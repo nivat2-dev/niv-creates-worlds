@@ -212,6 +212,100 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
+      {/* ───── 03 — FEATURED WORK ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-16 md:mb-24">
+            <div className="col-span-12 md:col-span-3">
+              <SectionLabel n="03" label="Featured Work" />
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+                Featured Work.
+              </h2>
+              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
+                A closer look at three editorial projects that defined the years at National Geographic Kids.
+              </p>
+            </div>
+          </div>
+
+          {/* Project 01 — Titanic (image left) */}
+          <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
+            <div className="col-span-12 lg:col-span-7 order-1">
+              <div className="relative mx-auto w-full max-w-[640px]">
+                <img
+                  src={coverTitanic.url}
+                  alt="National Geographic Kids — Titanic cover"
+                  className="block w-full h-auto rounded-sm select-none"
+                  style={{ filter: "drop-shadow(0 34px 60px rgba(20,20,22,.22))" }}
+                />
+              </div>
+            </div>
+            <div className="col-span-12 lg:col-span-5 order-2">
+              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                Project 01 — Cover Story
+              </div>
+              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
+                Bringing history back to the surface.
+              </h3>
+              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+                A cover story exploring new technology used to reveal details from the Titanic wreck more than a century after the disaster.
+              </p>
+            </div>
+          </article>
+
+          {/* Project 02 — Amazon (image right) */}
+          <article className="mt-24 md:mt-36 grid grid-cols-12 gap-8 md:gap-14 items-center">
+            <div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
+              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                Project 02 — Feature Issue
+              </div>
+              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
+                A visual journey into the Amazon.
+              </h3>
+              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+                A feature issue focused on one of the world's most important ecosystems.
+              </p>
+            </div>
+            <div className="col-span-12 lg:col-span-7 order-1 lg:order-2">
+              <div className="relative mx-auto w-full max-w-[640px]">
+                <img
+                  src={coverAmazon.url}
+                  alt="National Geographic Kids — Amazon cover"
+                  className="block w-full h-auto rounded-sm select-none"
+                  style={{ filter: "drop-shadow(0 34px 60px rgba(20,20,22,.22))" }}
+                />
+              </div>
+            </div>
+          </article>
+
+          {/* Project 03 — Editorial Design (image left) */}
+          <article className="mt-24 md:mt-36 grid grid-cols-12 gap-8 md:gap-14 items-center">
+            <div className="col-span-12 lg:col-span-7 order-1">
+              <div className="relative mx-auto w-full max-w-[760px]">
+                <img
+                  src={spread.url}
+                  alt="National Geographic Kids editorial spread"
+                  className="block w-full h-auto rounded-sm select-none"
+                  style={{ filter: "drop-shadow(0 30px 54px rgba(20,20,22,.20))" }}
+                />
+              </div>
+            </div>
+            <div className="col-span-12 lg:col-span-5 order-2">
+              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                Project 03 — Inside the Magazine
+              </div>
+              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
+                Editorial storytelling.
+              </h3>
+              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+                Transforming complex scientific and historical topics into engaging visual experiences for young readers.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <MoreWork currentSlug="national-geographic-kids" />
     </main>
   );
