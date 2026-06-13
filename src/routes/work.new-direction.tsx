@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
-import bookMockup from "@/assets/nd-book-mockup.png.asset.json";
+import bookMockup from "@/assets/nd-book-mockup.jpg.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
 import kiss from "@/assets/nd-kiss.png.asset.json";
 import water from "@/assets/nd-water.jpg.asset.json";
