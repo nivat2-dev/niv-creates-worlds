@@ -58,40 +58,30 @@ function NatGeoKidsPage() {
       body: "I designed covers, features and editorial spreads month after month — shaping how each story reached young readers.",
       image: coverTitanic.url,
       alt: "National Geographic Kids magazine cover",
-      frameClassName: "max-w-[120px]",
-      imageClassName: "rounded-[2px]",
     },
     {
       title: "Educational Products",
       body: "I led the design of games, collectibles and reading tools that extended the magazine into the hands of kids.",
       image: cards.url,
       alt: "Educational products and collectible cards",
-      frameClassName: "max-w-[132px]",
-      imageClassName: "",
     },
     {
       title: "Marketing Campaigns",
       body: "From subscriber drives to launch assets, I designed the campaigns that brought new readers to the brand.",
       image: promoPoster.url,
       alt: "National Geographic Kids marketing campaign poster",
-      frameClassName: "max-w-[108px]",
-      imageClassName: "rounded-[2px]",
     },
     {
       title: "Digital Design",
       body: "I translated the magazine's voice into landing pages and email campaigns built around products and subscriptions.",
       image: landing.url,
       alt: "National Geographic Kids landing page",
-      frameClassName: "max-w-[132px]",
-      imageClassName: "",
     },
     {
       title: "Print Production",
       body: "I owned the production workflow end-to-end — preparing files, working with vendors and protecting quality through to print.",
       image: bookmarks.url,
       alt: "Retail display stand for printed reading tools",
-      frameClassName: "max-w-[118px]",
-      imageClassName: "",
     },
   ];
 
@@ -189,24 +179,20 @@ function NatGeoKidsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 md:gap-6">
             {cardsList.map((card) => (
-              <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm min-h-[280px]">
-                <div>
-                  <div className="flex h-[112px] items-start">
-                    <div className={card.frameClassName}>
-                      <img
-                        src={card.image}
-                        alt={card.alt}
-                        loading="lazy"
-                        className={`block w-full h-auto object-contain ${card.imageClassName}`.trim()}
-                        style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
-                      />
-                    </div>
-                  </div>
-                  <h3 className="mt-6 font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
-                    {card.title}
-                  </h3>
+              <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm">
+                <div className="h-[220px] md:h-[230px] flex items-center justify-center">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    className="block max-h-full max-w-[70%] w-auto h-auto object-contain"
+                    style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
+                  />
                 </div>
-                <p className="mt-4 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[28ch]">
+                <h3 className="mt-7 font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                  {card.title}
+                </h3>
+                <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[28ch]">
                   {card.body}
                 </p>
               </article>
