@@ -1,12 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import portrait from "@/assets/portrait.jpg";
-import bookCover from "@/assets/book-cover.jpg";
+import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
+import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
 import novelSpread from "@/assets/novel-spread.jpg";
-import pendant from "@/assets/pendant.png";
+import necklace from "@/assets/necklace.png";
 import natgeo from "@/assets/natgeo.jpg";
 import superplay from "@/assets/superplay.jpg";
 import zoo from "@/assets/zoo.jpg";
+
+const portrait = portraitAsset.url;
+const bookCover = bookCoverAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,44 +125,82 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — floating composition */}
-        <div className="relative h-[560px] md:h-[640px] lg:h-[720px]">
-          {/* portrait */}
+        {/* Right — The Creator & The Creation */}
+        <div className="relative h-[600px] md:h-[680px] lg:h-[760px]">
+          {/* soft turquoise halo */}
           <div
-            className="absolute left-1/2 top-1/2 w-[58%] aspect-[3/4] -translate-x-1/2 -translate-y-1/2 overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]"
-            style={{ transform: `translate(-50%, calc(-50% + ${y * -0.05}px))` }}
+            aria-hidden
+            className="absolute right-[6%] top-[6%] w-[70%] aspect-square rounded-full blur-3xl opacity-60"
+            style={{
+              background:
+                "radial-gradient(closest-side, color-mix(in oklab, var(--turquoise) 40%, transparent), transparent 70%)",
+              transform: `translateY(${y * -0.06}px)`,
+            }}
+          />
+
+          {/* vertical caption */}
+          <div
+            className="absolute -left-2 md:left-2 top-1/2 -translate-y-1/2 rotate-180 text-[11px] uppercase tracking-[0.4em] text-ink-muted hidden md:block"
+            style={{ writingMode: "vertical-rl" }}
           >
-            <img src={portrait} alt="Portrait of Niv Haviv" width={768} height={1024} className="w-full h-full object-cover" />
+            The Creator <span className="text-turquoise-deep">&</span> The Creation
           </div>
 
-          {/* book cover top-left */}
+          {/* PORTRAIT — primary anchor */}
           <div
-            className="absolute left-[-4%] top-[6%] w-[44%] aspect-[3/4] float-slow shadow-[0_25px_60px_-20px_rgba(0,0,0,0.35)]"
-            style={{ ['--rot' as never]: '-6deg', transform: `translateY(${y * -0.12}px) rotate(-6deg)` }}
+            className="absolute right-[2%] top-[3%] w-[72%] aspect-[3/4] overflow-hidden bg-paper-deep shadow-[0_40px_90px_-30px_rgba(0,0,0,0.35)]"
+            style={{ transform: `translateY(${y * -0.04}px)` }}
           >
-            <img src={bookCover} alt="New Direction — graphic novel cover" loading="lazy" width={768} height={1024} className="w-full h-full object-cover" />
+            <img
+              src={portrait}
+              alt="Niv Haviv — portrait"
+              width={1280}
+              height={1707}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute top-3 left-3 text-[10px] uppercase tracking-[0.3em] text-paper/90 mix-blend-difference">
+              N.H. — 01
+            </div>
           </div>
 
-          {/* novel spread bottom-right */}
+          {/* BOOK COVER — the creation, lower-left, overlapping portrait corner */}
           <div
-            className="absolute right-[-6%] bottom-[4%] w-[52%] aspect-[4/3] float-med shadow-[0_25px_60px_-20px_rgba(0,0,0,0.35)]"
-            style={{ ['--rot' as never]: '5deg', transform: `translateY(${y * 0.08}px) rotate(5deg)` }}
+            className="absolute left-[0%] md:left-[-4%] bottom-[2%] w-[44%] md:w-[42%] float-med"
+            style={{
+              ['--rot' as never]: '-8deg',
+              transform: `translateY(${y * 0.1}px) rotate(-8deg)`,
+              filter: "drop-shadow(0 30px 40px rgba(0,0,0,0.25))",
+            }}
           >
-            <img src={novelSpread} alt="Graphic novel interior spread" loading="lazy" width={1280} height={896} className="w-full h-full object-cover" />
+            <img
+              src={bookCover}
+              alt="New Direction — graphic novel by Niv Haviv"
+              loading="lazy"
+              width={968}
+              height={1320}
+              className="w-full h-auto"
+            />
           </div>
 
-          {/* pendant */}
+          {/* NECKLACE — symbolic thread between creator and creation */}
           <div
-            className="absolute right-[8%] top-[2%] w-[24%] float-slow"
-            style={{ transform: `translateY(${y * -0.18}px)` }}
+            className="absolute right-[18%] -top-[4%] w-[34%] md:w-[30%] pointer-events-none"
+            style={{ transform: `translateY(${y * -0.18}px) rotate(8deg)` }}
           >
-            <img src={pendant} alt="Turquoise pendant necklace" loading="lazy" width={768} height={768} className="w-full h-auto" />
+            <img
+              src={necklace}
+              alt="Turquoise pendant — symbol from New Direction"
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="w-full h-auto"
+            />
           </div>
 
-          {/* small label */}
-          <div className="absolute left-[2%] bottom-[2%] text-[11px] uppercase tracking-[0.28em] text-ink-muted">
-            <span className="inline-block w-8 h-px bg-ink/40 align-middle mr-3" />
-            Selected world ’24
+          {/* editorial markers */}
+          <div className="absolute right-2 bottom-[2%] text-right text-[10px] uppercase tracking-[0.3em] text-ink-muted">
+            <div>Vol. 01</div>
+            <div className="mt-1">Studio of Niv Haviv</div>
           </div>
         </div>
       </div>
@@ -273,11 +314,11 @@ function ProjectHero({ p }: { p: Project }) {
             <img src={p.image} alt={p.alt} loading="lazy" width={1280} height={896} className="w-full h-full object-cover" />
           </div>
           <div className="mt-6 grid grid-cols-2 gap-6">
-            <div className="aspect-square overflow-hidden bg-paper-deep">
-              <img src={bookCover} alt="New Direction cover" loading="lazy" width={768} height={1024} className="w-full h-full object-cover" />
+            <div className="aspect-square overflow-hidden bg-paper-deep flex items-center justify-center p-6">
+              <img src={bookCover} alt="New Direction cover" loading="lazy" width={968} height={1320} className="h-full w-auto object-contain" />
             </div>
-            <div className="aspect-square overflow-hidden bg-ink flex items-center justify-center p-8">
-              <img src={pendant} alt="Turquoise pendant from New Direction" loading="lazy" width={768} height={768} className="w-2/3 h-auto" />
+            <div className="aspect-square overflow-hidden bg-ink flex items-center justify-center p-10">
+              <img src={necklace} alt="Turquoise pendant from New Direction" loading="lazy" width={1024} height={1024} className="w-2/3 h-auto" />
             </div>
           </div>
         </Reveal>
