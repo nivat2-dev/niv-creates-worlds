@@ -339,13 +339,13 @@ function SignatureProject() {
               </span>
             ))}
           </div>
-          <a
-            href="#"
+          <Link
+            to="/work/new-direction"
             className="group mt-12 inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] border-b border-paper/40 pb-1 hover:border-turquoise hover:text-turquoise transition-colors"
           >
             Open the case study
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-          </a>
+          </Link>
         </Reveal>
 
         {/* Right: Book + Pendant composition */}
@@ -409,7 +409,7 @@ function SignatureProject() {
 function ProjectRow({ p }: { p: Project }) {
   const isLeft = p.layout === "left";
   return (
-    <a href="#" className="group block">
+    <Link to={p.to} className="group block">
       <article className="relative">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-center">
           <Reveal className={`col-span-12 lg:col-span-7 ${isLeft ? "lg:order-1" : "lg:order-2"}`}>
@@ -457,7 +457,7 @@ function ProjectRow({ p }: { p: Project }) {
           </Reveal>
         </div>
       </article>
-    </a>
+    </Link>
   );
 }
 
