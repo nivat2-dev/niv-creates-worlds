@@ -110,13 +110,6 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 22%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 18%, transparent), transparent 75%)" }}
         />
-        {/* decorative motifs */}
-        <Motif src={diamondTeal.url} size={72} top={"22%"} left={"6%"} rotate={-8} opacity={0.85} className="hidden md:block" />
-        <Motif src={sparkCoral.url} size={56} top={"68%"} left={"10%"} rotate={12} opacity={0.9} className="hidden md:block" />
-        <Motif src={starCream.url} size={84} top={"14%"} right={"8%"} rotate={-12} className="hidden md:block" />
-        <Motif src={circleTurq.url} size={120} bottom={"6%"} right={"9%"} className="hidden md:block" />
-        <Motif src={sparkNavy.url} size={36} top={"6%"} left={"38%"} rotate={20} className="hidden md:block" />
-
         <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-32 md:pt-36 pb-20 md:pb-28">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Cover */}
@@ -172,9 +165,6 @@ function NewDirectionPage() {
 
       {/* ───── 02 — THE STORY ───── */}
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <Motif src={circleNavy.url} size={56} top={48} right={"8%"} className="hidden md:block" />
-        <Motif src={sparkOlive.url} size={44} bottom={64} left={"10%"} rotate={-10} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-center">
           <Reveal className="col-span-12 md:col-span-7">
             <div className="relative">
@@ -283,9 +273,6 @@ function NewDirectionPage() {
 
       {/* ───── 04 — CHARACTER MOMENTS ───── */}
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32" id="chapters">
-        <Motif src={starCream.url} size={88} top={56} left={"7%"} rotate={-8} className="hidden md:block" />
-        <Motif src={sparkCoral.url} size={56} bottom={64} right={"8%"} rotate={14} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="04" label="Character Moments" />
