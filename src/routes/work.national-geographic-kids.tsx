@@ -463,66 +463,6 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
-      {/* ───── Principles ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
-            <div className="col-span-12 md:col-span-3">
-              <SectionLabel label="What I took from it" />
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-                Designing for curious minds.
-              </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
-                Four years of designing for kids reshaped how I approach every project. Three lessons stayed with me.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            {[
-              { title: "Clarity beats cleverness.", body: "When the reader is nine years old, every layout decision has to earn its place. I learned to strip away anything that didn't help the story land." },
-              { title: "A brand lives off the page.", body: "The magazine was the anchor, but the real brand was the card game in a kid's hand and the bookmark on their desk. I started designing for the object, not the spread." },
-              { title: "Respect the reader.", body: "Kids notice when something is talking down to them. I held the same editorial standard for a children's cover as I would for any adult magazine." },
-            ].map((card) => (
-              <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-paper p-7 md:p-9 rounded-sm min-h-[280px]">
-                <div>
-                  <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em] max-w-[20ch]">
-                    {card.title}
-                  </h3>
-                </div>
-                <p className="mt-6 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[34ch]">
-                    {card.body}
-                  </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───── Closing ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-ink text-paper py-24 md:py-36">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12">
-            <div className="col-span-12 md:col-span-3">
-              <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-paper/60">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-                <span>In closing</span>
-              </div>
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <p className="font-serif text-[clamp(28px,3.4vw,48px)] leading-[1.15] tracking-[-0.02em] max-w-[28ch]">
-                Four years, dozens of issues and a brand that learned to live well beyond the page.
-              </p>
-              <p className="mt-8 font-sans text-[17px] leading-[1.7] text-paper/70 max-w-2xl">
-                National Geographic Kids Israel taught me how to hold an editorial standard across covers, products, campaigns and screens — and to keep the reader at the center of every decision. The work I'm most proud of isn't a single cover. It's the consistency.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <MoreWork currentSlug="national-geographic-kids" />
     </main>
   );
