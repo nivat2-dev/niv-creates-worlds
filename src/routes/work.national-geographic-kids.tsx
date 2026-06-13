@@ -73,7 +73,7 @@ function NatGeoKidsPage() {
 
   return (
     <main className="bg-cream text-ink">
-      <MiniNav />
+      <CaseNav />
 
       {/* ───── 01 — HERO ───── */}
       <section className="relative isolate overflow-hidden">
