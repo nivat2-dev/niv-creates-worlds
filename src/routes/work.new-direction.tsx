@@ -23,9 +23,9 @@ export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
     meta: [
       { title: "New Direction — A Graphic Novel by Niv Haviv" },
-      { name: "description", content: "New Direction — a 300+ page graphic novel about grief, faith, identity and unexpected connection. Written & illustrated by Niv Haviv." },
+      { name: "description", content: "New Direction — a graphic novel born from a long silence. A story about grief, family secrets, faith, guilt, and the consequences of looking away. Written & illustrated by Niv Haviv." },
       { property: "og:title", content: "New Direction — A Graphic Novel" },
-      { property: "og:description", content: "A graphic novel about grief, faith, identity and unexpected connection." },
+      { property: "og:description", content: "A graphic novel born from a long silence. About grief, family secrets, faith, guilt, and the consequences of looking away." },
       { property: "og:image", content: bookCover.url },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: bookCover.url },
@@ -170,14 +170,14 @@ function NewDirectionPage() {
               </Reveal>
               <Reveal delay={240}>
                 <p className="mt-8 font-serif text-xl md:text-[26px] leading-[1.32] text-ink max-w-xl">
-                  A graphic novel about <em className="text-turquoise-deep">grief</em>, <em className="text-coral">faith</em>, <em>identity</em>, and <em>unexpected connection</em>.
+                  A graphic novel born from a long silence. A story about <em className="text-turquoise-deep">grief</em>, <em className="text-coral">family secrets</em>, <em>faith</em>, and the <em>consequences of looking away</em>.
                 </p>
               </Reveal>
               <Reveal delay={340}>
                 <div className="mt-8 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
                   <span>300+ Pages</span>
                   <span className="text-coral">·</span>
-                  <span>Graphic Novel</span>
+                  <span>Mature Readers 16+</span>
                   <span className="text-coral">·</span>
                   <span>Written &amp; Illustrated by Niv Haviv</span>
                 </div>
@@ -218,14 +218,14 @@ function NewDirectionPage() {
             <Reveal><SectionLabel n="02" label="The Story" /></Reveal>
             <Reveal delay={120}>
               <h2 className="mt-6 font-serif text-4xl md:text-[56px] leading-[0.98] tracking-[-0.035em]">
-                After Rafael's death,<br /> two worlds collide.
+                After Rafael's death,<br /> silence begins to crack.
               </h2>
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-8 space-y-5 text-ink text-lg leading-relaxed max-w-md">
-                <p><span className="font-serif italic text-turquoise-deep">Arieh</span> — a religious student from Jerusalem.</p>
-                <p><span className="font-serif italic text-coral">Roy</span> — a secular young man from Tel Aviv.</p>
-                <p className="text-ink-muted">Their connection changes everything.</p>
+                <p><span className="font-serif italic text-turquoise-deep">Arieh</span> — a religious student from Jerusalem, carrying questions he was taught not to ask.</p>
+                <p><span className="font-serif italic text-coral">Roy</span> — a secular young man from Tel Aviv, running from a loss no one will name.</p>
+                <p className="text-ink-muted">Their bond grows from shared absence, not from romance alone.</p>
               </div>
             </Reveal>
           </div>
@@ -316,22 +316,22 @@ function NewDirectionPage() {
           <Reveal>
             <SectionLabel n="04" label="Character Moments" />
             <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
-              Quiet scenes that <span className="italic text-coral">carry the weight</span>.
+              The weight of <span className="italic text-coral">what is left unsaid</span>.
             </h2>
           </Reveal>
 
           <div className="mt-14 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
             <Reveal className="col-span-12 md:col-span-7">
-              <img src={beach.url} alt="Beach scene — Arieh and Roy" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
-              <Caption>Beach · the first crack</Caption>
+              <img src={beach.url} alt="Beach scene — Arieh and Roy sitting in silence" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <Caption>Beach · silence between two people who have lost the same person</Caption>
             </Reveal>
             <Reveal delay={100} className="col-span-12 md:col-span-5">
-              <img src={water.url} alt="Roy in the water" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
-              <Caption>Roy · in the water</Caption>
+              <img src={water.url} alt="Roy in the water — a moment of release" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <Caption>Roy · submerged in what cannot be spoken</Caption>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-12">
-              <img src={kiss.url} alt="The kiss" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
-              <Caption>The kiss</Caption>
+              <img src={kiss.url} alt="Arieh and Roy — intimacy born from shared loss" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <Caption>Connection that grows from grief, not from romance alone</Caption>
             </Reveal>
           </div>
         </div>
@@ -455,11 +455,12 @@ function NewDirectionPage() {
             <Reveal className="col-span-12 md:col-span-7 order-2 md:order-1">
               <SectionLabel n="08" label="Final Result" />
               <h2 className="mt-6 font-serif text-5xl md:text-[88px] leading-[0.92] tracking-[-0.045em] max-w-2xl">
-                A personal graphic novel<br />
-                <span className="italic text-coral">years in the making</span>.
+                New Direction is a<br />
+                <span className="italic text-coral">graphic novel</span><br />
+                born from a long silence.
               </h2>
               <p className="mt-8 font-mono text-[12px] uppercase tracking-[0.28em] text-ink-muted">
-                Coming soon
+                Coming soon · Ages 16+
               </p>
             </Reveal>
 
