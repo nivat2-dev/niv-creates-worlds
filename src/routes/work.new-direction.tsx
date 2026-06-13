@@ -170,14 +170,14 @@ function NewDirectionPage() {
               </Reveal>
               <Reveal delay={240}>
                 <p className="mt-8 font-serif text-xl md:text-[26px] leading-[1.32] text-ink max-w-xl">
-                  A graphic novel about <em className="text-turquoise-deep">grief</em>, <em className="text-coral">faith</em>, <em>identity</em>, and <em>unexpected connection</em>.
+                  A graphic novel born from a long silence. A story about <em className="text-turquoise-deep">grief</em>, <em className="text-coral">family secrets</em>, <em>faith</em>, and the <em>consequences of looking away</em>.
                 </p>
               </Reveal>
               <Reveal delay={340}>
                 <div className="mt-8 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
                   <span>300+ Pages</span>
                   <span className="text-coral">·</span>
-                  <span>Graphic Novel</span>
+                  <span>Mature Readers 16+</span>
                   <span className="text-coral">·</span>
                   <span>Written &amp; Illustrated by Niv Haviv</span>
                 </div>
