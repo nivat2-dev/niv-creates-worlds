@@ -4,13 +4,15 @@ import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
 import novelSpread from "@/assets/novel-spread.jpg";
 import necklace from "@/assets/necklace.png";
-import natgeo from "@/assets/natgeo.jpg";
-import superplay from "@/assets/superplay.jpg";
+import ngkCoverTitanicAsset from "@/assets/ngk-cover-titanic.png.asset.json";
+import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
 import zoo from "@/assets/zoo.jpg";
 import asaflezet from "@/assets/asaflezet.jpg";
 
 const portrait = portraitAsset.url;
 const bookCover = bookCoverAsset.url;
+const natgeo = ngkCoverTitanicAsset.url;
+const superplay = gpdPiratePopupAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
