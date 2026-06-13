@@ -68,11 +68,11 @@ function MiniNav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-6 flex items-center justify-between text-ink">
-        <Link to="/" className="flex items-center gap-2 font-mono text-[11px] tracking-[0.04em] uppercase">
+        <Link to="/" className="flex items-center gap-2 font-sans text-[12px] tracking-[0.02em]">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
           Niv Haviv
         </Link>
-        <Link to="/" className="font-mono text-[11px] uppercase tracking-[0.18em] hover:text-coral transition-colors">
+        <Link to="/" className="font-sans text-[12px] tracking-[0.02em] hover:text-coral transition-colors">
           ← Index
         </Link>
       </div>
@@ -82,7 +82,7 @@ function MiniNav() {
 
 function SectionLabel({ n, label }: { n: string; label: string }) {
   return (
-    <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
+    <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-ink-muted">
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
       <span>{n} — {label}</span>
     </div>
@@ -91,8 +91,8 @@ function SectionLabel({ n, label }: { n: string; label: string }) {
 
 function Caption({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
-      <span className="text-coral">▸</span> {children}
+    <p className="mt-3 font-sans text-[12px] text-ink-muted">
+      <span className="text-coral">·</span> {children}
     </p>
   );
 }
@@ -110,7 +110,11 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 20%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
         />
-        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32 pb-16 md:pb-20 min-h-[65vh] flex items-center">
+        {/* subtle motifs from the visual language */}
+        <img src={starCream.url} alt="" aria-hidden className="hidden md:block absolute top-[18%] left-[6%] w-10 opacity-70 pointer-events-none select-none" style={{ transform: "rotate(-12deg)" }} />
+        <img src={diamondTeal.url} alt="" aria-hidden className="hidden md:block absolute bottom-[14%] left-[44%] w-7 opacity-60 pointer-events-none select-none" style={{ transform: "rotate(8deg)" }} />
+        <img src={sparkCoral.url} alt="" aria-hidden className="hidden md:block absolute top-[24%] right-[8%] w-8 opacity-70 pointer-events-none select-none" />
+        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-24 pb-12 md:pb-14 min-h-[58vh] flex items-center">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
               <div className="relative max-w-[440px] w-full">
@@ -126,14 +130,14 @@ function NewDirectionPage() {
             <div className="col-span-12 lg:col-span-6">
               <Reveal><SectionLabel n="01" label="A Graphic Novel by Niv Haviv" /></Reveal>
               <Reveal delay={120}>
-                <h1 className="mt-6 font-serif text-[clamp(56px,8.5vw,140px)] leading-[0.86] tracking-[-0.045em]">
+                <h1 className="mt-6 font-serif text-[clamp(46px,7vw,116px)] leading-[0.9] tracking-[-0.035em] font-medium">
                   <span className="block">NEW</span>
                   <span className="block italic text-coral">Direction</span>
                 </h1>
               </Reveal>
               <Reveal delay={240}>
-                <p className="mt-8 font-serif text-xl md:text-[24px] leading-[1.35] text-ink max-w-xl">
-                  A 300-page graphic novel about <em className="text-turquoise-deep">family</em>, <em>silence</em>, and the <em className="text-coral">truths people leave behind</em>.
+                <p className="mt-7 font-sans text-lg md:text-[20px] leading-[1.5] text-ink max-w-xl">
+                  A 300-page graphic novel about family, silence, and the truths people leave behind.
                 </p>
               </Reveal>
             </div>
@@ -168,7 +172,7 @@ function NewDirectionPage() {
               </p>
             </Reveal>
             <Reveal delay={320}>
-              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 font-mono text-[11px] uppercase tracking-[0.18em]">
+              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 font-sans text-[13px]">
                 {[
                   ["Writer", "Niv Haviv"],
                   ["Illustrator", "Niv Haviv"],
@@ -273,7 +277,7 @@ function NewDirectionPage() {
                   <div className="aspect-square w-full bg-cream border border-hairline rounded-sm flex items-center justify-center p-5 md:p-7">
                     <img src={m.src} alt={m.label} loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
                   </div>
-                  <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-ink-muted">{m.label}</p>
+                  <p className="mt-2 font-sans text-[11px] text-ink-muted">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -315,7 +319,7 @@ function NewDirectionPage() {
             ].map((r, i) => (
               <Reveal key={r.t} delay={i * 60}>
                 <div className="h-full bg-paper border border-hairline rounded-sm p-8 md:p-10">
-                  <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+                  <div className="flex items-center gap-3 font-sans text-[12px] text-ink-muted">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
                     <span>0{i + 1}</span>
                   </div>
@@ -359,7 +363,7 @@ function NewDirectionPage() {
             <div className="mt-16 flex justify-center">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 font-mono text-[11px] uppercase tracking-[0.24em] transition-colors hover:bg-coral hover:text-ink"
+                className="group inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 font-sans text-[13px] transition-colors hover:bg-coral hover:text-ink"
               >
                 <span className="inline-block transition-transform group-hover:-translate-x-1">←</span>
                 Back to Index
