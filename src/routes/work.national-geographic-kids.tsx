@@ -478,6 +478,8 @@ function NatGeoKidsPage() {
             </div>
           </div>
         </div>
+      </section>
+
       {/* ───── 07 — DESIGNING FOR CURIOUS MINDS ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
