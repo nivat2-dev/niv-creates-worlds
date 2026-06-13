@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup.jpg.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
@@ -80,30 +80,6 @@ function MiniNav() {
   );
 }
 
-/* decorative motif — comic-book graphic */
-function Motif({
-  src, size = 64, top, left, right, bottom, rotate = 0, opacity = 1, className = "",
-}: {
-  src: string; size?: number;
-  top?: number | string; left?: number | string; right?: number | string; bottom?: number | string;
-  rotate?: number; opacity?: number; className?: string;
-}) {
-  const style: CSSProperties = {
-    width: size, height: size, top, left, right, bottom, opacity,
-    transform: `rotate(${rotate}deg)`,
-  };
-  return (
-    <img
-      src={src}
-      alt=""
-      aria-hidden
-      loading="lazy"
-      className={`pointer-events-none absolute select-none -z-10 ${className}`}
-      style={style}
-    />
-  );
-}
-
 function SectionLabel({ n, label }: { n: string; label: string }) {
   return (
     <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
@@ -134,13 +110,6 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 22%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 18%, transparent), transparent 75%)" }}
         />
-        {/* decorative motifs */}
-        <Motif src={diamondTeal.url} size={72} top={"22%"} left={"6%"} rotate={-8} opacity={0.85} className="hidden md:block" />
-        <Motif src={sparkCoral.url} size={56} top={"68%"} left={"10%"} rotate={12} opacity={0.9} className="hidden md:block" />
-        <Motif src={starCream.url} size={84} top={"14%"} right={"8%"} rotate={-12} className="hidden md:block" />
-        <Motif src={circleTurq.url} size={120} bottom={"6%"} right={"9%"} className="hidden md:block" />
-        <Motif src={sparkNavy.url} size={36} top={"6%"} left={"38%"} rotate={20} className="hidden md:block" />
-
         <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-32 md:pt-36 pb-20 md:pb-28">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Cover */}
@@ -196,9 +165,6 @@ function NewDirectionPage() {
 
       {/* ───── 02 — THE STORY ───── */}
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <Motif src={circleNavy.url} size={56} top={48} right={"8%"} className="hidden md:block" />
-        <Motif src={sparkOlive.url} size={44} bottom={64} left={"10%"} rotate={-10} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-center">
           <Reveal className="col-span-12 md:col-span-7">
             <div className="relative">
@@ -275,7 +241,7 @@ function NewDirectionPage() {
               ].map((m) => (
                 <div key={m.label + m.src} className="flex flex-col items-center">
                   <div className="aspect-square w-full bg-paper border border-hairline rounded-sm flex items-center justify-center p-5 md:p-7 transition-transform hover:-translate-y-1">
-                    <img src={m.src} alt={m.label} loading="lazy" className="w-full h-full object-contain" />
+                    <img src={m.src} alt={m.label} loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
                   </div>
                   <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-ink-muted">{m.label}</p>
                 </div>
@@ -307,9 +273,6 @@ function NewDirectionPage() {
 
       {/* ───── 04 — CHARACTER MOMENTS ───── */}
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32" id="chapters">
-        <Motif src={starCream.url} size={88} top={56} left={"7%"} rotate={-8} className="hidden md:block" />
-        <Motif src={sparkCoral.url} size={56} bottom={64} right={"8%"} rotate={14} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="04" label="Character Moments" />
@@ -337,9 +300,6 @@ function NewDirectionPage() {
 
       {/* ───── 05 — INSIDE THE BOOK ───── */}
       <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
-        <Motif src={circleTurq.url} size={120} top={"-3%"} right={"5%"} className="hidden md:block" />
-        <Motif src={diamondTeal.url} size={60} bottom={"6%"} left={"6%"} rotate={-14} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-12 md:mb-16">
             <div>
@@ -364,8 +324,6 @@ function NewDirectionPage() {
 
       {/* ───── 06 — BOOK DESIGN ───── */}
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <Motif src={sparkOlive.url} size={48} top={64} right={"10%"} rotate={18} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="06" label="Book Design" />
@@ -399,9 +357,6 @@ function NewDirectionPage() {
 
       {/* ───── 07 — CREATIVE PROCESS ───── */}
       <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
-        <Motif src={diamondGreen.url} size={64} top={48} left={"8%"} rotate={-10} className="hidden md:block" />
-        <Motif src={sparkNavy.url} size={42} bottom={64} right={"10%"} rotate={16} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="07" label="Creative Process" />
@@ -413,7 +368,7 @@ function NewDirectionPage() {
           <div className="mt-14 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
             <Reveal className="col-span-12 md:col-span-6">
               <div className="aspect-[4/3] w-full rounded-sm border border-dashed border-coral/50 bg-paper flex flex-col items-center justify-center text-center px-6">
-                <img src={sparkCoral.url} alt="" aria-hidden className="w-10 h-10 mb-3 opacity-80" />
+                <img src={sparkCoral.url} alt="" aria-hidden className="block w-10 h-auto mb-3 opacity-80" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-coral">Sketch · to supply</span>
                 <span className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">Character study · pencil</span>
               </div>
@@ -421,7 +376,7 @@ function NewDirectionPage() {
             </Reveal>
             <Reveal delay={120} className="col-span-12 md:col-span-6">
               <div className="aspect-[4/3] w-full rounded-sm border border-dashed border-turquoise/50 bg-paper flex flex-col items-center justify-center text-center px-6">
-                <img src={diamondTeal.url} alt="" aria-hidden className="w-10 h-10 mb-3 opacity-80" />
+                <img src={diamondTeal.url} alt="" aria-hidden className="block w-10 h-auto mb-3 opacity-80" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-turquoise-deep">Page sketch · to supply</span>
                 <span className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">Layout thumbnail · grid</span>
               </div>
@@ -443,11 +398,6 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 50% at 25% 35%, color-mix(in oklab, var(--coral) 18%, transparent), transparent 70%), radial-gradient(50% 50% at 80% 70%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
         />
-        <Motif src={starCream.url} size={96} top={64} left={"8%"} rotate={-12} className="hidden md:block" />
-        <Motif src={sparkCoral.url} size={52} top={"22%"} right={"10%"} rotate={14} className="hidden md:block" />
-        <Motif src={circleNavy.url} size={56} bottom={64} left={"12%"} className="hidden md:block" />
-        <Motif src={diamondTeal.url} size={64} bottom={"15%"} right={"7%"} rotate={-10} className="hidden md:block" />
-
         <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
             <Reveal className="col-span-12 md:col-span-7 order-2 md:order-1">
