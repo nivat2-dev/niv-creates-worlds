@@ -3,22 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
-import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
 import ariehRoyKiss from "@/assets/nd-kiss.png.asset.json";
-import palette from "@/assets/nd-palette.png.asset.json";
-import poster from "@/assets/nd-poster.png.asset.json";
-import logoEn from "@/assets/nd-logo-en.png.asset.json";
-import logoHe from "@/assets/nd-logo-he.png.asset.json";
 import diamondTeal from "@/assets/nd-diamond-teal.png.asset.json";
 import diamondGreen from "@/assets/nd-diamond-green.png.asset.json";
 import sparkCoral from "@/assets/nd-spark-coral.png.asset.json";
-import sparkOlive from "@/assets/nd-spark-olive.png.asset.json";
 import sparkNavy from "@/assets/nd-spark-navy.png.asset.json";
 import starCream from "@/assets/nd-star-cream.png.asset.json";
 import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
-import circleNavy from "@/assets/nd-circle-navy.png.asset.json";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
