@@ -58,40 +58,30 @@ function NatGeoKidsPage() {
       body: "I designed covers, features and editorial spreads month after month — shaping how each story reached young readers.",
       image: coverTitanic.url,
       alt: "National Geographic Kids magazine cover",
-      frameClassName: "max-w-[120px]",
-      imageClassName: "rounded-[2px]",
     },
     {
       title: "Educational Products",
       body: "I led the design of games, collectibles and reading tools that extended the magazine into the hands of kids.",
       image: cards.url,
       alt: "Educational products and collectible cards",
-      frameClassName: "max-w-[132px]",
-      imageClassName: "",
     },
     {
       title: "Marketing Campaigns",
       body: "From subscriber drives to launch assets, I designed the campaigns that brought new readers to the brand.",
       image: promoPoster.url,
       alt: "National Geographic Kids marketing campaign poster",
-      frameClassName: "max-w-[108px]",
-      imageClassName: "rounded-[2px]",
     },
     {
       title: "Digital Design",
       body: "I translated the magazine's voice into landing pages and email campaigns built around products and subscriptions.",
       image: landing.url,
       alt: "National Geographic Kids landing page",
-      frameClassName: "max-w-[132px]",
-      imageClassName: "",
     },
     {
       title: "Print Production",
       body: "I owned the production workflow end-to-end — preparing files, working with vendors and protecting quality through to print.",
       image: bookmarks.url,
       alt: "Retail display stand for printed reading tools",
-      frameClassName: "max-w-[118px]",
-      imageClassName: "",
     },
   ];
 
@@ -189,24 +179,20 @@ function NatGeoKidsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 md:gap-6">
             {cardsList.map((card) => (
-              <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm min-h-[280px]">
-                <div>
-                  <div className="flex h-[112px] items-start">
-                    <div className={card.frameClassName}>
-                      <img
-                        src={card.image}
-                        alt={card.alt}
-                        loading="lazy"
-                        className={`block w-full h-auto object-contain ${card.imageClassName}`.trim()}
-                        style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
-                      />
-                    </div>
-                  </div>
-                  <h3 className="mt-6 font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
-                    {card.title}
-                  </h3>
+              <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm">
+                <div className="h-[220px] md:h-[230px] flex items-center justify-center">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    className="block max-h-full max-w-[70%] w-auto h-auto object-contain"
+                    style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
+                  />
                 </div>
-                <p className="mt-4 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[28ch]">
+                <h3 className="mt-7 font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                  {card.title}
+                </h3>
+                <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[28ch]">
                   {card.body}
                 </p>
               </article>
@@ -377,7 +363,7 @@ function NatGeoKidsPage() {
           {/* Featured — Landing Page */}
           <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-7 order-1">
-              <div className="relative mx-auto w-full max-w-[640px]">
+              <div className="relative mx-auto w-full max-w-[460px] py-6">
                 <img
                   src={landingMockup.url}
                   alt="National Geographic Kids landing page mockup"
@@ -406,12 +392,12 @@ function NatGeoKidsPage() {
               { title: "Subscriber Renewal Email", body: "A separate campaign aimed at lapsed and returning readers — I built the layout and visual system to drive renewals without losing the editorial tone.", image: emailNgk.url, alt: "National Geographic Kids subscriber renewal email" },
             ].map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden">
-                <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-6">
+                <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-10 md:p-14">
                   <img
                     src={card.image}
                     alt={card.alt}
                     loading="lazy"
-                    className="block max-h-full max-w-full w-auto h-auto object-contain"
+                    className="block max-h-full max-w-[70%] w-auto h-auto object-contain"
                     style={{ filter: "drop-shadow(0 22px 38px rgba(20,20,22,.16))" }}
                   />
                 </div>
@@ -435,12 +421,12 @@ function NatGeoKidsPage() {
           <div className="grid grid-cols-12 gap-10 md:gap-14 items-center">
             {/* Left — portrait */}
             <div className="col-span-12 lg:col-span-6">
-              <div className="relative mx-auto w-full max-w-[560px]">
+              <div className="relative mx-auto w-full max-w-[460px] aspect-[4/5] overflow-hidden rounded-sm" style={{ filter: "drop-shadow(0 30px 54px rgba(20,20,22,.18))" }}>
                 <img
                   src={portrait.url}
                   alt="Niv Haviv at the National Geographic Kids studio"
-                  className="block w-full h-auto rounded-sm select-none"
-                  style={{ filter: "drop-shadow(0 30px 54px rgba(20,20,22,.20))" }}
+                  className="absolute inset-0 w-full h-full object-cover select-none"
+                  style={{ objectPosition: "30% center" }}
                 />
               </div>
             </div>
@@ -511,6 +497,28 @@ function NatGeoKidsPage() {
                   </p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── Closing ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-ink text-paper py-24 md:py-36">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12">
+            <div className="col-span-12 md:col-span-3">
+              <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-paper/60">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
+                <span>In closing</span>
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <p className="font-serif text-[clamp(28px,3.4vw,48px)] leading-[1.15] tracking-[-0.02em] max-w-[28ch]">
+                Four years, dozens of issues and a brand that learned to live well beyond the page.
+              </p>
+              <p className="mt-8 font-sans text-[17px] leading-[1.7] text-paper/70 max-w-2xl">
+                National Geographic Kids Israel taught me how to hold an editorial standard across covers, products, campaigns and screens — and to keep the reader at the center of every decision. The work I'm most proud of isn't a single cover. It's the consistency.
+              </p>
+            </div>
           </div>
         </div>
       </section>
