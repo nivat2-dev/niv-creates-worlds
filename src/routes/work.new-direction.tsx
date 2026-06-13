@@ -110,7 +110,11 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 20%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
         />
-        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32 pb-16 md:pb-20 min-h-[65vh] flex items-center">
+        {/* subtle motifs from the visual language */}
+        <img src={starCream.url} alt="" aria-hidden className="hidden md:block absolute top-[18%] left-[6%] w-10 opacity-70 pointer-events-none select-none" style={{ transform: "rotate(-12deg)" }} />
+        <img src={diamondTeal.url} alt="" aria-hidden className="hidden md:block absolute bottom-[14%] left-[44%] w-7 opacity-60 pointer-events-none select-none" style={{ transform: "rotate(8deg)" }} />
+        <img src={sparkCoral.url} alt="" aria-hidden className="hidden md:block absolute top-[24%] right-[8%] w-8 opacity-70 pointer-events-none select-none" />
+        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-24 pb-12 md:pb-14 min-h-[58vh] flex items-center">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
               <div className="relative max-w-[440px] w-full">
@@ -126,14 +130,14 @@ function NewDirectionPage() {
             <div className="col-span-12 lg:col-span-6">
               <Reveal><SectionLabel n="01" label="A Graphic Novel by Niv Haviv" /></Reveal>
               <Reveal delay={120}>
-                <h1 className="mt-6 font-serif text-[clamp(56px,8.5vw,140px)] leading-[0.86] tracking-[-0.045em]">
+                <h1 className="mt-6 font-serif text-[clamp(46px,7vw,116px)] leading-[0.9] tracking-[-0.035em] font-medium">
                   <span className="block">NEW</span>
                   <span className="block italic text-coral">Direction</span>
                 </h1>
               </Reveal>
               <Reveal delay={240}>
-                <p className="mt-8 font-serif text-xl md:text-[24px] leading-[1.35] text-ink max-w-xl">
-                  A 300-page graphic novel about <em className="text-turquoise-deep">family</em>, <em>silence</em>, and the <em className="text-coral">truths people leave behind</em>.
+                <p className="mt-7 font-sans text-lg md:text-[20px] leading-[1.5] text-ink max-w-xl">
+                  A 300-page graphic novel about family, silence, and the truths people leave behind.
                 </p>
               </Reveal>
             </div>
