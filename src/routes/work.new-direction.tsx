@@ -13,7 +13,7 @@ export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
     meta: [
       { title: "New Direction — Design Case Study · Niv Haviv" },
-      { name: "description", content: "A multidisciplinary design case study: writing, illustration, character systems, custom typography, editorial design and print production — taken from blank page to printed book by a single author." },
+      { name: "description", content: "New Direction — a 180-page graphic novel written, illustrated, designed and prepared for print by a single creator." },
       { property: "og:image", content: bookCover.url },
     ],
   }),
@@ -144,11 +144,9 @@ function Swatch({ name, role, hex, dark = false }: { name: string; role: string;
 /* annotated spread — numbered dots over the printed book photo */
 function AnnotatedSpread() {
   const dots = [
-    { id: "01", top: "12%", left: "26%" },
-    { id: "02", top: "44%", left: "70%" },
-    { id: "03", top: "72%", left: "20%" },
-    { id: "04", top: "30%", left: "52%" },
-    { id: "05", top: "82%", left: "62%" },
+    { id: "01", top: "18%", left: "28%" },
+    { id: "02", top: "44%", left: "72%" },
+    { id: "03", top: "78%", left: "38%" },
   ];
   return (
     <div className="relative w-full bg-paper-deep overflow-hidden" style={{ aspectRatio: "4/3" }}>
@@ -209,106 +207,151 @@ function NewDirectionPage() {
     <main className="bg-paper text-ink">
       <MiniNav />
 
-      {/* HERO — light, compact, cover-forward */}
-      <section className="relative bg-paper text-ink border-b border-hairline">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32 pb-14 md:pb-20">
+      {/* HERO — cover forward, light */}
+      <section className="bg-paper text-ink border-b border-hairline">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32 pb-16 md:pb-24">
           <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            <span>Case Study · 00 · New Direction</span>
-            <span>2024 · Self-initiated</span>
+            <span>Case Study · New Direction</span>
+            <span>2024</span>
           </div>
           <div className="mt-6 h-px w-full bg-hairline" />
 
-          <div className="mt-10 md:mt-14 grid grid-cols-12 gap-6 md:gap-10 items-end">
-            <div className="col-span-12 lg:col-span-7">
+          <div className="mt-12 md:mt-16 grid grid-cols-12 gap-6 md:gap-10 items-center">
+            <div className="col-span-12 lg:col-span-6 order-2 lg:order-1">
               <Reveal>
-                <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-turquoise-deep">From blank page to printed object</p>
-              </Reveal>
-              <Reveal delay={120}>
-                <h1 className="mt-5 font-serif text-[clamp(48px,7.4vw,116px)] leading-[0.9] tracking-[-0.04em]">
-                  A 180-page graphic novel,<br />designed and authored alone.
+                <h1 className="font-serif text-[clamp(64px,10vw,168px)] leading-[0.88] tracking-[-0.045em]">
+                  New<br />Direction
                 </h1>
               </Reveal>
-              <Reveal delay={240}>
-                <p className="mt-6 font-serif text-lg md:text-[22px] leading-[1.35] text-ink-muted max-w-xl">
-                  Writing, illustration, character systems, custom Hebrew typography, editorial design and print production — unified inside one project.
+              <Reveal delay={180}>
+                <p className="mt-8 font-serif text-xl md:text-[24px] leading-[1.35] text-ink-muted max-w-xl">
+                  180-page graphic novel written, illustrated, designed and prepared for print by a single creator.
                 </p>
               </Reveal>
             </div>
 
-            <div className="col-span-12 lg:col-span-5 flex items-end justify-center lg:justify-end">
+            <div className="col-span-12 lg:col-span-6 order-1 lg:order-2 flex items-center justify-center">
               <img
                 src={bookCover.url}
                 alt="New Direction — printed cover"
-                className="block max-h-[52vh] w-auto h-auto select-none"
-                style={{ filter: "drop-shadow(0 24px 48px rgba(20,20,22,.22))", transform: "rotate(-2deg)" }}
+                className="block max-h-[72vh] w-auto h-auto select-none"
+                style={{ filter: "drop-shadow(0 30px 60px rgba(20,20,22,.25))" }}
               />
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 md:mt-16 pt-6 border-t border-hairline grid grid-cols-2 md:grid-cols-6 gap-x-6 gap-y-6">
+      {/* 01 — PROJECT OVERVIEW */}
+      <section className="bg-paper py-20 md:py-24">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-center">
+          <Reveal className="col-span-4 md:col-span-3">
+            <img
+              src={bookCover.url}
+              alt="New Direction — cover (small)"
+              className="block w-full h-auto select-none"
+              style={{ filter: "drop-shadow(0 12px 24px rgba(20,20,22,.18))" }}
+            />
+          </Reveal>
+          <div className="col-span-12 md:col-span-9">
+            <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-turquoise-deep">(01) — Project Overview</p>
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6">
+              {[
+                { k: "Role", v: "Author · Designer · Illustrator" },
+                { k: "Year", v: "2024" },
+                { k: "Pages", v: "180" },
+                { k: "Format", v: "Hardbound" },
+                { k: "Languages", v: "Hebrew · English" },
+              ].map((m) => (
+                <div key={m.k}>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">{m.k}</p>
+                  <p className="mt-1.5 font-serif text-[17px] leading-tight tracking-[-0.01em]">{m.v}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 02 — THE CHALLENGE (no images, short) */}
+      <section className="bg-paper-deep border-y border-hairline py-20 md:py-24">
+        <SectionHead n="02" label="The Challenge" title="One person, every role — from writing to press-ready files." />
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10">
+          <div className="col-span-12 md:col-span-3" />
+          <Reveal className="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { k: "Role", v: "Author · Designer · Illustrator" },
-              { k: "Year", v: "2024" },
-              { k: "Format", v: "Hardbound · 180 pp" },
-              { k: "Languages", v: "Hebrew · English" },
-              { k: "Output", v: "Print + Identity" },
-              { k: "Disciplines", v: "9 unified" },
-            ].map((m) => (
-              <div key={m.k}>
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">{m.k}</p>
-                <p className="mt-1.5 font-serif text-[15px] leading-tight tracking-[-0.01em]">{m.v}</p>
+              ["01", "Bilingual identity", "A logo system that holds in Hebrew (RTL) and English (LTR)."],
+              ["02", "Monochrome with one signal", "Black ink and a single turquoise accent used as meaning, not decoration."],
+              ["03", "180 pages, print-ready", "Hand-drawn artwork prepared for offset without losing line quality."],
+            ].map(([n, k, v]) => (
+              <div key={n} className="border-l-2 border-turquoise pl-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise-deep">Constraint {n}</p>
+                <p className="mt-2 font-serif text-[19px] leading-snug tracking-[-0.015em] text-ink">{k}</p>
+                <p className="mt-2 text-ink-muted text-[14px] leading-relaxed">{v}</p>
               </div>
             ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 03 — VISUAL IDENTITY (cover + logos + color) */}
+      <section className="bg-paper py-20 md:py-24">
+        <SectionHead n="03" label="Visual Identity" title="Cover, logo system, color." />
+
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-start">
+          <Reveal className="col-span-12 md:col-span-5">
+            <Frame src={bookCover.url} alt="New Direction — final cover" ratio="3/4" />
+            <Caption>Final cover</Caption>
+          </Reveal>
+          <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-4 md:gap-6">
+            <Reveal>
+              <FrameContain src={logoEn.url} alt="English logotype" ratio="1/1" bg="bg-paper-deep" />
+              <Caption>Logo · English</Caption>
+            </Reveal>
+            <Reveal delay={80}>
+              <FrameContain src={logoHe.url} alt="Hebrew logotype" ratio="1/1" bg="bg-paper-deep" />
+              <Caption>Logo · Hebrew</Caption>
+            </Reveal>
+            <Reveal delay={140} className="col-span-2">
+              <div className="grid grid-cols-3 gap-4 md:gap-6 mt-2">
+                <Swatch role="Surface" name="Paper" hex="#F2EFE6" />
+                <Swatch role="Body" name="Ink" hex="#141416" />
+                <Swatch role="Signal" name="Turquoise" hex="#3FC7C2" />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 01 — VISUAL IDENTITY (logo + type + color, condensed) */}
-      <section className="bg-paper py-20 md:py-28">
-        <SectionHead n="01" label="Visual Identity" title="One system, two scripts: logotype, custom Hebrew lettering, and a three-tone palette." />
-
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10">
-          <Reveal className="col-span-12 md:col-span-6">
-            <FrameContain src={logoEn.url} alt="New Direction — English logotype" ratio="5/4" bg="bg-paper-deep" />
-            <Caption>English logotype</Caption>
+      {/* 04 — STORYTELLING & CHARACTERS */}
+      <section className="bg-paper-deep border-y border-hairline py-20 md:py-24">
+        <SectionHead n="04" label="Storytelling & Characters" title="Relationships, staging and emotional pacing." />
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-4 md:gap-6">
+          <Reveal className="col-span-12 md:col-span-7">
+            <Frame src={jerusalemWalk.url} alt="Two characters walking through Jerusalem" ratio="4/3" />
+            <Caption>Two characters · Jerusalem street</Caption>
           </Reveal>
-          <Reveal delay={100} className="col-span-12 md:col-span-6">
-            <FrameContain src={logoHe.url} alt="כיוון חדש — Hebrew logotype, hand-drawn" ratio="5/4" bg="bg-paper-deep" />
-            <Caption>Hebrew logotype · hand-drawn</Caption>
+          <Reveal delay={100} className="col-span-12 md:col-span-5">
+            <Frame src={kiss.url} alt="A quiet moment between two characters" ratio="4/5" />
+            <Caption>A quiet moment</Caption>
           </Reveal>
-        </div>
-
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-12 md:mt-16 grid grid-cols-12 gap-6 md:gap-10 items-start">
-          <div className="col-span-12 md:col-span-5">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise-deep">Color · three-tone system</p>
-            <p className="mt-3 text-ink-muted text-[15px] leading-relaxed max-w-sm">
-              Paper and ink do the reading. Turquoise carries meaning — appearing only where the story's recurring object appears.
-            </p>
-          </div>
-          <div className="col-span-12 md:col-span-7 grid grid-cols-3 gap-4 md:gap-6">
-            <Swatch role="Surface" name="Paper" hex="#F2EFE6" />
-            <Swatch role="Body" name="Ink" hex="#141416" />
-            <Swatch role="Signal" name="Turquoise" hex="#3FC7C2" />
-          </div>
         </div>
       </section>
 
-      {/* 02 — PAGE ARCHITECTURE */}
-      <section className="bg-paper-deep border-y border-hairline py-20 md:py-28">
-        <SectionHead n="02" label="Page Architecture" title="Why a printed spread works — grid, pacing, eye path." />
-
+      {/* 05 — PAGE DESIGN (annotated spread, 3 annotations) */}
+      <section className="bg-paper py-20 md:py-24">
+        <SectionHead n="05" label="Page Design" title="Inside a printed spread." />
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-start">
           <Reveal className="col-span-12 md:col-span-8">
             <AnnotatedSpread />
-            <Caption>Pp. 156–157 · annotated printed copy</Caption>
+            <Caption>Pp. 156–157 · annotated</Caption>
           </Reveal>
           <Reveal delay={120} className="col-span-12 md:col-span-4">
             <ol className="space-y-4">
               {[
-                ["01", "Grid", "2 × 4 panel grid. Locked to, or broken deliberately."],
-                ["02", "Pacing", "Action panel answered by silence. Beats land on the turn."],
-                ["03", "Eye path", "Hebrew reads right-to-left — every gesture stages with it."],
-                ["04", "Restraint", "Turquoise withheld. The signal works because it is absent here."],
+                ["01", "Grid", "2 × 4 panel grid; panels lock to it or break deliberately."],
+                ["02", "Reading Flow (RTL)", "Panel order, gestures and balloon tails all stage right to left."],
+                ["03", "Pacing", "Action panel answered by silence; dialogue lands on the page turn."],
               ].map(([n, k, v]) => (
                 <li key={n} className="grid grid-cols-12 gap-3 border-b border-hairline pb-3">
                   <span className="col-span-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-turquoise text-ink font-mono text-[10px]">{n}</span>
@@ -323,81 +366,37 @@ function NewDirectionPage() {
         </div>
       </section>
 
-      {/* 03 — ARTWORK */}
-      <section className="bg-paper py-20 md:py-28">
-        <SectionHead n="03" label="Selected Artwork" title="Characters as a readable system — silhouette first, detail inward." />
+      {/* 06 — INTERIOR STORYTELLING (3-image gallery) */}
+      <section className="bg-paper-deep border-y border-hairline py-20 md:py-24">
+        <SectionHead n="06" label="Interior Storytelling" />
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-4 md:gap-6">
-          <Reveal className="col-span-12 md:col-span-7">
-            <Frame src={jerusalemWalk.url} alt="Two characters walking through a Jerusalem street" ratio="4/3" />
-            <Caption>Street pacing · staging, scale, eyeline</Caption>
+          <Reveal className="col-span-12 md:col-span-4">
+            <Frame src={jerusalemWalk.url} alt="Walking through Jerusalem" ratio="3/4" />
+            <Caption>Jerusalem</Caption>
           </Reveal>
-          <Reveal delay={100} className="col-span-12 md:col-span-5">
-            <Frame src={kiss.url} alt="Two characters — a quiet moment" ratio="4/5" />
-            <Caption>Negative space as silence</Caption>
+          <Reveal delay={100} className="col-span-12 md:col-span-4">
+            <Frame src={water.url} alt="Roi in the water" ratio="3/4" />
+            <Caption>Water</Caption>
           </Reveal>
-          <Reveal delay={160} className="col-span-12 md:col-span-12">
-            <Frame src={water.url} alt="Bird's eye — single figure" ratio="21/9" />
-            <Caption>Single figure · bird's-eye composition</Caption>
+          <Reveal delay={180} className="col-span-12 md:col-span-4">
+            <Frame src={kiss.url} alt="The kiss" ratio="3/4" />
+            <Caption>The kiss</Caption>
           </Reveal>
         </div>
       </section>
 
-      {/* 04 — PROCESS (2 transformations) */}
-      <section className="bg-paper-deep border-y border-hairline py-20 md:py-28">
-        <SectionHead n="04" label="Process" title="Sketch to printed object — two key transformations." />
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <Transformation
-            n="T · 01"
-            label="Lettering → Logotype"
-            beforeNode={<Placeholder ratio="4/5" label="Hebrew lettering exploration — pencil iterations" />}
-            afterNode={<FrameContain src={logoHe.url} alt="Final Hebrew logotype" ratio="4/5" bg="bg-paper" />}
-            beforeCaption="Letterform studies · to supply"
-            afterCaption="Final כיוון חדש"
-            note="The mark integrates the pendant directly into the typography — identity and story-object become one drawing."
-          />
-          <Transformation
-            n="T · 02"
-            label="Layout → Printed Spread"
-            beforeNode={<Placeholder ratio="4/3" label="Panel thumbnail · grid sketch, pp. 156–157" />}
-            afterNode={<Frame src={bookMockup.url} alt="Final printed spread" ratio="4/3" />}
-            beforeCaption="Thumbnail layout · to supply"
-            afterCaption="Printed copy · pp. 156–157"
-            note="The page begins as a 2×4 grid sketch. The printed spread keeps the same architecture — system committed to before a single panel was inked."
-          />
-        </div>
-      </section>
-
-      {/* 05 — OUTCOMES (dark, compact) */}
-      <section className="bg-ink text-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10">
-          <div className="col-span-12 md:col-span-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-turquoise">(05) — Outcomes</p>
-          </div>
-          <Reveal className="col-span-12 md:col-span-9">
-            <h2 className="font-serif text-3xl md:text-[48px] leading-[1.04] tracking-[-0.035em] max-w-3xl">
-              Nine disciplines, one project — blank page to bound book.
-            </h2>
+      {/* 07 — FINAL BOOK */}
+      <section className="bg-paper py-20 md:py-28">
+        <SectionHead n="07" label="Final Book" title="180 pages, hardbound." />
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-4 md:gap-6 items-start">
+          <Reveal className="col-span-12 md:col-span-8">
+            <Frame src={bookMockup.url} alt="Printed book — mockup" ratio="4/3" />
+            <Caption>Printed copy</Caption>
           </Reveal>
-        </div>
-
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-6">
-          {[
-            ["Writing", "Story, structure, dialogue."],
-            ["Illustration", "Every panel hand-drawn."],
-            ["Narrative Design", "Pacing, page turns, silence."],
-            ["Character Design", "Cast as a readable system."],
-            ["Typography", "Custom Hebrew lettering."],
-            ["Editorial Design", "Grid, hierarchy, rhythm."],
-            ["Book Design", "Cover, spine, interior."],
-            ["Print Production", "CMYK, bleed, paper, ink."],
-            ["Publishing", "File to bound copy."],
-          ].map(([k, v], i) => (
-            <Reveal key={k} delay={i * 30} className="border-t border-paper/15 pt-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise">{String(i + 1).padStart(2, "0")}</p>
-              <p className="mt-2 font-serif text-xl tracking-[-0.02em]">{k}</p>
-              <p className="mt-1 text-paper/65 text-[13px] leading-relaxed">{v}</p>
-            </Reveal>
-          ))}
+          <Reveal delay={120} className="col-span-12 md:col-span-4">
+            <Frame src={bookCover.url} alt="Printed cover" ratio="3/4" />
+            <Caption>Cover</Caption>
+          </Reveal>
         </div>
       </section>
 
