@@ -86,11 +86,15 @@ function GamingPage() {
 
       {/* ───── 02 — THE CHALLENGE ───── */}
       <CaseSection tone="paper">
-        <CaseSectionHeader
-          label="The Challenge"
-          title="A pirate-themed event, end-to-end."
-          intro="A live event brief from SuperPlay: turn a familiar gameplay loop into a limited-time progression experience — built around a single popup that players see, understand and act on within seconds."
-        />
+        <Reveal className="mb-10 md:mb-14 max-w-3xl">
+          <SectionLabel label="The Challenge" />
+          <h2 className="font-serif text-2xl md:text-[32px] leading-[1.05] tracking-[-0.02em] mt-4">
+            A pirate-themed event, end-to-end.
+          </h2>
+          <Lead className="mt-3 max-w-2xl">
+            A live event brief from SuperPlay: turn a familiar gameplay loop into a limited-time progression experience — built around a single popup that players see, understand and act on within seconds.
+          </Lead>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <Reveal>
