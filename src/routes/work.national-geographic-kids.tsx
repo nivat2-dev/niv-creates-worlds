@@ -8,6 +8,8 @@ import bookmarks from "@/assets/ngk-bookmarks.png.asset.json";
 import spread from "@/assets/ngk-spread.png.asset.json";
 import landing from "@/assets/ngk-landing.png.asset.json";
 import promoPoster from "@/assets/ngk-promo-poster.jpg.asset.json";
+import packaging from "@/assets/ngk-packaging.png.asset.json";
+import bookmarkRhino from "@/assets/ngk-bookmark-rhino.jpg.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
