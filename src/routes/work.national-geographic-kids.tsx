@@ -13,6 +13,7 @@ import bookmarkRhino from "@/assets/ngk-bookmark-rhino.jpg.asset.json";
 import landingMockup from "@/assets/ngk-landing-mockup.png.asset.json";
 import emailYoung from "@/assets/ngk-email-young.avif.asset.json";
 import emailNgk from "@/assets/ngk-email-ngk.avif.asset.json";
+import portrait from "@/assets/ngk-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
@@ -427,6 +428,54 @@ function NatGeoKidsPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── 06 — MY ROLE ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-10 md:gap-14 items-center">
+            {/* Left — portrait */}
+            <div className="col-span-12 lg:col-span-6">
+              <div className="relative mx-auto w-full max-w-[560px]">
+                <img
+                  src={portrait.url}
+                  alt="Niv Haviv at the National Geographic Kids studio"
+                  className="block w-full h-auto rounded-sm select-none"
+                  style={{ filter: "drop-shadow(0 30px 54px rgba(20,20,22,.20))" }}
+                />
+              </div>
+            </div>
+
+            {/* Right — copy + metrics */}
+            <div className="col-span-12 lg:col-span-6">
+              <SectionLabel n="06" label="My Role" />
+              <h2 className="mt-6 font-serif text-[clamp(34px,4.4vw,60px)] leading-[1.02] tracking-[-0.025em] max-w-[14ch]">
+                My Role.
+              </h2>
+              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-xl">
+                For more than four years I helped shape the visual experience of National Geographic Kids Israel across print, products and digital platforms.
+              </p>
+
+              <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-xl">
+                {[
+                  { k: "4+ Years", v: "Editorial Design" },
+                  { k: "Dozens of Issues", v: "Magazine Production" },
+                  { k: "Print & Digital", v: "Cross-Platform Design" },
+                  { k: "Educational Products", v: "Brand Extensions" },
+                ].map((m) => (
+                  <div key={m.k} className="border-t border-hairline pt-4">
+                    <dt className="font-serif text-[26px] leading-[1.1] tracking-[-0.02em]">
+                      {m.k}
+                    </dt>
+                    <dd className="mt-2 font-sans text-[13px] tracking-[0.04em] uppercase text-ink-muted">
+                      {m.v}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </section>
