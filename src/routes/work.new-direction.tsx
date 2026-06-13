@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup.jpg.asset.json";
-import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
-import kiss from "@/assets/nd-kiss.png.asset.json";
-import water from "@/assets/nd-water.jpg.asset.json";
+import pagesCollage from "@/assets/nd-pages-collage-v2.png.asset.json";
+import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
+import beachScene from "@/assets/nd-beach-scene.png.asset.json";
 import palette from "@/assets/nd-palette.png.asset.json";
 import poster from "@/assets/nd-poster.png.asset.json";
 import logoEn from "@/assets/nd-logo-en.png.asset.json";
@@ -200,18 +200,20 @@ function NewDirectionPage() {
 
           <div className="mt-14 md:mt-20 space-y-16 md:space-y-24">
             <Reveal>
-              <img src={jerusalemWalk.url} alt="Walking in Jerusalem" loading="lazy" className="block w-full h-auto mx-auto max-w-[1200px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
-              <Caption>Jerusalem · a walk between two silences</Caption>
+              <img src={pagesCollage.url} alt="Selected pages from New Direction" loading="lazy" className="block w-full h-auto mx-auto max-w-[1200px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
+              <Caption>Selected pages · grief, silence and unspoken truths</Caption>
             </Reveal>
 
             <Reveal>
-              <img src={water.url} alt="Roy in the water" loading="lazy" className="block w-full h-auto mx-auto max-w-[1200px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
-              <Caption>Roy · submerged in what cannot be spoken</Caption>
+              <img src={beachScene.url} alt="Arieh and Roy on the beach" loading="lazy" className="block w-full h-auto mx-auto max-w-[1100px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
+              <Caption>The beach · a meeting between two silences</Caption>
             </Reveal>
 
             <Reveal>
-              <img src={kiss.url} alt="A moment of connection" loading="lazy" className="block w-full h-auto mx-auto max-w-[1200px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
-              <Caption>Connection that grows from grief, not romance alone</Caption>
+              <div className="mx-auto max-w-[640px]">
+                <img src={ariehRoyCircle.url} alt="Arieh and Roy" loading="lazy" className="block w-full h-auto rounded-full" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.18))" }} />
+              </div>
+              <Caption>Arieh &amp; Roy · connection that grows from grief, not romance alone</Caption>
             </Reveal>
           </div>
         </div>
