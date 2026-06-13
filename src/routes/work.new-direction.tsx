@@ -104,7 +104,7 @@ function NewDirectionPage() {
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 20%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
         />
         {/* one subtle motif from the visual language */}
-        <img src={sparkCoral.url} alt="" aria-hidden className="hidden md:block absolute top-[22%] right-[9%] w-7 opacity-60 pointer-events-none select-none" />
+        <img src={sparkCoral.url} alt="" aria-hidden className="hidden md:block absolute top-[24%] right-[10%] w-5 opacity-40 pointer-events-none select-none" />
         <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-24 pb-12 md:pb-14 min-h-[58vh] flex items-center">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
@@ -119,7 +119,7 @@ function NewDirectionPage() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-6">
-              <Reveal><SectionLabel n="01" label="Graphic Novel · 2026" /></Reveal>
+              <Reveal><SectionLabel n="01" label="2026" /></Reveal>
               <Reveal delay={120}>
                 <h1 className="mt-6 font-serif text-[clamp(46px,7vw,116px)] leading-[0.9] tracking-[-0.035em] font-medium">
                   <span className="block">NEW</span>
@@ -127,7 +127,7 @@ function NewDirectionPage() {
                 </h1>
               </Reveal>
               <Reveal delay={240}>
-                <p className="mt-7 font-sans text-lg md:text-[20px] leading-[1.5] text-ink max-w-xl">
+                <p className="mt-10 font-sans text-lg md:text-[20px] leading-[1.5] text-ink max-w-xl">
                   A 300-page graphic novel about family, silence, and the truths people leave behind.
                 </p>
               </Reveal>
@@ -140,7 +140,7 @@ function NewDirectionPage() {
       <section className="relative isolate overflow-hidden bg-paper py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
-            <div className="mx-auto max-w-[520px]">
+            <div className="mx-auto max-w-[620px]">
               <img
                 src={bookMockup.url}
                 alt="New Direction — open book mockup"
@@ -163,7 +163,7 @@ function NewDirectionPage() {
               </p>
             </Reveal>
             <Reveal delay={320}>
-              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-sans text-[13px]">
+              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-sans text-[12px] text-ink-muted">
                 {[
                   ["Pages", "300+"],
                   ["Format", "Graphic Novel"],
@@ -171,8 +171,8 @@ function NewDirectionPage() {
                   ["Audience", "Readers 16+"],
                 ].map(([k, v]) => (
                   <div key={k}>
-                    <dt className="text-ink-muted">{k}</dt>
-                    <dd className="mt-1 text-ink">{v}</dd>
+                    <dt className="text-ink-muted/70 text-[11px] uppercase tracking-[0.06em]">{k}</dt>
+                    <dd className="mt-1 text-ink-muted">{v}</dd>
                   </div>
                 ))}
               </dl>
@@ -191,7 +191,7 @@ function NewDirectionPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { img: jerusalemWalk.url, title: "Jerusalem", line: "A family of faith, and the things left unspoken between its walls." },
               { img: beachScene.url,    title: "Tel Aviv",  line: "A city of escape, where freedom and grief share the same shoreline." },
@@ -204,7 +204,7 @@ function NewDirectionPage() {
                       src={card.img}
                       alt={card.title}
                       loading="lazy"
-                      className="block w-full h-full object-cover"
+                      className="block w-full h-full object-cover object-center"
                     />
                   </div>
                   <h3 className="mt-5 font-serif text-2xl tracking-[-0.01em]">{card.title}</h3>
@@ -220,12 +220,15 @@ function NewDirectionPage() {
       <section className="relative isolate overflow-hidden bg-paper py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
-            <SectionLabel n="04" label="Visual Language" />
+            <SectionLabel n="04" label="A visual thread" />
             <h2 className="mt-5 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-              Colours and symbols that return through the story.
+              The colours and shapes that return through the book.
             </h2>
             <p className="mt-5 font-sans text-[16px] leading-[1.6] text-ink-muted max-w-xl">
-              Warm cream and coral carry the family scenes in Jerusalem; the deeper teals belong to the sea, to Tel Aviv, and to the quiet moments between Arieh and Roy. A few small motifs — a star, a spark, a diamond — reappear across the pages like a heartbeat under the panels.
+              Warm cream and coral hold the family scenes in Jerusalem. The deeper teals belong to the sea, to Tel Aviv, and to the quiet hours Arieh and Roy share after the loss. Small motifs — a star, a spark, a diamond — drift through the panels like something half-remembered.
+            </p>
+            <p className="mt-5 font-serif italic text-[17px] leading-[1.5] text-ink/80 max-w-xl">
+              “Some things you don't say out loud. You draw them, and hope someone notices.”
             </p>
           </Reveal>
 
@@ -266,7 +269,7 @@ function NewDirectionPage() {
       <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-16 md:py-24">
         <div className="mx-auto max-w-[1300px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
           <Reveal className="col-span-12 md:col-span-6">
-            <div className="mx-auto max-w-[440px]">
+            <div className="mx-auto max-w-[396px]">
               <img
                 src={nivCreator.url}
                 alt="Niv Haviv illustrating New Direction"
