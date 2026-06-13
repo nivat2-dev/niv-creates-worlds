@@ -13,6 +13,7 @@ export const Route = createFileRoute("/work/asaflezet")({
   component: () => (
     <CaseStudy
       index="04"
+      slug="asaflezet"
       eyebrow="Brand World"
       title="Asaf"
       italic="lezet"

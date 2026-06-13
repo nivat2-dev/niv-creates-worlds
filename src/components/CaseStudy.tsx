@@ -1,5 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import MoreWork from "@/components/MoreWork";
+
+type Slug =
+  | "new-direction"
+  | "national-geographic-kids"
+  | "gaming-product-design"
+  | "biblical-zoo"
+  | "asaflezet";
 
 export type CaseStudySection = { label: string; body: string };
 export type CaseStudyProps = {
@@ -21,6 +29,7 @@ export type CaseStudyProps = {
   outcomeStats?: { value: string; label: string }[];
   gallery: { src: string; alt: string; span?: "full" | "half" | "tall" }[];
   next: { to: string; label: string; index: string };
+  slug: Slug;
 };
 
 function useScrollY() {
@@ -232,6 +241,7 @@ export default function CaseStudy(p: CaseStudyProps) {
       </section>
 
       {/* NEXT PROJECT */}
+      <MoreWork currentSlug={p.slug} />
       <Link to={p.next.to} className="group block bg-ink text-paper border-t border-paper/10">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-36">
           <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-paper/60">

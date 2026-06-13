@@ -14,6 +14,7 @@ export const Route = createFileRoute("/work/national-geographic-kids")({
   component: () => (
     <CaseStudy
       index="01"
+      slug="national-geographic-kids"
       eyebrow="Editorial Illustration"
       title="Nat Geo"
       italic="Kids"

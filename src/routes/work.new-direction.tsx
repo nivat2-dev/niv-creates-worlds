@@ -11,6 +11,7 @@ import starCream from "@/assets/nd-star-cream.png.asset.json";
 import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
 import nivCreator from "@/assets/niv-creator.jpg.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
+import MoreWork from "@/components/MoreWork";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -301,6 +302,8 @@ function NewDirectionPage() {
           </div>
         </div>
       </section>
+
+      <MoreWork currentSlug="new-direction" />
     </main>
   );
 }

@@ -14,6 +14,7 @@ export const Route = createFileRoute("/work/biblical-zoo")({
   component: () => (
     <CaseStudy
       index="03"
+      slug="biblical-zoo"
       eyebrow="Illustration & Wayfinding"
       title="Treasure"
       italic="Map"
