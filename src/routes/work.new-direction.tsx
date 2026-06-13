@@ -343,17 +343,17 @@ function NewDirectionPage() {
         </div>
 
         {/* 03B — TYPOGRAPHY — elevated to a major design system */}
-        <div className="bg-ink text-paper -mx-0 px-0">
+        <div className="bg-paper-deep border-y border-hairline">
           <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-20 md:py-28 grid grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-3">
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise">03 / B — Typography</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise-deep">03 / B — Typography</p>
               <Reveal>
-                <h3 className="mt-6 font-serif text-3xl md:text-[44px] leading-[1] tracking-[-0.035em]">
+                <h3 className="mt-6 font-serif text-3xl md:text-[44px] leading-[1] tracking-[-0.035em] text-ink">
                   Custom Hebrew chapter lettering, drawn from scratch.
                 </h3>
               </Reveal>
               <Reveal delay={120}>
-                <p className="mt-6 text-paper/75 leading-relaxed text-[15px] max-w-sm">
+                <p className="mt-6 text-ink-muted leading-relaxed text-[15px] max-w-sm">
                   Existing Hebrew display faces felt borrowed. Each chapter opener was hand-lettered so the book's voice begins at the letter, not at the paragraph. The system pairs that voice with a calm serif for the body and a fixed-width caption mark — three roles, one feeling.
                 </p>
               </Reveal>
@@ -371,14 +371,14 @@ function NewDirectionPage() {
 
               {/* Three roles */}
               <Reveal delay={80} className="col-span-12 md:col-span-4">
-                <div className="bg-paper text-ink p-6 md:p-8 aspect-[4/5] flex flex-col justify-between">
+                <div className="bg-paper text-ink border border-hairline p-6 md:p-8 aspect-[4/5] flex flex-col justify-between">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise-deep">Role 01 · Display</p>
                   <p className="font-serif text-[48px] leading-[0.95] tracking-[-0.04em]">Aa<br/>אא</p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">Hand-drawn · chapter openers</p>
                 </div>
               </Reveal>
               <Reveal delay={140} className="col-span-12 md:col-span-4">
-                <div className="bg-paper text-ink p-6 md:p-8 aspect-[4/5] flex flex-col justify-between">
+                <div className="bg-paper text-ink border border-hairline p-6 md:p-8 aspect-[4/5] flex flex-col justify-between">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise-deep">Role 02 · Body</p>
                   <p className="font-serif text-[28px] leading-[1.15] tracking-[-0.015em]">
                     A calm serif carries the reading pace.
@@ -387,7 +387,7 @@ function NewDirectionPage() {
                 </div>
               </Reveal>
               <Reveal delay={200} className="col-span-12 md:col-span-4">
-                <div className="bg-paper text-ink p-6 md:p-8 aspect-[4/5] flex flex-col justify-between">
+                <div className="bg-paper text-ink border border-hairline p-6 md:p-8 aspect-[4/5] flex flex-col justify-between">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise-deep">Role 03 · Caption</p>
                   <p className="font-mono text-[18px] leading-[1.4] tracking-[0.04em] uppercase">PG · 156<br/>CH · 06</p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">Mono · folios & meta</p>
@@ -524,20 +524,8 @@ function NewDirectionPage() {
       </section>
 
       {/* 06 — PRODUCTION PROCESS — with mandatory transformations */}
-      <section className="bg-ink text-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 mb-14">
-          <div className="col-span-12 md:col-span-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-turquoise">(06) — Production Process</p>
-          </div>
-          <div className="col-span-12 md:col-span-9">
-            <Reveal>
-              <h2 className="font-serif text-3xl md:text-5xl leading-[1.02] tracking-[-0.035em] max-w-3xl">
-                Before and after — the decisions the printed book is built on.
-              </h2>
-            </Reveal>
-            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-paper/60">Sketch · Letter · Layout · Cover</p>
-          </div>
-        </div>
+      <section className="bg-paper-deep border-y border-hairline py-24 md:py-32">
+        <SectionHead n="06" label="Production Process" title="Before and after — the decisions the printed book is built on." kicker="Sketch · Letter · Layout · Cover" />
 
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Transformation
@@ -583,9 +571,9 @@ function NewDirectionPage() {
 
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-16 grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 md:col-span-3" />
-          <div className="col-span-12 md:col-span-9 border-t border-paper/15 pt-8">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise">Print preparation</p>
-            <p className="mt-3 font-serif text-2xl md:text-[28px] leading-[1.18] tracking-[-0.02em] max-w-3xl">
+          <div className="col-span-12 md:col-span-9 border-t border-hairline pt-8">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise-deep">Print preparation</p>
+            <p className="mt-3 font-serif text-2xl md:text-[28px] leading-[1.18] tracking-[-0.02em] text-ink max-w-3xl">
               CMYK separation, ink coverage, bleed and imposition prepared in-house. The artwork left the studio as press-ready files; the book that came back is the file.
             </p>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
