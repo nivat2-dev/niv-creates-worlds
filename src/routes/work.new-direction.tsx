@@ -144,11 +144,9 @@ function Swatch({ name, role, hex, dark = false }: { name: string; role: string;
 /* annotated spread — numbered dots over the printed book photo */
 function AnnotatedSpread() {
   const dots = [
-    { id: "01", top: "12%", left: "26%" },
-    { id: "02", top: "44%", left: "70%" },
-    { id: "03", top: "72%", left: "20%" },
-    { id: "04", top: "30%", left: "52%" },
-    { id: "05", top: "82%", left: "62%" },
+    { id: "01", top: "18%", left: "28%" },
+    { id: "02", top: "44%", left: "72%" },
+    { id: "03", top: "78%", left: "38%" },
   ];
   return (
     <div className="relative w-full bg-paper-deep overflow-hidden" style={{ aspectRatio: "4/3" }}>
