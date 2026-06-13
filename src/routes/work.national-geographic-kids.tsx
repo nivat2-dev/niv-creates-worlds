@@ -10,6 +10,9 @@ import landing from "@/assets/ngk-landing.png.asset.json";
 import promoPoster from "@/assets/ngk-promo-poster.jpg.asset.json";
 import packaging from "@/assets/ngk-packaging.png.asset.json";
 import bookmarkRhino from "@/assets/ngk-bookmark-rhino.jpg.asset.json";
+import landingMockup from "@/assets/ngk-landing-mockup.png.asset.json";
+import emailYoung from "@/assets/ngk-email-young.avif.asset.json";
+import emailNgk from "@/assets/ngk-email-ngk.avif.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
@@ -347,6 +350,78 @@ function NatGeoKidsPage() {
                     {card.title}
                   </h3>
                   <p className="mt-3 font-sans text-[14.5px] leading-[1.55] text-ink-muted max-w-[28ch]">
+                    {card.body}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── 05 — EXTENDING ONLINE ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
+            <div className="col-span-12 md:col-span-3">
+              <SectionLabel n="05" label="Digital" />
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+                Extending the experience online.
+              </h2>
+              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
+                The National Geographic Kids experience continued beyond print through digital campaigns, landing pages and promotional materials.
+              </p>
+            </div>
+          </div>
+
+          {/* Featured — Landing Page */}
+          <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
+            <div className="col-span-12 lg:col-span-8 order-1">
+              <div className="relative mx-auto w-full max-w-[860px]">
+                <img
+                  src={landingMockup.url}
+                  alt="National Geographic Kids landing page mockup"
+                  className="block w-full h-auto select-none"
+                  style={{ filter: "drop-shadow(0 36px 60px rgba(20,20,22,.22))" }}
+                />
+              </div>
+            </div>
+            <div className="col-span-12 lg:col-span-4 order-2">
+              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                Landing Page Design
+              </div>
+              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[16ch]">
+                From print to digital.
+              </h3>
+              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+                Designing digital experiences that supported products, subscriptions and audience engagement.
+              </p>
+            </div>
+          </article>
+
+          {/* Secondary row — campaign materials */}
+          <div className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              { title: "Young Magazine — Email Campaign", body: "Launch announcement for the new Young magazine, distributed to subscribers.", image: emailYoung.url, alt: "Young magazine email campaign" },
+              { title: "Subscriber Promotion", body: "Promotional email designed to drive subscription renewals and new sign-ups.", image: emailNgk.url, alt: "National Geographic Kids subscriber email" },
+            ].map((card) => (
+              <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden">
+                <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-6">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    className="block max-h-full max-w-full w-auto h-auto object-contain"
+                    style={{ filter: "drop-shadow(0 22px 38px rgba(20,20,22,.16))" }}
+                  />
+                </div>
+                <div className="border-t border-hairline p-6 md:p-7">
+                  <h4 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                    {card.title}
+                  </h4>
+                  <p className="mt-3 font-sans text-[15px] leading-[1.55] text-ink-muted max-w-[42ch]">
                     {card.body}
                   </p>
                 </div>
