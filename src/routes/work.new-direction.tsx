@@ -398,11 +398,6 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 50% at 25% 35%, color-mix(in oklab, var(--coral) 18%, transparent), transparent 70%), radial-gradient(50% 50% at 80% 70%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
         />
-        <Motif src={starCream.url} size={96} top={64} left={"8%"} rotate={-12} className="hidden md:block" />
-        <Motif src={sparkCoral.url} size={52} top={"22%"} right={"10%"} rotate={14} className="hidden md:block" />
-        <Motif src={circleNavy.url} size={56} bottom={64} left={"12%"} className="hidden md:block" />
-        <Motif src={diamondTeal.url} size={64} bottom={"15%"} right={"7%"} rotate={-10} className="hidden md:block" />
-
         <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
             <Reveal className="col-span-12 md:col-span-7 order-2 md:order-1">
