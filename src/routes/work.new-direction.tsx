@@ -3,14 +3,15 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup.png.asset.json";
-import pagesCollage from "@/assets/nd-pages-collage.png.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
 import kiss from "@/assets/nd-kiss.png.asset.json";
-import beach from "@/assets/nd-beach.jpg.asset.json";
 import water from "@/assets/nd-water.jpg.asset.json";
-import poster from "@/assets/nd-poster.png.asset.json";
 import logoEn from "@/assets/nd-logo-en.png.asset.json";
 import logoHe from "@/assets/nd-logo-he.png.asset.json";
+import processCharacters from "@/assets/nd-process-characters.jpg";
+import processLayouts from "@/assets/nd-process-layouts.jpg";
+import processType from "@/assets/nd-process-type.jpg";
+import processPrint from "@/assets/nd-process-print.jpg";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
