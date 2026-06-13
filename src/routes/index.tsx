@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
@@ -7,6 +7,7 @@ import necklace from "@/assets/necklace.png";
 import natgeo from "@/assets/natgeo.jpg";
 import superplay from "@/assets/superplay.jpg";
 import zoo from "@/assets/zoo.jpg";
+import asaflezet from "@/assets/asaflezet.jpg";
 
 const portrait = portraitAsset.url;
 const bookCover = bookCoverAsset.url;
@@ -239,6 +240,7 @@ type Project = {
   body: string;
   image: string;
   alt: string;
+  to: string;
   layout?: "hero" | "left" | "right";
 };
 
@@ -252,29 +254,44 @@ const projects: Project[] = [
       "Spreads, infographics and characters designed for young readers — translating science and wildlife into images that invite curiosity.",
     image: natgeo,
     alt: "National Geographic Kids editorial spreads",
+    to: "/work/national-geographic-kids",
     layout: "right",
   },
   {
     index: "02",
-    title: "SuperPlay",
+    title: "Gaming & Product",
     tagline: "Product & UI design for a mobile gaming studio.",
     tags: ["Product", "UI", "Game"],
     body:
       "Game interfaces, in-app economies and visual systems for a fast-moving mobile studio — designed to feel tactile, playful and clear in the hand.",
     image: superplay,
     alt: "SuperPlay mobile game UI screens",
+    to: "/work/gaming-product-design",
     layout: "left",
   },
   {
     index: "03",
-    title: "Biblical Zoo",
+    title: "Biblical Zoo Treasure Map",
     tagline: "An illustrated identity for a place full of stories.",
     tags: ["Identity", "Wayfinding", "Illustration"],
     body:
       "Illustrated mascots, signage and a friendly visual system for one of Jerusalem’s most beloved cultural spaces.",
     image: zoo,
     alt: "Biblical Zoo identity and signage",
+    to: "/work/biblical-zoo",
     layout: "right",
+  },
+  {
+    index: "04",
+    title: "Asaflezet",
+    tagline: "A complete brand world — quiet, warm, distinctly its own.",
+    tags: ["Brand", "Identity", "Art Direction"],
+    body:
+      "Identity, packaging and photography direction — a full sensory brand built around a single quiet idea.",
+    image: asaflezet,
+    alt: "Asaflezet brand identity",
+    to: "/work/asaflezet",
+    layout: "left",
   },
 ];
 
@@ -322,13 +339,13 @@ function SignatureProject() {
               </span>
             ))}
           </div>
-          <a
-            href="#"
+          <Link
+            to="/work/new-direction"
             className="group mt-12 inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] border-b border-paper/40 pb-1 hover:border-turquoise hover:text-turquoise transition-colors"
           >
             Open the case study
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-          </a>
+          </Link>
         </Reveal>
 
         {/* Right: Book + Pendant composition */}
@@ -392,7 +409,7 @@ function SignatureProject() {
 function ProjectRow({ p }: { p: Project }) {
   const isLeft = p.layout === "left";
   return (
-    <a href="#" className="group block">
+    <Link to={p.to} className="group block">
       <article className="relative">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-center">
           <Reveal className={`col-span-12 lg:col-span-7 ${isLeft ? "lg:order-1" : "lg:order-2"}`}>
@@ -440,7 +457,7 @@ function ProjectRow({ p }: { p: Project }) {
           </Reveal>
         </div>
       </article>
-    </a>
+    </Link>
   );
 }
 
