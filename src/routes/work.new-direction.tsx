@@ -218,14 +218,14 @@ function NewDirectionPage() {
             <Reveal><SectionLabel n="02" label="The Story" /></Reveal>
             <Reveal delay={120}>
               <h2 className="mt-6 font-serif text-4xl md:text-[56px] leading-[0.98] tracking-[-0.035em]">
-                After Rafael's death,<br /> two worlds collide.
+                After Rafael's death,<br /> silence begins to crack.
               </h2>
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-8 space-y-5 text-ink text-lg leading-relaxed max-w-md">
-                <p><span className="font-serif italic text-turquoise-deep">Arieh</span> — a religious student from Jerusalem.</p>
-                <p><span className="font-serif italic text-coral">Roy</span> — a secular young man from Tel Aviv.</p>
-                <p className="text-ink-muted">Their connection changes everything.</p>
+                <p><span className="font-serif italic text-turquoise-deep">Arieh</span> — a religious student from Jerusalem, carrying questions he was taught not to ask.</p>
+                <p><span className="font-serif italic text-coral">Roy</span> — a secular young man from Tel Aviv, running from a loss no one will name.</p>
+                <p className="text-ink-muted">Their bond grows from shared absence, not from romance alone.</p>
               </div>
             </Reveal>
           </div>
