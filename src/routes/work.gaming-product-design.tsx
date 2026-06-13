@@ -153,38 +153,38 @@ function GamingPage() {
           {/* Left — wireframe */}
           <Reveal className="col-span-12 lg:col-span-6">
             <EyebrowCaps>Wireframe · Structure</EyebrowCaps>
-            <div className="mt-5 border border-hairline bg-cream/60 rounded-sm p-6 md:p-8 aspect-[5/6] flex flex-col">
+            <div className="mt-5 border border-hairline bg-cream/60 rounded-sm p-5 md:p-6 flex flex-col">
               {/* header block */}
-              <div className="border border-dashed border-ink/30 rounded-sm py-4 text-center font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <div className="border border-dashed border-ink/30 rounded-sm py-2.5 text-center font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
                 Header
               </div>
               {/* progress block */}
-              <div className="mt-5 border border-dashed border-ink/30 rounded-sm p-4">
+              <div className="mt-3 border border-dashed border-ink/30 rounded-sm p-3">
                 <div className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
                   Progress Bar
                 </div>
-                <div className="mt-3 flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-full border border-dashed border-ink/30" />
-                  <div className="flex-1 h-3 rounded-full border border-dashed border-ink/30" />
-                  <div className="h-8 w-8 rounded-full border border-dashed border-ink/30" />
+                <div className="mt-2 flex items-center gap-3">
+                  <div className="h-7 w-7 rounded-full border border-dashed border-ink/30" />
+                  <div className="flex-1 h-2.5 rounded-full border border-dashed border-ink/30" />
+                  <div className="h-7 w-7 rounded-full border border-dashed border-ink/30" />
                 </div>
               </div>
               {/* icon */}
-              <div className="mt-5 border border-dashed border-ink/30 rounded-sm p-4 flex items-center gap-4">
-                <div className="h-10 w-10 rounded-sm border border-dashed border-ink/30" />
+              <div className="mt-3 border border-dashed border-ink/30 rounded-sm p-3 flex items-center gap-4">
+                <div className="h-9 w-9 rounded-sm border border-dashed border-ink/30" />
                 <div className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
                   Challenge Icon
                 </div>
               </div>
               {/* rewards */}
-              <div className="mt-5 border border-dashed border-ink/30 rounded-sm p-4 space-y-2">
+              <div className="mt-3 border border-dashed border-ink/30 rounded-sm p-3 space-y-1.5">
                 <div className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
                   Reward Structure
                 </div>
                 {["Streaks ×1", "Level Win ×2", "Levels 1st Try ×4"].map((r) => (
                   <div
                     key={r}
-                    className="flex justify-between items-center border-t border-dashed border-ink/15 pt-2 font-sans text-[12px] text-ink-muted"
+                    className="flex justify-between items-center border-t border-dashed border-ink/15 pt-1.5 font-sans text-[12px] text-ink-muted"
                   >
                     <span>{r.split(" ").slice(0, -1).join(" ")}</span>
                     <span className="font-mono">{r.split(" ").slice(-1)}</span>
@@ -192,8 +192,8 @@ function GamingPage() {
                 ))}
               </div>
               {/* CTA */}
-              <div className="mt-auto pt-5">
-                <div className="border border-dashed border-coral/60 rounded-full py-3 text-center font-sans text-[12px] tracking-[0.08em] uppercase text-coral">
+              <div className="mt-3">
+                <div className="mx-auto w-3/4 border border-dashed border-coral/60 rounded-full py-2 text-center font-sans text-[11px] tracking-[0.08em] uppercase text-coral">
                   CTA Button
                 </div>
               </div>
