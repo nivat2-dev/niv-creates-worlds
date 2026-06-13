@@ -303,11 +303,5 @@ function NewDirectionPage() {
         </div>
       </section>
     </main>
-      </>
-  );
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const _unused = null;
   );
 }
