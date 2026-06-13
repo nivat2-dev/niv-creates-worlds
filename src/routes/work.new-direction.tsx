@@ -316,22 +316,22 @@ function NewDirectionPage() {
           <Reveal>
             <SectionLabel n="04" label="Character Moments" />
             <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
-              Quiet scenes that <span className="italic text-coral">carry the weight</span>.
+              The weight of <span className="italic text-coral">what is left unsaid</span>.
             </h2>
           </Reveal>
 
           <div className="mt-14 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
             <Reveal className="col-span-12 md:col-span-7">
-              <img src={beach.url} alt="Beach scene — Arieh and Roy" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
-              <Caption>Beach · the first crack</Caption>
+              <img src={beach.url} alt="Beach scene — Arieh and Roy sitting in silence" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <Caption>Beach · silence between two people who have lost the same person</Caption>
             </Reveal>
             <Reveal delay={100} className="col-span-12 md:col-span-5">
-              <img src={water.url} alt="Roy in the water" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
-              <Caption>Roy · in the water</Caption>
+              <img src={water.url} alt="Roy in the water — a moment of release" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <Caption>Roy · submerged in what cannot be spoken</Caption>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-12">
-              <img src={kiss.url} alt="The kiss" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
-              <Caption>The kiss</Caption>
+              <img src={kiss.url} alt="Arieh and Roy — intimacy born from shared loss" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <Caption>Connection that grows from grief, not from romance alone</Caption>
             </Reveal>
           </div>
         </div>
@@ -455,11 +455,12 @@ function NewDirectionPage() {
             <Reveal className="col-span-12 md:col-span-7 order-2 md:order-1">
               <SectionLabel n="08" label="Final Result" />
               <h2 className="mt-6 font-serif text-5xl md:text-[88px] leading-[0.92] tracking-[-0.045em] max-w-2xl">
-                A personal graphic novel<br />
-                <span className="italic text-coral">years in the making</span>.
+                New Direction is a<br />
+                <span className="italic text-coral">graphic novel</span><br />
+                born from a long silence.
               </h2>
               <p className="mt-8 font-mono text-[12px] uppercase tracking-[0.28em] text-ink-muted">
-                Coming soon
+                Coming soon · Ages 16+
               </p>
             </Reveal>
 
