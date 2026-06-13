@@ -149,7 +149,7 @@ function NewDirectionPage() {
                 <img
                   src={bookCover.url}
                   alt="New Direction — book cover"
-                  className="block w-full h-auto max-h-[70vh] object-contain select-none rounded-[2px] mx-auto"
+                  className="block w-full h-auto select-none rounded-[2px] mx-auto"
                   style={{ filter: "drop-shadow(0 40px 70px rgba(20,20,22,.28))" }}
                 />
               </div>
@@ -205,7 +205,7 @@ function NewDirectionPage() {
               <img
                 src={jerusalemWalk.url}
                 alt="Arieh and Roy walking through Jerusalem"
-                className="block w-full h-auto max-h-[70vh] object-contain"
+                className="block w-full h-auto"
                 style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }}
               />
             </div>
@@ -253,7 +253,7 @@ function NewDirectionPage() {
               <img
                 src={palette.url}
                 alt="New Direction — full color palette"
-                className="block w-full h-auto max-h-[60vh] object-contain rounded-sm mx-auto"
+                className="block w-full h-auto rounded-sm mx-auto"
                 style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.10))" }}
               />
             </div>
@@ -290,7 +290,7 @@ function NewDirectionPage() {
                 <img
                   src={poster.url}
                   alt="New Direction — promotional poster"
-                  className="block w-full h-auto max-h-[70vh] object-contain rounded-sm"
+                  className="block w-full h-auto rounded-sm"
                   style={{ filter: "drop-shadow(0 16px 32px rgba(20,20,22,.14))" }}
                 />
                 <Caption>Poster · the visual language assembled</Caption>
@@ -320,15 +320,15 @@ function NewDirectionPage() {
 
           <div className="mt-14 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
             <Reveal className="col-span-12 md:col-span-7">
-              <img src={beach.url} alt="Beach scene — Arieh and Roy sitting in silence" loading="lazy" className="block w-full h-auto max-h-[60vh] object-contain" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <img src={beach.url} alt="Beach scene — Arieh and Roy sitting in silence" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
               <Caption>Beach · silence between two people who have lost the same person</Caption>
             </Reveal>
             <Reveal delay={100} className="col-span-12 md:col-span-5">
-              <img src={water.url} alt="Roy in the water — a moment of release" loading="lazy" className="block w-full h-auto max-h-[60vh] object-contain" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <img src={water.url} alt="Roy in the water — a moment of release" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
               <Caption>Roy · submerged in what cannot be spoken</Caption>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-12">
-              <img src={kiss.url} alt="Arieh and Roy — intimacy born from shared loss" loading="lazy" className="block w-full h-auto max-h-[75vh] object-contain mx-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <img src={kiss.url} alt="Arieh and Roy — intimacy born from shared loss" loading="lazy" className="block w-full h-auto mx-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
               <Caption>Connection that grows from grief, not from romance alone</Caption>
             </Reveal>
           </div>
@@ -354,7 +354,7 @@ function NewDirectionPage() {
             <img
               src={pagesCollage.url}
               alt="Six interior pages from New Direction"
-              className="block w-full h-auto max-h-[80vh] object-contain rounded-sm mx-auto"
+              className="block w-full h-auto rounded-sm mx-auto"
               style={{ filter: "drop-shadow(0 20px 40px rgba(20,20,22,.14))" }}
             />
             <Caption>Interior pages · selected sequence</Caption>
@@ -379,7 +379,7 @@ function NewDirectionPage() {
               <img
                 src={bookMockup.url}
                 alt="New Direction — printed book mockup"
-                className="block w-full h-auto max-h-[70vh] object-contain rounded-sm"
+                className="block w-full h-auto rounded-sm"
                 style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.18))" }}
               />
               <Caption>Printed book · cover &amp; spread</Caption>
@@ -388,7 +388,7 @@ function NewDirectionPage() {
               <img
                 src={bookCover.url}
                 alt="Cover design — final"
-                className="block w-full h-auto max-h-[70vh] object-contain rounded-sm"
+                className="block w-full h-auto rounded-sm"
                 style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.16))" }}
               />
               <Caption>Cover design · final</Caption>
@@ -467,7 +467,7 @@ function NewDirectionPage() {
                 <img
                   src={bookCover.url}
                   alt="New Direction — final cover"
-                  className="block w-full h-auto max-h-[60vh] object-contain select-none rounded-[2px] mx-auto"
+                  className="block w-full h-auto select-none rounded-[2px] mx-auto"
                   style={{ filter: "drop-shadow(0 36px 64px rgba(20,20,22,.28))" }}
                 />
               </div>
@@ -479,7 +479,7 @@ function NewDirectionPage() {
               <img
                 src={bookMockup.url}
                 alt="New Direction — printed mockup"
-                className="block w-full h-auto max-h-[75vh] object-contain rounded-sm mx-auto"
+                className="block w-full h-auto rounded-sm mx-auto"
                 style={{ filter: "drop-shadow(0 28px 56px rgba(20,20,22,.20))" }}
               />
             </div>
