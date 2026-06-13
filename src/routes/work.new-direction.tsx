@@ -13,6 +13,7 @@ import sparkNavy from "@/assets/nd-spark-navy.png.asset.json";
 import starCream from "@/assets/nd-star-cream.png.asset.json";
 import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
 import nivCreator from "@/assets/niv-creator.jpg.asset.json";
+import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -105,10 +106,8 @@ function NewDirectionPage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 20%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
         />
-        {/* subtle motifs from the visual language */}
-        <img src={starCream.url} alt="" aria-hidden className="hidden md:block absolute top-[18%] left-[6%] w-10 opacity-70 pointer-events-none select-none" style={{ transform: "rotate(-12deg)" }} />
-        <img src={diamondTeal.url} alt="" aria-hidden className="hidden md:block absolute bottom-[14%] left-[44%] w-7 opacity-60 pointer-events-none select-none" style={{ transform: "rotate(8deg)" }} />
-        <img src={sparkCoral.url} alt="" aria-hidden className="hidden md:block absolute top-[24%] right-[8%] w-8 opacity-70 pointer-events-none select-none" />
+        {/* one subtle motif from the visual language */}
+        <img src={sparkCoral.url} alt="" aria-hidden className="hidden md:block absolute top-[22%] right-[9%] w-7 opacity-60 pointer-events-none select-none" />
         <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-24 pb-12 md:pb-14 min-h-[58vh] flex items-center">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
@@ -123,7 +122,7 @@ function NewDirectionPage() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-6">
-              <Reveal><SectionLabel n="01" label="A Graphic Novel by Niv Haviv" /></Reveal>
+              <Reveal><SectionLabel n="01" label="Graphic Novel · 2026" /></Reveal>
               <Reveal delay={120}>
                 <h1 className="mt-6 font-serif text-[clamp(46px,7vw,116px)] leading-[0.9] tracking-[-0.035em] font-medium">
                   <span className="block">NEW</span>
@@ -141,10 +140,10 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 02 — PROJECT OVERVIEW ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-20 md:py-24">
+      <section className="relative isolate overflow-hidden bg-paper py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
-            <div className="mx-auto max-w-[620px]">
+            <div className="mx-auto max-w-[520px]">
               <img
                 src={bookMockup.url}
                 alt="New Direction — open book mockup"
@@ -157,17 +156,17 @@ function NewDirectionPage() {
           <div className="col-span-12 md:col-span-5">
             <Reveal><SectionLabel n="02" label="The Book" /></Reveal>
             <Reveal delay={120}>
-              <h2 className="mt-6 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-5 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em]">
                 A 300-page graphic novel.
               </h2>
             </Reveal>
             <Reveal delay={220}>
-              <p className="mt-5 font-sans text-ink-muted text-[17px] leading-[1.55] max-w-md">
+              <p className="mt-4 font-sans text-ink-muted text-[17px] leading-[1.55] max-w-md">
                 Written, illustrated and designed by Niv Haviv. Publishing in 2026.
               </p>
             </Reveal>
             <Reveal delay={320}>
-              <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 font-sans text-[13px]">
+              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-sans text-[13px]">
                 {[
                   ["Pages", "300+"],
                   ["Format", "Graphic Novel"],
@@ -186,20 +185,20 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 03 — INSIDE THE STORY ───── */}
-      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-y border-hairline py-20 md:py-24">
+      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-y border-hairline py-16 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="03" label="Inside the Story" />
             <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-              A story in three places.
+              Between faith, freedom and grief.
             </h2>
           </Reveal>
 
-          <div className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { img: jerusalemWalk.url, title: "Jerusalem", line: "Faith. Family. Silence." },
-              { img: beachScene.url,    title: "Tel Aviv",  line: "Freedom. Grief. Change." },
-              { img: ariehRoyKiss.url,  title: "Connection", line: "A relationship born from loss." },
+              { img: jerusalemWalk.url, title: "Jerusalem", line: "A family of faith, and the things left unspoken between its walls." },
+              { img: beachScene.url,    title: "Tel Aviv",  line: "A city of escape, where freedom and grief share the same shoreline." },
+              { img: ariehRoyCircle.url, title: "Arieh & Roy", line: "Two strangers brought together by loss, slowly learning to lean on each other." },
             ].map((card, i) => (
               <Reveal key={card.title} delay={i * 80}>
                 <article className="group">
@@ -221,44 +220,43 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 04 — VISUAL LANGUAGE ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-20 md:py-24">
+      <section className="relative isolate overflow-hidden bg-paper py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="04" label="Visual Language" />
-            <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-              The visual identity.
+            <h2 className="mt-5 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+              Colours and symbols that return through the story.
             </h2>
+            <p className="mt-5 font-sans text-[16px] leading-[1.6] text-ink-muted max-w-xl">
+              Warm cream and coral carry the family scenes in Jerusalem; the deeper teals belong to the sea, to Tel Aviv, and to the quiet moments between Arieh and Roy. A few small motifs — a star, a spark, a diamond — reappear across the pages like a heartbeat under the panels.
+            </p>
           </Reveal>
 
-          {/* Curated palette — 7 key colours */}
+          {/* Curated palette — narrative colours */}
           <Reveal delay={120}>
-            <div className="mt-10 md:mt-12 grid grid-cols-7 gap-2 md:gap-3 max-w-[820px]">
+            <div className="mt-10 grid grid-cols-5 gap-2 md:gap-3 max-w-[560px]">
               {[
-                "#F2E7CE", // cream
-                "#E7B6A3", // blush
-                "#E36B4A", // coral
-                "#C2B26A", // olive
-                "#3CA9A1", // turquoise
-                "#1F4F5C", // deep teal
-                "#1B1F2A", // ink
+                "#F2E7CE", // cream — Jerusalem light
+                "#E36B4A", // coral — family warmth
+                "#3CA9A1", // turquoise — the sea
+                "#1F4F5C", // deep teal — Tel Aviv nights
+                "#1B1F2A", // ink — silence
               ].map((hex) => (
                 <div key={hex} className="aspect-square rounded-sm border border-hairline" style={{ background: hex }} />
               ))}
             </div>
           </Reveal>
 
-          {/* Icon system — uniform grid, no labels */}
+          {/* Recurring symbols — 4 motifs */}
           <Reveal delay={180}>
-            <div className="mt-8 md:mt-10 grid grid-cols-6 gap-2 md:gap-3 max-w-[820px]">
+            <div className="mt-6 grid grid-cols-4 gap-2 md:gap-3 max-w-[480px]">
               {[
-                diamondTeal.url,
-                diamondGreen.url,
                 sparkCoral.url,
                 starCream.url,
+                diamondTeal.url,
                 circleTurq.url,
-                sparkNavy.url,
               ].map((src) => (
-                <div key={src} className="aspect-square bg-cream border border-hairline rounded-sm flex items-center justify-center p-5">
+                <div key={src} className="aspect-square bg-cream border border-hairline rounded-sm flex items-center justify-center p-7">
                   <img src={src} alt="" aria-hidden loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
                 </div>
               ))}
@@ -268,10 +266,10 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 05 — MY ROLE ───── */}
-      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-20 md:py-28">
+      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-16 md:py-24">
         <div className="mx-auto max-w-[1300px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
           <Reveal className="col-span-12 md:col-span-6">
-            <div className="mx-auto max-w-[520px]">
+            <div className="mx-auto max-w-[440px]">
               <img
                 src={nivCreator.url}
                 alt="Niv Haviv illustrating New Direction"
@@ -286,62 +284,21 @@ function NewDirectionPage() {
             <Reveal><SectionLabel n="05" label="The Creator" /></Reveal>
             <Reveal delay={120}>
               <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
-                Created by one creator.
+                Years in the making.
               </h2>
             </Reveal>
             <Reveal delay={220}>
               <div className="mt-6 space-y-5 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-lg">
-                <p>New Direction was written, illustrated, designed and prepared for print by Niv Haviv.</p>
-                <p>More than 300 pages created over several years, from the first sketch to the final print-ready book.</p>
+                <p>New Direction began as a single drawing and grew, slowly, into a 300-page book.</p>
+                <p>It was made by one person, over several years — written, drawn and shaped night after night, from the first sketch to the final printed page.</p>
               </div>
             </Reveal>
             <Reveal delay={320}>
               <p className="mt-8 font-sans text-[13px] text-ink-muted">
-                300 pages · Graphic Novel · 2026
+                Niv Haviv · Graphic Novel · 2026
               </p>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* ───── 06 — THE FINAL BOOK ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <Reveal>
-            <SectionLabel n="06" label="The Final Book" />
-            <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
-              A graphic novel <span className="italic text-coral">years in the making</span>.
-            </h2>
-          </Reveal>
-
-          <div className="mt-14 md:mt-20 flex justify-center">
-            <Reveal>
-              <img
-                src={bookCover.url}
-                alt="New Direction — final cover"
-                className="block w-full h-auto rounded-sm mx-auto max-w-[340px]"
-                style={{ filter: "drop-shadow(0 24px 48px rgba(20,20,22,.20))" }}
-              />
-            </Reveal>
-          </div>
-
-          <Reveal delay={200}>
-            <p className="mt-20 md:mt-28 mx-auto max-w-3xl text-center font-serif text-3xl md:text-[44px] leading-[1.15] tracking-[-0.02em]">
-              A graphic novel years in the making. <span className="italic text-coral">Publishing in 2026.</span>
-            </p>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <div className="mt-16 flex justify-center">
-              <Link
-                to="/"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 font-sans text-[13px] transition-colors hover:bg-coral hover:text-ink"
-              >
-                <span className="inline-block transition-transform group-hover:-translate-x-1">←</span>
-                Back to Index
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
     </main>
