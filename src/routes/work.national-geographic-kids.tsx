@@ -8,6 +8,8 @@ import bookmarks from "@/assets/ngk-bookmarks.png.asset.json";
 import spread from "@/assets/ngk-spread.png.asset.json";
 import landing from "@/assets/ngk-landing.png.asset.json";
 import promoPoster from "@/assets/ngk-promo-poster.jpg.asset.json";
+import packaging from "@/assets/ngk-packaging.png.asset.json";
+import bookmarkRhino from "@/assets/ngk-bookmark-rhino.jpg.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
@@ -303,6 +305,54 @@ function NatGeoKidsPage() {
               </p>
             </div>
           </article>
+        </div>
+      </section>
+
+      {/* ───── 04 — BEYOND THE MAGAZINE ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-12 md:mb-16">
+            <div className="col-span-12 md:col-span-3">
+              <SectionLabel n="04" label="Beyond the Magazine" />
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+                Beyond the Magazine.
+              </h2>
+              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
+                Creating physical products and collectible experiences that expanded the National Geographic Kids brand beyond the monthly publication.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
+            {[
+              { title: "Keflaonim Card Game", body: "A collectible trading card series built around natural science and discovery.", image: cards.url, alt: "Keflaonim collectible cards" },
+              { title: "Retail Display Stand", body: "Point-of-sale display designed to present the bookmark collection in stores.", image: bookmarks.url, alt: "Retail display stand" },
+              { title: "Packaging Design", body: "Foil pack artwork developed for the Keflaonim collectible card series.", image: packaging.url, alt: "Keflaonim packaging" },
+              { title: "Magnetic Bookmarks", body: "A printed line of magnetic bookmarks featuring photographed wildlife.", image: bookmarkRhino.url, alt: "Magnetic bookmark — rhino" },
+            ].map((card) => (
+              <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+                <div className="relative aspect-[4/5] bg-cream flex items-center justify-center p-6">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    className="block max-h-full max-w-full w-auto h-auto object-contain"
+                    style={{ filter: "drop-shadow(0 18px 32px rgba(20,20,22,.14))" }}
+                  />
+                </div>
+                <div className="border-t border-hairline p-5 md:p-6">
+                  <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 font-sans text-[14.5px] leading-[1.55] text-ink-muted max-w-[28ch]">
+                    {card.body}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
