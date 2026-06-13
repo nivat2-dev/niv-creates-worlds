@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import CaseStudy from "@/components/CaseStudy";
-import bookCover from "@/assets/new-direction-cover.png.asset.json";
-import novelSpread from "@/assets/novel-spread.jpg";
-import necklace from "@/assets/necklace.png";
-import portrait from "@/assets/niv-portrait.jpg.asset.json";
+import bookCover from "@/assets/nd-cover.png.asset.json";
+import bookMockup from "@/assets/nd-book-mockup.png.asset.json";
+import pagesCollage from "@/assets/nd-pages-collage.png.asset.json";
+import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
+import kiss from "@/assets/nd-kiss.png.asset.json";
+import beach from "@/assets/nd-beach.jpg.asset.json";
+import water from "@/assets/nd-water.jpg.asset.json";
+import poster from "@/assets/nd-poster.png.asset.json";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -23,7 +27,7 @@ export const Route = createFileRoute("/work/new-direction")({
       client="Self-initiated"
       role="Author, Illustrator, Designer"
       disciplines={["Graphic Novel", "Character Design", "Illustration", "Publishing"]}
-      hero={{ src: novelSpread, alt: "Interior pages of New Direction" }}
+      hero={{ src: bookMockup.url, alt: "New Direction — open book spread" }}
       tagline="An original graphic novel — story, characters, typography and book design built from a single visual language."
       overview="New Direction is a complete authored world: a 180-page graphic novel I wrote, illustrated, designed and prepared for print end-to-end. The story follows a young protagonist whose turquoise pendant becomes a compass for change."
       roleDetail="From the first sketch to the printed spine. Story development, character design, panel-by-panel illustration, typography, color, layout and production. The pendant — a recurring symbol — was designed as both a narrative object and a piece of brand identity for the book."
@@ -43,11 +47,14 @@ export const Route = createFileRoute("/work/new-direction")({
         { value: "∞", label: "Re-reads" },
       ]}
       gallery={[
-        { src: bookCover.url, alt: "New Direction — cover", span: "full" },
-        { src: novelSpread, alt: "Interior spread", span: "half" },
-        { src: necklace, alt: "Turquoise pendant", span: "half" },
-        { src: portrait.url, alt: "Author portrait", span: "tall" },
-        { src: novelSpread, alt: "Hand-painted detail", span: "tall" },
+        { src: bookCover.url, alt: "New Direction — printed cover", span: "tall" },
+        { src: poster.url, alt: "Character poster — Roi & Arie", span: "tall" },
+        { src: pagesCollage.url, alt: "Six-page panel composition", span: "full" },
+        { src: jerusalemWalk.url, alt: "Walking through Jerusalem", span: "half" },
+        { src: kiss.url, alt: "The kiss", span: "half" },
+        { src: water.url, alt: "Floating — bird's-eye scene", span: "half" },
+        { src: beach.url, alt: "Beach promenade scene", span: "half" },
+        { src: bookMockup.url, alt: "Printed interior spread", span: "full" },
       ]}
       next={{ to: "/work/national-geographic-kids", label: "National Geographic Kids", index: "01 / 05" }}
     />
