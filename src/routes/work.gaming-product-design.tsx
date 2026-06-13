@@ -137,46 +137,8 @@ function GamingPage() {
         </div>
       </CaseSection>
 
-      {/* ───── 03 — UNDERSTANDING THE PROBLEM ───── */}
+      {/* ───── 03 — WIREFRAME → FINAL ───── */}
       <CaseSection tone="cream">
-        <CaseSectionHeader
-          label="Understanding the Problem"
-          title="Three questions every player asks."
-          intro="Before opening Figma I mapped the player's mental model — what they need to feel in the first second, the first tap, and across the full event."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {[
-            {
-              n: "01",
-              t: "Progression",
-              b: "Players should immediately understand how close they are to the reward.",
-            },
-            {
-              n: "02",
-              t: "Motivation",
-              b: "Every action should feel meaningful and contribute toward a visible goal.",
-            },
-            {
-              n: "03",
-              t: "Visibility",
-              b: "The reward should remain visible throughout the experience to encourage completion.",
-            },
-          ].map((c, i) => (
-            <Reveal key={c.t} delay={i * 80}>
-              <article className="h-full border border-hairline bg-cream/60 rounded-sm p-7 md:p-9">
-                <div className="font-serif text-coral text-[15px] tracking-[0.04em]">
-                  {c.n}
-                </div>
-                <H4Card className="mt-3">{c.t}</H4Card>
-                <Body className="mt-3 max-w-[32ch]">{c.b}</Body>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </CaseSection>
-
-      {/* ───── 04 — WIREFRAME → FINAL ───── */}
-      <CaseSection tone="paper">
         <CaseSectionHeader
           label="From Wireframe to Final"
           title="From assignment to designed event."
@@ -267,62 +229,7 @@ function GamingPage() {
         </div>
       </CaseSection>
 
-      {/* ───── 05 — BUILDING THE SYSTEM ───── */}
-      <CaseSection tone="cream">
-        <CaseSectionHeader
-          label="Building the System"
-          title="Each element carrying a job."
-          intro="The popup is one screen, but it's really four small systems working together — each tuned for clarity, hierarchy and motivation."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
-          {[
-            {
-              t: "Challenge Icon",
-              b: "Designing a recognizable event symbol players link to every action.",
-              crop: { x: "16%", y: "44%", scale: 2.6 },
-            },
-            {
-              t: "Progress Bar",
-              b: "Making progression visible and motivating across every tap.",
-              crop: { x: "50%", y: "40%", scale: 1.9 },
-            },
-            {
-              t: "Reward Structure",
-              b: "Communicating goals and rewards in a single glance.",
-              crop: { x: "50%", y: "62%", scale: 2.2 },
-            },
-            {
-              t: "CTA",
-              b: "Driving participation through hierarchy, color and clarity.",
-              crop: { x: "50%", y: "84%", scale: 2.4 },
-            },
-          ].map((c, i) => (
-            <Reveal key={c.t} delay={i * 60}>
-              <article className="flex h-full flex-col border border-hairline bg-cream/60 rounded-sm overflow-hidden">
-                <div className="relative aspect-[4/3] bg-cream overflow-hidden">
-                  <img
-                    src={pirate.url}
-                    alt={c.t}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{
-                      objectPosition: `${c.crop.x} ${c.crop.y}`,
-                      transform: `scale(${c.crop.scale})`,
-                      transformOrigin: `${c.crop.x} ${c.crop.y}`,
-                    }}
-                  />
-                </div>
-                <div className="border-t border-hairline p-5 md:p-6">
-                  <H4Card>{c.t}</H4Card>
-                  <Body className="mt-3 max-w-[32ch]">{c.b}</Body>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </CaseSection>
-
-      {/* ───── 06 — FINAL EVENT DESIGN ───── */}
+      {/* ───── 04 — FINAL EVENT DESIGN ───── */}
       <CaseSection tone="paper">
         <CaseSectionHeader
           label="Final Event Design"
@@ -340,36 +247,36 @@ function GamingPage() {
         </Reveal>
         <Reveal delay={120}>
           <Lead className="mt-12 md:mt-16 max-w-2xl mx-auto text-center">
-            The final solution combines progression, rewards and player motivation into a single event experience — one screen the player can read, feel and act on in seconds.
+            Progression stays visible, rewards stay motivating, and the next action is never in doubt — a single screen tuned for participation, retention and completion.
           </Lead>
         </Reveal>
       </CaseSection>
 
-      {/* ───── 07 — ADDITIONAL CREATIVES ───── */}
+      {/* ───── 05 — ADDITIONAL CREATIVES ───── */}
       <CaseSection tone="cream">
         <CaseSectionHeader
           label="Marketing Creatives"
           title="Additional Gaming Marketing Creatives."
-          intro="Beyond event systems and monetization design, I also created promotional creatives focused on acquisition, engagement and seasonal campaigns."
+          intro="Promotional design built alongside the in-game work — acquisition, engagement and seasonal campaigns for RealPrize."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {[
             {
               image: threeGames.url,
               title: "Three Games Promotion",
-              body: "An acquisition creative for RealPrize introducing three slot titles in a single editorial layout.",
+              body: "Acquisition creative pairing three slot titles in one editorial layout to lift install intent and CTR.",
               alt: "RealPrize three games promotional creative",
             },
             {
               image: easter.url,
               title: "Easter Campaign",
-              body: "A seasonal hook designed to lift engagement around the holiday and re-activate dormant players.",
+              body: "Seasonal engagement push built to re-activate dormant players around a high-traffic holiday window.",
               alt: "RealPrize Easter campaign creative",
             },
             {
               image: newGames.url,
               title: "New Games Launch",
-              body: "A product-first launch creative showcasing new titles inside hero device mockups.",
+              body: "Product-led launch communication framing new titles inside hero device mockups for store and paid placements.",
               alt: "RealPrize new games launch creative",
             },
           ].map((c, i) => (
@@ -382,43 +289,6 @@ function GamingPage() {
                 aspect="1/1"
                 framePadding="p-0"
               />
-            </Reveal>
-          ))}
-        </div>
-      </CaseSection>
-
-      {/* ───── 08 — WHAT I LEARNED ───── */}
-      <CaseSection tone="paper">
-        <CaseSectionHeader
-          label="What I Learned"
-          title="Lessons from shipping events."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {[
-            {
-              n: "01",
-              t: "Clarity Drives Engagement",
-              b: "Players engage more when goals are instantly understandable.",
-            },
-            {
-              n: "02",
-              t: "Rewards Create Momentum",
-              b: "Visible rewards encourage continued participation.",
-            },
-            {
-              n: "03",
-              t: "Design Supports Behaviour",
-              b: "Every visual decision contributes to motivation and player action.",
-            },
-          ].map((c, i) => (
-            <Reveal key={c.t} delay={i * 80}>
-              <article className="h-full border border-hairline bg-cream/60 rounded-sm p-7 md:p-9">
-                <div className="font-serif text-coral text-[15px] tracking-[0.04em]">
-                  {c.n}
-                </div>
-                <H4Card className="mt-3">{c.t}</H4Card>
-                <Body className="mt-3 max-w-[32ch]">{c.b}</Body>
-              </article>
             </Reveal>
           ))}
         </div>
