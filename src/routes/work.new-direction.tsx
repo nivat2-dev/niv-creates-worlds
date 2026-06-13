@@ -300,9 +300,6 @@ function NewDirectionPage() {
 
       {/* ───── 05 — INSIDE THE BOOK ───── */}
       <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
-        <Motif src={circleTurq.url} size={120} top={"-3%"} right={"5%"} className="hidden md:block" />
-        <Motif src={diamondTeal.url} size={60} bottom={"6%"} left={"6%"} rotate={-14} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-12 md:mb-16">
             <div>
@@ -327,8 +324,6 @@ function NewDirectionPage() {
 
       {/* ───── 06 — BOOK DESIGN ───── */}
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <Motif src={sparkOlive.url} size={48} top={64} right={"10%"} rotate={18} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="06" label="Book Design" />
@@ -362,9 +357,6 @@ function NewDirectionPage() {
 
       {/* ───── 07 — CREATIVE PROCESS ───── */}
       <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
-        <Motif src={diamondGreen.url} size={64} top={48} left={"8%"} rotate={-10} className="hidden md:block" />
-        <Motif src={sparkNavy.url} size={42} bottom={64} right={"10%"} rotate={16} className="hidden md:block" />
-
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="07" label="Creative Process" />
