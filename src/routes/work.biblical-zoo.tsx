@@ -51,37 +51,37 @@ const ROLE_TAGS = [
 const SOLUTION_CARDS = [
   {
     title: "Treasure Hunt Narrative",
-    body: "The visit becomes a journey rather than a route.",
+    body: "The visit becomes a story to follow, not a route to complete. Each stop adds a chapter.",
   },
   {
     title: "Color-Coded Trails",
-    body: "Three paths help visitors choose their level of challenge.",
+    body: "Three trails — short, medium and full — let families choose their own pace and challenge level.",
   },
   {
     title: "Animal Challenges",
-    body: "Riddles encourage interaction with exhibits.",
+    body: "Riddles tied to specific exhibits turn passive watching into active observation.",
   },
   {
     title: "Educational Discovery",
-    body: "Learning is embedded into exploration.",
+    body: "Facts are hidden inside the play, so learning happens without ever feeling like a lesson.",
   },
 ];
 
 const LESSONS = [
   {
     n: "01",
-    title: "Engagement Changes Behaviour",
-    body: "Visitors participate more when information becomes play.",
+    title: "Turn directions into rewards.",
+    body: "Once finding the next animal felt like uncovering treasure, families stopped asking where to go — they wanted to keep going.",
   },
   {
     n: "02",
-    title: "Clarity Enables Exploration",
-    body: "Simple navigation encourages deeper discovery.",
+    title: "Design for curiosity, not instructions.",
+    body: "The map gives just enough structure to start, and leaves enough mystery for kids to lead the way.",
   },
   {
     n: "03",
-    title: "Good UX Exists Beyond Screens",
-    body: "The same principles apply to physical environments.",
+    title: "The best educational tools don't feel educational.",
+    body: "When learning is wrapped inside a game, children absorb it without resistance — and parents enjoy the visit too.",
   },
 ];
 
@@ -140,25 +140,40 @@ function BiblicalZooPage() {
         <CaseSectionHeader
           label="The Challenge"
           title="From map to experience."
-          intro="The original visitor map was difficult to navigate, visually crowded and offered little engagement for younger visitors. The goal was to create a tool that could guide families through the zoo while encouraging exploration, discovery and learning."
+          intro="The original visitor map was crowded, hard to scan and almost invisible to children. The redesign turns the same information into a structured, playful and family-oriented tool — built to invite exploration instead of just locating exhibits."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {[
-            { src: beforeMap.url, alt: "Original Biblical Zoo visitor map", caption: "Original Zoo Map" },
-            { src: afterMap.url, alt: "Redesigned Biblical Zoo treasure map", caption: "Redesigned Treasure Map" },
+            {
+              src: beforeMap.url,
+              alt: "Original Biblical Zoo visitor map",
+              caption: "Before — Original Map",
+              desc: "Crowded layout, dense labels and a passive reading experience.",
+            },
+            {
+              src: afterMap.url,
+              alt: "Redesigned Biblical Zoo treasure map",
+              caption: "After — Treasure Map",
+              desc: "Structured, playful and interactive — designed for families to explore together.",
+            },
           ].map((img, i) => (
             <Reveal key={img.caption} delay={i * 120}>
               <figure>
-                <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+                <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center">
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="block w-full h-auto"
+                    className="block w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
-                <figcaption className="mt-4 font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
-                  <span className="text-coral">·</span> {img.caption}
+                <figcaption className="mt-5">
+                  <p className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                    <span className="text-coral">·</span> {img.caption}
+                  </p>
+                  <p className="mt-2 font-sans text-[15px] leading-relaxed text-ink-muted max-w-md">
+                    {img.desc}
+                  </p>
                 </figcaption>
               </figure>
             </Reveal>
@@ -171,10 +186,10 @@ function BiblicalZooPage() {
         <CaseSectionHeader
           label="Design Solution"
           title="Navigation designed as play."
-          intro="Instead of treating the map as a static guide, I transformed it into a treasure-hunt experience. Visitors follow color-coded trails, solve animal-based challenges and collect gems throughout the zoo."
+          intro="Instead of treating the map as a static guide, I rebuilt it as a treasure-hunt experience. Four design moves work together to turn navigation into a game families actively want to play."
         />
         <Reveal>
-          <div className="border border-hairline bg-paper rounded-sm overflow-hidden">
+          <div className="mx-auto max-w-[820px] border border-hairline bg-paper rounded-sm overflow-hidden">
             <img
               src={afterMap.url}
               alt="Redesigned Biblical Zoo treasure map — full layout"
@@ -183,7 +198,7 @@ function BiblicalZooPage() {
             />
           </div>
         </Reveal>
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {SOLUTION_CARDS.map((c, i) => (
             <Reveal key={c.title} delay={i * 80}>
               <article className="h-full border border-hairline bg-cream/60 rounded-sm p-6">
@@ -201,18 +216,41 @@ function BiblicalZooPage() {
         <CaseSectionHeader
           label="Gamification"
           title="Encouraging exploration through challenges."
-          intro="To increase engagement, I designed a companion challenge system with collectible gems, animal riddles and trail-based objectives tailored for families and children."
+          intro="The challenge sheet is a designed system, not a printed worksheet. Every element — routes, gems, riddles and rewards — is tuned to keep children engaged from the entrance to the last exhibit."
         />
-        <Reveal>
-          <div className="border border-hairline bg-cream rounded-sm overflow-hidden">
-            <img
-              src={gamification.url}
-              alt="Gamification challenge sheet — collectible gems and animal riddles"
-              className="block w-full h-auto"
-              loading="lazy"
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
+          <Reveal className="lg:col-span-7">
+            <div className="border border-hairline bg-cream rounded-sm overflow-hidden">
+              <img
+                src={gamification.url}
+                alt="Gamification challenge sheet — collectible gems and animal riddles"
+                className="block w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+          <div className="lg:col-span-5 lg:pt-4">
+            <ul className="space-y-6">
+              {[
+                { t: "Three difficulty routes", b: "Short, medium and full trails let families pick the pace that matches the day." },
+                { t: "Collectible gems", b: "Each completed challenge earns a gem, turning the visit into a tangible progression." },
+                { t: "Animal riddles", b: "Clues sit next to real exhibits, rewarding observation over reading." },
+                { t: "Reward progression", b: "Visible milestones along the trail give kids a reason to keep going." },
+                { t: "Educational engagement", b: "Facts are baked into the play, so curiosity does the teaching." },
+              ].map((row, i) => (
+                <Reveal key={row.t} delay={i * 60}>
+                  <li className="flex gap-4 border-b border-hairline pb-5 last:border-b-0 last:pb-0">
+                    <span className="font-mono text-[11px] tracking-[0.18em] text-coral pt-1">{String(i + 1).padStart(2, "0")}</span>
+                    <div>
+                      <H4Card>{row.t}</H4Card>
+                      <Body className="mt-2">{row.b}</Body>
+                    </div>
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
           </div>
-        </Reveal>
+        </div>
       </CaseSection>
 
       {/* ───── 05 — IN THE WILD ───── */}
@@ -220,22 +258,28 @@ function BiblicalZooPage() {
         <CaseSectionHeader
           label="In The Wild"
           title="Designed for families. Tested by curiosity."
-          intro="The strongest validation came from seeing children actively using the map to navigate, solve challenges and explore the zoo independently."
+          intro="The clearest validation came from watching real visitors. Children took the lead — navigating, solving challenges and pulling parents toward the next exhibit. Independent exploration, sustained engagement and visible enjoyment confirmed the concept in the field."
         />
         <Reveal>
-          <div className="border border-hairline rounded-sm overflow-hidden">
-            <img
-              src={kids.url}
-              alt="Children using the Biblical Zoo treasure map at the zoo"
-              className="block w-full h-auto"
-              loading="lazy"
-            />
-          </div>
+          <figure className="mx-auto max-w-[620px]">
+            <div className="border border-hairline rounded-sm overflow-hidden">
+              <img
+                src={kids.url}
+                alt="Children using the Biblical Zoo treasure map at the zoo"
+                className="block w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="mt-4 font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted text-center">
+              <span className="text-coral">·</span> Live at the Biblical Zoo, Jerusalem
+            </figcaption>
+          </figure>
         </Reveal>
       </CaseSection>
 
       {/* ───── 06 — WHAT I LEARNED ───── */}
-      <CaseSection tone="paper">
+      <section className="bg-paper pt-20 md:pt-28 pb-14 md:pb-20">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
         <CaseSectionHeader
           label="What I Learned"
           title="Lessons from designing physical experiences."
@@ -251,7 +295,8 @@ function BiblicalZooPage() {
             </Reveal>
           ))}
         </div>
-      </CaseSection>
+        </div>
+      </section>
 
       <MoreWork currentSlug="biblical-zoo" limit={4} />
     </main>
