@@ -1,6 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
 import MoreWork from "@/components/MoreWork";
+import {
+  CaseNav,
+  SectionLabel,
+  EyebrowCaps,
+  H1Hero,
+  H2Section,
+  H3Feature,
+  Lead,
+  CaseCard,
+  CaseFramedCard,
+  MetricsGrid,
+} from "@/components/case-study/primitives";
 import coverTitanic from "@/assets/ngk-cover-titanic.png.asset.json";
 import coverAmazon from "@/assets/ngk-cover-amazon.png.asset.json";
 import cards from "@/assets/ngk-cards.png.asset.json";
@@ -25,31 +36,6 @@ export const Route = createFileRoute("/work/national-geographic-kids")({
   }),
   component: NatGeoKidsPage,
 });
-
-function MiniNav() {
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-6 flex items-center justify-between text-ink">
-        <Link to="/" className="flex items-center gap-2 font-sans text-[12px] tracking-[0.02em]">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-          Niv Haviv
-        </Link>
-        <Link to="/" className="font-sans text-[12px] tracking-[0.02em] hover:text-coral transition-colors">
-          ← Index
-        </Link>
-      </div>
-    </header>
-  );
-}
-
-function SectionLabel({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-ink-muted">
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-      <span>{label}</span>
-    </div>
-  );
-}
 
 function NatGeoKidsPage() {
   const cardsList = [
@@ -87,7 +73,7 @@ function NatGeoKidsPage() {
 
   return (
     <main className="bg-cream text-ink">
-      <MiniNav />
+      <CaseNav />
 
       {/* ───── 01 — HERO ───── */}
       <section className="relative isolate overflow-hidden">

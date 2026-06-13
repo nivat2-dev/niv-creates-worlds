@@ -1,6 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
@@ -12,6 +10,16 @@ import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
 import nivCreator from "@/assets/niv-creator.jpg.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import MoreWork from "@/components/MoreWork";
+import {
+  CaseNav,
+  Reveal,
+  SectionLabel,
+  H1Hero,
+  H2Section,
+  Lead,
+  Body,
+  CaseCoverCard,
+} from "@/components/case-study/primitives";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -28,75 +36,12 @@ export const Route = createFileRoute("/work/new-direction")({
   component: NewDirectionPage,
 });
 
-/* ───── primitives ───── */
-
-function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [v, setV] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setV(true); io.disconnect(); } },
-      { threshold: 0.12 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        opacity: v ? 1 : 0,
-        transform: v ? "translateY(0)" : "translateY(20px)",
-        transition: `opacity .8s cubic-bezier(.2,.7,.2,1) ${delay}ms, transform .8s cubic-bezier(.2,.7,.2,1) ${delay}ms`,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function MiniNav() {
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-6 flex items-center justify-between text-ink">
-        <Link to="/" className="flex items-center gap-2 font-sans text-[12px] tracking-[0.02em]">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-          Niv Haviv
-        </Link>
-        <Link to="/" className="font-sans text-[12px] tracking-[0.02em] hover:text-coral transition-colors">
-          ← Index
-        </Link>
-      </div>
-    </header>
-  );
-}
-
-function SectionLabel({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-ink-muted">
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-      <span>{n} — {label}</span>
-    </div>
-  );
-}
-
-function Caption({ children }: { children: ReactNode }) {
-  return (
-    <p className="mt-3 font-sans text-[12px] text-ink-muted">
-      <span className="text-coral">·</span> {children}
-    </p>
-  );
-}
-
 /* ───── page ───── */
 
 function NewDirectionPage() {
   return (
     <main className="bg-cream text-ink">
-      <MiniNav />
+      <CaseNav />
 
       {/* ───── 01 — HERO ───── */}
       <section className="relative isolate overflow-hidden">
@@ -120,17 +65,17 @@ function NewDirectionPage() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-6">
-              <Reveal><SectionLabel n="01" label="2026" /></Reveal>
+              <Reveal><SectionLabel label="2026" /></Reveal>
               <Reveal delay={120}>
-                <h1 className="mt-6 font-serif text-[clamp(46px,7vw,116px)] leading-[0.9] tracking-[-0.035em] font-medium">
+                <H1Hero className="mt-6">
                   <span className="block">NEW</span>
                   <span className="block italic text-coral">Direction</span>
-                </h1>
+                </H1Hero>
               </Reveal>
               <Reveal delay={240}>
-                <p className="mt-10 font-sans text-lg md:text-[20px] leading-[1.5] text-ink max-w-xl">
+                <Lead className="mt-10 text-ink max-w-xl">
                   A 300-page graphic novel about family, silence, and the truths people leave behind.
-                </p>
+                </Lead>
               </Reveal>
             </div>
           </div>
@@ -138,8 +83,8 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 02 — PROJECT OVERVIEW ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
             <div className="mx-auto max-w-[620px]">
               <img
@@ -152,16 +97,16 @@ function NewDirectionPage() {
           </Reveal>
 
           <div className="col-span-12 md:col-span-5">
-            <Reveal><SectionLabel n="02" label="The Book" /></Reveal>
+            <Reveal><SectionLabel label="The Book" /></Reveal>
             <Reveal delay={120}>
-              <h2 className="mt-5 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em]">
+              <H2Section className="mt-5">
                 A 300-page graphic novel.
-              </h2>
+              </H2Section>
             </Reveal>
             <Reveal delay={220}>
-              <p className="mt-4 font-sans text-ink-muted text-[17px] leading-[1.55] max-w-md">
+              <Lead className="mt-4 max-w-md">
                 Written, illustrated and designed by Niv Haviv. Publishing in 2026.
-              </p>
+              </Lead>
             </Reveal>
             <Reveal delay={320}>
               <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-sans text-[12px] text-ink-muted">
@@ -183,13 +128,13 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 03 — INSIDE THE STORY ───── */}
-      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-y border-hairline py-16 md:py-20">
+      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-t border-hairline py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
-            <SectionLabel n="03" label="Inside the Story" />
-            <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+            <SectionLabel label="Inside the Story" />
+            <H2Section className="mt-5 max-w-3xl">
               Between faith, freedom and grief.
-            </h2>
+            </H2Section>
           </Reveal>
 
           <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -199,18 +144,7 @@ function NewDirectionPage() {
               { img: ariehRoyCircle.url, title: "Arieh & Roy", line: "Two strangers brought together by loss, slowly learning to lean on each other." },
             ].map((card, i) => (
               <Reveal key={card.title} delay={i * 80}>
-                <article className="group">
-                  <div className="aspect-[4/3] w-full overflow-hidden bg-paper border border-hairline rounded-sm">
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      loading="lazy"
-                      className="block w-full h-full object-cover object-center"
-                    />
-                  </div>
-                  <h3 className="mt-5 font-serif text-2xl tracking-[-0.01em]">{card.title}</h3>
-                  <p className="mt-1.5 font-sans text-[15px] text-ink-muted leading-snug">{card.line}</p>
-                </article>
+                <CaseCoverCard image={card.img} alt={card.title} title={card.title} body={card.line} />
               </Reveal>
             ))}
           </div>
@@ -218,16 +152,16 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 04 — VISUAL LANGUAGE ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
-            <SectionLabel n="04" label="A visual thread" />
-            <h2 className="mt-5 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+            <SectionLabel label="A visual thread" />
+            <H2Section className="mt-5 max-w-3xl">
               The colours and shapes that return through the book.
-            </h2>
-            <p className="mt-5 font-sans text-[16px] leading-[1.6] text-ink-muted max-w-xl">
+            </H2Section>
+            <Lead className="mt-5 max-w-xl">
               Warm cream and coral hold the family scenes in Jerusalem. The deeper teals belong to the sea, to Tel Aviv, and to the quiet hours Arieh and Roy share after the loss. Small motifs — a star, a spark, a diamond — drift through the panels like something half-remembered.
-            </p>
+            </Lead>
             <p className="mt-5 font-serif italic text-[17px] leading-[1.5] text-ink/80 max-w-xl">
               “Some things you don't say out loud. You draw them, and hope someone notices.”
             </p>
@@ -267,8 +201,8 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 05 — MY ROLE ───── */}
-      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-16 md:py-24">
-        <div className="mx-auto max-w-[1300px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
+      <section className="relative isolate overflow-hidden bg-cream border-t border-hairline py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
           <Reveal className="col-span-12 md:col-span-6">
             <div className="mx-auto max-w-[396px]">
               <img
@@ -282,16 +216,16 @@ function NewDirectionPage() {
           </Reveal>
 
           <div className="col-span-12 md:col-span-6">
-            <Reveal><SectionLabel n="05" label="The Creator" /></Reveal>
+            <Reveal><SectionLabel label="The Creator" /></Reveal>
             <Reveal delay={120}>
-              <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+              <H2Section className="mt-5">
                 Years in the making.
-              </h2>
+              </H2Section>
             </Reveal>
             <Reveal delay={220}>
-              <div className="mt-6 space-y-5 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-lg">
-                <p>New Direction began as a single drawing and grew, slowly, into a 300-page book.</p>
-                <p>It was made by one person, over several years — written, drawn and shaped night after night, from the first sketch to the final printed page.</p>
+              <div className="mt-6 space-y-5 max-w-lg">
+                <Body className="text-[17px]">New Direction began as a single drawing and grew, slowly, into a 300-page book.</Body>
+                <Body className="text-[17px]">It was made by one person, over several years — written, drawn and shaped night after night, from the first sketch to the final printed page.</Body>
               </div>
             </Reveal>
             <Reveal delay={320}>
