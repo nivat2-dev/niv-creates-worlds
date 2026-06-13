@@ -137,7 +137,7 @@ export default function CaseStudy(p: CaseStudyProps) {
                 <span key={d} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5">{d}</span>
               ))}
             </div>
-            <p className="text-ink-muted leading-relaxed max-w-2xl text-lg">{p.role}</p>
+            <p className="text-ink-muted leading-relaxed max-w-2xl text-lg">{p.roleDetail}</p>
           </Reveal>
         </div>
       </section>
