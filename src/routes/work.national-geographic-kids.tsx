@@ -13,6 +13,7 @@ import bookmarkRhino from "@/assets/ngk-bookmark-rhino.jpg.asset.json";
 import landingMockup from "@/assets/ngk-landing-mockup.png.asset.json";
 import emailYoung from "@/assets/ngk-email-young.avif.asset.json";
 import emailNgk from "@/assets/ngk-email-ngk.avif.asset.json";
+import portrait from "@/assets/ngk-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
