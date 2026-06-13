@@ -42,11 +42,11 @@ function MiniNav() {
   );
 }
 
-function SectionLabel({ n, label }: { n: string; label: string }) {
+function SectionLabel({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-ink-muted">
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-      <span>{n} — {label}</span>
+      <span>{label}</span>
     </div>
   );
 }
@@ -55,7 +55,7 @@ function NatGeoKidsPage() {
   const cardsList = [
     {
       title: "Magazine Design",
-      body: "Editorial layouts, covers, features and visual storytelling.",
+      body: "I designed covers, features and editorial spreads month after month — shaping how each story reached young readers.",
       image: coverTitanic.url,
       alt: "National Geographic Kids magazine cover",
       frameClassName: "max-w-[120px]",
@@ -63,7 +63,7 @@ function NatGeoKidsPage() {
     },
     {
       title: "Educational Products",
-      body: "Games, bookmarks, collectible items and reading tools.",
+      body: "I led the design of games, collectibles and reading tools that extended the magazine into the hands of kids.",
       image: cards.url,
       alt: "Educational products and collectible cards",
       frameClassName: "max-w-[132px]",
@@ -71,7 +71,7 @@ function NatGeoKidsPage() {
     },
     {
       title: "Marketing Campaigns",
-      body: "Promotional materials, subscriber campaigns and launch assets.",
+      body: "From subscriber drives to launch assets, I designed the campaigns that brought new readers to the brand.",
       image: promoPoster.url,
       alt: "National Geographic Kids marketing campaign poster",
       frameClassName: "max-w-[108px]",
@@ -79,7 +79,7 @@ function NatGeoKidsPage() {
     },
     {
       title: "Digital Design",
-      body: "Landing pages and online experiences.",
+      body: "I translated the magazine's voice into landing pages and email campaigns built around products and subscriptions.",
       image: landing.url,
       alt: "National Geographic Kids landing page",
       frameClassName: "max-w-[132px]",
@@ -87,7 +87,7 @@ function NatGeoKidsPage() {
     },
     {
       title: "Print Production",
-      body: "Preparing files, production workflows and collaboration with vendors.",
+      body: "I owned the production workflow end-to-end — preparing files, working with vendors and protecting quality through to print.",
       image: bookmarks.url,
       alt: "Retail display stand for printed reading tools",
       frameClassName: "max-w-[118px]",
@@ -157,40 +157,37 @@ function NatGeoKidsPage() {
 
             {/* Right — copy */}
             <div className="col-span-12 lg:col-span-5">
-              <SectionLabel n="01" label="National Geographic Kids Israel · 2021–2025" />
+              <SectionLabel label="National Geographic Kids Israel · 2021–2025" />
               <h1 className="mt-6 font-serif text-[clamp(46px,7vw,108px)] leading-[0.9] tracking-[-0.035em] font-medium">
                 <span className="block">Designing</span>
                 <span className="block italic text-coral">curiosity.</span>
               </h1>
-              <p className="mt-10 font-sans text-lg md:text-[20px] leading-[1.5] text-ink max-w-xl">
-                For more than four years I designed magazines, educational products, campaigns and visual experiences for thousands of young readers every month.
+              <p className="mt-10 font-sans text-[17px] leading-[1.6] text-ink max-w-xl">
+                For more than four years I led the visual experience of National Geographic Kids Israel — designing the magazine, the products around it and the campaigns that reached thousands of young readers every month.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ───── 02 — OVERVIEW ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-16 md:py-20">
+      {/* ───── More than a magazine ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
             <div className="col-span-12 md:col-span-3">
-              <SectionLabel n="02" label="More than a magazine" />
+              <SectionLabel label="More than a magazine" />
             </div>
             <div className="col-span-12 md:col-span-9">
               <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
                 More than a magazine.
               </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-3xl">
-                National Geographic Kids was much more than a monthly publication.
-              </p>
-              <p className="mt-2 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-3xl">
-                For over four years I worked across editorial design, educational products, marketing campaigns and print production.
+              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-3xl">
+                National Geographic Kids was never just a monthly publication. Across more than four years I worked on five connected disciplines — and was responsible for the way they fit together.
               </p>
             </div>
           </div>
 
-          <div className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 md:gap-6">
             {cardsList.map((card) => (
               <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm min-h-[280px]">
                 <div>
@@ -205,11 +202,11 @@ function NatGeoKidsPage() {
                       />
                     </div>
                   </div>
-                  <h3 className="mt-6 font-serif text-[26px] leading-[1.05] tracking-[-0.015em]">
+                  <h3 className="mt-6 font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
                     {card.title}
                   </h3>
                 </div>
-                <p className="mt-4 font-sans text-[15px] leading-[1.55] text-ink-muted max-w-[24ch]">
+                <p className="mt-4 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[28ch]">
                   {card.body}
                 </p>
               </article>
@@ -218,25 +215,25 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
-      {/* ───── 03 — FEATURED WORK ───── */}
+      {/* ───── Featured Work ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-16 md:mb-24">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
             <div className="col-span-12 md:col-span-3">
-              <SectionLabel n="03" label="Featured Work" />
+              <SectionLabel label="Featured Work" />
             </div>
             <div className="col-span-12 md:col-span-9">
               <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
                 Featured Work.
               </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
-                A closer look at three editorial projects that defined the years at National Geographic Kids.
+              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
+                Three editorial projects that defined my years on the magazine — covers and features I designed from concept to final print.
               </p>
             </div>
           </div>
 
           {/* Project 01 — Titanic (image left) */}
-          <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
+          <article className="grid grid-cols-12 gap-8 md:gap-14 items-center mt-4">
             <div className="col-span-12 lg:col-span-7 order-1">
               <div className="relative mx-auto w-full max-w-[640px]">
                 <img
@@ -249,28 +246,28 @@ function NatGeoKidsPage() {
             </div>
             <div className="col-span-12 lg:col-span-5 order-2">
               <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
-                Project 01 — Cover Story
+                Cover Story
               </div>
               <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
                 Bringing history back to the surface.
               </h3>
               <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
-                A cover story exploring new technology used to reveal details from the Titanic wreck more than a century after the disaster.
+                A cover I designed around new technology used to reveal details from the Titanic wreck more than a century after the disaster. I led the cover concept, typography and image treatment.
               </p>
             </div>
           </article>
 
           {/* Project 02 — Amazon (image right) */}
-          <article className="mt-24 md:mt-36 grid grid-cols-12 gap-8 md:gap-14 items-center">
+          <article className="mt-20 md:mt-28 grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
               <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
-                Project 02 — Feature Issue
+                Feature Issue
               </div>
               <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
                 A visual journey into the Amazon.
               </h3>
               <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
-                A feature issue focused on one of the world's most important ecosystems.
+                A feature issue on one of the world's most important ecosystems. I designed the cover and shaped the interior story to immerse young readers in the rainforest.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-7 order-1 lg:order-2">
@@ -286,7 +283,7 @@ function NatGeoKidsPage() {
           </article>
 
           {/* Project 03 — Editorial Design (image left) */}
-          <article className="mt-24 md:mt-36 grid grid-cols-12 gap-8 md:gap-14 items-center">
+          <article className="mt-20 md:mt-28 grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-7 order-1">
               <div className="relative mx-auto w-full max-w-[760px]">
                 <img
@@ -299,42 +296,42 @@ function NatGeoKidsPage() {
             </div>
             <div className="col-span-12 lg:col-span-5 order-2">
               <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
-                Project 03 — Inside the Magazine
+                Inside the Magazine
               </div>
               <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
                 Editorial storytelling.
               </h3>
               <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
-                Transforming complex scientific and historical topics into engaging visual experiences for young readers.
+                Across dozens of issues I translated complex scientific and historical topics into visual experiences — building layout systems that let each story breathe.
               </p>
             </div>
           </article>
         </div>
       </section>
 
-      {/* ───── 04 — BEYOND THE MAGAZINE ───── */}
+      {/* ───── Beyond the Magazine ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-12 md:mb-16">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
             <div className="col-span-12 md:col-span-3">
-              <SectionLabel n="04" label="Beyond the Magazine" />
+              <SectionLabel label="Beyond the Magazine" />
             </div>
             <div className="col-span-12 md:col-span-9">
               <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
                 Beyond the Magazine.
               </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
-                Creating physical products and collectible experiences that expanded the National Geographic Kids brand beyond the monthly publication.
+              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
+                I designed physical products and promotional pieces that extended the brand off the page — each one a different category of work I led end-to-end.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
             {[
-              { title: "Keflaonim Card Game", body: "A collectible trading card series built around natural science and discovery.", image: cards.url, alt: "Keflaonim collectible cards" },
-              { title: "Retail Display Stand", body: "Point-of-sale display designed to present the bookmark collection in stores.", image: bookmarks.url, alt: "Retail display stand" },
-              { title: "Packaging Design", body: "Foil pack artwork developed for the Keflaonim collectible card series.", image: packaging.url, alt: "Keflaonim packaging" },
-              { title: "Magnetic Bookmarks", body: "A printed line of magnetic bookmarks featuring photographed wildlife.", image: bookmarkRhino.url, alt: "Magnetic bookmark — rhino" },
+              { title: "Keflaonim Card Game", body: "A collectible trading card series I designed around natural science — characters, layout system and full deck art.", image: cards.url, alt: "Keflaonim collectible cards" },
+              { title: "Magnetic Bookmarks", body: "A printed line of magnetic bookmarks featuring wildlife photography. I art-directed the series and prepared it for print.", image: bookmarkRhino.url, alt: "Magnetic bookmark — rhino" },
+              { title: "Retail Display Stand", body: "Point-of-sale display I designed to present the bookmark collection in stores — from structure to printed graphics.", image: bookmarks.url, alt: "Retail display stand" },
+              { title: "Promotional Print", body: "Subscriber posters and giveaways I designed to launch new issues and reward returning readers.", image: promoPoster.url, alt: "Promotional poster" },
             ].map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 rounded-sm overflow-hidden">
                 <div className="relative aspect-[4/5] bg-cream flex items-center justify-center p-6">
@@ -350,7 +347,7 @@ function NatGeoKidsPage() {
                   <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
                     {card.title}
                   </h3>
-                  <p className="mt-3 font-sans text-[14.5px] leading-[1.55] text-ink-muted max-w-[28ch]">
+                  <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[32ch]">
                     {card.body}
                   </p>
                 </div>
@@ -360,36 +357,36 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
-      {/* ───── 05 — EXTENDING ONLINE ───── */}
+      {/* ───── Digital ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
             <div className="col-span-12 md:col-span-3">
-              <SectionLabel n="05" label="Digital" />
+              <SectionLabel label="Digital" />
             </div>
             <div className="col-span-12 md:col-span-9">
               <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
                 Extending the experience online.
               </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
-                The National Geographic Kids experience continued beyond print through digital campaigns, landing pages and promotional materials.
+              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
+                I extended the magazine into digital — designing landing pages and campaign emails that carried the same editorial voice to subscribers and new readers.
               </p>
             </div>
           </div>
 
           {/* Featured — Landing Page */}
           <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
-            <div className="col-span-12 lg:col-span-8 order-1">
-              <div className="relative mx-auto w-full max-w-[860px]">
+            <div className="col-span-12 lg:col-span-7 order-1">
+              <div className="relative mx-auto w-full max-w-[640px]">
                 <img
                   src={landingMockup.url}
                   alt="National Geographic Kids landing page mockup"
                   className="block w-full h-auto select-none"
-                  style={{ filter: "drop-shadow(0 36px 60px rgba(20,20,22,.22))" }}
+                  style={{ filter: "drop-shadow(0 30px 54px rgba(20,20,22,.20))" }}
                 />
               </div>
             </div>
-            <div className="col-span-12 lg:col-span-4 order-2">
+            <div className="col-span-12 lg:col-span-5 order-2">
               <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
                 Landing Page Design
               </div>
@@ -397,16 +394,16 @@ function NatGeoKidsPage() {
                 From print to digital.
               </h3>
               <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
-                Designing digital experiences that supported products, subscriptions and audience engagement.
+                A landing page I designed to promote new issues and subscriptions to parents and educators. I led the layout, hierarchy and visual system — translating the magazine's editorial voice to the screen.
               </p>
             </div>
           </article>
 
           {/* Secondary row — campaign materials */}
-          <div className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
             {[
-              { title: "Young Magazine — Email Campaign", body: "Launch announcement for the new Young magazine, distributed to subscribers.", image: emailYoung.url, alt: "Young magazine email campaign" },
-              { title: "Subscriber Promotion", body: "Promotional email designed to drive subscription renewals and new sign-ups.", image: emailNgk.url, alt: "National Geographic Kids subscriber email" },
+              { title: "Young — Launch Email", body: "Launch announcement for the new Young magazine. I designed the email to introduce the title to existing subscribers and educators.", image: emailYoung.url, alt: "Young magazine launch email" },
+              { title: "Subscriber Renewal Email", body: "A separate campaign aimed at lapsed and returning readers — I built the layout and visual system to drive renewals without losing the editorial tone.", image: emailNgk.url, alt: "National Geographic Kids subscriber renewal email" },
             ].map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden">
                 <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-6">
@@ -419,10 +416,10 @@ function NatGeoKidsPage() {
                   />
                 </div>
                 <div className="border-t border-hairline p-6 md:p-7">
-                  <h4 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                  <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
                     {card.title}
-                  </h4>
-                  <p className="mt-3 font-sans text-[15px] leading-[1.55] text-ink-muted max-w-[42ch]">
+                  </h3>
+                  <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[42ch]">
                     {card.body}
                   </p>
                 </div>
@@ -432,7 +429,7 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
-      {/* ───── 06 — MY ROLE ───── */}
+      {/* ───── Behind the work ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-10 md:gap-14 items-center">
@@ -450,20 +447,20 @@ function NatGeoKidsPage() {
 
             {/* Right — copy + metrics */}
             <div className="col-span-12 lg:col-span-6">
-              <SectionLabel n="06" label="My Role" />
-              <h2 className="mt-6 font-serif text-[clamp(34px,4.4vw,60px)] leading-[1.02] tracking-[-0.025em] max-w-[14ch]">
-                My Role.
+              <SectionLabel label="Behind the work" />
+              <h2 className="mt-6 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-[16ch]">
+                Four years inside National Geographic Kids.
               </h2>
               <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-xl">
-                For more than four years I helped shape the visual experience of National Geographic Kids Israel across print, products and digital platforms.
+                I joined as the lead designer and stayed for more than four years. I was responsible for the magazine's visual language, the products that grew around it and the campaigns that brought new readers to the brand.
               </p>
 
-              <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-xl">
+              <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-xl">
                 {[
-                  { k: "4+ Years", v: "Editorial Design" },
-                  { k: "Dozens of Issues", v: "Magazine Production" },
-                  { k: "Print & Digital", v: "Cross-Platform Design" },
-                  { k: "Educational Products", v: "Brand Extensions" },
+                  { k: "50+ Issues", v: "Designed end-to-end" },
+                  { k: "4 Years", v: "Lead designer on the brand" },
+                  { k: "12+ Products", v: "Games, bookmarks, packaging" },
+                  { k: "Print + Digital", v: "Magazine, web and email" },
                 ].map((m) => (
                   <div key={m.k} className="border-t border-hairline pt-4">
                     <dt className="font-serif text-[26px] leading-[1.1] tracking-[-0.02em]">
@@ -480,41 +477,38 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
-      {/* ───── 07 — DESIGNING FOR CURIOUS MINDS ───── */}
+      {/* ───── Principles ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
             <div className="col-span-12 md:col-span-3">
-              <SectionLabel n="07" label="Principles" />
+              <SectionLabel label="What I took from it" />
             </div>
             <div className="col-span-12 md:col-span-9">
               <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
                 Designing for curious minds.
               </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
-                National Geographic Kids presented a unique challenge: making educational content feel exciting, approachable and memorable.
+              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
+                Four years of designing for kids reshaped how I approach every project. Three lessons stayed with me.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
-              { title: "Make complex ideas approachable.", body: "Transforming science, history and nature into engaging visual stories." },
-              { title: "Create experiences, not pages.", body: "Extending the brand through products, games, campaigns and physical experiences." },
-              { title: "Keep curiosity at the center.", body: "Design choices that encouraged discovery, learning and exploration." },
-            ].map((card, i) => (
+              { title: "Clarity beats cleverness.", body: "When the reader is nine years old, every layout decision has to earn its place. I learned to strip away anything that didn't help the story land." },
+              { title: "A brand lives off the page.", body: "The magazine was the anchor, but the real brand was the card game in a kid's hand and the bookmark on their desk. I started designing for the object, not the spread." },
+              { title: "Respect the reader.", body: "Kids notice when something is talking down to them. I held the same editorial standard for a children's cover as I would for any adult magazine." },
+            ].map((card) => (
               <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-paper p-7 md:p-9 rounded-sm min-h-[280px]">
-                <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
-                  Principle 0{i + 1}
-                </div>
-                <div className="mt-10">
-                  <h3 className="font-serif text-[26px] leading-[1.1] tracking-[-0.015em] max-w-[20ch]">
+                <div>
+                  <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em] max-w-[20ch]">
                     {card.title}
                   </h3>
-                  <p className="mt-5 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[32ch]">
+                </div>
+                <p className="mt-6 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[34ch]">
                     {card.body}
                   </p>
-                </div>
               </article>
             ))}
           </div>
