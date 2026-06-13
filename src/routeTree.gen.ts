@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkNewDirectionRouteImport } from './routes/work.new-direction'
 import { Route as WorkNationalGeographicKidsRouteImport } from './routes/work.national-geographic-kids'
 import { Route as WorkGamingProductDesignRouteImport } from './routes/work.gaming-product-design'
+import { Route as WorkBiblicalZooRouteImport } from './routes/work.biblical-zoo'
 import { Route as WorkAsaflezetRouteImport } from './routes/work.asaflezet'
 
 const IndexRoute = IndexRouteImport.update({
@@ -36,6 +37,11 @@ const WorkGamingProductDesignRoute = WorkGamingProductDesignRouteImport.update({
   path: '/work/gaming-product-design',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkBiblicalZooRoute = WorkBiblicalZooRouteImport.update({
+  id: '/work/biblical-zoo',
+  path: '/work/biblical-zoo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkAsaflezetRoute = WorkAsaflezetRouteImport.update({
   id: '/work/asaflezet',
   path: '/work/asaflezet',
@@ -45,6 +51,7 @@ const WorkAsaflezetRoute = WorkAsaflezetRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
+  '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
   '/work/national-geographic-kids': typeof WorkNationalGeographicKidsRoute
   '/work/new-direction': typeof WorkNewDirectionRoute
@@ -52,6 +59,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
+  '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
   '/work/national-geographic-kids': typeof WorkNationalGeographicKidsRoute
   '/work/new-direction': typeof WorkNewDirectionRoute
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
+  '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
   '/work/national-geographic-kids': typeof WorkNationalGeographicKidsRoute
   '/work/new-direction': typeof WorkNewDirectionRoute
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/work/asaflezet'
+    | '/work/biblical-zoo'
     | '/work/gaming-product-design'
     | '/work/national-geographic-kids'
     | '/work/new-direction'
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/work/asaflezet'
+    | '/work/biblical-zoo'
     | '/work/gaming-product-design'
     | '/work/national-geographic-kids'
     | '/work/new-direction'
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/work/asaflezet'
+    | '/work/biblical-zoo'
     | '/work/gaming-product-design'
     | '/work/national-geographic-kids'
     | '/work/new-direction'
@@ -91,6 +103,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   WorkAsaflezetRoute: typeof WorkAsaflezetRoute
+  WorkBiblicalZooRoute: typeof WorkBiblicalZooRoute
   WorkGamingProductDesignRoute: typeof WorkGamingProductDesignRoute
   WorkNationalGeographicKidsRoute: typeof WorkNationalGeographicKidsRoute
   WorkNewDirectionRoute: typeof WorkNewDirectionRoute
@@ -126,6 +139,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkGamingProductDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/biblical-zoo': {
+      id: '/work/biblical-zoo'
+      path: '/work/biblical-zoo'
+      fullPath: '/work/biblical-zoo'
+      preLoaderRoute: typeof WorkBiblicalZooRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/asaflezet': {
       id: '/work/asaflezet'
       path: '/work/asaflezet'
@@ -139,6 +159,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   WorkAsaflezetRoute: WorkAsaflezetRoute,
+  WorkBiblicalZooRoute: WorkBiblicalZooRoute,
   WorkGamingProductDesignRoute: WorkGamingProductDesignRoute,
   WorkNationalGeographicKidsRoute: WorkNationalGeographicKidsRoute,
   WorkNewDirectionRoute: WorkNewDirectionRoute,
