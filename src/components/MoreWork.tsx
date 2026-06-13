@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import zoo from "@/assets/zoo.jpg";
 import asaflezet from "@/assets/asaflezet.jpg";
 import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
 import ngkCoverTitanicAsset from "@/assets/ngk-cover-titanic.png.asset.json";
 import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
+import bzAfterMapAsset from "@/assets/bz-after-map.jpg.asset.json";
 
 const natgeo = ngkCoverTitanicAsset.url;
 const superplay = gpdPiratePopupAsset.url;
+const zoo = bzAfterMapAsset.url;
 
 type Slug =
   | "new-direction"
