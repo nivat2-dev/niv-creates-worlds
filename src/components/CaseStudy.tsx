@@ -11,6 +11,7 @@ export type CaseStudyProps = {
   year: string;
   client: string;
   role: string;
+  roleDetail: string;
   disciplines: string[];
   hero: { src: string; alt: string };
   overview: string;
