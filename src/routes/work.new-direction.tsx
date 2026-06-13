@@ -13,7 +13,7 @@ export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
     meta: [
       { title: "New Direction — Design Case Study · Niv Haviv" },
-      { name: "description", content: "A multidisciplinary design case study: writing, illustration, character systems, custom typography, editorial design and print production — taken from blank page to printed book by a single author." },
+      { name: "description", content: "New Direction — a 180-page graphic novel written, illustrated, designed and prepared for print by a single creator." },
       { property: "og:image", content: bookCover.url },
     ],
   }),
