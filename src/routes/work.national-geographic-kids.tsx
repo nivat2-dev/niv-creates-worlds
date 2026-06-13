@@ -480,6 +480,47 @@ function NatGeoKidsPage() {
         </div>
       </section>
 
+      {/* ───── 07 — DESIGNING FOR CURIOUS MINDS ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
+            <div className="col-span-12 md:col-span-3">
+              <SectionLabel n="07" label="Principles" />
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+                Designing for curious minds.
+              </h2>
+              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-2xl">
+                National Geographic Kids presented a unique challenge: making educational content feel exciting, approachable and memorable.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              { title: "Make complex ideas approachable.", body: "Transforming science, history and nature into engaging visual stories." },
+              { title: "Create experiences, not pages.", body: "Extending the brand through products, games, campaigns and physical experiences." },
+              { title: "Keep curiosity at the center.", body: "Design choices that encouraged discovery, learning and exploration." },
+            ].map((card, i) => (
+              <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-paper p-7 md:p-9 rounded-sm min-h-[280px]">
+                <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                  Principle 0{i + 1}
+                </div>
+                <div className="mt-10">
+                  <h3 className="font-serif text-[26px] leading-[1.1] tracking-[-0.015em] max-w-[20ch]">
+                    {card.title}
+                  </h3>
+                  <p className="mt-5 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[32ch]">
+                    {card.body}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <MoreWork currentSlug="national-geographic-kids" />
     </main>
   );
