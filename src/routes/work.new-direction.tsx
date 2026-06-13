@@ -12,6 +12,7 @@ import sparkCoral from "@/assets/nd-spark-coral.png.asset.json";
 import sparkNavy from "@/assets/nd-spark-navy.png.asset.json";
 import starCream from "@/assets/nd-star-cream.png.asset.json";
 import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
+import nivCreator from "@/assets/niv-creator.jpg.asset.json";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -267,35 +268,38 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 05 — MY ROLE ───── */}
-      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <Reveal>
-            <SectionLabel n="05" label="My Role" />
-            <h2 className="mt-6 font-serif text-4xl md:text-[60px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
-              Written, illustrated, designed and <span className="italic text-coral">prepared for print</span>.
-            </h2>
+      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-20 md:py-28">
+        <div className="mx-auto max-w-[1300px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
+          <Reveal className="col-span-12 md:col-span-6">
+            <div className="mx-auto max-w-[520px]">
+              <img
+                src={nivCreator.url}
+                alt="Niv Haviv illustrating New Direction"
+                loading="lazy"
+                className="block w-full h-auto rounded-sm"
+                style={{ filter: "drop-shadow(0 24px 48px rgba(20,20,22,.18))" }}
+              />
+            </div>
           </Reveal>
 
-          <div className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { t: "Writer", d: "Created the story, characters and narrative structure." },
-              { t: "Illustrator", d: "Illustrated more than 300 pages by hand." },
-              { t: "Book Designer", d: "Designed the reading experience, layouts and cover." },
-              { t: "Lettering", d: "Created the chapter lettering system." },
-              { t: "Creative Direction", d: "Defined the project's visual identity." },
-              { t: "Print Production", d: "Prepared the book for publication." },
-            ].map((r, i) => (
-              <Reveal key={r.t} delay={i * 60}>
-                <div className="h-full bg-paper border border-hairline rounded-sm p-8 md:p-10">
-                  <div className="flex items-center gap-3 font-sans text-[12px] text-ink-muted">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-                    <span>0{i + 1}</span>
-                  </div>
-                  <h3 className="mt-5 font-serif text-2xl md:text-[28px] leading-tight tracking-[-0.02em]">{r.t}</h3>
-                  <p className="mt-3 text-ink-muted leading-relaxed">{r.d}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="col-span-12 md:col-span-6">
+            <Reveal><SectionLabel n="05" label="The Creator" /></Reveal>
+            <Reveal delay={120}>
+              <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+                Created by one creator.
+              </h2>
+            </Reveal>
+            <Reveal delay={220}>
+              <div className="mt-6 space-y-5 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-lg">
+                <p>New Direction was written, illustrated, designed and prepared for print by Niv Haviv.</p>
+                <p>More than 300 pages created over several years, from the first sketch to the final print-ready book.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={320}>
+              <p className="mt-8 font-sans text-[13px] text-ink-muted">
+                300 pages · Graphic Novel · 2026
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
