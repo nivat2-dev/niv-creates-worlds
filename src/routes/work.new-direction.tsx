@@ -3,22 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
-import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
 import ariehRoyKiss from "@/assets/nd-kiss.png.asset.json";
-import palette from "@/assets/nd-palette.png.asset.json";
-import poster from "@/assets/nd-poster.png.asset.json";
-import logoEn from "@/assets/nd-logo-en.png.asset.json";
-import logoHe from "@/assets/nd-logo-he.png.asset.json";
 import diamondTeal from "@/assets/nd-diamond-teal.png.asset.json";
 import diamondGreen from "@/assets/nd-diamond-green.png.asset.json";
 import sparkCoral from "@/assets/nd-spark-coral.png.asset.json";
-import sparkOlive from "@/assets/nd-spark-olive.png.asset.json";
 import sparkNavy from "@/assets/nd-spark-navy.png.asset.json";
 import starCream from "@/assets/nd-star-cream.png.asset.json";
 import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
-import circleNavy from "@/assets/nd-circle-navy.png.asset.json";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -227,73 +220,47 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 04 — VISUAL LANGUAGE ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+      <section className="relative isolate overflow-hidden bg-paper py-20 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="04" label="Visual Language" />
-            <h2 className="mt-6 font-serif text-4xl md:text-[60px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
-              A complete <span className="italic text-coral">graphic identity</span>.
+            <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+              The visual identity.
             </h2>
           </Reveal>
 
-          {/* Logos */}
+          {/* Curated palette — 7 key colours */}
           <Reveal delay={120}>
-            <div className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="bg-cream border border-hairline rounded-sm p-10 md:p-14 flex items-center justify-center min-h-[220px]">
-                <img src={logoEn.url} alt="New Direction — English logo" className="block w-auto h-auto max-w-full max-h-[140px]" />
-              </div>
-              <div className="bg-cream border border-hairline rounded-sm p-10 md:p-14 flex items-center justify-center min-h-[220px]">
-                <img src={logoHe.url} alt="New Direction — Hebrew logo" className="block w-auto h-auto max-w-full max-h-[140px]" />
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Color palette */}
-          <Reveal delay={160}>
-            <div className="mt-10 md:mt-12">
-              <img
-                src={palette.url}
-                alt="New Direction — color palette"
-                className="block w-full h-auto rounded-sm mx-auto"
-                style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.10))" }}
-              />
-              <Caption>Color palette · cream, turquoise &amp; coral</Caption>
-            </div>
-          </Reveal>
-
-          {/* Motifs */}
-          <Reveal delay={200}>
-            <div className="mt-12 md:mt-16 grid grid-cols-4 md:grid-cols-8 gap-4 md:gap-6">
+            <div className="mt-10 md:mt-12 grid grid-cols-7 gap-2 md:gap-3 max-w-[820px]">
               {[
-                { src: diamondTeal.url,  label: "Diamond" },
-                { src: diamondGreen.url, label: "Gem" },
-                { src: sparkCoral.url,   label: "Spark" },
-                { src: starCream.url,    label: "Star" },
-                { src: sparkOlive.url,   label: "Spark" },
-                { src: circleTurq.url,   label: "Circle" },
-                { src: circleNavy.url,   label: "Circle" },
-                { src: sparkNavy.url,    label: "Spark" },
-              ].map((m) => (
-                <div key={m.label + m.src} className="flex flex-col items-center">
-                  <div className="aspect-square w-full bg-cream border border-hairline rounded-sm flex items-center justify-center p-5 md:p-7">
-                    <img src={m.src} alt={m.label} loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
-                  </div>
-                  <p className="mt-2 font-sans text-[11px] text-ink-muted">{m.label}</p>
-                </div>
+                "#F2E7CE", // cream
+                "#E7B6A3", // blush
+                "#E36B4A", // coral
+                "#C2B26A", // olive
+                "#3CA9A1", // turquoise
+                "#1F4F5C", // deep teal
+                "#1B1F2A", // ink
+              ].map((hex) => (
+                <div key={hex} className="aspect-square rounded-sm border border-hairline" style={{ background: hex }} />
               ))}
             </div>
           </Reveal>
 
-          {/* Poster */}
-          <Reveal delay={240}>
-            <div className="mt-14 md:mt-20">
-              <img
-                src={poster.url}
-                alt="New Direction — visual language assembled"
-                className="block w-full h-auto rounded-sm mx-auto max-w-[1200px]"
-                style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }}
-              />
-              <Caption>Poster · the visual language assembled</Caption>
+          {/* Icon system — uniform grid, no labels */}
+          <Reveal delay={180}>
+            <div className="mt-8 md:mt-10 grid grid-cols-6 gap-2 md:gap-3 max-w-[820px]">
+              {[
+                diamondTeal.url,
+                diamondGreen.url,
+                sparkCoral.url,
+                starCream.url,
+                circleTurq.url,
+                sparkNavy.url,
+              ].map((src) => (
+                <div key={src} className="aspect-square bg-cream border border-hairline rounded-sm flex items-center justify-center p-5">
+                  <img src={src} alt="" aria-hidden loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
@@ -341,23 +308,6 @@ function NewDirectionPage() {
             <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
               A graphic novel <span className="italic text-coral">years in the making</span>.
             </h2>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="mt-12 md:mt-16 grid grid-cols-12 gap-8 items-center">
-              <div className="col-span-12 md:col-span-4 flex justify-center md:justify-end">
-                <img
-                  src={ariehRoyCircle.url}
-                  alt="Arieh and Roy"
-                  loading="lazy"
-                  className="block w-full h-auto max-w-[240px] rounded-full"
-                  style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.16))" }}
-                />
-              </div>
-              <p className="col-span-12 md:col-span-7 font-serif text-2xl md:text-[28px] leading-[1.3] tracking-[-0.01em] text-ink max-w-xl">
-                Arieh &amp; Roy — a connection that grows from grief, not romance alone.
-              </p>
-            </div>
           </Reveal>
 
           <div className="mt-14 md:mt-20 flex justify-center">
