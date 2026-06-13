@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
@@ -7,6 +7,7 @@ import necklace from "@/assets/necklace.png";
 import natgeo from "@/assets/natgeo.jpg";
 import superplay from "@/assets/superplay.jpg";
 import zoo from "@/assets/zoo.jpg";
+import asaflezet from "@/assets/asaflezet.jpg";
 
 const portrait = portraitAsset.url;
 const bookCover = bookCoverAsset.url;
@@ -239,6 +240,7 @@ type Project = {
   body: string;
   image: string;
   alt: string;
+  to: string;
   layout?: "hero" | "left" | "right";
 };
 
@@ -252,29 +254,44 @@ const projects: Project[] = [
       "Spreads, infographics and characters designed for young readers — translating science and wildlife into images that invite curiosity.",
     image: natgeo,
     alt: "National Geographic Kids editorial spreads",
+    to: "/work/national-geographic-kids",
     layout: "right",
   },
   {
     index: "02",
-    title: "SuperPlay",
+    title: "Gaming & Product",
     tagline: "Product & UI design for a mobile gaming studio.",
     tags: ["Product", "UI", "Game"],
     body:
       "Game interfaces, in-app economies and visual systems for a fast-moving mobile studio — designed to feel tactile, playful and clear in the hand.",
     image: superplay,
     alt: "SuperPlay mobile game UI screens",
+    to: "/work/gaming-product-design",
     layout: "left",
   },
   {
     index: "03",
-    title: "Biblical Zoo",
+    title: "Biblical Zoo Treasure Map",
     tagline: "An illustrated identity for a place full of stories.",
     tags: ["Identity", "Wayfinding", "Illustration"],
     body:
       "Illustrated mascots, signage and a friendly visual system for one of Jerusalem’s most beloved cultural spaces.",
     image: zoo,
     alt: "Biblical Zoo identity and signage",
+    to: "/work/biblical-zoo",
     layout: "right",
+  },
+  {
+    index: "04",
+    title: "Asaflezet",
+    tagline: "A complete brand world — quiet, warm, distinctly its own.",
+    tags: ["Brand", "Identity", "Art Direction"],
+    body:
+      "Identity, packaging and photography direction — a full sensory brand built around a single quiet idea.",
+    image: asaflezet,
+    alt: "Asaflezet brand identity",
+    to: "/work/asaflezet",
+    layout: "left",
   },
 ];
 
