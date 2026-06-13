@@ -54,8 +54,9 @@ const PROJECTS: { slug: Slug; to: string; title: string; subtitle: string; image
   },
 ];
 
-export default function MoreWork({ currentSlug }: { currentSlug: Slug }) {
-  const others = PROJECTS.filter((p) => p.slug !== currentSlug).slice(0, 3);
+export default function MoreWork({ currentSlug, limit = 3 }: { currentSlug: Slug; limit?: number }) {
+  const others = PROJECTS.filter((p) => p.slug !== currentSlug).slice(0, limit);
+  const cols = others.length >= 4 ? "md:grid-cols-4" : "md:grid-cols-3";
   return (
     <section className="bg-paper border-t border-hairline py-20 md:py-28">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
@@ -63,7 +64,7 @@ export default function MoreWork({ currentSlug }: { currentSlug: Slug }) {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">More Selected Work</p>
           <Link to="/" className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted hover:text-ink transition-colors">Index →</Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className={`grid grid-cols-1 ${cols} gap-6 md:gap-8`}>
           {others.map((p) => (
             <Link
               key={p.slug}
