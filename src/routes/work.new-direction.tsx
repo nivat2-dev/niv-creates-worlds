@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup.jpg.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
@@ -77,30 +77,6 @@ function MiniNav() {
         </Link>
       </div>
     </header>
-  );
-}
-
-/* decorative motif — comic-book graphic */
-function Motif({
-  src, size = 64, top, left, right, bottom, rotate = 0, opacity = 1, className = "",
-}: {
-  src: string; size?: number;
-  top?: number | string; left?: number | string; right?: number | string; bottom?: number | string;
-  rotate?: number; opacity?: number; className?: string;
-}) {
-  const style: CSSProperties = {
-    width: size, height: size, top, left, right, bottom, opacity,
-    transform: `rotate(${rotate}deg)`,
-  };
-  return (
-    <img
-      src={src}
-      alt=""
-      aria-hidden
-      loading="lazy"
-      className={`pointer-events-none absolute select-none -z-10 ${className}`}
-      style={style}
-    />
   );
 }
 
