@@ -3,14 +3,15 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup.png.asset.json";
-import pagesCollage from "@/assets/nd-pages-collage.png.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
 import kiss from "@/assets/nd-kiss.png.asset.json";
-import beach from "@/assets/nd-beach.jpg.asset.json";
 import water from "@/assets/nd-water.jpg.asset.json";
-import poster from "@/assets/nd-poster.png.asset.json";
 import logoEn from "@/assets/nd-logo-en.png.asset.json";
 import logoHe from "@/assets/nd-logo-he.png.asset.json";
+import processCharacters from "@/assets/nd-process-characters.jpg";
+import processLayouts from "@/assets/nd-process-layouts.jpg";
+import processType from "@/assets/nd-process-type.jpg";
+import processPrint from "@/assets/nd-process-print.jpg";
 
 export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
@@ -172,40 +173,82 @@ function NewDirectionPage() {
         </div>
       </section>
 
-      {/* CHALLENGE — tight, with a small accent image pair */}
-      <section className="bg-paper-deep py-24 md:py-32">
+      {/* ANCHOR 1 — Jerusalem walking scene (square hero with caption rail) */}
+      <section className="bg-paper-deep py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-center">
-          <div className="col-span-12 md:col-span-3"><SectionLabel n="03">Challenge</SectionLabel></div>
-          <Reveal className="col-span-12 md:col-span-6">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1] tracking-[-0.035em] text-ink">
-              Make a self-published debut feel as considered as a major publisher release — visually, narratively and physically.
-            </h2>
+          <Reveal className="col-span-12 md:col-span-8">
+            <Frame src={jerusalemWalk.url} alt="Two characters walking through a Jerusalem street" ratio="1/1" />
           </Reveal>
-          <Reveal delay={120} className="col-span-12 md:col-span-3">
-            <Frame src={kiss.url} alt="Character study — the kiss" ratio="1/1" />
+          <Reveal delay={120} className="col-span-12 md:col-span-4">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise-deep">Chapter 03 · Jerusalem</p>
+            <p className="mt-6 font-serif text-2xl md:text-[28px] leading-[1.2] tracking-[-0.02em] text-ink">
+              "Two strangers, one street. The first walk that changes everything."
+            </p>
+            <p className="mt-6 text-ink-muted text-sm leading-relaxed max-w-sm">
+              Architectural backgrounds were hand-inked panel-by-panel — the city is a character, not a backdrop.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      {/* PROCESS — text rows + a paired process image strip */}
-      <section className="bg-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 mb-14">
-          <div className="col-span-12 md:col-span-3"><SectionLabel n="04">Process</SectionLabel></div>
+      {/* 03 — STORY & WORLD (compact) */}
+      <section className="bg-paper py-24 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-start">
+          <div className="col-span-12 md:col-span-3"><SectionLabel n="03">Story &amp; World</SectionLabel></div>
           <Reveal className="col-span-12 md:col-span-9">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1] tracking-[-0.035em] text-ink">How it came together.</h2>
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1] tracking-[-0.035em] text-ink max-w-3xl">
+              Make a self-published debut feel as considered as a major publisher release — visually, narratively and physically.
+            </h2>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 04 — CRAFT & PROCESS (sketches, layouts, type, print) */}
+      <section className="bg-paper py-20 md:py-24 border-t border-hairline">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 mb-12">
+          <div className="col-span-12 md:col-span-3"><SectionLabel n="04">Craft &amp; Process</SectionLabel></div>
+          <Reveal className="col-span-12 md:col-span-9 flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1] tracking-[-0.035em] text-ink max-w-2xl">
+              From character sketch to printer's proof.
+            </h2>
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-turquoise-deep">Sketch · Layout · Type · Print</p>
           </Reveal>
         </div>
 
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10">
-          {/* Left: process steps */}
+        {/* Process imagery: characters as hero, layouts & type paired, print medium */}
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-4 md:gap-6">
+          <Reveal className="col-span-12 lg:col-span-7">
+            <Frame src={processCharacters} alt="Character development sheet" ratio="1/1" />
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+              <span className="text-turquoise-deep">▸</span> Character development sheet · graphite &amp; ink
+            </p>
+          </Reveal>
+          <div className="col-span-12 lg:col-span-5 grid grid-cols-1 gap-4 md:gap-6">
+            <Reveal delay={80}>
+              <Frame src={processLayouts} alt="Page layout thumbnails" ratio="4/3" />
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+                <span className="text-turquoise-deep">▸</span> Page layout planning · panel thumbnails
+              </p>
+            </Reveal>
+            <Reveal delay={140}>
+              <Frame src={processType} alt="Hebrew custom lettering exploration" ratio="4/3" />
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+                <span className="text-turquoise-deep">▸</span> Custom Hebrew lettering · chapter openers
+              </p>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Process steps — text, supported by print photo */}
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-16 md:mt-20 grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 lg:col-span-7">
             <div className="border-t border-hairline">
               {[
                 { step: "01", title: "Story & world", body: "Beat sheet, character arcs and the pendant as the story's emotional engine. Tone over plot — quiet, hopeful, a little strange." },
-                { step: "02", title: "Visual language", body: "Muted paper, deep ink, one signal color. Every panel respects this restraint — the world breathes." },
-                { step: "03", title: "Panels", body: "Hand-painted spreads, scanned and composited. Hundreds of panels, each its own composition before being woven into the page." },
-                { step: "04", title: "Typography & layout", body: "Custom Hebrew lettering for chapter openers; Fraunces for body. Page grids tuned to the reading pace of each scene." },
-                { step: "05", title: "Print", body: "Paper stock, ink coverage, spine treatment and a turquoise accent on the cover. An object, not a product." },
+                { step: "02", title: "Character & visual language", body: "Hundreds of sketches narrowed to a cast of seven. Muted paper, deep ink, one signal color — turquoise — used as a narrative thread." },
+                { step: "03", title: "Panels & spreads", body: "Hand-drawn pages, scanned and composited. Each panel composed in isolation, then woven into the page rhythm." },
+                { step: "04", title: "Typography & layout", body: "Custom Hebrew lettering for chapter openers; a refined serif for body. Page grids tuned to the reading pace of each scene." },
+                { step: "05", title: "Print production", body: "Paper stock, ink coverage, signature folding, spine treatment, turquoise accent on the cover. Designed as an object, not a product." },
               ].map((s, i) => (
                 <Reveal key={i} delay={i * 60} className="grid grid-cols-12 gap-4 border-b border-hairline py-6">
                   <div className="col-span-2 font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise-deep pt-1">{s.step}</div>
@@ -218,84 +261,106 @@ function NewDirectionPage() {
             </div>
           </div>
 
-          {/* Right: paired process imagery, properly sized */}
-          <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-4 self-start lg:sticky lg:top-24">
-            <Reveal className="col-span-2"><Frame src={pagesCollage.url} alt="Six-page panel composition sheet" ratio="1/1" /></Reveal>
-            <Reveal delay={80}><Frame src={jerusalemWalk.url} alt="Walking through Jerusalem — panel" ratio="1/1" /></Reveal>
-            <Reveal delay={140}><Frame src={beach.url} alt="Beach promenade — panel" ratio="1/1" /></Reveal>
-          </div>
+          <Reveal delay={120} className="col-span-12 lg:col-span-5 lg:sticky lg:top-24 self-start">
+            <Frame src={processPrint} alt="Printer's proof with signatures and turquoise paper swatch" ratio="1/1" />
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+              <span className="text-turquoise-deep">▸</span> Print proof · signatures &amp; turquoise stock
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* OUTCOME */}
+      {/* ANCHOR 2 — Water + Kiss, paired emotional pinnacles */}
+      <section className="bg-paper-deep py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-10 grid grid-cols-12 gap-6 md:gap-10">
+          <div className="col-span-12 md:col-span-3"><SectionLabel n="05">Anchor scenes</SectionLabel></div>
+          <div className="col-span-12 md:col-span-9">
+            <p className="font-serif text-2xl md:text-[28px] leading-[1.2] tracking-[-0.02em] text-ink max-w-2xl">
+              Two moments the book is built around — stillness and surrender.
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-4 md:gap-6">
+          <Reveal className="col-span-12 md:col-span-7">
+            <Frame src={water.url} alt="Bird's-eye view of the protagonist floating in the sea" ratio="1/1" />
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+              <span className="text-turquoise-deep">▸</span> Floating · bird's-eye · Chapter 06
+            </p>
+          </Reveal>
+          <Reveal delay={100} className="col-span-12 md:col-span-5">
+            <Frame src={kiss.url} alt="The kiss — vertical character composition" ratio="4/5" />
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+              <span className="text-turquoise-deep">▸</span> The kiss · Chapter 07
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 06 — THE OBJECT (book mockup + cover) */}
+      <section className="bg-paper py-24 md:py-32">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-10 grid grid-cols-12 gap-6 md:gap-10">
+          <div className="col-span-12 md:col-span-3"><SectionLabel n="06">The Object</SectionLabel></div>
+          <Reveal className="col-span-12 md:col-span-9">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1] tracking-[-0.035em] text-ink max-w-3xl">
+              180 pages, hardbound, with a turquoise accent on the cover.
+            </h2>
+          </Reveal>
+        </div>
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-4 md:gap-6 items-start">
+          <Reveal className="col-span-12 md:col-span-8">
+            <Frame src={bookMockup.url} alt="Open book — printed interior spread" ratio="4/3" />
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+              <span className="text-turquoise-deep">▸</span> Printed interior spread · pp. 156–157
+            </p>
+          </Reveal>
+          <Reveal delay={120} className="col-span-12 md:col-span-4">
+            <Frame src={bookCover.url} alt="New Direction — printed cover (3D mockup)" ratio="3/4" />
+            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+              <span className="text-turquoise-deep">▸</span> Printed cover · Book 1
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 07 — OUTCOME (rewritten — meaningful, not decorative) */}
       <section className="bg-ink text-paper py-24 md:py-32">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/60">(05) — Outcome</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise">(07) — Outcome</p>
           </div>
           <Reveal className="col-span-12 md:col-span-9">
-            <p className="font-serif text-2xl md:text-4xl leading-[1.2] tracking-[-0.025em] max-w-4xl">
-              A complete published graphic novel — sold through independent bookshops, exhibited at design festivals, and the founding artifact of the studio's storytelling work.
+            <p className="font-serif text-2xl md:text-[42px] leading-[1.15] tracking-[-0.025em] max-w-4xl">
+              A complete, self-published graphic novel — written, illustrated, lettered, designed and produced by one person from a blank page to a bound book on the shelf.
             </p>
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-paper/15 pt-8">
-              {[
-                { value: "180", label: "Pages" },
-                { value: "300+", label: "Painted panels" },
-                { value: "1", label: "Pendant, hand-made" },
-                { value: "∞", label: "Re-reads" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="font-serif text-4xl md:text-5xl text-turquoise tracking-[-0.04em]">{s.value}</div>
-                  <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/60">{s.label}</div>
-                </div>
-              ))}
+
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 border-t border-turquoise/30 pt-10">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise">In Print</p>
+                <p className="mt-3 font-serif text-xl leading-[1.3] tracking-[-0.015em]">
+                  Book 1 published in Hebrew, sold through independent bookshops in Tel Aviv, Jerusalem &amp; Haifa.
+                </p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise">Exhibited</p>
+                <p className="mt-3 font-serif text-xl leading-[1.3] tracking-[-0.015em]">
+                  Shown at independent comics festivals and design talks as a case study in single-author publishing.
+                </p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-turquoise">Scale</p>
+                <p className="mt-3 font-serif text-xl leading-[1.3] tracking-[-0.015em]">
+                  180 pages · 300+ hand-drawn panels · 1 custom Hebrew display face · 7 principal characters.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 flex items-center gap-4">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/70">
+                The founding artifact of the studio's storytelling work — Book 2 in development.
+              </p>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* GALLERY — bespoke editorial grid, sized for quality */}
-      <section className="bg-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-12 grid grid-cols-12 gap-6 md:gap-10">
-          <div className="col-span-12 md:col-span-3"><SectionLabel n="06">Gallery</SectionLabel></div>
-          <Reveal className="col-span-12 md:col-span-9 flex items-end justify-between gap-6">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1] tracking-[-0.035em] text-ink">Selected frames.</h2>
-            <p className="hidden md:block font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">Cover · Spreads · Panels · Characters</p>
-          </Reveal>
-        </div>
-
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 space-y-4 md:space-y-6">
-          {/* Row 1 — cover (tall, 4) + spread (8, landscape) */}
-          <div className="grid grid-cols-12 gap-4 md:gap-6">
-            <Reveal className="col-span-12 md:col-span-4">
-              <Frame src={bookCover.url} alt="New Direction — printed cover" ratio="3/4" />
-            </Reveal>
-            <Reveal delay={80} className="col-span-12 md:col-span-8">
-              <Frame src={bookMockup.url} alt="Open book — interior spread" ratio="4/3" />
-            </Reveal>
-          </div>
-
-          {/* Row 2 — collage (6, square) + two stacked squares (kiss/water) */}
-          <div className="grid grid-cols-12 gap-4 md:gap-6">
-            <Reveal className="col-span-12 md:col-span-6">
-              <Frame src={pagesCollage.url} alt="Six-page panel composition" ratio="1/1" />
-            </Reveal>
-            <div className="col-span-12 md:col-span-6 grid grid-cols-2 gap-4 md:gap-6">
-              <Reveal delay={60}><Frame src={kiss.url} alt="The kiss" ratio="1/1" /></Reveal>
-              <Reveal delay={120}><Frame src={water.url} alt="Floating — bird's-eye scene" ratio="1/1" /></Reveal>
-              <Reveal delay={180} className="col-span-2"><Frame src={beach.url} alt="Beach promenade" ratio="2/1" /></Reveal>
-            </div>
-          </div>
-
-          {/* Row 3 — jerusalem walk + poster (paired squares) */}
-          <div className="grid grid-cols-12 gap-4 md:gap-6">
-            <Reveal className="col-span-12 md:col-span-7">
-              <Frame src={jerusalemWalk.url} alt="Walking through Jerusalem" ratio="1/1" />
-            </Reveal>
-            <Reveal delay={80} className="col-span-12 md:col-span-5">
-              <Frame src={poster.url} alt="Character poster — Roi & Arie" ratio="1/1" />
-            </Reveal>
-          </div>
         </div>
       </section>
 
