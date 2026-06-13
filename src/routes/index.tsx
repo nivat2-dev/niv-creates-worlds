@@ -1,12 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import portrait from "@/assets/portrait.jpg";
-import bookCover from "@/assets/book-cover.jpg";
+import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
+import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
 import novelSpread from "@/assets/novel-spread.jpg";
-import pendant from "@/assets/pendant.png";
+import necklace from "@/assets/necklace.png";
 import natgeo from "@/assets/natgeo.jpg";
 import superplay from "@/assets/superplay.jpg";
 import zoo from "@/assets/zoo.jpg";
+
+const portrait = portraitAsset.url;
+const bookCover = bookCoverAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
