@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
-import pagesCollage from "@/assets/nd-pages-collage-v2.png.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
 import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
@@ -342,6 +341,23 @@ function NewDirectionPage() {
             <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
               A graphic novel <span className="italic text-coral">years in the making</span>.
             </h2>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="mt-12 md:mt-16 grid grid-cols-12 gap-8 items-center">
+              <div className="col-span-12 md:col-span-4 flex justify-center md:justify-end">
+                <img
+                  src={ariehRoyCircle.url}
+                  alt="Arieh and Roy"
+                  loading="lazy"
+                  className="block w-full h-auto max-w-[240px] rounded-full"
+                  style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.16))" }}
+                />
+              </div>
+              <p className="col-span-12 md:col-span-7 font-serif text-2xl md:text-[28px] leading-[1.3] tracking-[-0.01em] text-ink max-w-xl">
+                Arieh &amp; Roy — a connection that grows from grief, not romance alone.
+              </p>
+            </div>
           </Reveal>
 
           <div className="mt-14 md:mt-20 flex justify-center">
