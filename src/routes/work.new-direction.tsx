@@ -23,9 +23,9 @@ export const Route = createFileRoute("/work/new-direction")({
   head: () => ({
     meta: [
       { title: "New Direction — A Graphic Novel by Niv Haviv" },
-      { name: "description", content: "New Direction — a 300+ page graphic novel about grief, faith, identity and unexpected connection. Written & illustrated by Niv Haviv." },
+      { name: "description", content: "New Direction — a graphic novel born from a long silence. A story about grief, family secrets, faith, guilt, and the consequences of looking away. Written & illustrated by Niv Haviv." },
       { property: "og:title", content: "New Direction — A Graphic Novel" },
-      { property: "og:description", content: "A graphic novel about grief, faith, identity and unexpected connection." },
+      { property: "og:description", content: "A graphic novel born from a long silence. About grief, family secrets, faith, guilt, and the consequences of looking away." },
       { property: "og:image", content: bookCover.url },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: bookCover.url },
