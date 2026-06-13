@@ -68,11 +68,11 @@ function MiniNav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-6 flex items-center justify-between text-ink">
-        <Link to="/" className="flex items-center gap-2 font-mono text-[11px] tracking-[0.04em] uppercase">
+        <Link to="/" className="flex items-center gap-2 font-sans text-[12px] tracking-[0.02em]">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
           Niv Haviv
         </Link>
-        <Link to="/" className="font-mono text-[11px] uppercase tracking-[0.18em] hover:text-coral transition-colors">
+        <Link to="/" className="font-sans text-[12px] tracking-[0.02em] hover:text-coral transition-colors">
           ← Index
         </Link>
       </div>
@@ -82,7 +82,7 @@ function MiniNav() {
 
 function SectionLabel({ n, label }: { n: string; label: string }) {
   return (
-    <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
+    <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-ink-muted">
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
       <span>{n} — {label}</span>
     </div>
@@ -91,8 +91,8 @@ function SectionLabel({ n, label }: { n: string; label: string }) {
 
 function Caption({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
-      <span className="text-coral">▸</span> {children}
+    <p className="mt-3 font-sans text-[12px] text-ink-muted">
+      <span className="text-coral">·</span> {children}
     </p>
   );
 }
