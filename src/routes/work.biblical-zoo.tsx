@@ -51,37 +51,37 @@ const ROLE_TAGS = [
 const SOLUTION_CARDS = [
   {
     title: "Treasure Hunt Narrative",
-    body: "The visit becomes a journey rather than a route.",
+    body: "The visit becomes a story to follow, not a route to complete. Each stop adds a chapter.",
   },
   {
     title: "Color-Coded Trails",
-    body: "Three paths help visitors choose their level of challenge.",
+    body: "Three trails — short, medium and full — let families choose their own pace and challenge level.",
   },
   {
     title: "Animal Challenges",
-    body: "Riddles encourage interaction with exhibits.",
+    body: "Riddles tied to specific exhibits turn passive watching into active observation.",
   },
   {
     title: "Educational Discovery",
-    body: "Learning is embedded into exploration.",
+    body: "Facts are hidden inside the play, so learning happens without ever feeling like a lesson.",
   },
 ];
 
 const LESSONS = [
   {
     n: "01",
-    title: "Engagement Changes Behaviour",
-    body: "Visitors participate more when information becomes play.",
+    title: "Turn directions into rewards.",
+    body: "Once finding the next animal felt like uncovering treasure, families stopped asking where to go — they wanted to keep going.",
   },
   {
     n: "02",
-    title: "Clarity Enables Exploration",
-    body: "Simple navigation encourages deeper discovery.",
+    title: "Design for curiosity, not instructions.",
+    body: "The map gives just enough structure to start, and leaves enough mystery for kids to lead the way.",
   },
   {
     n: "03",
-    title: "Good UX Exists Beyond Screens",
-    body: "The same principles apply to physical environments.",
+    title: "The best educational tools don't feel educational.",
+    body: "When learning is wrapped inside a game, children absorb it without resistance — and parents enjoy the visit too.",
   },
 ];
 
