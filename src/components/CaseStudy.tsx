@@ -1,5 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import MoreWork from "@/components/MoreWork";
+
+type Slug =
+  | "new-direction"
+  | "national-geographic-kids"
+  | "gaming-product-design"
+  | "biblical-zoo"
+  | "asaflezet";
 
 export type CaseStudySection = { label: string; body: string };
 export type CaseStudyProps = {
@@ -21,6 +29,7 @@ export type CaseStudyProps = {
   outcomeStats?: { value: string; label: string }[];
   gallery: { src: string; alt: string; span?: "full" | "half" | "tall" }[];
   next: { to: string; label: string; index: string };
+  slug: Slug;
 };
 
 function useScrollY() {
