@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
 import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
-import pagesCollage from "@/assets/nd-pages-collage-v2.png.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
+import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
+import ariehRoyKiss from "@/assets/nd-kiss.png.asset.json";
 import palette from "@/assets/nd-palette.png.asset.json";
 import poster from "@/assets/nd-poster.png.asset.json";
 import logoEn from "@/assets/nd-logo-en.png.asset.json";
@@ -146,10 +147,10 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 02 — PROJECT OVERVIEW ───── */}
-      <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
+      <section className="relative isolate overflow-hidden bg-paper py-20 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
-            <div className="mx-auto max-w-[560px]">
+            <div className="mx-auto max-w-[620px]">
               <img
                 src={bookMockup.url}
                 alt="New Direction — open book mockup"
@@ -160,27 +161,23 @@ function NewDirectionPage() {
           </Reveal>
 
           <div className="col-span-12 md:col-span-5">
-            <Reveal><SectionLabel n="02" label="The Project" /></Reveal>
+            <Reveal><SectionLabel n="02" label="The Book" /></Reveal>
             <Reveal delay={120}>
-              <h2 className="mt-6 font-serif text-4xl md:text-[52px] leading-[0.98] tracking-[-0.035em]">
-                One creator. <span className="italic text-coral">One book</span>.
+              <h2 className="mt-6 font-serif text-3xl md:text-[40px] leading-[1.05] tracking-[-0.02em]">
+                A 300-page graphic novel.
               </h2>
             </Reveal>
             <Reveal delay={220}>
-              <p className="mt-6 text-ink-muted text-lg leading-relaxed max-w-md">
-                A graphic novel written, illustrated, designed and prepared for print by a single creator over several years.
+              <p className="mt-5 font-sans text-ink-muted text-[17px] leading-[1.55] max-w-md">
+                Written, illustrated and designed by Niv Haviv. Publishing in 2026.
               </p>
             </Reveal>
             <Reveal delay={320}>
-              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 font-sans text-[13px]">
+              <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 font-sans text-[13px]">
                 {[
-                  ["Writer", "Niv Haviv"],
-                  ["Illustrator", "Niv Haviv"],
-                  ["Designer", "Niv Haviv"],
                   ["Pages", "300+"],
                   ["Format", "Graphic Novel"],
                   ["Languages", "Hebrew · English"],
-                  ["Publishing", "2026"],
                   ["Audience", "Readers 16+"],
                 ].map(([k, v]) => (
                   <div key={k}>
@@ -195,32 +192,36 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 03 — INSIDE THE STORY ───── */}
-      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
+      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-y border-hairline py-20 md:py-24">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel n="03" label="Inside the Story" />
-            <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
-              The weight of <span className="italic text-coral">what is left unsaid</span>.
+            <h2 className="mt-5 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+              A story in three places.
             </h2>
           </Reveal>
 
-          <div className="mt-14 md:mt-20 space-y-16 md:space-y-24">
-            <Reveal>
-              <img src={pagesCollage.url} alt="Selected pages from New Direction" loading="lazy" className="block w-full h-auto mx-auto max-w-[1200px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
-              <Caption>Selected pages · grief, silence and unspoken truths</Caption>
-            </Reveal>
-
-            <Reveal>
-              <img src={beachScene.url} alt="Arieh and Roy on the beach" loading="lazy" className="block w-full h-auto mx-auto max-w-[1100px]" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.16))" }} />
-              <Caption>The beach · a meeting between two silences</Caption>
-            </Reveal>
-
-            <Reveal>
-              <div className="mx-auto max-w-[640px]">
-                <img src={ariehRoyCircle.url} alt="Arieh and Roy" loading="lazy" className="block w-full h-auto rounded-full" style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.18))" }} />
-              </div>
-              <Caption>Arieh &amp; Roy · connection that grows from grief, not romance alone</Caption>
-            </Reveal>
+          <div className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              { img: jerusalemWalk.url, title: "Jerusalem", line: "Faith. Family. Silence." },
+              { img: beachScene.url,    title: "Tel Aviv",  line: "Freedom. Grief. Change." },
+              { img: ariehRoyKiss.url,  title: "Connection", line: "A relationship born from loss." },
+            ].map((card, i) => (
+              <Reveal key={card.title} delay={i * 80}>
+                <article className="group">
+                  <div className="aspect-[4/3] w-full overflow-hidden bg-paper border border-hairline rounded-sm">
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      loading="lazy"
+                      className="block w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-5 font-serif text-2xl tracking-[-0.01em]">{card.title}</h3>
+                  <p className="mt-1.5 font-sans text-[15px] text-ink-muted leading-snug">{card.line}</p>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -340,6 +341,23 @@ function NewDirectionPage() {
             <h2 className="mt-6 font-serif text-4xl md:text-[64px] leading-[0.98] tracking-[-0.04em] max-w-3xl">
               A graphic novel <span className="italic text-coral">years in the making</span>.
             </h2>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="mt-12 md:mt-16 grid grid-cols-12 gap-8 items-center">
+              <div className="col-span-12 md:col-span-4 flex justify-center md:justify-end">
+                <img
+                  src={ariehRoyCircle.url}
+                  alt="Arieh and Roy"
+                  loading="lazy"
+                  className="block w-full h-auto max-w-[240px] rounded-full"
+                  style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.16))" }}
+                />
+              </div>
+              <p className="col-span-12 md:col-span-7 font-serif text-2xl md:text-[28px] leading-[1.3] tracking-[-0.01em] text-ink max-w-xl">
+                Arieh &amp; Roy — a connection that grows from grief, not romance alone.
+              </p>
+            </div>
           </Reveal>
 
           <div className="mt-14 md:mt-20 flex justify-center">
