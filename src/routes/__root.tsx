@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Niv Haviv — Visual Designer, Illustrator, Storyteller" },
+      { name: "description", content: "Niv Haviv designs products, stories and visual worlds — from graphic novels to digital products." },
+      { name: "author", content: "Niv Haviv" },
+      { property: "og:title", content: "Niv Haviv — Visual Designer, Illustrator, Storyteller" },
+      { property: "og:description", content: "Designing products, stories and visual worlds that people connect with." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
