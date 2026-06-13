@@ -7,6 +7,7 @@ import cards from "@/assets/ngk-cards.png.asset.json";
 import bookmarks from "@/assets/ngk-bookmarks.png.asset.json";
 import spread from "@/assets/ngk-spread.png.asset.json";
 import landing from "@/assets/ngk-landing.png.asset.json";
+import promoPoster from "@/assets/ngk-promo-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
@@ -45,6 +46,49 @@ function SectionLabel({ n, label }: { n: string; label: string }) {
 }
 
 function NatGeoKidsPage() {
+  const cardsList = [
+    {
+      title: "Magazine Design",
+      body: "Editorial layouts, covers, features and visual storytelling.",
+      image: coverTitanic.url,
+      alt: "National Geographic Kids magazine cover",
+      frameClassName: "max-w-[120px]",
+      imageClassName: "rounded-[2px]",
+    },
+    {
+      title: "Educational Products",
+      body: "Games, bookmarks, collectible items and reading tools.",
+      image: cards.url,
+      alt: "Educational products and collectible cards",
+      frameClassName: "max-w-[132px]",
+      imageClassName: "",
+    },
+    {
+      title: "Marketing Campaigns",
+      body: "Promotional materials, subscriber campaigns and launch assets.",
+      image: promoPoster.url,
+      alt: "National Geographic Kids marketing campaign poster",
+      frameClassName: "max-w-[108px]",
+      imageClassName: "rounded-[2px]",
+    },
+    {
+      title: "Digital Design",
+      body: "Landing pages and online experiences.",
+      image: landing.url,
+      alt: "National Geographic Kids landing page",
+      frameClassName: "max-w-[132px]",
+      imageClassName: "",
+    },
+    {
+      title: "Print Production",
+      body: "Preparing files, production workflows and collaboration with vendors.",
+      image: bookmarks.url,
+      alt: "Retail display stand for printed reading tools",
+      frameClassName: "max-w-[118px]",
+      imageClassName: "",
+    },
+  ];
+
   return (
     <main className="bg-cream text-ink">
       <MiniNav />
@@ -116,6 +160,54 @@ function NatGeoKidsPage() {
                 For more than four years I designed magazines, educational products, campaigns and visual experiences for thousands of young readers every month.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───── 02 — OVERVIEW ───── */}
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-16 md:py-20">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end">
+            <div className="col-span-12 md:col-span-3">
+              <SectionLabel n="02" label="More than a magazine" />
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
+                More than a magazine.
+              </h2>
+              <p className="mt-4 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-3xl">
+                National Geographic Kids was much more than a monthly publication.
+              </p>
+              <p className="mt-2 font-sans text-[17px] leading-[1.55] text-ink-muted max-w-3xl">
+                For over four years I worked across editorial design, educational products, marketing campaigns and print production.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 md:gap-5">
+            {cardsList.map((card) => (
+              <article key={card.title} className="flex h-full flex-col justify-between border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm min-h-[280px]">
+                <div>
+                  <div className="flex h-[112px] items-start">
+                    <div className={card.frameClassName}>
+                      <img
+                        src={card.image}
+                        alt={card.alt}
+                        loading="lazy"
+                        className={`block w-full h-auto object-contain ${card.imageClassName}`.trim()}
+                        style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
+                      />
+                    </div>
+                  </div>
+                  <h3 className="mt-6 font-serif text-[26px] leading-[1.05] tracking-[-0.015em]">
+                    {card.title}
+                  </h3>
+                </div>
+                <p className="mt-4 font-sans text-[15px] leading-[1.55] text-ink-muted max-w-[24ch]">
+                  {card.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
