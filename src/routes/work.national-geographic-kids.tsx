@@ -10,6 +10,9 @@ import landing from "@/assets/ngk-landing.png.asset.json";
 import promoPoster from "@/assets/ngk-promo-poster.jpg.asset.json";
 import packaging from "@/assets/ngk-packaging.png.asset.json";
 import bookmarkRhino from "@/assets/ngk-bookmark-rhino.jpg.asset.json";
+import landingMockup from "@/assets/ngk-landing-mockup.png.asset.json";
+import emailYoung from "@/assets/ngk-email-young.avif.asset.json";
+import emailNgk from "@/assets/ngk-email-ngk.avif.asset.json";
 
 export const Route = createFileRoute("/work/national-geographic-kids")({
   head: () => ({
