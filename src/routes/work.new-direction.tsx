@@ -241,7 +241,7 @@ function NewDirectionPage() {
               ].map((m) => (
                 <div key={m.label + m.src} className="flex flex-col items-center">
                   <div className="aspect-square w-full bg-paper border border-hairline rounded-sm flex items-center justify-center p-5 md:p-7 transition-transform hover:-translate-y-1">
-                    <img src={m.src} alt={m.label} loading="lazy" className="w-full h-full object-contain" />
+                    <img src={m.src} alt={m.label} loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
                   </div>
                   <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-ink-muted">{m.label}</p>
                 </div>
@@ -368,7 +368,7 @@ function NewDirectionPage() {
           <div className="mt-14 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
             <Reveal className="col-span-12 md:col-span-6">
               <div className="aspect-[4/3] w-full rounded-sm border border-dashed border-coral/50 bg-paper flex flex-col items-center justify-center text-center px-6">
-                <img src={sparkCoral.url} alt="" aria-hidden className="w-10 h-10 mb-3 opacity-80" />
+                <img src={sparkCoral.url} alt="" aria-hidden className="block w-10 h-auto mb-3 opacity-80" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-coral">Sketch · to supply</span>
                 <span className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">Character study · pencil</span>
               </div>
@@ -376,7 +376,7 @@ function NewDirectionPage() {
             </Reveal>
             <Reveal delay={120} className="col-span-12 md:col-span-6">
               <div className="aspect-[4/3] w-full rounded-sm border border-dashed border-turquoise/50 bg-paper flex flex-col items-center justify-center text-center px-6">
-                <img src={diamondTeal.url} alt="" aria-hidden className="w-10 h-10 mb-3 opacity-80" />
+                <img src={diamondTeal.url} alt="" aria-hidden className="block w-10 h-auto mb-3 opacity-80" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-turquoise-deep">Page sketch · to supply</span>
                 <span className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">Layout thumbnail · grid</span>
               </div>
