@@ -302,6 +302,8 @@ function NewDirectionPage() {
           </div>
         </div>
       </section>
+
+      <MoreWork currentSlug="new-direction" />
     </main>
   );
 }
