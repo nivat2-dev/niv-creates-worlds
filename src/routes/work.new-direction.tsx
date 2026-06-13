@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import bookCover from "@/assets/nd-cover.png.asset.json";
-import bookMockup from "@/assets/nd-book-mockup.jpg.asset.json";
+import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
 import pagesCollage from "@/assets/nd-pages-collage-v2.png.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
@@ -145,12 +145,14 @@ function NewDirectionPage() {
       <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
-            <img
-              src={bookMockup.url}
-              alt="New Direction — open book mockup"
-              className="block w-full h-auto"
-              style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.18))" }}
-            />
+            <div className="mx-auto max-w-[560px]">
+              <img
+                src={bookMockup.url}
+                alt="New Direction — open book mockup"
+                className="block w-full h-auto"
+                style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.18))" }}
+              />
+            </div>
           </Reveal>
 
           <div className="col-span-12 md:col-span-5">
@@ -336,21 +338,13 @@ function NewDirectionPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 md:mt-20 grid grid-cols-12 gap-6 md:gap-10 items-start">
-            <Reveal className="col-span-12 md:col-span-7">
-              <img
-                src={bookMockup.url}
-                alt="New Direction — printed book"
-                className="block w-full h-auto rounded-sm"
-                style={{ filter: "drop-shadow(0 24px 48px rgba(20,20,22,.20))" }}
-              />
-            </Reveal>
-            <Reveal delay={120} className="col-span-12 md:col-span-5">
+          <div className="mt-14 md:mt-20 flex justify-center">
+            <Reveal>
               <img
                 src={bookCover.url}
                 alt="New Direction — final cover"
-                className="block w-full h-auto rounded-sm mx-auto max-w-[380px]"
-                style={{ filter: "drop-shadow(0 20px 40px rgba(20,20,22,.18))" }}
+                className="block w-full h-auto rounded-sm mx-auto max-w-[340px]"
+                style={{ filter: "drop-shadow(0 24px 48px rgba(20,20,22,.20))" }}
               />
             </Reveal>
           </div>
