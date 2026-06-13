@@ -363,7 +363,7 @@ function NatGeoKidsPage() {
           {/* Featured — Landing Page */}
           <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-7 order-1">
-              <div className="relative mx-auto w-full max-w-[640px]">
+              <div className="relative mx-auto w-full max-w-[460px] py-6">
                 <img
                   src={landingMockup.url}
                   alt="National Geographic Kids landing page mockup"
@@ -392,12 +392,12 @@ function NatGeoKidsPage() {
               { title: "Subscriber Renewal Email", body: "A separate campaign aimed at lapsed and returning readers — I built the layout and visual system to drive renewals without losing the editorial tone.", image: emailNgk.url, alt: "National Geographic Kids subscriber renewal email" },
             ].map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden">
-                <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-6">
+                <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-10 md:p-14">
                   <img
                     src={card.image}
                     alt={card.alt}
                     loading="lazy"
-                    className="block max-h-full max-w-full w-auto h-auto object-contain"
+                    className="block max-h-full max-w-[70%] w-auto h-auto object-contain"
                     style={{ filter: "drop-shadow(0 22px 38px rgba(20,20,22,.16))" }}
                   />
                 </div>
