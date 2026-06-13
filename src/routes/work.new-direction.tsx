@@ -172,7 +172,7 @@ function NewDirectionPage() {
               </p>
             </Reveal>
             <Reveal delay={320}>
-              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 font-mono text-[11px] uppercase tracking-[0.18em]">
+              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 font-sans text-[13px]">
                 {[
                   ["Writer", "Niv Haviv"],
                   ["Illustrator", "Niv Haviv"],
@@ -277,7 +277,7 @@ function NewDirectionPage() {
                   <div className="aspect-square w-full bg-cream border border-hairline rounded-sm flex items-center justify-center p-5 md:p-7">
                     <img src={m.src} alt={m.label} loading="lazy" className="block w-auto h-auto max-w-full max-h-full" />
                   </div>
-                  <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-ink-muted">{m.label}</p>
+                  <p className="mt-2 font-sans text-[11px] text-ink-muted">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -319,7 +319,7 @@ function NewDirectionPage() {
             ].map((r, i) => (
               <Reveal key={r.t} delay={i * 60}>
                 <div className="h-full bg-paper border border-hairline rounded-sm p-8 md:p-10">
-                  <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted">
+                  <div className="flex items-center gap-3 font-sans text-[12px] text-ink-muted">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
                     <span>0{i + 1}</span>
                   </div>
@@ -363,7 +363,7 @@ function NewDirectionPage() {
             <div className="mt-16 flex justify-center">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 font-mono text-[11px] uppercase tracking-[0.24em] transition-colors hover:bg-coral hover:text-ink"
+                className="group inline-flex items-center gap-3 rounded-full bg-ink text-paper px-7 py-4 font-sans text-[13px] transition-colors hover:bg-coral hover:text-ink"
               >
                 <span className="inline-block transition-transform group-hover:-translate-x-1">←</span>
                 Back to Index
