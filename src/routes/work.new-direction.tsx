@@ -26,7 +26,7 @@ export const Route = createFileRoute("/work/new-direction")({
       hero={{ src: novelSpread, alt: "Interior pages of New Direction" }}
       tagline="An original graphic novel — story, characters, typography and book design built from a single visual language."
       overview="New Direction is a complete authored world: a 180-page graphic novel I wrote, illustrated, designed and prepared for print end-to-end. The story follows a young protagonist whose turquoise pendant becomes a compass for change."
-      role="From the first sketch to the printed spine. Story development, character design, panel-by-panel illustration, typography, color, layout and production. The pendant — a recurring symbol — was designed as both a narrative object and a piece of brand identity for the book."
+      roleDetail="From the first sketch to the printed spine. Story development, character design, panel-by-panel illustration, typography, color, layout and production. The pendant — a recurring symbol — was designed as both a narrative object and a piece of brand identity for the book."
       challenge="How do you make a self-published debut graphic novel feel as considered as a major publisher release — visually, narratively and physically?"
       process={[
         { step: "01", title: "Story & world", body: "Beat sheet, character arcs and the pendant as the story's emotional engine. Early drafts focused on tone over plot — quiet, hopeful, a little strange." },
