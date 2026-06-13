@@ -6,6 +6,8 @@ import bookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
 import pagesCollage from "@/assets/nd-pages-collage-v2.png.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import beachScene from "@/assets/nd-beach-scene.png.asset.json";
+import jerusalemWalk from "@/assets/nd-jerusalem-walk.png.asset.json";
+import ariehRoyKiss from "@/assets/nd-kiss.png.asset.json";
 import palette from "@/assets/nd-palette.png.asset.json";
 import poster from "@/assets/nd-poster.png.asset.json";
 import logoEn from "@/assets/nd-logo-en.png.asset.json";
