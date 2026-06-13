@@ -14,6 +14,7 @@ import { Route as WorkNewDirectionRouteImport } from './routes/work.new-directio
 import { Route as WorkNationalGeographicKidsRouteImport } from './routes/work.national-geographic-kids'
 import { Route as WorkGamingProductDesignRouteImport } from './routes/work.gaming-product-design'
 import { Route as WorkBiblicalZooRouteImport } from './routes/work.biblical-zoo'
+import { Route as WorkAsaflezetRouteImport } from './routes/work.asaflezet'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,9 +42,15 @@ const WorkBiblicalZooRoute = WorkBiblicalZooRouteImport.update({
   path: '/work/biblical-zoo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkAsaflezetRoute = WorkAsaflezetRouteImport.update({
+  id: '/work/asaflezet',
+  path: '/work/asaflezet',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
   '/work/national-geographic-kids': typeof WorkNationalGeographicKidsRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
   '/work/national-geographic-kids': typeof WorkNationalGeographicKidsRoute
@@ -59,6 +67,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
   '/work/national-geographic-kids': typeof WorkNationalGeographicKidsRoute
@@ -68,6 +77,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/work/asaflezet'
     | '/work/biblical-zoo'
     | '/work/gaming-product-design'
     | '/work/national-geographic-kids'
@@ -75,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/work/asaflezet'
     | '/work/biblical-zoo'
     | '/work/gaming-product-design'
     | '/work/national-geographic-kids'
@@ -82,6 +93,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/work/asaflezet'
     | '/work/biblical-zoo'
     | '/work/gaming-product-design'
     | '/work/national-geographic-kids'
@@ -90,6 +102,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WorkAsaflezetRoute: typeof WorkAsaflezetRoute
   WorkBiblicalZooRoute: typeof WorkBiblicalZooRoute
   WorkGamingProductDesignRoute: typeof WorkGamingProductDesignRoute
   WorkNationalGeographicKidsRoute: typeof WorkNationalGeographicKidsRoute
@@ -133,11 +146,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkBiblicalZooRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/asaflezet': {
+      id: '/work/asaflezet'
+      path: '/work/asaflezet'
+      fullPath: '/work/asaflezet'
+      preLoaderRoute: typeof WorkAsaflezetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WorkAsaflezetRoute: WorkAsaflezetRoute,
   WorkBiblicalZooRoute: WorkBiblicalZooRoute,
   WorkGamingProductDesignRoute: WorkGamingProductDesignRoute,
   WorkNationalGeographicKidsRoute: WorkNationalGeographicKidsRoute,
