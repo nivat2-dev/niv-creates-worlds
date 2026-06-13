@@ -98,7 +98,7 @@ function Motif({
       alt=""
       aria-hidden
       loading="lazy"
-      className={`pointer-events-none absolute select-none ${className}`}
+      className={`pointer-events-none absolute select-none -z-10 ${className}`}
       style={style}
     />
   );
@@ -125,11 +125,11 @@ function Caption({ children }: { children: ReactNode }) {
 
 function NewDirectionPage() {
   return (
-    <main className="bg-cream text-ink overflow-hidden">
+    <main className="bg-cream text-ink">
       <MiniNav />
 
       {/* ───── 01 — HERO ───── */}
-      <section className="relative">
+      <section className="relative isolate overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 55% at 78% 30%, color-mix(in oklab, var(--coral) 22%, transparent), transparent 70%), radial-gradient(50% 50% at 14% 78%, color-mix(in oklab, var(--turquoise) 18%, transparent), transparent 75%)" }}
@@ -145,14 +145,12 @@ function NewDirectionPage() {
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Cover */}
             <Reveal className="col-span-12 lg:col-span-6 order-1 flex justify-center lg:justify-start">
-              <div className="relative">
-                <Motif src={diamondGreen.url} size={64} top={-28} left={-32} rotate={-18} className="block z-10" />
-                <Motif src={sparkCoral.url} size={48} bottom={-18} right={-22} rotate={14} className="block z-10" />
+              <div className="relative max-w-[480px] w-full">
                 <img
                   src={bookCover.url}
                   alt="New Direction — book cover"
-                  className="block max-h-[78vh] w-auto h-auto select-none rounded-[2px]"
-                  style={{ filter: "drop-shadow(0 40px 70px rgba(20,20,22,.28))", transform: "rotate(-2deg)" }}
+                  className="block w-full h-auto max-h-[70vh] object-contain select-none rounded-[2px] mx-auto"
+                  style={{ filter: "drop-shadow(0 40px 70px rgba(20,20,22,.28))" }}
                 />
               </div>
             </Reveal>
@@ -197,7 +195,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 02 — THE STORY ───── */}
-      <section className="relative bg-paper py-24 md:py-32">
+      <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
         <Motif src={circleNavy.url} size={56} top={48} right={"8%"} className="hidden md:block" />
         <Motif src={sparkOlive.url} size={44} bottom={64} left={"10%"} rotate={-10} className="hidden md:block" />
 
@@ -207,7 +205,7 @@ function NewDirectionPage() {
               <img
                 src={jerusalemWalk.url}
                 alt="Arieh and Roy walking through Jerusalem"
-                className="block w-full h-auto"
+                className="block w-full h-auto max-h-[70vh] object-contain"
                 style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }}
               />
             </div>
@@ -233,7 +231,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 03 — VISUAL LANGUAGE ───── */}
-      <section className="relative bg-cream border-y border-hairline py-24 md:py-32">
+      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-12 md:mb-16">
             <Reveal className="col-span-12 md:col-span-7">
@@ -255,7 +253,7 @@ function NewDirectionPage() {
               <img
                 src={palette.url}
                 alt="New Direction — full color palette"
-                className="block w-full h-auto rounded-sm"
+                className="block w-full h-auto max-h-[60vh] object-contain rounded-sm mx-auto"
                 style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.10))" }}
               />
             </div>
@@ -292,7 +290,7 @@ function NewDirectionPage() {
                 <img
                   src={poster.url}
                   alt="New Direction — promotional poster"
-                  className="block w-full h-auto rounded-sm"
+                  className="block w-full h-auto max-h-[70vh] object-contain rounded-sm"
                   style={{ filter: "drop-shadow(0 16px 32px rgba(20,20,22,.14))" }}
                 />
                 <Caption>Poster · the visual language assembled</Caption>
@@ -308,7 +306,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 04 — CHARACTER MOMENTS ───── */}
-      <section className="relative bg-paper py-24 md:py-32" id="chapters">
+      <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32" id="chapters">
         <Motif src={starCream.url} size={88} top={56} left={"7%"} rotate={-8} className="hidden md:block" />
         <Motif src={sparkCoral.url} size={56} bottom={64} right={"8%"} rotate={14} className="hidden md:block" />
 
@@ -322,15 +320,15 @@ function NewDirectionPage() {
 
           <div className="mt-14 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
             <Reveal className="col-span-12 md:col-span-7">
-              <img src={beach.url} alt="Beach scene — Arieh and Roy sitting in silence" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <img src={beach.url} alt="Beach scene — Arieh and Roy sitting in silence" loading="lazy" className="block w-full h-auto max-h-[60vh] object-contain" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
               <Caption>Beach · silence between two people who have lost the same person</Caption>
             </Reveal>
             <Reveal delay={100} className="col-span-12 md:col-span-5">
-              <img src={water.url} alt="Roy in the water — a moment of release" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <img src={water.url} alt="Roy in the water — a moment of release" loading="lazy" className="block w-full h-auto max-h-[60vh] object-contain" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
               <Caption>Roy · submerged in what cannot be spoken</Caption>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-12">
-              <img src={kiss.url} alt="Arieh and Roy — intimacy born from shared loss" loading="lazy" className="block w-full h-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
+              <img src={kiss.url} alt="Arieh and Roy — intimacy born from shared loss" loading="lazy" className="block w-full h-auto max-h-[75vh] object-contain mx-auto" style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.14))" }} />
               <Caption>Connection that grows from grief, not from romance alone</Caption>
             </Reveal>
           </div>
@@ -338,7 +336,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 05 — INSIDE THE BOOK ───── */}
-      <section className="relative bg-cream border-y border-hairline py-24 md:py-32">
+      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
         <Motif src={circleTurq.url} size={120} top={"-3%"} right={"5%"} className="hidden md:block" />
         <Motif src={diamondTeal.url} size={60} bottom={"6%"} left={"6%"} rotate={-14} className="hidden md:block" />
 
@@ -356,7 +354,7 @@ function NewDirectionPage() {
             <img
               src={pagesCollage.url}
               alt="Six interior pages from New Direction"
-              className="block w-full h-auto rounded-sm"
+              className="block w-full h-auto max-h-[80vh] object-contain rounded-sm mx-auto"
               style={{ filter: "drop-shadow(0 20px 40px rgba(20,20,22,.14))" }}
             />
             <Caption>Interior pages · selected sequence</Caption>
@@ -365,7 +363,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 06 — BOOK DESIGN ───── */}
-      <section className="relative bg-paper py-24 md:py-32">
+      <section className="relative isolate overflow-hidden bg-paper py-24 md:py-32">
         <Motif src={sparkOlive.url} size={48} top={64} right={"10%"} rotate={18} className="hidden md:block" />
 
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
@@ -381,7 +379,7 @@ function NewDirectionPage() {
               <img
                 src={bookMockup.url}
                 alt="New Direction — printed book mockup"
-                className="block w-full h-auto rounded-sm"
+                className="block w-full h-auto max-h-[70vh] object-contain rounded-sm"
                 style={{ filter: "drop-shadow(0 22px 44px rgba(20,20,22,.18))" }}
               />
               <Caption>Printed book · cover &amp; spread</Caption>
@@ -390,7 +388,7 @@ function NewDirectionPage() {
               <img
                 src={bookCover.url}
                 alt="Cover design — final"
-                className="block w-full h-auto rounded-sm"
+                className="block w-full h-auto max-h-[70vh] object-contain rounded-sm"
                 style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.16))" }}
               />
               <Caption>Cover design · final</Caption>
@@ -400,7 +398,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 07 — CREATIVE PROCESS ───── */}
-      <section className="relative bg-cream border-y border-hairline py-24 md:py-32">
+      <section className="relative isolate overflow-hidden bg-cream border-y border-hairline py-24 md:py-32">
         <Motif src={diamondGreen.url} size={64} top={48} left={"8%"} rotate={-10} className="hidden md:block" />
         <Motif src={sparkNavy.url} size={42} bottom={64} right={"10%"} rotate={16} className="hidden md:block" />
 
@@ -440,7 +438,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 08 — FINAL RESULT ───── */}
-      <section className="relative bg-paper py-28 md:py-40">
+      <section className="relative isolate overflow-hidden bg-paper py-28 md:py-40">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(60% 50% at 25% 35%, color-mix(in oklab, var(--coral) 18%, transparent), transparent 70%), radial-gradient(50% 50% at 80% 70%, color-mix(in oklab, var(--turquoise) 16%, transparent), transparent 75%)" }}
@@ -465,12 +463,12 @@ function NewDirectionPage() {
             </Reveal>
 
             <Reveal delay={160} className="col-span-12 md:col-span-5 order-1 md:order-2 flex justify-center md:justify-end">
-              <div className="relative">
+              <div className="relative max-w-[420px] w-full">
                 <img
                   src={bookCover.url}
                   alt="New Direction — final cover"
-                  className="block max-h-[64vh] w-auto h-auto select-none rounded-[2px]"
-                  style={{ filter: "drop-shadow(0 36px 64px rgba(20,20,22,.28))", transform: "rotate(-3deg)" }}
+                  className="block w-full h-auto max-h-[60vh] object-contain select-none rounded-[2px] mx-auto"
+                  style={{ filter: "drop-shadow(0 36px 64px rgba(20,20,22,.28))" }}
                 />
               </div>
             </Reveal>
@@ -481,7 +479,7 @@ function NewDirectionPage() {
               <img
                 src={bookMockup.url}
                 alt="New Direction — printed mockup"
-                className="block w-full h-auto rounded-sm"
+                className="block w-full h-auto max-h-[75vh] object-contain rounded-sm mx-auto"
                 style={{ filter: "drop-shadow(0 28px 56px rgba(20,20,22,.20))" }}
               />
             </div>
