@@ -294,18 +294,16 @@ function Hero() {
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
         {/* LEFT — content */}
         <div className="flex flex-col justify-center">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
             <h1
-              className="word-rise font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[14vw] md:text-[8vw] lg:text-[6.8vw]"
-              style={{ animationDelay: "80ms" }}
+              className="font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[14vw] md:text-[8vw] lg:text-[6.8vw]"
             >
               Niv Haviv
             </h1>
           </div>
-          <div className="mt-1.5 md:mt-2 overflow-hidden">
+          <div className="mt-1.5 md:mt-2 overflow-hidden word-rise" style={{ animationDelay: "200ms" }}>
             <p
-              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]"
-              style={{ animationDelay: "200ms" }}
+              className="font-serif font-medium text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]"
             >
               Visual Designer
             </p>
