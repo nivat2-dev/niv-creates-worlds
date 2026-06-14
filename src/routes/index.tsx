@@ -350,15 +350,22 @@ function IllustrationPortrait() {
   return (
     <div
       ref={wrapRef}
-      className="relative w-full max-w-[680px] lg:max-w-[740px]"
+      className="relative w-full max-w-[460px] lg:max-w-[520px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
-      <div
+      <svg
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-0 flex items-center justify-center"
+        viewBox="0 0 200 200"
+        className="pointer-events-none absolute -left-6 top-8 w-[42%] h-auto -z-0 opacity-80"
       >
-        <div className="w-[78%] h-[78%] rounded-full bg-[#bcd9f5] opacity-70 blur-3xl" />
-      </div>
+        <path
+          fill="#8fbce6"
+          d="M44 18c18-10 46-6 60 8s24 36 16 56-30 36-54 38-44-10-52-30-2-44 12-58 8-6 18-14z"
+        />
+        <circle cx="22" cy="150" r="6" fill="#8fbce6" opacity="0.6" />
+        <circle cx="12" cy="170" r="3" fill="#8fbce6" opacity="0.5" />
+        <circle cx="170" cy="40" r="4" fill="#8fbce6" opacity="0.5" />
+      </svg>
       <img
         src={nivIllustration}
         alt="Editorial illustration of Niv Haviv"
