@@ -6,6 +6,7 @@ import {
   SectionLabel,
   EyebrowCaps,
   H1Hero,
+  H2Section,
   Lead,
   Body,
   H4Card,
