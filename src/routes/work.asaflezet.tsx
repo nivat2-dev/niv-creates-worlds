@@ -9,7 +9,6 @@ import {
   H2Section,
   Lead,
   Body,
-  H4Card,
   CaseSection,
   CaseSectionHeader,
 } from "@/components/case-study/primitives";
@@ -46,52 +45,16 @@ export const Route = createFileRoute("/work/asaflezet")({
 
 const ROLE_TAGS = ["Writing", "Illustration", "Book Design", "Publishing", "Print Production"];
 
-const CRAFT_CARDS = [
-  {
-    title: "Storytelling",
-    body: "The story explores belonging, confidence and friendship through a child's imagination.",
-  },
-  {
-    title: "Illustration",
-    body: "Visual storytelling communicates emotion and personality in a way young readers can immediately understand.",
-  },
-  {
-    title: "Accessibility",
-    body: "Complex emotions are translated into a playful and approachable reading experience.",
-  },
+const CRAFT_POINTS = [
+  "Belonging, confidence and friendship — told through a child's imagination.",
+  "Emotion carried by line, color and character before words do the work.",
+  "Complex feelings made playful, approachable and easy to read aloud.",
 ];
 
-const RESULTS = [
-  {
-    title: "900 Copies Printed",
-    body: "A full hardcover production run brought the project into the hands of readers.",
-  },
-  {
-    title: "Independent Publishing",
-    body: "The project was fully developed and produced independently.",
-  },
-  {
-    title: "Real Readers",
-    body: "The book moved beyond concept stage and became a completed physical product.",
-  },
-];
-
-const LESSONS = [
-  {
-    n: "01",
-    title: "Creating is only half the work.",
-    body: "Turning an idea into a product requires production, logistics and persistence.",
-  },
-  {
-    n: "02",
-    title: "Storytelling goes beyond words.",
-    body: "Illustration, pacing and design shape how readers experience a story.",
-  },
-  {
-    n: "03",
-    title: "Publishing is a design challenge.",
-    body: "The reader experience begins long before the first page and continues beyond the last.",
-  },
+const OUTCOMES = [
+  { value: "900", label: "Hardcover copies printed" },
+  { value: "End-to-end", label: "Written, illustrated & published" },
+  { value: "In hand", label: "Reached real readers & families" },
 ];
 
 function AsaflezetPage() {
@@ -227,8 +190,8 @@ function AsaflezetPage() {
       {/* ───── 04 — STORYTELLING THROUGH CHARACTER ───── */}
       <CaseSection tone="paper" className="!py-12 md:!py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
-          <Reveal className="lg:col-span-6">
-            <figure className="max-w-[440px]">
+          <Reveal className="lg:col-span-7">
+            <figure>
               <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
                 <ZoomableImage
                   src={spreadClassroom.url}
@@ -238,25 +201,20 @@ function AsaflezetPage() {
               </div>
             </figure>
           </Reveal>
-          <Reveal className="lg:col-span-6" delay={120}>
+          <Reveal className="lg:col-span-5" delay={120}>
             <SectionLabel label="Craft" />
             <H2Section className="mt-4">Storytelling through character.</H2Section>
             <Lead className="mt-5 max-w-md">
               Every choice — voice, line, color, pacing — was shaped around the reader's emotional experience with the main character.
             </Lead>
-            <ol className="mt-8 divide-y divide-hairline border-y border-hairline">
-              {CRAFT_CARDS.map((c, i) => (
-                <li key={c.title} className="grid grid-cols-12 gap-5 py-5 md:py-6 items-baseline">
-                  <div className="col-span-2 font-sans text-[11px] tracking-[0.08em] uppercase text-coral">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <div className="col-span-10">
-                    <H4Card>{c.title}</H4Card>
-                    <Body className="mt-2 max-w-[48ch]">{c.body}</Body>
-                  </div>
+            <ul className="mt-7 space-y-3 max-w-md">
+              {CRAFT_POINTS.map((p) => (
+                <li key={p} className="flex gap-3">
+                  <span className="mt-2 inline-block h-1 w-1 rounded-full bg-coral shrink-0" />
+                  <Body className="text-ink">{p}</Body>
                 </li>
               ))}
-            </ol>
+            </ul>
           </Reveal>
         </div>
       </CaseSection>
@@ -265,7 +223,7 @@ function AsaflezetPage() {
       <CaseSection tone="cream" className="!py-12 md:!py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="lg:col-span-6 lg:order-2">
-            <figure className="max-w-[440px] lg:ml-auto">
+            <figure className="max-w-[440px]">
               <ZoomableImage
                 src={backCover.url}
                 alt="Asaflezet — printed back cover"
@@ -284,47 +242,29 @@ function AsaflezetPage() {
         </div>
       </CaseSection>
 
-      {/* ───── 06 — CLOSING: RESULTS + LESSONS ───── */}
-      <CaseSection tone="paper" className="!py-14 md:!py-20">
-        <CaseSectionHeader
-          label="Closing"
-          title="From file to finished object."
-          intro="What the project produced — and what it taught me along the way."
-          dense
-        />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
-          <Reveal className="lg:col-span-5">
-            <EyebrowCaps>Results</EyebrowCaps>
-            <dl className="mt-5 border-t border-hairline">
-              {RESULTS.map((r) => (
-                <div key={r.title} className="border-b border-hairline py-5">
-                  <dt className="font-serif text-[22px] tracking-[-0.015em]">{r.title}</dt>
-                  <dd className="mt-1.5 font-sans text-[14px] leading-[1.55] text-ink-muted max-w-[40ch]">
-                    {r.body}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-          <Reveal className="lg:col-span-7" delay={120}>
-            <EyebrowCaps>What I Learned</EyebrowCaps>
-            <ol className="mt-5 space-y-6 md:space-y-7">
-              {LESSONS.map((l) => (
-                <li key={l.n} className="grid grid-cols-12 gap-5 items-baseline">
-                  <div className="col-span-2 font-sans text-[11px] tracking-[0.08em] uppercase text-coral">
-                    {l.n}
-                  </div>
-                  <div className="col-span-10">
-                    <p className="font-serif text-[24px] md:text-[28px] leading-[1.15] tracking-[-0.015em]">
-                      {l.title}
-                    </p>
-                    <Body className="mt-2 max-w-[52ch]">{l.body}</Body>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </Reveal>
-        </div>
+      {/* ───── 06 — CLOSING ───── */}
+      <CaseSection tone="paper" className="!py-16 md:!py-24">
+        <Reveal className="max-w-3xl">
+          <EyebrowCaps>In Closing</EyebrowCaps>
+          <p className="mt-6 font-serif font-medium leading-[1.05] tracking-[-0.025em] text-[clamp(32px,4.2vw,56px)]">
+            What began as a personal idea became a printed hardcover book
+            <span className="text-coral italic"> in the hands of real readers.</span>
+          </p>
+        </Reveal>
+        <Reveal delay={120} className="mt-14 md:mt-20">
+          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-8 max-w-4xl border-t border-hairline pt-8">
+            {OUTCOMES.map((o) => (
+              <div key={o.label}>
+                <dt className="font-serif text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.02em]">
+                  {o.value}
+                </dt>
+                <dd className="mt-2 font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                  {o.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </CaseSection>
 
       <MoreWork currentSlug="asaflezet" limit={4} />
