@@ -189,19 +189,8 @@ function AsaflezetPage() {
 
       {/* ───── 04 — STORYTELLING THROUGH CHARACTER ───── */}
       <CaseSection tone="paper" className="!py-12 md:!py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
-          <Reveal className="lg:col-span-7">
-            <figure>
-              <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
-                <ZoomableImage
-                  src={spreadClassroom.url}
-                  alt="Asaflezet — character close-up spread"
-                  className="block w-full h-auto"
-                />
-              </div>
-            </figure>
-          </Reveal>
-          <Reveal className="lg:col-span-5" delay={120}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
+          <Reveal className="lg:col-span-6" delay={120}>
             <SectionLabel label="Craft" />
             <H2Section className="mt-4">Storytelling through character.</H2Section>
             <Lead className="mt-5 max-w-md">
@@ -216,14 +205,32 @@ function AsaflezetPage() {
               ))}
             </ul>
           </Reveal>
+          <Reveal className="lg:col-span-6">
+            <figure className="max-w-[440px] lg:ml-auto">
+              <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+                <ZoomableImage
+                  src={spreadClassroom.url}
+                  alt="Asaflezet — character close-up spread"
+                  className="block w-full h-auto"
+                />
+              </div>
+            </figure>
+          </Reveal>
         </div>
       </CaseSection>
 
       {/* ───── 05 — FROM SCREEN TO PRINT ───── */}
       <CaseSection tone="cream" className="!py-12 md:!py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
-          <Reveal className="lg:col-span-6 lg:order-2">
-            <figure className="max-w-[440px]">
+          <Reveal className="lg:col-span-6" delay={120}>
+            <SectionLabel label="Production" />
+            <H2Section className="mt-4">From screen to print.</H2Section>
+            <Lead className="mt-5 max-w-md">
+              Publishing the book required more than illustration. Print preparation, production decisions, hardcover specifications and collaboration with printers all played an important role in transforming the project into a physical object.
+            </Lead>
+          </Reveal>
+          <Reveal className="lg:col-span-6">
+            <figure className="max-w-[440px] lg:ml-auto">
               <ZoomableImage
                 src={backCover.url}
                 alt="Asaflezet — printed back cover"
@@ -231,13 +238,6 @@ function AsaflezetPage() {
                 style={{ filter: "drop-shadow(0 30px 50px rgba(20,20,22,.22))" }}
               />
             </figure>
-          </Reveal>
-          <Reveal className="lg:col-span-6 lg:order-1" delay={120}>
-            <SectionLabel label="Production" />
-            <H2Section className="mt-4">From screen to print.</H2Section>
-            <Lead className="mt-5 max-w-md">
-              Publishing the book required more than illustration. Print preparation, production decisions, hardcover specifications and collaboration with printers all played an important role in transforming the project into a physical object.
-            </Lead>
           </Reveal>
         </div>
       </CaseSection>
