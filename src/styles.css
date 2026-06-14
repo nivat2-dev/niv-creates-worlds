@@ -192,9 +192,9 @@
   --color-pink: var(--pink);
   --color-cream: var(--cream);
   --color-navy-deep: var(--navy-deep);
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-serif: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 @keyframes float-slow {
