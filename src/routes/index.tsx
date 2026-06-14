@@ -144,8 +144,8 @@ function Hero() {
       {/* top eyebrow */}
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32">
         <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
-          <span>(01) — A studio of one</span>
-          <span className="hidden md:inline">Tel Aviv · Worldwide</span>
+          <span>(01) — Independent visual storyteller</span>
+          <span className="hidden md:inline">Author · Illustrator · Designer</span>
           <span>Vol. MMXXVI<span className="cursor-blink">_</span></span>
         </div>
         <div className="mt-8 hair-divider" />
@@ -157,7 +157,7 @@ function Hero() {
           <h1 className="font-serif text-ink leading-[0.86] tracking-[-0.045em] text-[18vw] md:text-[14vw] lg:text-[11.5vw]">
             <span className="block overflow-hidden">
               <span className="word-rise inline-block" style={{ animationDelay: "60ms" }}>
-                Designer,
+                Stories,
               </span>
             </span>
             <span className="block overflow-hidden">
@@ -165,12 +165,12 @@ function Hero() {
                 className="word-rise inline-block italic font-light text-turquoise-deep"
                 style={{ animationDelay: "180ms", fontStyle: "italic" }}
               >
-                storyteller,
+                characters,
               </span>
             </span>
             <span className="block overflow-hidden">
               <span className="word-rise inline-block" style={{ animationDelay: "300ms" }}>
-                world-builder.
+                worlds — drawn by hand.
               </span>
             </span>
           </h1>
@@ -190,9 +190,18 @@ function Hero() {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ transform: `translateY(${y * -0.04}px) scale(1.04)` }}
             />
+            {/* turquoise frame mark — author personality */}
+            <span
+              aria-hidden
+              className="absolute -top-2 -left-2 h-6 w-6 border-l-2 border-t-2 border-turquoise"
+            />
+            <span
+              aria-hidden
+              className="absolute -bottom-2 -right-2 h-6 w-6 border-r-2 border-b-2 border-turquoise"
+            />
             <div className="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-paper mix-blend-difference">
               <span>N. Haviv</span>
-              <span>— Studio Lead</span>
+              <span>— Author & Illustrator</span>
             </div>
           </div>
         </div>
@@ -202,19 +211,20 @@ function Hero() {
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-16 md:pb-24 grid grid-cols-12 gap-6 items-end">
         <Reveal className="col-span-12 md:col-span-5" delay={400}>
           <p className="font-serif text-2xl md:text-3xl leading-[1.15] text-ink max-w-md">
-            An independent practice designing
-            <span className="italic"> products</span>,
-            <span className="italic"> stories </span>
-            and the
-            <span className="italic"> visual systems </span>
-            that hold them together.
+            I write and draw <span className="italic">books</span>,
+            build <span className="italic">characters</span>, and design
+            the <span className="italic">worlds</span> that hold them together.
           </p>
         </Reveal>
         <div className="col-span-12 md:col-span-3 md:col-start-7 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted leading-relaxed">
-          <div className="flex justify-between"><span>Product / UI</span><span>01</span></div>
-          <div className="flex justify-between mt-1"><span>Illustration</span><span>02</span></div>
-          <div className="flex justify-between mt-1"><span>Graphic Novels</span><span>03</span></div>
-          <div className="flex justify-between mt-1"><span>Brand Worlds</span><span>04</span></div>
+          <div className="flex justify-between"><span>Books &amp; Publishing</span><span>01</span></div>
+          <div className="flex justify-between mt-1"><span>Character Design</span><span>02</span></div>
+          <div className="flex justify-between mt-1"><span>Illustration</span><span>03</span></div>
+          <div className="flex justify-between mt-1"><span>Product / UI</span><span>04</span></div>
+          <div className="mt-4 flex items-center gap-2 text-turquoise-deep normal-case tracking-[0.12em]">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+            <span>Now: <span className="text-ink">New Direction</span> — printing 2026</span>
+          </div>
         </div>
         <div className="col-span-12 md:col-span-2 md:col-start-11 flex md:justify-end">
           <a
@@ -235,12 +245,12 @@ function Hero() {
         <div className="marquee flex gap-12 whitespace-nowrap font-mono text-[12px] uppercase tracking-[0.22em] text-ink">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-12 pr-12">
-              <span>Graphic Novels</span><span className="text-turquoise">●</span>
-              <span>Product Design</span><span className="text-turquoise">●</span>
-              <span>Illustration</span><span className="text-turquoise">●</span>
-              <span>Visual Storytelling</span><span className="text-turquoise">●</span>
-              <span>Brand Worlds</span><span className="text-turquoise">●</span>
-              <span>Character Design</span><span className="text-turquoise">●</span>
+              <span>Graphic Novels</span><span className="text-turquoise">✦</span>
+              <span>Author / Illustrator</span><span className="text-turquoise">✦</span>
+              <span>Editorial Illustration</span><span className="text-turquoise">✦</span>
+              <span>Visual Storytelling</span><span className="text-turquoise">✦</span>
+              <span>Character Design</span><span className="text-turquoise">✦</span>
+              <span>World Building</span><span className="text-turquoise">✦</span>
             </div>
           ))}
         </div>
