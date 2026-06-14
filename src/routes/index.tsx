@@ -252,12 +252,12 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden bg-white">
-      <div className="relative mx-auto max-w-[1340px] px-6 md:px-12 lg:px-20 pt-32 md:pt-36 pb-12 md:pb-16 grid grid-cols-12 gap-8 lg:gap-10 items-center min-h-[78vh] lg:min-h-[82vh]">
+      <div className="relative mx-auto max-w-[1280px] px-8 md:px-16 lg:px-20 pt-40 md:pt-48 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[80vh] lg:min-h-[85vh]">
         {/* LEFT — content */}
-        <div className="col-span-12 lg:col-span-6">
+        <div className="flex flex-col justify-center">
           <div className="overflow-hidden">
             <h1
-              className="word-rise font-serif text-ink leading-[0.92] tracking-[-0.05em] text-[13vw] md:text-[7.4vw] lg:text-[6vw]"
+              className="word-rise font-serif text-ink leading-[0.92] tracking-[-0.05em] text-[11vw] md:text-[6.2vw] lg:text-[5.2vw]"
               style={{ animationDelay: "80ms" }}
             >
               Niv Haviv
@@ -265,7 +265,7 @@ function Hero() {
           </div>
           <div className="mt-2 md:mt-3 overflow-hidden">
             <p
-              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[6.5vw] md:text-[3.2vw] lg:text-[2.4vw] tracking-[-0.03em]"
+              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[5.5vw] md:text-[2.6vw] lg:text-[2vw] tracking-[-0.03em]"
               style={{ animationDelay: "200ms" }}
             >
               Visual Designer
@@ -296,7 +296,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-end lg:-mt-8">
+        <div className="flex justify-center items-center px-4 md:px-8 lg:px-6">
           <IllustrationPortrait />
         </div>
       </div>
@@ -313,20 +313,20 @@ function IllustrationPortrait() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY * 0.08);
+    const onScroll = () => setOffset(window.scrollY * 0.06);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <div
       ref={wrapRef}
-      className="relative mx-auto aspect-[5/4] w-full max-w-[700px] lg:max-w-[810px]"
+      className="relative w-full max-w-[520px] lg:max-w-[560px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
       <img
         src={nivIllustration}
         alt="Editorial illustration of Niv Haviv"
-        className="relative w-full h-full object-contain select-none rise-in"
+        className="relative w-full h-auto object-contain select-none rise-in"
         draggable={false}
       />
     </div>
