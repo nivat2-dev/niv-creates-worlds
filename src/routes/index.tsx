@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
-import portraitV2Asset from "@/assets/niv-portrait-v2.png.asset.json";
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
 import nivIllustrationAsset from "@/assets/niv-illustration.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
@@ -21,7 +20,6 @@ import ndBeachSceneAsset from "@/assets/nd-beach-scene.png.asset.json";
 import ndKissAsset from "@/assets/nd-kiss.png.asset.json";
 
 const portrait = portraitAsset.url;
-const portraitV2 = portraitV2Asset.url;
 const signature = signatureAsset.url;
 const nivIllustration = nivIllustrationAsset.url;
 const bookMockup = bookMockupAsset.url;
