@@ -651,14 +651,18 @@ function FeaturedWork() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-20 md:mb-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            (02) — Selected Work
+            <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
           </p>
         </div>
         <div className="col-span-12 md:col-span-9">
           <Reveal>
             <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em]">
-              A few of the worlds <span className="italic font-light text-turquoise-deep">we've built.</span>
+              More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
             </h2>
+            <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
+              Beyond New Direction — books, characters, illustrated identities and
+              products built around the stories they tell.
+            </p>
           </Reveal>
         </div>
       </div>
@@ -674,32 +678,52 @@ function FeaturedWork() {
 
 function About() {
   return (
-    <section id="about" className="relative bg-ink text-paper py-32 md:py-44">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-start">
+    <section id="about" className="relative bg-cream/60 text-ink py-32 md:py-44 border-t border-hairline overflow-hidden">
+      <img
+        src={sparkCoral}
+        alt=""
+        aria-hidden
+        className="absolute right-[8%] top-20 w-10 h-10 opacity-80 hidden md:block"
+      />
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-start">
         <Reveal className="col-span-12 lg:col-span-5">
-          <div className="lift-img relative aspect-[3/4] w-full overflow-hidden grayscale">
+          <div className="lift-img relative aspect-[3/4] w-full overflow-hidden">
             <img src={portrait} alt="Portrait of Niv Haviv" loading="lazy" width={768} height={1024} className="w-full h-full object-cover" />
+            <span aria-hidden className="absolute -top-2 -left-2 h-8 w-8 border-l-2 border-t-2 border-turquoise" />
+            <span aria-hidden className="absolute -bottom-2 -right-2 h-8 w-8 border-r-2 border-b-2 border-turquoise" />
           </div>
+          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            Niv Haviv · Tel Aviv
+          </p>
         </Reveal>
         <Reveal delay={120} className="col-span-12 lg:col-span-7 lg:pl-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/60">(03) — About</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            <span className="text-turquoise-deep">●</span> (03) — About
+          </p>
           <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] mt-6 tracking-[-0.045em]">
-            I build <span className="italic text-turquoise">worlds</span> — products,
-            stories, and the visual systems that hold them together.
+            I write, <span className="italic text-turquoise-deep">draw</span> and
+            design the worlds I want to read.
           </h2>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-2xl">
+          <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
+            An independent visual storyteller working between books, illustration
+            and product. I make the story, draw the world, and design the object
+            that puts it in someone's hands.
+          </p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl">
             {[
-              ["Design", "Products and interfaces that feel quiet, tactile, and considered."],
-              ["Storytelling", "Long-form narrative — characters, pacing, panel by panel."],
-              ["Illustration", "From editorial spreads to printed graphic novels."],
-              ["Problem solving", "Brand, product and visual language as one continuous craft."],
+              ["Author", "Original graphic novels and children's books — written and published end-to-end."],
+              ["Illustrator", "Characters, spreads and editorial work with a consistent hand."],
+              ["Designer", "Books, identities and products built around the story they carry."],
             ].map(([t, b]) => (
-              <div key={t}>
-                <h4 className="font-serif text-2xl text-paper tracking-[-0.03em]">{t}</h4>
-                <p className="mt-2 text-paper/70 leading-relaxed text-sm">{b}</p>
+              <div key={t} className="border-t border-turquoise/40 pt-4">
+                <h4 className="font-serif text-2xl text-ink tracking-[-0.03em]">{t}</h4>
+                <p className="mt-2 text-ink-muted leading-relaxed text-sm">{b}</p>
               </div>
             ))}
           </div>
+          <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            Selected: National Geographic Kids · SuperPlay · Jerusalem Biblical Zoo · Asaflezet
+          </p>
         </Reveal>
       </div>
     </section>
@@ -708,25 +732,44 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative bg-paper py-32 md:py-44">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+    <section id="contact" className="relative bg-paper py-32 md:py-44 overflow-hidden">
+      <img
+        src={diamondTeal}
+        alt=""
+        aria-hidden
+        className="absolute right-[12%] top-24 w-14 h-14 opacity-70 hidden md:block"
+      />
+      <img
+        src={starCream}
+        alt=""
+        aria-hidden
+        className="absolute left-[6%] bottom-32 w-10 h-10 opacity-80 hidden md:block"
+      />
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
         <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">(04) — Contact</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            <span className="text-turquoise-deep">●</span> (04) — Let's make something
+          </p>
           <h2 className="font-serif text-6xl md:text-[10vw] leading-[0.86] mt-6 text-ink tracking-[-0.045em]">
-            Have a story <span className="italic text-turquoise-deep">to tell?</span>
+            Got a story <span className="italic text-turquoise-deep">to tell?</span>
           </h2>
+          <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
+            Books, illustration commissions, collaborations on worlds that
+            don't exist yet — I'd love to hear about it.
+          </p>
           <a
             href="mailto:hello@nivhaviv.com"
-            className="group inline-flex mt-12 items-center gap-4 text-2xl md:text-3xl font-serif border-b border-ink/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors"
+            className="group inline-flex mt-10 items-center gap-4 text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors"
           >
+            <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
             hello@nivhaviv.com
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </a>
         </Reveal>
 
-        <div className="mt-24 hair-divider" />
+        <div className="mt-24 h-px w-full bg-turquoise/30" />
         <div className="mt-8 flex flex-wrap items-center justify-between gap-6 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-          <span>© {new Date().getFullYear()} Niv Haviv — Studio</span>
+          <span>© {new Date().getFullYear()} Niv Haviv — Author · Illustrator · Designer</span>
           <div className="flex gap-8">
             <a href="#" className="hover:text-turquoise-deep">Instagram</a>
             <a href="#" className="hover:text-turquoise-deep">Behance</a>
@@ -743,6 +786,7 @@ function Index() {
     <main className="bg-paper text-ink">
       <Nav />
       <Hero />
+      <StudioBand />
       <SignatureProject />
       <FeaturedWork />
       <About />
