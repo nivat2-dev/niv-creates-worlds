@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
+import portraitV2Asset from "@/assets/niv-portrait-v2.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import necklace from "@/assets/necklace.png";
 import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
@@ -18,6 +19,7 @@ import ndBeachSceneAsset from "@/assets/nd-beach-scene.png.asset.json";
 import ndKissAsset from "@/assets/nd-kiss.png.asset.json";
 
 const portrait = portraitAsset.url;
+const portraitV2 = portraitV2Asset.url;
 const bookMockup = bookMockupAsset.url;
 const natgeo = ngkSpreadAsset.url;
 const superplay = gpdPiratePopupAsset.url;
@@ -111,28 +113,32 @@ function Nav() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-14 flex items-center justify-between text-ink">
         <a
           href="#top"
-          className="flex items-center gap-2.5 font-mono text-[11px] tracking-[0.18em] uppercase"
+          className="flex items-center gap-2.5 font-serif text-[15px] tracking-[-0.02em] text-ink"
         >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
           Niv Haviv
         </a>
-        <nav className="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+        <nav className="hidden md:flex items-center gap-7 text-[13px] text-ink-muted">
           {[
             ["Work", "#work"],
+            ["Editorial", "#work"],
+            ["Digital", "#work"],
+            ["Illustration", "#work"],
+            ["AI", "#work"],
             ["About", "#about"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
-            <a key={href} href={href} className="hover:text-ink transition-colors">
+            <a key={label} href={href} className="hover:text-ink transition-colors">
               {label}
             </a>
           ))}
         </nav>
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink hover:text-turquoise-deep transition-colors"
+          className="hidden md:inline-flex items-center gap-2 text-[13px] text-ink hover:text-turquoise-deep transition-colors"
         >
-          Available
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+          Available
         </a>
       </div>
     </header>
@@ -143,91 +149,108 @@ function Hero() {
   const y = useScrollY();
   return (
     <section id="top" className="relative w-full overflow-hidden bg-paper">
-      {/* Split: copy left, portrait right — tight to header */}
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-28 pb-16 md:pb-20 grid grid-cols-12 gap-8 lg:gap-12 items-center min-h-[88vh]">
-        {/* LEFT — copy */}
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-20 md:pt-24 pb-12 md:pb-16 grid grid-cols-12 gap-8 lg:gap-10 items-center min-h-[calc(100vh-3.5rem)]">
+        {/* LEFT — 60% */}
         <div className="col-span-12 lg:col-span-7">
+          <Reveal delay={60}>
+            <p className="text-[12px] text-ink-muted tracking-[-0.005em] mb-6 flex items-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
+              Available for select work · Tel Aviv
+            </p>
+          </Reveal>
           <div className="overflow-hidden">
             <h1
-              className="word-rise font-serif text-ink leading-[0.85] tracking-[-0.05em] uppercase text-[16vw] md:text-[11vw] lg:text-[8.4vw]"
+              className="word-rise font-serif text-ink leading-[0.95] tracking-[-0.045em] text-[12vw] md:text-[8vw] lg:text-[6.4vw]"
               style={{ animationDelay: "80ms" }}
             >
               Niv Haviv
             </h1>
           </div>
-
           <div className="mt-2 md:mt-3 overflow-hidden">
             <p
-              className="word-rise font-sans font-light text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.02em]"
-              style={{ animationDelay: "220ms" }}
+              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[7vw] md:text-[4vw] lg:text-[3.1vw] tracking-[-0.03em]"
+              style={{ animationDelay: "200ms" }}
             >
-              Visual Designer · Editorial · UI · Illustration
+              Visual Designer
             </p>
           </div>
 
-          <Reveal delay={380} className="mt-8 md:mt-10 max-w-lg">
-            <p className="font-sans text-base md:text-lg leading-[1.5] text-ink-muted">
-              An independent designer working across digital products,
-              editorial and illustrated worlds.
+          <Reveal delay={340} className="mt-7 md:mt-9 max-w-lg">
+            <p className="text-base md:text-[17px] leading-[1.55] text-ink-muted">
+              Creating visual experiences across digital products, publishing and storytelling.
             </p>
           </Reveal>
 
-          <Reveal delay={520} className="mt-8 md:mt-10 flex items-center gap-6">
+          <Reveal delay={460} className="mt-5 text-[13px] text-ink tracking-[-0.005em]">
+            <span>Editorial</span>
+            <span className="mx-2 text-ink-muted">•</span>
+            <span>UI</span>
+            <span className="mx-2 text-ink-muted">•</span>
+            <span>Illustration</span>
+            <span className="mx-2 text-ink-muted">•</span>
+            <span>AI</span>
+          </Reveal>
+
+          <Reveal delay={600} className="mt-8 md:mt-10 flex items-center gap-3">
             <a
               href="#work"
-              className="group inline-flex items-center gap-3 rounded-full bg-ink text-paper px-6 py-3 font-mono text-[11px] uppercase tracking-[0.2em] hover:bg-turquoise-deep transition-colors"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-3 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
             >
               View Work
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
             </a>
             <a
               href="#contact"
-              className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted hover:text-ink transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-ink/15 text-ink px-5 py-3 text-[13px] font-medium hover:border-ink/40 hover:bg-ink/[0.03] transition-colors"
             >
-              Get in touch
+              Get In Touch
             </a>
           </Reveal>
         </div>
 
-        {/* RIGHT — clean portrait */}
-        <div className="col-span-12 lg:col-span-5 lg:pl-8">
-          <IllustratedPortrait y={y} />
+        {/* RIGHT — 40% portrait */}
+        <div className="col-span-12 lg:col-span-5">
+          <CleanPortrait y={y} />
         </div>
       </div>
     </section>
   );
 }
 
-function IllustratedPortrait({ y }: { y: number }) {
-  const slow = y * 0.04;
+function CleanPortrait({ y }: { y: number }) {
+  const slow = y * 0.03;
   return (
-    <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px]">
-      {/* single soft pastel shape — behind, offset */}
+    <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px]">
+      {/* soft pastel gradient frame */}
       <div
         aria-hidden
-        className="absolute rounded-full"
+        className="absolute inset-0 rounded-[28px] overflow-hidden"
         style={{
-          top: "8%",
-          right: "-4%",
-          width: "82%",
-          height: "82%",
-          background: "oklch(0.92 0.05 200 / 0.7)",
-          transform: `translateY(${-slow}px)`,
-        }}
-      />
-
-      {/* portrait frame — clean, no overlay */}
-      <div
-        className="absolute inset-[4%] overflow-hidden clip-reveal"
-        style={{
-          animationDelay: "200ms",
+          background:
+            "linear-gradient(160deg, oklch(0.95 0.04 200) 0%, oklch(0.97 0.03 30) 55%, oklch(0.96 0.03 90) 100%)",
+          boxShadow:
+            "0 1px 0 rgba(0,0,0,0.04) inset, 0 30px 60px -25px rgba(20,40,60,0.18)",
         }}
       >
+        {/* subtle radial highlight */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 70% 25%, oklch(1 0 0 / 0.55), transparent 70%)",
+          }}
+        />
+      </div>
+
+      {/* portrait — cutout, bottom-aligned, scaled to occupy frame */}
+      <div className="absolute inset-0 overflow-hidden rounded-[28px]">
         <img
-          src={portrait}
+          src={portraitV2}
           alt="Niv Haviv — portrait"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ transform: `translateY(${-slow}px) scale(1.05)` }}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[108%] w-auto max-w-none object-contain object-bottom select-none"
+          style={{ transform: `translate(-50%, ${-slow}px)` }}
+          draggable={false}
         />
       </div>
     </div>
