@@ -141,26 +141,23 @@ function Nav() {
         }`}
       >
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
-          <a href="#top" aria-label="Niv Haviv — home" className="flex items-center gap-2.5 text-ink">
-            <img
-              src={signature}
-              alt="Niv Haviv signature"
-              className="h-14 md:h-16 w-auto select-none"
-              draggable={false}
-            />
+          <a
+            href="mailto:nivat2@gmail.com"
+            className="group inline-flex items-center gap-2 border border-ink/30 text-ink px-4 py-2 text-[12px] font-mono uppercase tracking-[0.18em] hover:border-ink hover:bg-ink/[0.04] transition-colors"
+          >
+            <span className="block h-1.5 w-1.5 rounded-full bg-turquoise-deep group-hover:scale-125 transition-transform" />
+            Hire me
           </a>
-          <nav className="hidden md:flex items-center gap-9 text-[12px] font-normal text-ink/55">
-            {[
-              ["Work", "#work"],
-              ["About", "#about"],
-              ["Contact", "#contact"],
-            ].map(([label, href]) => (
-              <a key={label} href={href} className="hover:text-ink transition-colors tracking-[-0.005em]">
-                {label}
-              </a>
-            ))}
-          </nav>
-          <button
+          <div className="flex items-center gap-6 md:gap-8">
+            <a href="#top" aria-label="Niv Haviv — home" className="flex items-center gap-2.5 text-ink">
+              <img
+                src={signature}
+                alt="Niv Haviv signature"
+                className="h-14 md:h-16 w-auto select-none"
+                draggable={false}
+              />
+            </a>
+            <button
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
@@ -171,7 +168,8 @@ function Nav() {
               <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
             </span>
             <span>Menu</span>
-          </button>
+            </button>
+          </div>
         </div>
       </header>
       <FullScreenMenu open={open} onClose={() => setOpen(false)} />
