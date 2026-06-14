@@ -270,16 +270,11 @@ function BiblicalZooPage() {
 
       {/* ───── 05 — IN THE WILD ───── */}
       <CaseSection tone="cream" className="!py-12 md:!py-16">
-        <CaseSectionHeader
-          label="Real-World Validation"
-          title="Observed visitor behaviour."
-          intro="Watching real families use the map at the zoo confirmed what the design was built for: children understood the structure within seconds, picked a trail and started moving on their own."
-          dense
-        />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
+          {/* Left — evidence */}
           <Reveal className="lg:col-span-5">
             <figure>
-              <div className="border border-hairline rounded-sm overflow-hidden max-w-[440px]">
+              <div className="border border-hairline rounded-sm overflow-hidden max-w-[460px]">
                 <img
                   src={kids.url}
                   alt="Children using the Biblical Zoo treasure map at the zoo"
@@ -287,19 +282,26 @@ function BiblicalZooPage() {
                   loading="lazy"
                 />
               </div>
-              <figcaption className="mt-3 font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <figcaption className="mt-3 max-w-[460px] font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
                 <span className="text-coral">·</span> On site, Biblical Zoo Jerusalem
               </figcaption>
             </figure>
           </Reveal>
+
+          {/* Right — story + findings, one continuous column */}
           <Reveal className="lg:col-span-7" delay={120}>
-            <ul className="space-y-3.5">
+            <SectionLabel label="Real-World Validation" />
+            <H2Section className="mt-4 max-w-2xl">Observed visitor behaviour.</H2Section>
+            <Lead className="mt-4 max-w-xl">
+              Watching real families use the map at the zoo confirmed what the design was built for — children understood the structure within seconds and started moving on their own.
+            </Lead>
+            <ul className="mt-7 border-t border-hairline">
               {[
                 "Children grasped the treasure-hunt structure without explanation and chose a trail on their own.",
                 "Families used the map without staff guidance — kids led the route, parents followed.",
                 "Engagement held from the entrance to the final exhibit, with the map in hand the whole visit.",
               ].map((t, i) => (
-                <li key={i} className="flex gap-3 border-t border-hairline pt-3.5">
+                <li key={i} className="flex gap-4 border-b border-hairline py-3.5">
                   <span className="font-mono text-[11px] tracking-[0.18em] text-coral pt-1">{String(i + 1).padStart(2, "0")}</span>
                   <Body className="text-ink">{t}</Body>
                 </li>
