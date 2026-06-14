@@ -36,8 +36,9 @@ const studioProduct = gpdPiratePopupAsset.url;
 const ndStrip1 = ndJerusalemWalkAsset.url;
 const ndStrip2 = ndBeachSceneAsset.url;
 const ndStrip3 = ndKissAsset.url;
-
+const sparkCoral = ndSparkCoralAsset.url;
 const sparkOlive = ndSparkOliveAsset.url;
+const diamondTeal = ndDiamondTealAsset.url;
 
 
 
