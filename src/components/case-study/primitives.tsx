@@ -203,7 +203,7 @@ export function CaseSectionHeader({
   label,
   title,
   intro,
-  align = "split",
+  align = "stack",
   dense = false,
 }: {
   label: string;
@@ -217,8 +217,8 @@ export function CaseSectionHeader({
     return (
       <Reveal className={`${headerGap} max-w-3xl`}>
         <SectionLabel label={label} />
-        <H2Section className="mt-5">{title}</H2Section>
-        {intro && <Lead className="mt-4">{intro}</Lead>}
+        <H2Section className="mt-4">{title}</H2Section>
+        {intro && <Lead className="mt-5">{intro}</Lead>}
       </Reveal>
     );
   }
