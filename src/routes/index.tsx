@@ -507,7 +507,7 @@ function StudioBand() {
     },
   ];
   return (
-    <section className="relative bg-cream/70 py-24 md:py-32 border-y border-hairline overflow-hidden">
+    <section className="relative bg-cream/60 py-16 md:py-24 border-y border-hairline overflow-hidden">
       <img
         src={sparkOlive}
         alt=""
@@ -521,7 +521,7 @@ function StudioBand() {
         className="absolute right-10 bottom-10 w-12 h-12 opacity-60 hidden md:block"
       />
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
-        <div className="flex items-end justify-between mb-14 md:mb-20">
+        <div className="flex items-end justify-between mb-10 md:mb-14">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> The Studio
           </p>
@@ -556,8 +556,8 @@ function StudioBand() {
 
 function FeaturedWork() {
   return (
-    <section id="work" className="relative bg-paper py-28 md:py-40">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-20 md:mb-28 grid grid-cols-12 gap-6">
+    <section id="work" className="relative bg-paper py-20 md:py-28">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
@@ -576,7 +576,7 @@ function FeaturedWork() {
         </div>
       </div>
 
-      <div className="space-y-28 md:space-y-40">
+      <div className="space-y-20 md:space-y-28">
         {projects.map((p) => (
           <ProjectRow key={p.title} p={p} />
         ))}
@@ -587,7 +587,7 @@ function FeaturedWork() {
 
 function About() {
   return (
-    <section id="about" className="relative bg-cream/60 text-ink py-32 md:py-44 border-t border-hairline overflow-hidden">
+    <section id="about" className="relative bg-cream/50 text-ink py-20 md:py-28 border-t border-hairline overflow-hidden">
       <img
         src={sparkCoral}
         alt=""
@@ -641,7 +641,7 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative bg-paper py-32 md:py-44 overflow-hidden">
+    <section id="contact" className="relative bg-paper py-20 md:py-28 overflow-hidden">
       <img
         src={diamondTeal}
         alt=""
@@ -676,14 +676,13 @@ function Contact() {
           </a>
         </Reveal>
 
-        <div className="mt-24 h-px w-full bg-turquoise/30" />
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-6 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+        <p className="mt-10 max-w-xl text-ink-muted leading-relaxed">
+          Find me by email — that's where the work happens.
+        </p>
+        <div className="mt-16 h-px w-full bg-turquoise/30" />
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <span>© {new Date().getFullYear()} Niv Haviv — Author · Illustrator · Designer</span>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-turquoise-deep">Instagram</a>
-            <a href="#" className="hover:text-turquoise-deep">Behance</a>
-            <a href="#" className="hover:text-turquoise-deep">Read.cv</a>
-          </div>
+          <span>Tel Aviv</span>
         </div>
       </div>
     </section>
