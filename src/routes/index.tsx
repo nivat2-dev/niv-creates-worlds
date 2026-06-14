@@ -938,7 +938,6 @@ function Index() {
       <Nav />
       <Hero />
       <FeaturedWork />
-      <SignatureProject />
       <StudioBand />
       <About />
       <Contact />
