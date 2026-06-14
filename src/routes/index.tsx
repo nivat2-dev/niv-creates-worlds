@@ -281,7 +281,7 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[1500px] px-10 md:px-16 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
 
-        <div className="flex flex-col justify-center pb-16 md:pb-24 lg:pl-24 xl:pl-32 lg:order-2">
+        <div className="flex flex-col justify-center pb-16 md:pb-24">
 
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
 
@@ -317,7 +317,7 @@ function Hero() {
 
         </div>
 
-        <div className="flex justify-start items-end h-full lg:order-1 lg:-ml-16 xl:-ml-24">
+        <div className="flex justify-end items-end h-full">
 
           <IllustrationPortrait />
 
