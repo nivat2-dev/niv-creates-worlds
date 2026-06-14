@@ -556,58 +556,103 @@ function SignatureProject() {
 }
 
 function ProjectRow({ p }: { p: Project }) {
+
   return (
-    <Link to={p.to} className="group block">
-      <article className="relative">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-center">
-          <Reveal className="col-span-12 lg:col-span-7 lg:order-1">
-            <div className="lift-img relative aspect-[4/3] w-full overflow-hidden bg-paper-deep">
-              <img
-                src={p.image}
-                alt={p.alt}
-                loading="lazy"
-                width={1280}
-                height={960}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
-              <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-paper mix-blend-difference">
-                {p.index} / {p.tags[0]}
-              </div>
+
+    <Link to={p.to} className="group block border-b border-ink/8 last:border-b-0">
+
+      <article className="mx-auto max-w-[1500px] px-10 md:px-16 py-16 md:py-20 grid grid-cols-12 gap-8 md:gap-12 items-center">
+
+        {/* LEFT — image, ~40% width */}
+
+        <Reveal className="col-span-12 md:col-span-5">
+
+          <div className="relative w-full aspect-[3/4] overflow-hidden bg-paper-deep">
+
+            <img
+
+              src={p.image}
+
+              alt={p.alt}
+
+              loading="lazy"
+
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+
+            />
+
+            <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 mix-blend-difference">
+
+              {p.index}
+
             </div>
-          </Reveal>
-          <Reveal delay={120} className="col-span-12 lg:col-span-5 lg:order-2">
-            <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-              <span>{p.index}</span>
-              <span className="h-px w-10 bg-ink/30" />
-              <span>Project</span>
-            </div>
-            <h3 className="font-serif text-5xl md:text-6xl leading-[0.95] mt-5 text-ink tracking-[-0.04em]">
-              {p.title}
-            </h3>
-            <p className="font-serif italic text-xl md:text-2xl text-turquoise-deep mt-3 font-light">{p.tagline}</p>
-            <p className="mt-6 text-ink-muted leading-relaxed max-w-md">{p.body}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {p.tags.map((t) => (
-                <span
-                  key={t}
-                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-            <span className="mt-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink">
-              <span className="border-b border-ink/40 pb-0.5 group-hover:border-turquoise group-hover:text-turquoise-deep transition-colors">
-                View project
+
+          </div>
+
+        </Reveal>
+
+        {/* RIGHT — text, ~55% width */}
+
+        <Reveal delay={100} className="col-span-12 md:col-span-7 flex flex-col justify-center pl-0 md:pl-8">
+
+          <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/30 mb-6">
+
+            <span>{p.index}</span>
+
+            <span className="h-px w-8 bg-ink/20" />
+
+            <span>{p.tags[0]}</span>
+
+          </div>
+
+          <h3 className="font-serif text-[8vw] sm:text-[5vw] md:text-[3.2vw] lg:text-[2.4vw] leading-[1.05] tracking-[-0.03em] text-ink">
+
+            {p.title}
+
+          </h3>
+
+          <p className="font-serif italic text-[1.1vw] md:text-[1vw] lg:text-[18px] text-turquoise-deep mt-3 font-light leading-[1.4]">
+
+            {p.tagline}
+
+          </p>
+
+          <p className="mt-5 text-[14px] md:text-[15px] text-ink/50 leading-relaxed max-w-[400px]">
+
+            {p.body}
+
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+
+            {p.tags.map((t) => (
+
+              <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 border border-ink/15 px-3 py-1.5">
+
+                {t}
+
               </span>
-              <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">→</span>
-            </span>
-          </Reveal>
-        </div>
+
+            ))}
+
+          </div>
+
+          <span className="mt-8 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/40 border border-ink/20 px-5 py-3 w-fit group-hover:border-ink/50 group-hover:text-ink transition-colors duration-300">
+
+            View project
+
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+
+          </span>
+
+        </Reveal>
+
       </article>
+
     </Link>
+
   );
+
 }
 
 function StudioBand() {
