@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import MoreWork from "@/components/MoreWork";
+import { ZoomableImage } from "@/components/Lightbox";
 import {
   CaseNav,
   SectionLabel,
@@ -87,42 +88,42 @@ function NatGeoKidsPage() {
             <div className="col-span-12 lg:col-span-7">
               <div className="relative mx-auto w-full max-w-[640px] aspect-[5/6]">
                 {/* Editorial spread — back layer */}
-                <img
+                <ZoomableImage
                   src={spread.url}
                   alt="National Geographic Kids editorial spread"
                   className="absolute left-[-4%] top-[6%] w-[58%] h-auto rounded-sm select-none"
                   style={{ filter: "drop-shadow(0 18px 36px rgba(20,20,22,.18))", transform: "rotate(-4deg)" }}
                 />
                 {/* Landing page mockup — back right */}
-                <img
+                <ZoomableImage
                   src={landing.url}
                   alt="NGK landing page mockup"
                   className="absolute right-[-6%] top-[2%] w-[46%] h-auto select-none"
                   style={{ filter: "drop-shadow(0 16px 32px rgba(20,20,22,.16))", transform: "rotate(3deg)" }}
                 />
                 {/* Display stand — mid back */}
-                <img
+                <ZoomableImage
                   src={bookmarks.url}
                   alt="NGK magnetic bookmarks display stand"
                   className="absolute left-[6%] bottom-[2%] w-[40%] h-auto select-none"
                   style={{ filter: "drop-shadow(0 20px 36px rgba(20,20,22,.20))", transform: "rotate(-2deg)" }}
                 />
                 {/* Card pack — mid right */}
-                <img
+                <ZoomableImage
                   src={cards.url}
                   alt="Keflaonim collectible cards and pack"
                   className="absolute right-[2%] bottom-[6%] w-[44%] h-auto select-none"
                   style={{ filter: "drop-shadow(0 22px 40px rgba(20,20,22,.22))", transform: "rotate(4deg)" }}
                 />
                 {/* Amazon cover — secondary anchor */}
-                <img
+                <ZoomableImage
                   src={coverAmazon.url}
                   alt="National Geographic Kids — Amazon cover"
                   className="absolute left-[12%] top-[18%] w-[44%] h-auto rounded-sm select-none"
                   style={{ filter: "drop-shadow(0 26px 44px rgba(20,20,22,.24))", transform: "rotate(-5deg)" }}
                 />
                 {/* Titanic cover — primary anchor, front-center */}
-                <img
+                <ZoomableImage
                   src={coverTitanic.url}
                   alt="National Geographic Kids — Titanic cover"
                   className="absolute right-[10%] top-[22%] w-[50%] h-auto rounded-sm select-none"
@@ -167,10 +168,9 @@ function NatGeoKidsPage() {
             {cardsList.map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm">
                 <div className="h-[220px] md:h-[230px] flex items-center justify-center">
-                  <img
+                  <ZoomableImage
                     src={card.image}
                     alt={card.alt}
-                    loading="lazy"
                     className="block max-h-full max-w-[70%] w-auto h-auto object-contain"
                     style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
                   />
@@ -208,7 +208,7 @@ function NatGeoKidsPage() {
           <article className="grid grid-cols-12 gap-8 md:gap-14 items-center mt-4">
             <div className="col-span-12 lg:col-span-7 order-1">
               <div className="relative mx-auto w-full max-w-[640px]">
-                <img
+                <ZoomableImage
                   src={coverTitanic.url}
                   alt="National Geographic Kids — Titanic cover"
                   className="block w-full h-auto rounded-sm select-none"
@@ -244,7 +244,7 @@ function NatGeoKidsPage() {
             </div>
             <div className="col-span-12 lg:col-span-7 order-1 lg:order-2">
               <div className="relative mx-auto w-full max-w-[640px]">
-                <img
+                <ZoomableImage
                   src={coverAmazon.url}
                   alt="National Geographic Kids — Amazon cover"
                   className="block w-full h-auto rounded-sm select-none"
@@ -258,7 +258,7 @@ function NatGeoKidsPage() {
           <article className="mt-20 md:mt-28 grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-7 order-1">
               <div className="relative mx-auto w-full max-w-[760px]">
-                <img
+                <ZoomableImage
                   src={spread.url}
                   alt="National Geographic Kids editorial spread"
                   className="block w-full h-auto rounded-sm select-none"
@@ -307,10 +307,9 @@ function NatGeoKidsPage() {
             ].map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 rounded-sm overflow-hidden">
                 <div className="relative aspect-[4/5] bg-cream flex items-center justify-center p-6">
-                  <img
+                  <ZoomableImage
                     src={card.image}
                     alt={card.alt}
-                    loading="lazy"
                     className="block max-h-full max-w-full w-auto h-auto object-contain"
                     style={{ filter: "drop-shadow(0 18px 32px rgba(20,20,22,.14))" }}
                   />
@@ -350,7 +349,7 @@ function NatGeoKidsPage() {
           <article className="grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-7 order-1">
               <div className="relative mx-auto w-full max-w-[460px] py-6">
-                <img
+                <ZoomableImage
                   src={landingMockup.url}
                   alt="National Geographic Kids landing page mockup"
                   className="block w-full h-auto select-none"
@@ -379,10 +378,9 @@ function NatGeoKidsPage() {
             ].map((card) => (
               <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden">
                 <div className="relative aspect-[4/3] bg-cream flex items-center justify-center p-10 md:p-14">
-                  <img
+                  <ZoomableImage
                     src={card.image}
                     alt={card.alt}
-                    loading="lazy"
                     className="block max-h-full max-w-[70%] w-auto h-auto object-contain"
                     style={{ filter: "drop-shadow(0 22px 38px rgba(20,20,22,.16))" }}
                   />
@@ -408,7 +406,7 @@ function NatGeoKidsPage() {
             {/* Left — portrait */}
             <div className="col-span-12 lg:col-span-6">
               <div className="relative mx-auto w-full max-w-[460px] aspect-[4/5] overflow-hidden rounded-sm" style={{ filter: "drop-shadow(0 30px 54px rgba(20,20,22,.18))" }}>
-                <img
+                <ZoomableImage
                   src={portrait.url}
                   alt="Niv Haviv at the National Geographic Kids studio"
                   className="absolute inset-0 w-full h-full object-cover select-none"
