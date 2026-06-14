@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
-import nivIllustrationAsset from "@/assets/niv-illustration.png.asset.json";
+import nivIllustrationAsset from "@/assets/niv-illustration-v2.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import necklace from "@/assets/necklace.png";
 import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
@@ -311,7 +311,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="col-span-12 lg:col-span-5">
+        <div className="col-span-12 lg:col-span-5 lg:pr-10 xl:pr-20">
           <IllustrationPortrait />
         </div>
       </div>
@@ -321,29 +321,10 @@ function Hero() {
 
 function IllustrationPortrait() {
   const wrapRef = useRef<HTMLDivElement>(null);
-  const [pupil, setPupil] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      const el = wrapRef.current;
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      const cx = r.left + r.width / 2;
-      const cy = r.top + r.height / 2;
-      const dx = (e.clientX - cx) / window.innerWidth;
-      const dy = (e.clientY - cy) / window.innerHeight;
-      const max = 3.5;
-      setPupil({
-        x: Math.max(-max, Math.min(max, dx * 12)),
-        y: Math.max(-max, Math.min(max, dy * 12)),
-      });
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
   return (
     <div
       ref={wrapRef}
-      className="relative mx-auto aspect-[3/4] w-full max-w-[380px] lg:max-w-[400px]"
+      className="relative mx-auto aspect-[5/4] w-full max-w-[460px] lg:max-w-[520px]"
     >
       <img
         src={nivIllustration}
@@ -351,24 +332,6 @@ function IllustrationPortrait() {
         className="relative w-full h-full object-contain select-none"
         draggable={false}
       />
-      {/* subtle pupil overlay — tiny eyes-follow-cursor */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          transform: `translate(${pupil.x}px, ${pupil.y}px)`,
-          transition: "transform 280ms cubic-bezier(.2,.7,.2,1)",
-        }}
-      >
-        <span
-          className="absolute rounded-full bg-ink"
-          style={{ left: "44.6%", top: "33.6%", width: 5, height: 5 }}
-        />
-        <span
-          className="absolute rounded-full bg-ink"
-          style={{ left: "54.2%", top: "33.6%", width: 5, height: 5 }}
-        />
-      </div>
     </div>
   );
 }
