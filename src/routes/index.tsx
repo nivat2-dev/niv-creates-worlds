@@ -663,23 +663,19 @@ function StudioBand() {
 function FeaturedWork() {
   return (
     <section id="work" className="relative bg-paper py-20 md:py-28">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20 grid grid-cols-12 gap-6">
-        <div className="col-span-12 md:col-span-3">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20">
+        <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
           </p>
-        </div>
-        <div className="col-span-12 md:col-span-9">
-          <Reveal>
-            <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em]">
-              More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
-            </h2>
-            <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
-              Beyond New Direction — books, characters, illustrated identities and
-              products built around the stories they tell.
-            </p>
-          </Reveal>
-        </div>
+          <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em] mt-6">
+            More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
+          </h2>
+          <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
+            Beyond New Direction — books, characters, illustrated identities and
+            products built around the stories they tell.
+          </p>
+        </Reveal>
       </div>
 
       <div className="space-y-20 md:space-y-28">
@@ -711,7 +707,7 @@ function About() {
             Niv Haviv · Tel Aviv
           </p>
         </Reveal>
-        <Reveal delay={120} className="col-span-12 lg:col-span-7 lg:pl-8">
+        <Reveal delay={120} className="col-span-12 lg:col-span-7">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (03) — About
           </p>
