@@ -182,6 +182,7 @@ function Nav() {
 function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const items = [
     { label: "Work", sub: "Selected projects across editorial, illustration, UI and publishing.", href: "#work" },
+    { label: "Who I Am", sub: "A visual journey through theatre, design, illustration and graphic novels.", href: "/who-i-am" },
   ];
   return (
     <div
