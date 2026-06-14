@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import portraitV2Asset from "@/assets/niv-portrait-v2.png.asset.json";
-import signatureAsset from "@/assets/niv-signature.png.asset.json";
+import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import necklace from "@/assets/necklace.png";
 import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
@@ -121,7 +121,7 @@ function Nav() {
           <img
             src={signature}
             alt="Niv Haviv signature"
-            className="h-7 md:h-8 w-auto select-none"
+            className="h-8 md:h-10 w-auto select-none"
             draggable={false}
           />
         </a>
