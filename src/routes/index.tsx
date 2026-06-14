@@ -141,13 +141,6 @@ function Nav() {
         }`}
       >
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
-          <a
-            href="mailto:nivat2@gmail.com"
-            className="group inline-flex items-center gap-2 border border-ink/30 text-ink px-4 py-2 text-[12px] font-mono uppercase tracking-[0.18em] hover:border-ink hover:bg-ink/[0.04] transition-colors"
-          >
-            <span className="block h-1.5 w-1.5 rounded-full bg-turquoise-deep group-hover:scale-125 transition-transform" />
-            Hire me
-          </a>
           <div className="flex items-center gap-6 md:gap-8">
             <a href="#top" aria-label="Niv Haviv — home" className="flex items-center gap-2.5 text-ink">
               <img
@@ -158,18 +151,25 @@ function Nav() {
               />
             </a>
             <button
-            type="button"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-            className="group relative inline-flex items-center gap-3.5 rounded-full bg-ink text-white px-6 py-3 text-[14px] font-medium tracking-[-0.005em] hover:bg-turquoise-deep transition-all duration-300 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
-          >
-            <span className="relative flex flex-col gap-[6px]">
-              <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
-              <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
-            </span>
-            <span>Menu</span>
+              type="button"
+              aria-label="Open menu"
+              onClick={() => setOpen(true)}
+              className="group relative inline-flex items-center gap-3.5 rounded-full bg-ink text-white px-6 py-3 text-[14px] font-medium tracking-[-0.005em] hover:bg-turquoise-deep transition-all duration-300 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
+            >
+              <span className="relative flex flex-col gap-[6px]">
+                <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
+                <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
+              </span>
+              <span>Menu</span>
             </button>
           </div>
+          <a
+            href="mailto:nivat2@gmail.com"
+            className="group inline-flex items-center gap-2 border border-ink/30 text-ink px-4 py-2 text-[12px] font-mono uppercase tracking-[0.18em] hover:border-ink hover:bg-ink/[0.04] transition-colors"
+          >
+            <span className="block h-1.5 w-1.5 rounded-full bg-turquoise-deep group-hover:scale-125 transition-transform" />
+            Hire me
+          </a>
         </div>
       </header>
       <FullScreenMenu open={open} onClose={() => setOpen(false)} />
@@ -277,9 +277,9 @@ function Hero() {
 
   return (
 
-    <section id="top" className="relative w-full overflow-hidden bg-[#f0f4f8]">
+    <section id="top" className="relative w-full bg-[#f0f4f8]">
 
-      <div className="relative mx-auto max-w-[1500px] px-10 md:px-16 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
+      <div className="relative mx-auto max-w-[1500px] px-14 md:px-24 lg:px-32 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
 
         <div className="flex flex-col justify-center pb-16 md:pb-24">
 
@@ -317,7 +317,7 @@ function Hero() {
 
         </div>
 
-        <div className="flex justify-end items-end h-full">
+        <div className="flex justify-center items-end h-full">
 
           <IllustrationPortrait />
 
@@ -325,12 +325,9 @@ function Hero() {
 
       </div>
 
-      <div className="pointer-events-none absolute bottom-6 left-16 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-ink/30 font-mono">
-
+      <div className="pointer-events-none absolute top-[92%] left-16 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-ink/30 font-mono">
         <span>Scroll</span>
-
-        <span className="block h-8 w-px bg-ink/20 scroll-cue" />
-
+        <span className="block h-[20vh] md:h-[28vh] w-px bg-ink/20 scroll-cue" />
       </div>
 
     </section>
