@@ -203,8 +203,8 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-6 md:px-12 lg:px-20 pt-20 md:pt-32 pb-24 grid grid-cols-12 gap-10">
-          <ul className="col-span-12 lg:col-span-9 space-y-14 md:space-y-20 lg:space-y-24">
+        <div className="mx-auto max-w-[720px] lg:max-w-[800px] px-8 md:px-12 pt-16 md:pt-28 lg:pt-36 pb-32 md:pb-40">
+          <ul className="space-y-20 md:space-y-28 lg:space-y-32">
             {items.map((it, i) => (
               <li
                 key={it.label}
@@ -217,29 +217,31 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
               >
                 <a href={it.href} onClick={onClose} className="block">
                   <div className="flex items-baseline justify-between gap-6">
-                    <h3 className="font-serif text-[14vw] md:text-[9vw] lg:text-[7.6vw] leading-[0.9] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                    <h3 className="font-serif text-[10vw] md:text-[6.5vw] lg:text-[5vw] leading-[0.9] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                       {it.label}
                     </h3>
-                    <span className="hidden md:inline-block text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-4xl">→</span>
+                    <span className="hidden md:inline-block text-ink/25 group-hover:text-turquoise-deep/60 group-hover:translate-x-2 transition-all duration-500 text-2xl font-light">→</span>
                   </div>
-                  <p className="mt-5 md:mt-6 ml-1 max-w-md text-ink/55 text-[15px] md:text-[16px] font-normal leading-[1.55] tracking-[-0.005em]">{it.sub}</p>
+                  <p className="mt-8 md:mt-10 ml-0.5 max-w-sm text-ink/40 text-[13px] md:text-[14px] font-normal leading-[1.6] tracking-[-0.005em]">{it.sub}</p>
                 </a>
               </li>
             ))}
           </ul>
           <div
-            className="col-span-12 lg:col-span-3 flex flex-col justify-end gap-4 text-[13px] text-ink-muted"
+            className="mt-32 md:mt-40 flex flex-col gap-5 text-[12px] text-ink/35"
             style={{
               opacity: open ? 1 : 0,
               transition: `opacity .6s ease 500ms`,
             }}
           >
-            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink/55">Get in touch</p>
-            <a href="mailto:nivat2@gmail.com" className="text-ink hover:text-turquoise-deep transition-colors">nivat2@gmail.com</a>
-            <a href="tel:050-2231317" className="text-ink hover:text-turquoise-deep transition-colors">050-2231317</a>
-            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="text-ink hover:text-turquoise-deep transition-colors">LinkedIn</a>
-            <span className="mt-4 inline-flex items-center gap-2">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+            <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-ink/30">Get in touch</p>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <a href="mailto:nivat2@gmail.com" className="text-ink/55 hover:text-turquoise-deep transition-colors">nivat2@gmail.com</a>
+              <a href="tel:050-2231317" className="text-ink/55 hover:text-turquoise-deep transition-colors">050-2231317</a>
+              <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="text-ink/55 hover:text-turquoise-deep transition-colors">LinkedIn</a>
+            </div>
+            <span className="mt-2 inline-flex items-center gap-2 text-[11px] text-ink/30">
+              <span className="inline-block h-1 w-1 rounded-full bg-turquoise/60 animate-pulse" />
               Available for selected opportunities
             </span>
           </div>
