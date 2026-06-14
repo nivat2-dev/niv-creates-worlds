@@ -268,7 +268,7 @@ type Project = {
   image: string;
   alt: string;
   to: string;
-  layout?: "hero" | "left" | "right";
+  layout?: "hero" | "left" | "right" | "wide";
 };
 
 const projects: Project[] = [
@@ -299,24 +299,24 @@ const projects: Project[] = [
   {
     index: "03",
     title: "Biblical Zoo Treasure Map",
-    tagline: "An illustrated identity for a place full of stories.",
-    tags: ["Identity", "Wayfinding", "Illustration"],
+    tagline: "A hand-drawn map for one of Jerusalem's most beloved places.",
+    tags: ["Illustrated Map", "Wayfinding", "Storytelling"],
     body:
-      "Illustrated mascots, signage and a friendly visual system for one of Jerusalem’s most beloved cultural spaces.",
-    image: zoo,
-    alt: "Biblical Zoo identity and signage",
+      "An illustrated treasure map that turns a walk through the zoo into a story — every animal a character, every path a chapter.",
+    image: zooMap,
+    alt: "Biblical Zoo illustrated treasure map",
     to: "/work/biblical-zoo",
-    layout: "right",
+    layout: "wide",
   },
   {
     index: "04",
     title: "Asaflezet",
-    tagline: "A complete brand world — quiet, warm, distinctly its own.",
-    tags: ["Brand", "Identity", "Art Direction"],
+    tagline: "A self-written, self-illustrated children's book in print.",
+    tags: ["Author", "Children's Book", "Illustration"],
     body:
-      "Identity, packaging and photography direction — a full sensory brand built around a single quiet idea.",
+      "Written, illustrated and designed end-to-end — from first sketch to a printed hardcover in the hands of real readers.",
     image: asaflezet,
-    alt: "Asaflezet brand identity",
+    alt: "Asaflezet — printed children's book held in hand",
     to: "/work/asaflezet",
     layout: "left",
   },
