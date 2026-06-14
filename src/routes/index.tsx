@@ -655,78 +655,6 @@ function ProjectRow({ p }: { p: Project }) {
 
 }
 
-function StudioBand() {
-  const items = [
-    {
-      n: "I.",
-      label: "Books",
-      title: "I write and draw books.",
-      body: "Graphic novels and printed children's titles — authored and illustrated end-to-end.",
-      img: studioBooks,
-    },
-    {
-      n: "II.",
-      label: "Illustration",
-      title: "I tell stories in pictures.",
-      body: "Editorial spreads, characters and worlds — a recognizable hand across every project.",
-      img: studioIllo,
-    },
-    {
-      n: "III.",
-      label: "Product",
-      title: "I design the things that carry them.",
-      body: "When the story needs an interface, an identity or a printed object — I make that too.",
-      img: studioProduct,
-    },
-  ];
-  return (
-    <section className="relative bg-[#f0f4f8] py-16 md:py-24 border-y border-hairline overflow-hidden">
-      <img
-        src={sparkOlive}
-        alt=""
-        aria-hidden
-        className="absolute left-6 top-10 w-10 h-10 opacity-70 hidden md:block"
-      />
-      <img
-        src={diamondTeal}
-        alt=""
-        aria-hidden
-        className="absolute right-10 bottom-10 w-12 h-12 opacity-60 hidden md:block"
-      />
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
-        <div className="flex items-end justify-between mb-10 md:mb-14">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            <span className="text-turquoise-deep">●</span> The Studio
-          </p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted hidden md:block">
-            One person · three crafts
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
-          {items.map((it, i) => (
-            <Reveal key={it.label} delay={i * 80}>
-              <div className="relative">
-                <div className="aspect-[5/4] w-full overflow-hidden bg-paper border border-hairline">
-                  <img src={it.img} alt="" className="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <div className="mt-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-                  <span className="text-turquoise-deep">{it.n}</span>
-                  <span className="h-px w-8 bg-turquoise/50" />
-                  <span>{it.label}</span>
-                </div>
-                <h3 className="font-serif text-2xl md:text-3xl leading-[1.05] mt-3 text-ink tracking-[-0.03em]">
-                  {it.title}
-                </h3>
-                <p className="mt-3 text-ink-muted leading-relaxed text-[15px] max-w-sm">{it.body}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function FeaturedWork() {
   return (
     <section id="work" className="relative bg-white py-20 md:py-28">
@@ -938,7 +866,6 @@ function Index() {
       <Nav />
       <Hero />
       <FeaturedWork />
-      <StudioBand />
       <About />
       <Contact />
     </main>
