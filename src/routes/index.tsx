@@ -355,10 +355,16 @@ function IllustrationPortrait() {
       className="relative w-full max-w-[680px] lg:max-w-[740px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-0 flex items-center justify-center"
+      >
+        <div className="w-[78%] h-[78%] rounded-full bg-[#bcd9f5] opacity-70 blur-3xl" />
+      </div>
       <img
         src={nivIllustration}
         alt="Editorial illustration of Niv Haviv"
-        className="relative w-full h-auto object-contain select-none rise-in"
+        className="relative z-10 w-full h-auto object-contain select-none rise-in"
         draggable={false}
       />
     </div>
