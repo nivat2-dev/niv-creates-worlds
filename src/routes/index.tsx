@@ -203,9 +203,9 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 lg:px-16 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-5 md:py-7 lg:py-8 flex flex-col">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 lg:px-16 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-3 md:py-4 lg:py-5 flex flex-col">
           <p
-            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-5 md:mb-7 lg:mb-8 shrink-0"
+            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-3 md:mb-4 lg:mb-5 shrink-0"
             style={{
               opacity: open ? 1 : 0,
               transition: `opacity .5s ease 150ms`,
@@ -228,14 +228,14 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 <a
                   href={it.href}
                   onClick={onClose}
-                  className="grid grid-cols-12 gap-4 md:gap-6 items-center py-5 md:py-6 lg:py-7"
+                  className="grid grid-cols-12 gap-4 md:gap-6 items-center py-3.5 md:py-4 lg:py-5"
                 >
                   {/* number */}
                   <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
                     0{i + 1}
                   </span>
                   {/* title — left, dominant */}
-                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[10vw] md:text-[6.8vw] lg:text-[5.4vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                  <h3 className="col-span-5 md:col-span-6 font-serif text-[12vw] sm:text-[9vw] md:text-[5.8vw] lg:text-[4.8vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                     {it.label}
                   </h3>
                   {/* description + arrow — right, asymmetric */}
@@ -253,7 +253,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
           </ul>
 
           <div
-            className="mt-auto pt-5 md:pt-7 lg:pt-8 grid grid-cols-12 gap-4 md:gap-6 shrink-0"
+            className="mt-auto pt-3 md:pt-4 lg:pt-5 grid grid-cols-12 gap-4 md:gap-6 shrink-0"
             style={{
               opacity: open ? 1 : 0,
               transition: `opacity .6s ease 560ms`,
