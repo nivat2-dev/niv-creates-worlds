@@ -338,21 +338,27 @@ function SignatureProject() {
 
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-32 pb-10">
         <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-paper/60">
-          <span>★ Signature Project</span>
-          <span>00 / New Direction</span>
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
+            ★ Flagship Project
+          </span>
+          <span>00 / New Direction · Graphic Novel</span>
         </div>
-        <div className="mt-6 h-px w-full bg-paper/15" />
+        <div className="mt-6 h-px w-full bg-turquoise/40" />
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-24 md:pb-36 grid grid-cols-12 gap-6 items-center">
         <Reveal className="col-span-12 lg:col-span-7">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise mb-6">
+            An original graphic novel — written, drawn and designed by Niv.
+          </p>
           <h2 className="font-serif text-[14vw] md:text-[9.5vw] lg:text-[8.2vw] leading-[0.86] tracking-[-0.045em]">
             New
             <span className="italic font-light text-turquoise"> Direction</span>
           </h2>
           <p className="font-serif text-2xl md:text-3xl leading-[1.2] max-w-xl mt-8 text-paper/90">
-            An original graphic novel — story, characters, typography and
-            book design built from a single visual language.
+            Story, characters, typography and book design — built from
+            a single visual language, panel by panel.
           </p>
           <p className="mt-8 max-w-md text-paper/60 leading-relaxed">
             Hundreds of hand-painted panels. A complete publishing project,
@@ -377,21 +383,41 @@ function SignatureProject() {
 
         {/* Right: Book + Pendant composition */}
         <Reveal className="col-span-12 lg:col-span-5 relative h-[520px] md:h-[600px]" delay={160}>
+          {/* ambient personality marks */}
+          <img
+            src={sparkCoral}
+            alt=""
+            aria-hidden
+            className="absolute -top-2 right-6 w-10 h-10 opacity-90 float-med"
+            style={{ transform: `translateY(${y * 0.06}px)` }}
+          />
+          <img
+            src={diamondTeal}
+            alt=""
+            aria-hidden
+            className="absolute top-1/2 right-[6%] w-8 h-8 opacity-80"
+            style={{ transform: `translateY(${y * -0.05}px) rotate(12deg)` }}
+          />
+          <img
+            src={starCream}
+            alt=""
+            aria-hidden
+            className="absolute left-[40%] top-10 w-6 h-6 opacity-70 float-med"
+            style={{ transform: `translateY(${y * 0.04}px)` }}
+          />
           <div
-            className="absolute right-0 top-4 w-[78%] aspect-[968/1320] overflow-hidden bg-paper/5 clip-reveal"
+            className="absolute right-0 top-4 w-[82%] clip-reveal"
             style={{
               animationDelay: "200ms",
               transform: `translateY(${y * -0.04}px)`,
-              filter: "drop-shadow(0 40px 60px rgba(0,0,0,0.45))",
+              filter: "drop-shadow(0 50px 70px rgba(0,0,0,0.55))",
             }}
           >
             <img
-              src={bookCover}
-              alt="New Direction — graphic novel cover"
+              src={bookMockup}
+              alt="New Direction — printed graphic novel"
               loading="lazy"
-              width={968}
-              height={1320}
-              className="w-full h-full object-cover"
+              className="w-full h-auto"
             />
           </div>
           <div
