@@ -327,134 +327,101 @@ const projects: Project[] = [
 function SignatureProject() {
   const y = useScrollY();
   return (
-    <section id="signature" className="relative bg-ink text-paper overflow-hidden">
-      {/* turquoise wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 -right-40 w-[60vw] h-[60vw] rounded-full blur-3xl opacity-30"
-        style={{
-          background:
-            "radial-gradient(closest-side, color-mix(in oklab, var(--turquoise) 70%, transparent), transparent 70%)",
-        }}
-      />
-
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-32 pb-10">
-        <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-paper/60">
-          <span className="inline-flex items-center gap-2">
+    <section id="signature" className="relative bg-cream/80 text-ink overflow-hidden border-y border-hairline">
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-20 md:pt-28 pb-6">
+        <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+          <span className="inline-flex items-center gap-2 text-turquoise-deep">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
             ★ Flagship Project
           </span>
           <span>00 / New Direction · Graphic Novel</span>
         </div>
-        <div className="mt-6 h-px w-full bg-turquoise/40" />
+        <div className="mt-5 h-px w-full bg-turquoise/40" />
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-24 md:pb-36 grid grid-cols-12 gap-6 items-center">
-        <Reveal className="col-span-12 lg:col-span-7">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise mb-6">
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-16 md:pb-24 grid grid-cols-12 gap-8 md:gap-12 items-center">
+        <Reveal className="col-span-12 lg:col-span-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise-deep mb-6">
             An original graphic novel — written, drawn and designed by Niv.
           </p>
-          <h2 className="font-serif text-[14vw] md:text-[9.5vw] lg:text-[8.2vw] leading-[0.86] tracking-[-0.045em]">
+          <h2 className="font-serif text-[14vw] md:text-[9vw] lg:text-[7.6vw] leading-[0.86] tracking-[-0.045em] text-ink">
             New
-            <span className="italic font-light text-turquoise"> Direction</span>
+            <span className="italic font-light text-turquoise-deep"> Direction</span>
           </h2>
-          <p className="font-serif text-2xl md:text-3xl leading-[1.2] max-w-xl mt-8 text-paper/90">
+          <p className="font-serif text-2xl md:text-3xl leading-[1.2] max-w-xl mt-8 text-ink">
             Story, characters, typography and book design — built from
             a single visual language, panel by panel.
           </p>
-          <p className="mt-8 max-w-md text-paper/60 leading-relaxed">
+          <p className="mt-6 max-w-md text-ink-muted leading-relaxed">
             Hundreds of hand-painted panels. A complete publishing project,
             from first sketch to printed spine — and the turquoise pendant
             that anchors the whole world.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em]">
+          <div className="mt-8 flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
             {["Graphic Novel", "Character Design", "Illustration", "Publishing"].map((t) => (
-              <span key={t} className="border border-paper/25 px-3 py-1.5 rounded-full">
+              <span key={t} className="border border-hairline text-ink px-3 py-1.5 rounded-full">
                 {t}
               </span>
             ))}
           </div>
           <Link
             to="/work/new-direction"
-            className="group mt-12 inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] border-b border-paper/40 pb-1 hover:border-turquoise hover:text-turquoise transition-colors"
+            className="group mt-10 inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.2em] border-b border-ink/40 pb-1 hover:border-turquoise hover:text-turquoise-deep transition-colors"
           >
             Open the case study
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </Reveal>
 
-        {/* Right: Book + Pendant composition */}
-        <Reveal className="col-span-12 lg:col-span-5 relative h-[520px] md:h-[600px]" delay={160}>
-          {/* ambient personality marks */}
-          <img
-            src={sparkCoral}
-            alt=""
-            aria-hidden
-            className="absolute -top-2 right-6 w-10 h-10 opacity-90 float-med"
-            style={{ transform: `translateY(${y * 0.06}px)` }}
-          />
-          <img
-            src={diamondTeal}
-            alt=""
-            aria-hidden
-            className="absolute top-1/2 right-[6%] w-8 h-8 opacity-80"
-            style={{ transform: `translateY(${y * -0.05}px) rotate(12deg)` }}
-          />
-          <img
-            src={starCream}
-            alt=""
-            aria-hidden
-            className="absolute left-[40%] top-10 w-6 h-6 opacity-70 float-med"
-            style={{ transform: `translateY(${y * 0.04}px)` }}
-          />
+        {/* Right: layered ND composition — real assets only */}
+        <Reveal className="col-span-12 lg:col-span-6 relative h-[520px] md:h-[620px]" delay={160}>
+          {/* pages collage behind, tilted */}
           <div
-            className="absolute right-0 top-4 w-[82%] clip-reveal"
-            style={{
-              animationDelay: "200ms",
-              transform: `translateY(${y * -0.04}px)`,
-              filter: "drop-shadow(0 50px 70px rgba(0,0,0,0.55))",
-            }}
+            className="absolute left-0 top-6 w-[55%] opacity-95"
+            style={{ transform: `translateY(${y * -0.03}px) rotate(-5deg)`, filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.18))" }}
           >
-            <img
-              src={bookMockup}
-              alt="New Direction — printed graphic novel"
-              loading="lazy"
-              className="w-full h-auto"
-            />
+            <img src={pagesCollage} alt="New Direction interior pages" loading="lazy" className="w-full h-auto" />
           </div>
+          {/* character peeking */}
           <div
-            className="absolute left-0 bottom-0 w-[42%]"
-            style={{
-              ['--rot' as never]: '-6deg',
-              transform: `translateY(${y * 0.08}px) rotate(-6deg)`,
-            }}
+            className="absolute right-2 top-0 w-[34%]"
+            style={{ transform: `translateY(${y * 0.05}px)` }}
           >
-            <img
-              src={necklace}
-              alt="Turquoise pendant from New Direction"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="float-med w-full h-auto"
-            />
+            <img src={character} alt="New Direction character" loading="lazy" className="w-full h-auto float-med" />
           </div>
+          {/* book mockup, hero */}
+          <div
+            className="absolute right-0 bottom-2 w-[78%] clip-reveal"
+            style={{ animationDelay: "200ms", transform: `translateY(${y * -0.04}px)`, filter: "drop-shadow(0 40px 50px rgba(0,0,0,0.22))" }}
+          >
+            <img src={bookMockup} alt="New Direction — printed graphic novel" loading="lazy" className="w-full h-auto" />
+          </div>
+          {/* pendant floating foreground */}
+          <div
+            className="absolute left-[10%] bottom-0 w-[26%]"
+            style={{ transform: `translateY(${y * 0.08}px) rotate(-6deg)` }}
+          >
+            <img src={necklace} alt="Turquoise pendant from New Direction" loading="lazy" width={1024} height={1024} className="float-med w-full h-auto" />
+          </div>
+          {/* ambient marks */}
+          <img src={sparkCoral} alt="" aria-hidden className="absolute -top-2 left-[58%] w-9 h-9 opacity-90 float-med" />
+          <img src={diamondTeal} alt="" aria-hidden className="absolute right-[8%] top-1/2 w-7 h-7 opacity-80" style={{ transform: "rotate(12deg)" }} />
         </Reveal>
       </div>
 
-      {/* Full-bleed interior spread */}
+      {/* 3-up "from inside the book" strip — real ND artwork, no dark slab */}
       <Reveal className="relative">
-        <div className="relative h-[55vh] md:h-[75vh] w-full overflow-hidden">
-          <img
-            src={novelSpread}
-            alt="Interior pages from New Direction"
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ transform: `translateY(${(y - 800) * 0.08}px) scale(1.08)` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
-          <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 font-mono text-[11px] uppercase tracking-[0.2em] text-paper">
-            Interior spread — hand-painted panels
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pb-20 md:pb-28">
+          <div className="grid grid-cols-3 gap-3 md:gap-5">
+            {[ndStrip1, ndStrip2, ndStrip3].map((src, i) => (
+              <div key={i} className="relative aspect-[4/5] overflow-hidden bg-paper-deep">
+                <img src={src} alt="From inside New Direction" loading="lazy" className="w-full h-full object-cover" />
+              </div>
+            ))}
           </div>
+          <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            From inside the book — hand-painted panels
+          </p>
         </div>
       </Reveal>
     </section>
@@ -462,20 +429,18 @@ function SignatureProject() {
 }
 
 function ProjectRow({ p }: { p: Project }) {
-  if (p.layout === "wide") return <WideProjectRow p={p} />;
-  const isLeft = p.layout === "left";
   return (
     <Link to={p.to} className="group block">
       <article className="relative">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-6 md:gap-10 items-center">
-          <Reveal className={`col-span-12 lg:col-span-7 ${isLeft ? "lg:order-1" : "lg:order-2"}`}>
-            <div className="lift-img relative aspect-[5/4] w-full overflow-hidden bg-paper-deep">
+          <Reveal className="col-span-12 lg:col-span-7 lg:order-1">
+            <div className="lift-img relative aspect-[4/3] w-full overflow-hidden bg-paper-deep">
               <img
                 src={p.image}
                 alt={p.alt}
                 loading="lazy"
                 width={1280}
-                height={896}
+                height={960}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
@@ -484,7 +449,7 @@ function ProjectRow({ p }: { p: Project }) {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={120} className={`col-span-12 lg:col-span-5 ${isLeft ? "lg:order-2" : "lg:order-1"}`}>
+          <Reveal delay={120} className="col-span-12 lg:col-span-5 lg:order-2">
             <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
               <span>{p.index}</span>
               <span className="h-px w-10 bg-ink/30" />
@@ -510,64 +475,6 @@ function ProjectRow({ p }: { p: Project }) {
               </span>
               <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">→</span>
             </span>
-          </Reveal>
-        </div>
-      </article>
-    </Link>
-  );
-}
-
-function WideProjectRow({ p }: { p: Project }) {
-  return (
-    <Link to={p.to} className="group block">
-      <article className="relative">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <Reveal>
-            <div className="lift-img relative w-full overflow-hidden bg-paper-deep aspect-[16/9]">
-              <img
-                src={p.image}
-                alt={p.alt}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
-              <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-paper mix-blend-difference">
-                {p.index} / {p.tags[0]}
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="mt-8 grid grid-cols-12 gap-6 md:gap-10">
-              <div className="col-span-12 lg:col-span-7">
-                <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-                  <span>{p.index}</span>
-                  <span className="h-px w-10 bg-turquoise/60" />
-                  <span>Project</span>
-                </div>
-                <h3 className="font-serif text-5xl md:text-6xl leading-[0.95] mt-5 text-ink tracking-[-0.04em]">
-                  {p.title}
-                </h3>
-                <p className="font-serif italic text-xl md:text-2xl text-turquoise-deep mt-3 font-light">
-                  {p.tagline}
-                </p>
-              </div>
-              <div className="col-span-12 lg:col-span-5">
-                <p className="text-ink-muted leading-relaxed max-w-md">{p.body}</p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <span className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink">
-                  <span className="border-b border-ink/40 pb-0.5 group-hover:border-turquoise group-hover:text-turquoise-deep transition-colors">
-                    View project
-                  </span>
-                  <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">→</span>
-                </span>
-              </div>
-            </div>
           </Reveal>
         </div>
       </article>
