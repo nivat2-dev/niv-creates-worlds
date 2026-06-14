@@ -13,6 +13,7 @@ import {
   CaseSection,
   CaseSectionHeader,
 } from "@/components/case-study/primitives";
+import { ZoomableImage } from "@/components/Lightbox";
 import frontCover from "@/assets/az-front-cover.png.asset.json";
 import backCover from "@/assets/az-back-cover.png.asset.json";
 import nivBook from "@/assets/az-niv-book.jpg.asset.json";
@@ -111,7 +112,7 @@ function AsaflezetPage() {
           <div className="grid grid-cols-12 gap-10 md:gap-16 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-6">
               <div className="relative mx-auto w-full max-w-[520px]">
-                <img
+                <ZoomableImage
                   src={frontCover.url}
                   alt="Asaflezet hardcover children's book — front cover"
                   className="block w-full h-auto rounded-[6px] select-none"
@@ -170,11 +171,10 @@ function AsaflezetPage() {
           <Reveal className="lg:col-span-5">
             <figure className="max-w-[360px] ml-auto">
               <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
-                <img
+                <ZoomableImage
                   src={nivBook.url}
                   alt="Niv Haviv holding the printed Asaflezet hardcover book"
                   className="block w-full h-auto"
-                  loading="lazy"
                 />
               </div>
               <figcaption className="mt-3 font-sans text-[12px] text-ink-muted">
@@ -209,11 +209,10 @@ function AsaflezetPage() {
             <Reveal key={img.caption} delay={i * 120}>
               <figure>
                 <div className="border border-hairline bg-paper rounded-sm overflow-hidden shadow-[0_18px_36px_rgba(20,20,22,0.10)]">
-                  <img
+                  <ZoomableImage
                     src={img.src}
                     alt={img.alt}
                     className="block w-full h-auto"
-                    loading="lazy"
                   />
                 </div>
                 <figcaption className="mt-2.5 font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted/80">
@@ -237,11 +236,10 @@ function AsaflezetPage() {
             <Reveal delay={120}>
               <figure className="mt-8 max-w-[360px]">
                 <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
-                  <img
+                  <ZoomableImage
                     src={spreadClassroom.url}
                     alt="Asaflezet — character close-up spread"
                     className="block w-full h-auto"
-                    loading="lazy"
                   />
                 </div>
               </figure>
@@ -267,22 +265,21 @@ function AsaflezetPage() {
 
       {/* ───── 05 — FROM SCREEN TO PRINT ───── */}
       <CaseSection tone="cream" className="!py-12 md:!py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
-          <Reveal className="lg:col-span-6 lg:order-2">
-            <div className="max-w-[360px] ml-auto">
-              <img
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center max-w-[1100px] mx-auto">
+          <Reveal className="lg:col-span-7 lg:order-2">
+            <div className="max-w-[340px] mx-auto lg:mx-0">
+              <ZoomableImage
                 src={backCover.url}
                 alt="Asaflezet — printed back cover"
                 className="block w-full h-auto select-none"
                 style={{ filter: "drop-shadow(0 30px 50px rgba(20,20,22,.22))" }}
-                loading="lazy"
               />
             </div>
           </Reveal>
-          <Reveal className="lg:col-span-6 lg:order-1" delay={120}>
+          <Reveal className="lg:col-span-5 lg:order-1" delay={120}>
             <SectionLabel label="Production" />
-            <H2Section className="mt-4 max-w-xl">From screen to print.</H2Section>
-            <Lead className="mt-5 max-w-xl">
+            <H2Section className="mt-4">From screen to print.</H2Section>
+            <Lead className="mt-5 max-w-md">
               Publishing the book required more than illustration. Print preparation, production decisions, hardcover specifications and collaboration with printers all played an important role in transforming the project into a physical object.
             </Lead>
           </Reveal>
