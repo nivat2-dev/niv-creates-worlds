@@ -234,6 +234,16 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             Index
           </p>
 
+          {/* Social icons */}
+          <div className="flex items-center gap-5 pb-8">
+            <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/30 hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/30 hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+
           <ul className="flex-1 flex flex-col justify-center">
             {items.map((it, i) => (
               <li
@@ -247,36 +257,18 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 <a
                   href={it.href}
                   onClick={onClose}
-                  className="group flex items-center justify-between py-6 md:py-8 border-b border-ink/8 hover:border-ink/20 transition-colors"
+                  className="group grid grid-cols-12 items-center py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors"
                 >
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <span className="hidden md:block font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
-                      0{i + 1}
-                    </span>
-                    <span className="font-serif text-[9vw] md:text-[3.5vw] lg:text-[2.8vw] leading-[0.9] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
-                      {it.label}
-                    </span>
-                    <span className="hidden md:block text-ink/45 text-[12px] md:text-[13px] leading-[1.4] tracking-[-0.005em] max-w-[280px]">
-                      {it.sub}
-                    </span>
-                  </div>
-                  <span className="shrink-0 text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-[20px] md:text-[24px] font-light leading-none">
-                    →
+                  <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/25">0{i + 1}</span>
+                  <span className="col-span-6 md:col-span-5 font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
+                    {it.label}
                   </span>
+                  <span className="hidden md:block col-span-5 text-[12px] text-ink/40 leading-[1.5] max-w-[260px]">{it.sub}</span>
+                  <span className="col-span-6 md:col-span-1 flex justify-end text-ink/25 group-hover:text-turquoise-deep group-hover:translate-x-1 transition-all duration-300 text-[18px] font-light">→</span>
                 </a>
               </li>
             ))}
           </ul>
-
-          {/* Social icons */}
-          <div className="flex items-center gap-5 pb-8">
-            <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-          </div>
         </div>
       </div>
     </div>
