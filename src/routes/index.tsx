@@ -248,8 +248,8 @@ function CleanPortrait({ y }: { y: number }) {
         <img
           src={portraitV2}
           alt="Niv Haviv — portrait"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[108%] w-auto max-w-none object-contain object-bottom select-none"
-          style={{ transform: `translate(-50%, ${-slow}px)` }}
+          className="absolute inset-0 w-full h-full object-cover select-none"
+          style={{ objectPosition: "32% 18%", transform: `translateY(${-slow}px) scale(1.04)` }}
           draggable={false}
         />
       </div>
