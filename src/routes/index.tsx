@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
-import nivIllustrationAsset from "@/assets/niv-illustration-v2.png.asset.json";
+import nivIllustrationAsset from "@/assets/niv-portrait-v3.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import necklace from "@/assets/necklace.png";
 import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
@@ -283,7 +283,7 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[1500px] px-10 md:px-16 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
 
-        <div className="flex flex-col justify-center pb-16 md:pb-24">
+        <div className="flex flex-col justify-center pb-16 md:pb-24 lg:pl-24 xl:pl-32 lg:order-2">
 
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
 
@@ -301,7 +301,7 @@ function Hero() {
 
             <p className="text-[4vw] md:text-[2vw] lg:text-[1.4vw] leading-[1.6] text-ink/70 max-w-[420px]">
 
-              I'm a <strong className="text-ink font-semibold">visual designer and illustrator</strong> based in Tel Aviv.
+              I'm a <strong className="text-ink font-semibold">visual designer and illustrator</strong><br />based in Tel Aviv.
 
             </p>
 
@@ -319,7 +319,7 @@ function Hero() {
 
         </div>
 
-        <div className="flex justify-end items-end h-full">
+        <div className="flex justify-start items-end h-full lg:order-1 lg:-ml-16 xl:-ml-24">
 
           <IllustrationPortrait />
 
@@ -355,10 +355,16 @@ function IllustrationPortrait() {
       className="relative w-full max-w-[680px] lg:max-w-[740px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-0 flex items-center justify-center"
+      >
+        <div className="w-[78%] h-[78%] rounded-full bg-[#bcd9f5] opacity-70 blur-3xl" />
+      </div>
       <img
         src={nivIllustration}
         alt="Editorial illustration of Niv Haviv"
-        className="relative w-full h-auto object-contain select-none rise-in"
+        className="relative z-10 w-full h-auto object-contain select-none rise-in"
         draggable={false}
       />
     </div>
