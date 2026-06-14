@@ -244,12 +244,12 @@ function CleanPortrait({ y }: { y: number }) {
       </div>
 
       {/* portrait — cutout, bottom-aligned, scaled to occupy frame */}
-      <div className="absolute inset-0 overflow-hidden rounded-[28px]">
+      <div className="absolute inset-0 overflow-hidden rounded-[28px] flex items-end justify-center">
         <img
           src={portraitV2}
           alt="Niv Haviv — portrait"
-          className="absolute inset-0 w-full h-full object-cover select-none"
-          style={{ objectPosition: "32% 18%", transform: `translateY(${-slow}px) scale(1.04)` }}
+          className="relative h-full w-auto max-w-none select-none"
+          style={{ transform: `translateY(${-slow}px)` }}
           draggable={false}
         />
       </div>
