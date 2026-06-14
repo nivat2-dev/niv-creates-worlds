@@ -146,11 +146,11 @@ function AsaflezetPage() {
 
       {/* ───── 02 — FROM IDEA TO PUBLISHED BOOK ───── */}
       <CaseSection tone="paper" className="!py-12 md:!py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
-          <Reveal className="lg:col-span-7" delay={120}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
+          <Reveal className="lg:col-span-6" delay={120}>
             <SectionLabel label="The Process" />
             <H2Section className="mt-4 max-w-xl">From idea to published book.</H2Section>
-            <Lead className="mt-5 max-w-xl">
+            <Lead className="mt-5 max-w-md">
               This project required managing every stage of the process — story development, illustration, book design, production and printing. Rather than handing off the work between specialists, I built the project end-to-end and brought it into the physical world as a finished product.
             </Lead>
             <dl className="mt-8 grid grid-cols-3 gap-x-6 gap-y-4 max-w-md border-t border-hairline pt-5">
@@ -168,8 +168,8 @@ function AsaflezetPage() {
               ))}
             </dl>
           </Reveal>
-          <Reveal className="lg:col-span-5">
-            <figure className="max-w-[360px] ml-auto">
+          <Reveal className="lg:col-span-6">
+            <figure className="max-w-[440px] lg:ml-auto">
               <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
                 <ZoomableImage
                   src={nivBook.url}
@@ -226,29 +226,27 @@ function AsaflezetPage() {
 
       {/* ───── 04 — STORYTELLING THROUGH CHARACTER ───── */}
       <CaseSection tone="paper" className="!py-12 md:!py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
-          <Reveal className="lg:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
+          <Reveal className="lg:col-span-6">
+            <figure className="max-w-[440px]">
+              <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+                <ZoomableImage
+                  src={spreadClassroom.url}
+                  alt="Asaflezet — character close-up spread"
+                  className="block w-full h-auto"
+                />
+              </div>
+            </figure>
+          </Reveal>
+          <Reveal className="lg:col-span-6" delay={120}>
             <SectionLabel label="Craft" />
             <H2Section className="mt-4">Storytelling through character.</H2Section>
             <Lead className="mt-5 max-w-md">
               Every choice — voice, line, color, pacing — was shaped around the reader's emotional experience with the main character.
             </Lead>
-            <Reveal delay={120}>
-              <figure className="mt-8 max-w-[360px]">
-                <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
-                  <ZoomableImage
-                    src={spreadClassroom.url}
-                    alt="Asaflezet — character close-up spread"
-                    className="block w-full h-auto"
-                  />
-                </div>
-              </figure>
-            </Reveal>
-          </Reveal>
-          <Reveal className="lg:col-span-7" delay={120}>
-            <ol className="divide-y divide-hairline border-y border-hairline">
+            <ol className="mt-8 divide-y divide-hairline border-y border-hairline">
               {CRAFT_CARDS.map((c, i) => (
-                <li key={c.title} className="grid grid-cols-12 gap-6 py-6 md:py-7 items-baseline">
+                <li key={c.title} className="grid grid-cols-12 gap-5 py-5 md:py-6 items-baseline">
                   <div className="col-span-2 font-sans text-[11px] tracking-[0.08em] uppercase text-coral">
                     {String(i + 1).padStart(2, "0")}
                   </div>
@@ -265,18 +263,18 @@ function AsaflezetPage() {
 
       {/* ───── 05 — FROM SCREEN TO PRINT ───── */}
       <CaseSection tone="cream" className="!py-12 md:!py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center max-w-[1100px] mx-auto">
-          <Reveal className="lg:col-span-7 lg:order-2">
-            <div className="max-w-[340px] mx-auto lg:mx-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
+          <Reveal className="lg:col-span-6 lg:order-2">
+            <figure className="max-w-[440px] lg:ml-auto">
               <ZoomableImage
                 src={backCover.url}
                 alt="Asaflezet — printed back cover"
                 className="block w-full h-auto select-none"
                 style={{ filter: "drop-shadow(0 30px 50px rgba(20,20,22,.22))" }}
               />
-            </div>
+            </figure>
           </Reveal>
-          <Reveal className="lg:col-span-5 lg:order-1" delay={120}>
+          <Reveal className="lg:col-span-6 lg:order-1" delay={120}>
             <SectionLabel label="Production" />
             <H2Section className="mt-4">From screen to print.</H2Section>
             <Lead className="mt-5 max-w-md">
