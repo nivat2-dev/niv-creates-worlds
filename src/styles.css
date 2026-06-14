@@ -154,7 +154,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "ss01", "ss02", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -166,14 +166,14 @@
   }
 
   .font-serif {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.035em;
-    font-optical-sizing: auto;
+    font-family: "Syne", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
   }
 
   .font-mono {
-    font-family: "Geist Mono", ui-monospace, monospace;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
   }
 
   html { scroll-behavior: smooth; }
@@ -192,9 +192,9 @@
   --color-pink: var(--pink);
   --color-cream: var(--cream);
   --color-navy-deep: var(--navy-deep);
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-serif: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 @keyframes float-slow {
