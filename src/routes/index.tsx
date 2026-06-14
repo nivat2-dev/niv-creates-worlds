@@ -141,26 +141,23 @@ function Nav() {
         }`}
       >
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
-          <a href="#top" aria-label="Niv Haviv — home" className="flex items-center gap-2.5 text-ink">
-            <img
-              src={signature}
-              alt="Niv Haviv signature"
-              className="h-14 md:h-16 w-auto select-none"
-              draggable={false}
-            />
+          <a
+            href="mailto:nivat2@gmail.com"
+            className="group inline-flex items-center gap-2 border border-ink/30 text-ink px-4 py-2 text-[12px] font-mono uppercase tracking-[0.18em] hover:border-ink hover:bg-ink/[0.04] transition-colors"
+          >
+            <span className="block h-1.5 w-1.5 rounded-full bg-turquoise-deep group-hover:scale-125 transition-transform" />
+            Hire me
           </a>
-          <nav className="hidden md:flex items-center gap-9 text-[12px] font-normal text-ink/55">
-            {[
-              ["Work", "#work"],
-              ["About", "#about"],
-              ["Contact", "#contact"],
-            ].map(([label, href]) => (
-              <a key={label} href={href} className="hover:text-ink transition-colors tracking-[-0.005em]">
-                {label}
-              </a>
-            ))}
-          </nav>
-          <button
+          <div className="flex items-center gap-6 md:gap-8">
+            <a href="#top" aria-label="Niv Haviv — home" className="flex items-center gap-2.5 text-ink">
+              <img
+                src={signature}
+                alt="Niv Haviv signature"
+                className="h-14 md:h-16 w-auto select-none"
+                draggable={false}
+              />
+            </a>
+            <button
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
@@ -171,7 +168,8 @@ function Nav() {
               <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
             </span>
             <span>Menu</span>
-          </button>
+            </button>
+          </div>
         </div>
       </header>
       <FullScreenMenu open={open} onClose={() => setOpen(false)} />
@@ -283,7 +281,7 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[1500px] px-10 md:px-16 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
 
-        <div className="flex flex-col justify-center pb-16 md:pb-24 lg:pl-24 xl:pl-32 lg:order-2">
+        <div className="flex flex-col justify-center pb-16 md:pb-24">
 
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
 
@@ -319,7 +317,7 @@ function Hero() {
 
         </div>
 
-        <div className="flex justify-start items-end h-full lg:order-1 lg:-ml-16 xl:-ml-24">
+        <div className="flex justify-end items-end h-full">
 
           <IllustrationPortrait />
 
@@ -352,15 +350,22 @@ function IllustrationPortrait() {
   return (
     <div
       ref={wrapRef}
-      className="relative w-full max-w-[680px] lg:max-w-[740px]"
+      className="relative w-full max-w-[460px] lg:max-w-[520px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
-      <div
+      <svg
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-0 flex items-center justify-center"
+        viewBox="0 0 200 200"
+        className="pointer-events-none absolute -left-6 top-8 w-[42%] h-auto -z-0 opacity-80"
       >
-        <div className="w-[78%] h-[78%] rounded-full bg-[#bcd9f5] opacity-70 blur-3xl" />
-      </div>
+        <path
+          fill="#8fbce6"
+          d="M44 18c18-10 46-6 60 8s24 36 16 56-30 36-54 38-44-10-52-30-2-44 12-58 8-6 18-14z"
+        />
+        <circle cx="22" cy="150" r="6" fill="#8fbce6" opacity="0.6" />
+        <circle cx="12" cy="170" r="3" fill="#8fbce6" opacity="0.5" />
+        <circle cx="170" cy="40" r="4" fill="#8fbce6" opacity="0.5" />
+      </svg>
       <img
         src={nivIllustration}
         alt="Editorial illustration of Niv Haviv"
