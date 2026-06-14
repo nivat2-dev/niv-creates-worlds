@@ -275,7 +275,6 @@ type Project = {
   image: string;
   alt: string;
   to: string;
-  layout?: "hero" | "left" | "right" | "wide";
 };
 
 const projects: Project[] = [
@@ -289,7 +288,6 @@ const projects: Project[] = [
     image: natgeo,
     alt: "National Geographic Kids editorial spreads",
     to: "/work/national-geographic-kids",
-    layout: "right",
   },
   {
     index: "02",
@@ -301,7 +299,6 @@ const projects: Project[] = [
     image: superplay,
     alt: "SuperPlay mobile game UI screens",
     to: "/work/gaming-product-design",
-    layout: "left",
   },
   {
     index: "03",
@@ -313,7 +310,6 @@ const projects: Project[] = [
     image: zooMap,
     alt: "Biblical Zoo illustrated treasure map",
     to: "/work/biblical-zoo",
-    layout: "wide",
   },
   {
     index: "04",
@@ -325,7 +321,6 @@ const projects: Project[] = [
     image: asaflezet,
     alt: "Asaflezet — printed children's book held in hand",
     to: "/work/asaflezet",
-    layout: "left",
   },
 ];
 
