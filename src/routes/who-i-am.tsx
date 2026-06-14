@@ -154,7 +154,7 @@ function ChapterLabel({ n, label }: { n: string; label: string }) {
 function ChapterTitle({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <h2
-      className={`font-serif leading-[0.95] tracking-[-0.04em] text-ink text-[12vw] sm:text-[7vw] md:text-[5vw] lg:text-[4vw] ${className}`}
+      className={`font-serif leading-[1.05] tracking-[-0.03em] text-ink text-[8vw] sm:text-[5vw] md:text-[3.5vw] lg:text-[2.8vw] ${className}`}
     >
       {children}
     </h2>
@@ -163,7 +163,7 @@ function ChapterTitle({ children, className = "" }: { children: React.ReactNode;
 
 function ChapterText({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-serif text-[1.4rem] md:text-[1.6rem] leading-[1.4] text-ink/75 max-w-[440px]">
+    <p className="text-[15px] md:text-[16px] leading-[1.6] text-ink/65 max-w-[420px]">
       {children}
     </p>
   );
@@ -244,19 +244,19 @@ function Hero() {
           </Reveal>
           <div className="overflow-hidden">
             <h1
-              className="font-serif text-ink leading-[0.92] tracking-[-0.04em] text-[18vw] sm:text-[14vw] md:text-[10vw] lg:text-[8.4vw] word-rise"
+              className="font-serif text-ink leading-[1.05] tracking-[-0.03em] text-[12vw] sm:text-[8vw] md:text-[5vw] lg:text-[4vw] word-rise"
               style={{ animationDelay: "120ms" }}
             >
               Who I <span className="italic font-light text-turquoise-deep">am</span>.
             </h1>
           </div>
           <Reveal delay={320}>
-            <p className="mt-10 font-serif text-[1.6rem] md:text-[2rem] leading-[1.25] text-ink max-w-[520px]">
+            <p className="mt-8 text-[4vw] md:text-[2vw] lg:text-[1.4vw] leading-[1.6] text-ink/70 max-w-[420px]">
               I've always been telling stories.
             </p>
           </Reveal>
           <Reveal delay={460}>
-            <p className="mt-5 text-[15px] md:text-[16px] leading-[1.6] text-ink/55 max-w-[420px]">
+            <p className="mt-3 text-[3.5vw] md:text-[1.6vw] lg:text-[1.1vw] leading-[1.6] text-ink/45 max-w-[380px]">
               Through theatre, design, illustration and graphic novels.
             </p>
           </Reveal>
@@ -264,7 +264,7 @@ function Hero() {
 
         <div className="col-span-12 lg:col-span-5 relative flex justify-center lg:justify-end">
           <div
-            className="relative w-full max-w-[420px] lg:max-w-[480px]"
+            className="relative w-full max-w-[340px] lg:max-w-[400px]"
             style={{ transform: `translateY(${-y * 0.06}px)` }}
           >
             <img
@@ -291,7 +291,7 @@ function Ch01Eilat() {
   return (
     <section className="relative bg-white py-28 md:py-40 overflow-hidden">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-center">
-        <Reveal className="col-span-12 md:col-span-5 order-2 md:order-1">
+        <Reveal className="col-span-12 md:col-span-6 order-2 md:order-1">
           <ChapterLabel n="01" label="Where it began" />
           <ChapterTitle className="mt-6">
             Growing up in <span className="italic font-light text-turquoise-deep">Eilat</span>.
@@ -303,9 +303,9 @@ function Ch01Eilat() {
           </div>
         </Reveal>
 
-        <div className="col-span-12 md:col-span-7 order-1 md:order-2 relative">
+        <div className="col-span-12 md:col-span-6 order-1 md:order-2 relative">
           <Parallax speed={0.05}>
-            <div className="relative aspect-[3/4] max-w-[520px] mx-auto overflow-hidden bg-paper-deep">
+            <div className="relative aspect-[3/4] max-w-[360px] mx-auto overflow-hidden bg-paper-deep">
               <img
                 src={eilatChildhood.url}
                 alt="Niv as a child in Eilat"
@@ -338,32 +338,32 @@ function Ch02Stage() {
             <span className="h-px w-10 bg-white/20" />
             <span>The stage</span>
           </div>
-          <h2 className="mt-6 font-serif leading-[0.95] tracking-[-0.04em] text-[12vw] sm:text-[7vw] md:text-[5vw] lg:text-[4vw]">
+          <h2 className="mt-6 font-serif leading-[1.05] tracking-[-0.03em] text-[8vw] sm:text-[5vw] md:text-[3.5vw] lg:text-[2.8vw]">
             Life <span className="italic font-light text-turquoise">on stage</span>.
           </h2>
-          <p className="mt-8 font-serif text-[1.4rem] md:text-[1.6rem] leading-[1.4] text-white/75 max-w-[520px]">
+          <p className="mt-6 text-[15px] md:text-[16px] leading-[1.6] text-white/65 max-w-[460px]">
             Before design, I was an actor. I performed leading roles in repertory theatres, including Habima.
           </p>
         </Reveal>
 
         <div className="mt-16 md:mt-24 grid grid-cols-12 gap-4 md:gap-6">
-          <Reveal className="col-span-12 md:col-span-7" delay={80}>
+          <Reveal className="col-span-12 md:col-span-6" delay={80}>
             <Parallax speed={0.04}>
-              <div className="relative aspect-[16/10] overflow-hidden bg-black/30">
+              <div className="relative aspect-[16/10] max-w-[460px] overflow-hidden bg-black/30">
                 <img src={theatre1.url} alt="Theatre performance — Habima" className="w-full h-full object-cover" />
               </div>
             </Parallax>
           </Reveal>
-          <Reveal className="col-span-12 md:col-span-5 md:mt-24" delay={180}>
+          <Reveal className="col-span-12 md:col-span-4 md:mt-24" delay={180}>
             <Parallax speed={0.07}>
-              <div className="relative aspect-[4/5] overflow-hidden bg-black/30">
+              <div className="relative aspect-[4/5] max-w-[320px] overflow-hidden bg-black/30">
                 <img src={theatre3.url} alt="On stage — leading role" className="w-full h-full object-cover" />
               </div>
             </Parallax>
           </Reveal>
-          <Reveal className="col-span-12 md:col-start-3 md:col-span-8" delay={260}>
+          <Reveal className="col-span-12 md:col-start-4 md:col-span-6" delay={260}>
             <Parallax speed={0.05}>
-              <div className="relative aspect-[16/9] overflow-hidden bg-black/30">
+              <div className="relative aspect-[16/9] max-w-[460px] overflow-hidden bg-black/30">
                 <img src={theatre2.url} alt="Stage performance" className="w-full h-full object-cover" />
               </div>
             </Parallax>
@@ -371,7 +371,7 @@ function Ch02Stage() {
         </div>
 
         <Reveal delay={120}>
-          <p className="mt-10 font-serif italic text-white/55 text-[17px] max-w-md">
+          <p className="mt-10 font-serif italic text-white/55 text-[15px] max-w-md">
             "Every role taught me how a story moves through a body before it ever reaches a page."
           </p>
         </Reveal>
@@ -398,7 +398,7 @@ function Ch03Design() {
         </Reveal>
 
         <div className="col-span-12 md:col-span-6 relative">
-          <div className="grid grid-cols-6 gap-3 md:gap-4">
+          <div className="grid grid-cols-6 gap-3 md:gap-4 max-w-[460px] mx-auto">
             <Reveal className="col-span-6">
               <Parallax speed={0.04}>
                 <div className="relative aspect-[16/10] overflow-hidden bg-white">
@@ -425,16 +425,16 @@ function Ch03Design() {
       </div>
 
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-10 md:mt-16 grid grid-cols-12 gap-4 md:gap-6">
-        <Reveal className="col-span-6 md:col-span-4 md:col-start-3">
+        <Reveal className="col-span-6 md:col-span-3 md:col-start-4">
           <Parallax speed={0.05}>
-            <div className="relative aspect-[3/4] overflow-hidden bg-white">
+            <div className="relative aspect-[3/4] max-w-[260px] overflow-hidden bg-white">
               <img src={shenkar4.url} alt="Apparel design — Mr Wdg" className="w-full h-full object-cover" />
             </div>
           </Parallax>
         </Reveal>
-        <Reveal className="col-span-6 md:col-span-4" delay={120}>
+        <Reveal className="col-span-6 md:col-span-3" delay={120}>
           <Parallax speed={0.07}>
-            <div className="relative aspect-[3/4] overflow-hidden bg-white">
+            <div className="relative aspect-[3/4] max-w-[260px] overflow-hidden bg-white">
               <img src={shenkar8.url} alt="Apparel design — back print" className="w-full h-full object-cover" />
             </div>
           </Parallax>
@@ -455,20 +455,20 @@ function Ch04NatGeo() {
           <ChapterTitle className="mt-6">
             National Geographic <span className="italic font-light text-turquoise-deep">Kids</span>.
           </ChapterTitle>
-          <p className="mt-8 font-serif text-[1.4rem] md:text-[1.6rem] leading-[1.4] text-ink/75 max-w-[520px]">
+          <p className="mt-6 text-[15px] md:text-[16px] leading-[1.6] text-ink/65 max-w-[460px]">
             For years, I helped create one of Israel's leading children's magazines.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-12 gap-3 md:gap-5">
-          <Reveal className="col-span-12 md:col-span-8">
+        <div className="mt-16 grid grid-cols-12 gap-3 md:gap-5 max-w-[1100px] mx-auto">
+          <Reveal className="col-span-12 md:col-span-7">
             <Parallax speed={0.04}>
               <div className="relative aspect-[16/10] overflow-hidden bg-paper-deep">
                 <img src={ngkSpread.url} alt="National Geographic Kids spread" className="w-full h-full object-cover" />
               </div>
             </Parallax>
           </Reveal>
-          <Reveal className="col-span-6 md:col-span-4 md:mt-12" delay={120}>
+          <Reveal className="col-span-6 md:col-span-5 md:mt-12" delay={120}>
             <Parallax speed={0.07}>
               <div className="relative aspect-[3/4] overflow-hidden bg-paper-deep">
                 <img src={ngkCover.url} alt="NGK cover — Titanic" className="w-full h-full object-cover" />
@@ -513,7 +513,7 @@ function Ch05Asaflezet() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-center">
         <div className="col-span-12 md:col-span-6 relative">
           <Parallax speed={0.05}>
-            <div className="relative max-w-[460px] mx-auto">
+            <div className="relative max-w-[340px] mx-auto">
               <img
                 src={azFrontCover.url}
                 alt="Asaflezet — book cover"
@@ -534,7 +534,7 @@ function Ch05Asaflezet() {
         </Reveal>
       </div>
 
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-16 grid grid-cols-12 gap-4 md:gap-6">
+      <div className="mx-auto max-w-[1100px] px-6 md:px-10 mt-16 grid grid-cols-12 gap-4 md:gap-6">
         <Reveal className="col-span-12 md:col-span-7">
           <Parallax speed={0.04}>
             <div className="relative aspect-[16/10] overflow-hidden bg-paper">
@@ -592,12 +592,12 @@ function Ch06NewDirection() {
           <ChapterLabel n="06" label="A graphic novel" />
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="mt-6 font-serif leading-[0.88] tracking-[-0.045em] text-ink text-[18vw] sm:text-[14vw] md:text-[10vw] lg:text-[8vw]">
+          <h2 className="mt-6 font-serif leading-[1.05] tracking-[-0.03em] text-ink text-[10vw] sm:text-[6vw] md:text-[4.5vw] lg:text-[3.5vw]">
             New <span className="italic font-light text-coral">Direction</span>.
           </h2>
         </Reveal>
         <Reveal delay={180}>
-          <p className="mt-10 font-serif text-[1.6rem] md:text-[2rem] leading-[1.3] text-ink/80 max-w-[640px]">
+          <p className="mt-6 text-[15px] md:text-[16px] leading-[1.6] text-ink/70 max-w-[520px]">
             My most ambitious project so far. A graphic novel years in the making.
           </p>
         </Reveal>
@@ -607,7 +607,7 @@ function Ch06NewDirection() {
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 mt-20 md:mt-28 grid grid-cols-12 gap-6 md:gap-10 items-center">
         <Reveal className="col-span-12 lg:col-span-6">
           <Parallax speed={0.04}>
-            <div className="relative max-w-[460px] mx-auto">
+            <div className="relative max-w-[340px] mx-auto">
               <img
                 src={ndCover.url}
                 alt="New Direction — cover"
@@ -618,7 +618,7 @@ function Ch06NewDirection() {
           </Parallax>
         </Reveal>
 
-        <div className="col-span-12 lg:col-span-6 relative h-[520px] md:h-[600px]">
+        <div className="col-span-12 lg:col-span-6 relative h-[420px] md:h-[480px] max-w-[460px] mx-auto">
           <Parallax speed={0.07} className="absolute left-0 top-2 w-[60%]">
             <div className="overflow-hidden bg-white/40 aspect-[4/5]">
               <img src={ndArieh.url} alt="Arieh & Roy — character study" className="w-full h-full object-cover" />
@@ -633,7 +633,7 @@ function Ch06NewDirection() {
       </div>
 
       {/* three panels strip */}
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-20 md:mt-28">
+      <div className="mx-auto max-w-[1100px] px-6 md:px-10 mt-20 md:mt-28">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/45 mb-6">
             From inside the book — hand-painted panels
@@ -654,7 +654,7 @@ function Ch06NewDirection() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-20 md:mt-28">
         <Reveal>
           <Parallax speed={0.05}>
-            <div className="relative max-w-[1000px] mx-auto">
+            <div className="relative max-w-[720px] mx-auto">
               <img
                 src={ndBookMockup.url}
                 alt="New Direction — printed book"
@@ -688,19 +688,19 @@ function Ch07Today() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-16 items-center">
         <div className="col-span-12 md:col-span-6 relative">
           <Parallax speed={0.05}>
-            <div className="relative max-w-[460px] mx-auto aspect-[3/4] overflow-hidden">
+            <div className="relative max-w-[340px] mx-auto aspect-[3/4] overflow-hidden">
               <img src={nivCreatorAsset.url} alt="Niv Haviv today" className="w-full h-full object-cover" />
             </div>
           </Parallax>
         </div>
         <Reveal className="col-span-12 md:col-span-6">
           <ChapterLabel n="07" label="Today" />
-          <h2 className="mt-6 font-serif leading-[0.95] tracking-[-0.04em] text-ink text-[14vw] sm:text-[9vw] md:text-[6vw] lg:text-[4.6vw]">
+          <h2 className="mt-6 font-serif leading-[1.05] tracking-[-0.03em] text-ink text-[9vw] sm:text-[6vw] md:text-[4vw] lg:text-[3vw]">
             Designer.<br />
             Illustrator.<br />
             <span className="italic font-light text-turquoise-deep">Storyteller</span>.
           </h2>
-          <p className="mt-8 font-serif text-[1.3rem] md:text-[1.5rem] leading-[1.4] text-ink/70 max-w-[440px]">
+          <p className="mt-6 text-[15px] md:text-[16px] leading-[1.6] text-ink/65 max-w-[420px]">
             Different tools. The same instinct — telling a story worth following.
           </p>
         </Reveal>
@@ -763,7 +763,7 @@ function Closer() {
           </p>
         </Reveal>
         <Reveal delay={120}>
-          <h2 className="mt-8 font-serif leading-[1.05] tracking-[-0.035em] text-ink text-[7vw] md:text-[3.6vw] lg:text-[2.8vw]">
+          <h2 className="mt-8 font-serif leading-[1.05] tracking-[-0.03em] text-ink text-[6vw] md:text-[3vw] lg:text-[2.2vw] max-w-[820px] mx-auto">
             Not just a designer.<br />
             A <span className="italic font-light text-turquoise-deep">storyteller</span> who uses design,
             illustration, publishing and theatre — as different tools.
