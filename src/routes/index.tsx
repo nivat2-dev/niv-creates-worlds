@@ -203,9 +203,9 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-8 md:px-14 lg:px-20 pt-10 md:pt-16 lg:pt-20 pb-20 md:pb-24">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 lg:px-16 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-5 md:py-7 lg:py-8 flex flex-col">
           <p
-            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-12 md:mb-16 lg:mb-20"
+            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-5 md:mb-7 lg:mb-8 shrink-0"
             style={{
               opacity: open ? 1 : 0,
               transition: `opacity .5s ease 150ms`,
@@ -214,7 +214,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span className="inline-block w-8 h-px bg-ink/25 align-middle mr-3" />
             Index
           </p>
-          <ul>
+          <ul className="shrink-0">
             {items.map((it, i) => (
               <li
                 key={it.label}
@@ -228,22 +228,22 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 <a
                   href={it.href}
                   onClick={onClose}
-                  className="grid grid-cols-12 gap-6 items-baseline py-10 md:py-12 lg:py-14"
+                  className="grid grid-cols-12 gap-4 md:gap-6 items-center py-5 md:py-6 lg:py-7"
                 >
                   {/* number */}
-                  <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30 translate-y-[-0.6em]">
+                  <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
                     0{i + 1}
                   </span>
                   {/* title — left, dominant */}
-                  <h3 className="col-span-12 md:col-span-6 font-serif text-[14vw] md:text-[7.5vw] lg:text-[6vw] leading-[0.9] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[10vw] md:text-[6.8vw] lg:text-[5.4vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                     {it.label}
                   </h3>
                   {/* description + arrow — right, asymmetric */}
-                  <div className="col-span-12 md:col-span-5 md:col-start-8 flex items-end justify-between gap-8 mt-4 md:mt-0 md:pb-3 lg:pb-4">
-                    <p className="max-w-[280px] text-ink/45 text-[13px] md:text-[14px] leading-[1.55] tracking-[-0.005em]">
+                  <div className="col-span-7 md:col-span-5 md:col-start-8 flex items-center justify-between gap-4 md:gap-8">
+                    <p className="max-w-[250px] text-ink/45 text-[12px] md:text-[13px] leading-[1.4] tracking-[-0.005em]">
                       {it.sub}
                     </p>
-                    <span className="shrink-0 text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-[28px] font-light leading-none">
+                    <span className="shrink-0 text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-[24px] md:text-[28px] font-light leading-none">
                       →
                     </span>
                   </div>
@@ -253,7 +253,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
           </ul>
 
           <div
-            className="mt-20 md:mt-24 grid grid-cols-12 gap-6"
+            className="mt-auto pt-5 md:pt-7 lg:pt-8 grid grid-cols-12 gap-4 md:gap-6 shrink-0"
             style={{
               opacity: open ? 1 : 0,
               transition: `opacity .6s ease 560ms`,
@@ -262,15 +262,15 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <p className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
               Say hi
             </p>
-            <div className="col-span-12 md:col-span-6 flex flex-col gap-2">
-              <a href="mailto:nivat2@gmail.com" className="font-serif text-[28px] md:text-[34px] tracking-[-0.02em] text-ink hover:text-turquoise-deep transition-colors leading-tight">
+            <div className="col-span-6 md:col-span-6 flex flex-col gap-1.5">
+              <a href="mailto:nivat2@gmail.com" className="font-serif text-[18px] md:text-[24px] lg:text-[28px] tracking-[-0.02em] text-ink hover:text-turquoise-deep transition-colors leading-tight">
                 nivat2@gmail.com
               </a>
-              <a href="tel:050-2231317" className="text-[13px] text-ink/45 hover:text-turquoise-deep transition-colors">
+              <a href="tel:050-2231317" className="text-[12px] md:text-[13px] text-ink/45 hover:text-turquoise-deep transition-colors">
                 050-2231317
               </a>
             </div>
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-3 text-[12px] text-ink/45 md:pt-3">
+            <div className="col-span-6 md:col-span-5 md:col-start-8 flex flex-col gap-2 text-[11px] md:text-[12px] text-ink/45 md:pt-2">
               <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="hover:text-turquoise-deep transition-colors">
                 LinkedIn ↗
               </a>
