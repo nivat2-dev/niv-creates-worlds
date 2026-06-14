@@ -287,9 +287,9 @@ function Hero() {
 
             <h1 className="font-serif text-ink leading-[1.05] tracking-[-0.03em] text-[9vw] md:text-[5vw] lg:text-[4vw]">
 
-              Hi, my<br />
+              My name is<br />
 
-              name is <strong className="font-bold">Niv</strong>.
+              <strong className="font-bold">Niv Haviv</strong>.
 
             </h1>
 
