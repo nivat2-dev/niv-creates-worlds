@@ -291,7 +291,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden bg-white">
-      <div className="relative mx-auto max-w-[1280px] px-8 md:px-14 lg:px-16 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
         {/* LEFT — content */}
         <div className="flex flex-col justify-center">
           <div className="overflow-hidden">
@@ -335,7 +335,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="flex justify-center items-center pl-2 md:pl-4 lg:pl-0 pr-4 md:pr-8 lg:pr-12">
+        <div className="flex justify-center items-center">
           <IllustrationPortrait />
         </div>
       </div>
