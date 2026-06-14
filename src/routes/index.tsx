@@ -125,7 +125,7 @@ function Nav() {
           : "bg-white/60 backdrop-blur-sm border-b border-transparent"
       }`}
     >
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 flex items-center justify-between text-ink">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
         <a
           href="#top"
           aria-label="Niv Haviv — home"
@@ -134,11 +134,11 @@ function Nav() {
           <img
             src={signature}
             alt="Niv Haviv signature"
-            className="h-9 md:h-11 w-auto select-none"
+            className="h-14 md:h-16 w-auto select-none"
             draggable={false}
           />
         </a>
-        <nav className="hidden md:flex items-center gap-10 text-[13px] font-medium text-ink/70">
+        <nav className="hidden md:flex items-center gap-9 text-[12px] font-normal text-ink/55">
           {[
             ["Work", "#work"],
             ["About", "#about"],
@@ -149,24 +149,18 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-5">
-          <span className="hidden md:inline-flex items-center gap-2 text-[12px] text-ink/70 tracking-[-0.005em]">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
-            Available for selected opportunities
+        <button
+          type="button"
+          aria-label="Open menu"
+          onClick={() => setOpen(true)}
+          className="group relative inline-flex items-center gap-3 rounded-full border border-ink/15 px-4 py-2 text-[13px] font-medium text-ink hover:border-ink/60 hover:bg-ink hover:text-white transition-all duration-300"
+        >
+          <span className="relative flex flex-col gap-[5px]">
+            <span className="block h-px w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
+            <span className="block h-px w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
           </span>
-          <button
-            type="button"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-            className="group inline-flex items-center gap-2 text-[13px] font-medium text-ink"
-          >
-            <span className="flex flex-col gap-[5px]">
-              <span className="block h-px w-5 bg-ink transition-transform group-hover:translate-x-0.5" />
-              <span className="block h-px w-5 bg-ink" />
-            </span>
-            <span className="hidden sm:inline">Menu</span>
-          </button>
-        </div>
+          <span>Menu</span>
+        </button>
       </div>
     </header>
     <FullScreenMenu open={open} onClose={() => setOpen(false)} />
@@ -257,43 +251,48 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden bg-white">
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16 pt-28 md:pt-32 pb-10 md:pb-14 grid grid-cols-12 gap-8 lg:gap-14 items-center min-h-[58vh] lg:min-h-[62vh]">
+      <div className="relative mx-auto max-w-[1340px] px-6 md:px-12 lg:px-20 pt-32 md:pt-36 pb-12 md:pb-16 grid grid-cols-12 gap-8 lg:gap-10 items-center min-h-[78vh] lg:min-h-[82vh]">
         {/* LEFT — content */}
-        <div className="col-span-12 lg:col-span-7">
+        <div className="col-span-12 lg:col-span-6">
           <div className="overflow-hidden">
             <h1
-              className="word-rise font-serif text-ink leading-[0.95] tracking-[-0.045em] text-[12vw] md:text-[7vw] lg:text-[5.4vw]"
+              className="word-rise font-serif text-ink leading-[0.92] tracking-[-0.05em] text-[13vw] md:text-[7.4vw] lg:text-[6vw]"
               style={{ animationDelay: "80ms" }}
             >
               Niv Haviv
             </h1>
           </div>
-          <div className="mt-1 md:mt-2 overflow-hidden">
+          <div className="mt-2 md:mt-3 overflow-hidden">
             <p
-              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]"
+              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[6.5vw] md:text-[3.2vw] lg:text-[2.4vw] tracking-[-0.03em]"
               style={{ animationDelay: "200ms" }}
             >
               Visual Designer
             </p>
           </div>
 
-          <Reveal delay={340} className="mt-5 md:mt-6 max-w-lg">
-            <p className="text-base md:text-[17px] leading-[1.55] text-ink-muted">
-              Creating visual experiences across digital products, publishing and storytelling.
+          <Reveal delay={340} className="mt-6 md:mt-7 max-w-md">
+            <p className="text-[15px] md:text-[16px] leading-[1.6] text-ink-muted">
+              Creating visual experiences across digital products, publishing, illustration and storytelling.
             </p>
           </Reveal>
 
-          <Reveal delay={460} className="mt-4 text-[13px] text-ink tracking-[-0.005em]">
-            <span>National Geographic Kids</span>
-            <span className="mx-2 text-ink-muted">•</span>
-            <span>UI Design</span>
-            <span className="mx-2 text-ink-muted">•</span>
-            <span>Illustration</span>
-            <span className="mx-2 text-ink-muted">•</span>
-            <span>AI</span>
+          <Reveal delay={460} className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] text-ink-muted tracking-[-0.005em]">
+            <span className="text-ink">Editorial</span>
+            <span className="text-ink/30">/</span>
+            <span className="text-ink">Digital Product</span>
+            <span className="text-ink/30">/</span>
+            <span className="text-ink">Illustration</span>
+            <span className="text-ink/30">/</span>
+            <span className="text-ink">AI</span>
           </Reveal>
 
-          <Reveal delay={600} className="mt-7 md:mt-8 flex items-center gap-3">
+          <Reveal delay={560} className="mt-5 inline-flex items-center gap-2 text-[12px] text-ink-muted">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+            Featured in National Geographic Kids · Available for selected opportunities
+          </Reveal>
+
+          <Reveal delay={680} className="mt-8 md:mt-9 flex items-center gap-3">
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-2.5 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
@@ -311,9 +310,14 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="col-span-12 lg:col-span-5 lg:pr-10 xl:pr-20">
+        <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start lg:pl-4 xl:pl-10 lg:-mt-6">
           <IllustrationPortrait />
         </div>
+      </div>
+      {/* scroll cue */}
+      <div className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-ink/40 font-mono">
+        <span>Scroll</span>
+        <span className="block h-8 w-px bg-ink/30 scroll-cue" />
       </div>
     </section>
   );
@@ -321,15 +325,22 @@ function Hero() {
 
 function IllustrationPortrait() {
   const wrapRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setOffset(window.scrollY * 0.08);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <div
       ref={wrapRef}
-      className="relative mx-auto aspect-[5/4] w-full max-w-[460px] lg:max-w-[520px]"
+      className="relative mx-auto aspect-[5/4] w-full max-w-[540px] lg:max-w-[620px]"
+      style={{ transform: `translateY(${-offset}px)` }}
     >
       <img
         src={nivIllustration}
         alt="Editorial illustration of Niv Haviv"
-        className="relative w-full h-full object-contain select-none"
+        className="relative w-full h-full object-contain select-none rise-in"
         draggable={false}
       />
     </div>
