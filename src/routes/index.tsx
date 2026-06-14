@@ -219,7 +219,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-10 md:px-16 lg:px-24 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-6 md:py-8 lg:py-10 flex flex-col">
+        <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-6 md:py-8 lg:py-10 flex flex-col">
           <p
             className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-3 md:mb-4 lg:mb-5 shrink-0"
             style={{
@@ -231,13 +231,17 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span className="inline-block w-8 h-px bg-ink/25 align-middle mr-3" />
             Index
           </p>
+          <div className="flex items-center gap-6 shrink-0" style={{ opacity: open ? 1 : 0, transition: `opacity .5s ease 200ms` }}>
+            <a href="mailto:nivat2@gmail.com" className="text-ink/40 hover:text-ink transition-colors text-[12px] font-mono uppercase tracking-[0.2em]">Email</a>
+            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="text-ink/40 hover:text-ink transition-colors text-[12px] font-mono uppercase tracking-[0.2em]">LinkedIn</a>
+          </div>
           <ul className="shrink-0">
             {items.map((it, i) => (
               <li
                 key={it.label}
                 className="group"
                 style={{
-                  height: "clamp(140px, 22vh, 180px)",
+                  height: "clamp(120px, 18vh, 150px)",
                   transform: open ? "translateY(0)" : "translateY(20px)",
                   opacity: open ? 1 : 0,
                   transition: `opacity .6s ease ${220 + i * 90}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${220 + i * 90}ms`,
@@ -253,7 +257,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                     0{i + 1}
                   </span>
                   {/* title — left, dominant */}
-                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6vw] lg:text-[6vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6vw] lg:text-[5vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                     {it.label}
                   </h3>
                   {/* description + arrow — right, asymmetric */}
