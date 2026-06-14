@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
 import portraitV2Asset from "@/assets/niv-portrait-v2.png.asset.json";
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
+import nivIllustrationAsset from "@/assets/niv-illustration.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import necklace from "@/assets/necklace.png";
 import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
@@ -22,6 +23,7 @@ import ndKissAsset from "@/assets/nd-kiss.png.asset.json";
 const portrait = portraitAsset.url;
 const portraitV2 = portraitV2Asset.url;
 const signature = signatureAsset.url;
+const nivIllustration = nivIllustrationAsset.url;
 const bookMockup = bookMockupAsset.url;
 const natgeo = ngkSpreadAsset.url;
 const superplay = gpdPiratePopupAsset.url;
@@ -98,21 +100,34 @@ function Reveal({ children, className = "", delay = 0 }: { children: React.React
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-paper/90 backdrop-blur-md border-b border-ink/10 shadow-[0_1px_0_rgba(0,0,0,0.02)]"
-          : "bg-paper/60 backdrop-blur-sm border-b border-transparent"
+          ? "bg-white/85 backdrop-blur-md border-b border-ink/10"
+          : "bg-white/60 backdrop-blur-sm border-b border-transparent"
       }`}
     >
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-16 flex items-center justify-between text-ink">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 flex items-center justify-between text-ink">
         <a
           href="#top"
           aria-label="Niv Haviv — home"
@@ -121,17 +136,13 @@ function Nav() {
           <img
             src={signature}
             alt="Niv Haviv signature"
-            className="h-8 md:h-10 w-auto select-none"
+            className="h-9 md:h-11 w-auto select-none"
             draggable={false}
           />
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-[13px] font-medium text-ink/70">
+        <nav className="hidden md:flex items-center gap-10 text-[13px] font-medium text-ink/70">
           {[
             ["Work", "#work"],
-            ["Editorial", "#work"],
-            ["Digital", "#work"],
-            ["Illustration", "#work"],
-            ["AI", "#work"],
             ["About", "#about"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
@@ -140,15 +151,108 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-2 text-[13px] font-medium text-ink hover:text-turquoise-deep transition-colors"
-        >
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
-          Available
-        </a>
+        <div className="flex items-center gap-5">
+          <span className="hidden md:inline-flex items-center gap-2 text-[12px] text-ink/70 tracking-[-0.005em]">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+            Available for selected opportunities
+          </span>
+          <button
+            type="button"
+            aria-label="Open menu"
+            onClick={() => setOpen(true)}
+            className="group inline-flex items-center gap-2 text-[13px] font-medium text-ink"
+          >
+            <span className="flex flex-col gap-[5px]">
+              <span className="block h-px w-5 bg-ink transition-transform group-hover:translate-x-0.5" />
+              <span className="block h-px w-5 bg-ink" />
+            </span>
+            <span className="hidden sm:inline">Menu</span>
+          </button>
+        </div>
       </div>
     </header>
+    <FullScreenMenu open={open} onClose={() => setOpen(false)} />
+    </>
+  );
+}
+
+function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const items: { label: string; sub: string; href: string }[] = [
+    { label: "Work", sub: "Selected projects across editorial, product, illustration and AI.", href: "#work" },
+    { label: "About", sub: "A short note on who I am and how I work.", href: "#about" },
+    { label: "Contact", sub: "Tell me about your project — I read every message.", href: "#contact" },
+  ];
+  return (
+    <div
+      aria-hidden={!open}
+      className={`fixed inset-0 z-[60] transition-[opacity,visibility] duration-500 ${
+        open ? "opacity-100 visible" : "opacity-0 invisible"
+      }`}
+    >
+      {/* sliding sheet */}
+      <div
+        className={`absolute inset-0 bg-white transition-transform duration-700 ease-[cubic-bezier(.7,0,.2,1)] ${
+          open ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 flex items-center justify-between">
+          <img src={signature} alt="Niv Haviv signature" className="h-9 md:h-11 w-auto select-none" draggable={false} />
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close menu"
+            className="text-[13px] font-medium text-ink inline-flex items-center gap-2"
+          >
+            <span className="relative inline-block h-4 w-4">
+              <span className="absolute top-1/2 left-0 block h-px w-4 bg-ink rotate-45" />
+              <span className="absolute top-1/2 left-0 block h-px w-4 bg-ink -rotate-45" />
+            </span>
+            <span className="hidden sm:inline">Close</span>
+          </button>
+        </div>
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-16 md:pt-24 pb-20 grid grid-cols-12 gap-10">
+          <ul className="col-span-12 lg:col-span-9 space-y-6 md:space-y-10">
+            {items.map((it, i) => (
+              <li
+                key={it.label}
+                className="border-b border-ink/10 pb-6 md:pb-10 group"
+                style={{
+                  transform: open ? "translateY(0)" : "translateY(24px)",
+                  opacity: open ? 1 : 0,
+                  transition: `opacity .6s ease ${200 + i * 90}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${200 + i * 90}ms`,
+                }}
+              >
+                <a href={it.href} onClick={onClose} className="block">
+                  <div className="flex items-baseline justify-between gap-6">
+                    <h3 className="font-serif text-[14vw] md:text-[8vw] lg:text-[7vw] leading-[0.95] tracking-[-0.045em] text-ink group-hover:text-turquoise-deep transition-colors">
+                      {it.label}
+                    </h3>
+                    <span className="hidden md:inline-block text-ink/40 group-hover:text-turquoise-deep transition-colors text-3xl">→</span>
+                  </div>
+                  <p className="mt-3 max-w-md text-ink-muted text-[15px] md:text-base leading-relaxed">{it.sub}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div
+            className="col-span-12 lg:col-span-3 flex flex-col justify-end gap-4 text-[13px] text-ink-muted"
+            style={{
+              opacity: open ? 1 : 0,
+              transition: `opacity .6s ease 500ms`,
+            }}
+          >
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/60">Get in touch</p>
+            <a href="mailto:nivat2@gmail.com" className="text-ink hover:text-turquoise-deep transition-colors">nivat2@gmail.com</a>
+            <a href="tel:050-2231317" className="text-ink hover:text-turquoise-deep transition-colors">050-2231317</a>
+            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="text-ink hover:text-turquoise-deep transition-colors">LinkedIn</a>
+            <span className="mt-4 inline-flex items-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+              Available for selected opportunities
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
