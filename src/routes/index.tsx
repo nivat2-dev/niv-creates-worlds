@@ -282,12 +282,12 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function MenuItemContent({ label, sub, index }: { label: string; sub: string; index: number }) {
   return (
     <>
-                  <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/25">0{i + 1}</span>
-                  <span className="col-span-6 md:col-span-5 font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
-                    {it.label}
-                  </span>
-                  <span className="hidden md:block col-span-5 text-[12px] text-ink/40 leading-[1.5] max-w-[260px]">{it.sub}</span>
-                  <span className="col-span-6 md:col-span-1 flex justify-end text-ink/25 group-hover:text-turquoise-deep group-hover:translate-x-1 transition-all duration-300 text-[18px] font-light">→</span>
+      <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/25">0{index + 1}</span>
+      <span className="col-span-6 md:col-span-5 font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
+        {label}
+      </span>
+      <span className="hidden md:block col-span-5 text-[12px] text-ink/40 leading-[1.5] max-w-[260px]">{sub}</span>
+      <span className="col-span-6 md:col-span-1 flex justify-end text-ink/25 group-hover:text-turquoise-deep group-hover:translate-x-1 transition-all duration-300 text-[18px] font-light">→</span>
     </>
   );
 }
