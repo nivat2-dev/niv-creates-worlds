@@ -680,7 +680,7 @@ function StudioBand() {
     },
   ];
   return (
-    <section className="relative bg-cream/60 py-16 md:py-24 border-y border-hairline overflow-hidden">
+    <section className="relative bg-[#f0f4f8] py-16 md:py-24 border-y border-hairline overflow-hidden">
       <img
         src={sparkOlive}
         alt=""
@@ -729,7 +729,7 @@ function StudioBand() {
 
 function FeaturedWork() {
   return (
-    <section id="work" className="relative bg-paper py-20 md:py-28">
+    <section id="work" className="relative bg-white py-20 md:py-28">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
@@ -793,7 +793,7 @@ function About() {
   return (
     <section
       id="about"
-      className="relative bg-cream/50 text-ink py-20 md:py-28 border-t border-hairline overflow-hidden"
+      className="relative bg-white text-ink py-20 md:py-28 border-t border-hairline overflow-hidden"
     >
       <img
         src={sparkCoral}
@@ -821,7 +821,7 @@ function About() {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (03) — About
           </p>
-          <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] mt-6 tracking-[-0.045em]">
+          <h2 className="font-serif text-[8vw] sm:text-[5vw] md:text-[3.5vw] lg:text-[2.8vw] leading-[0.95] mt-6 tracking-[-0.045em]">
             I write, <span className="italic text-turquoise-deep">draw</span> and design the worlds I want to read.
           </h2>
           <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
@@ -851,7 +851,7 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative bg-paper py-20 md:py-28 overflow-hidden">
+    <section id="contact" className="relative bg-white py-20 md:py-28 overflow-hidden">
       <img
         src={diamondTeal}
         alt=""
@@ -869,7 +869,7 @@ function Contact() {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (04) — Let's make something
           </p>
-          <h2 className="font-serif text-6xl md:text-[10vw] leading-[0.86] mt-6 text-ink tracking-[-0.045em]">
+          <h2 className="font-serif text-[8vw] sm:text-[6vw] md:text-[4.5vw] lg:text-[3.5vw] leading-[0.86] mt-6 text-ink tracking-[-0.045em]">
             Got a story <span className="italic text-turquoise-deep">to tell?</span>
           </h2>
           <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
