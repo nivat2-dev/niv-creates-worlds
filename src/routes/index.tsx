@@ -797,18 +797,18 @@ function Contact() {
             >
               <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">W</span>
               nivhaviv.com
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
             >
-              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">in</span>
+              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">in</span>
               LinkedIn
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Reveal>
