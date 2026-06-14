@@ -278,16 +278,16 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden bg-white">
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-44 md:pt-52 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
         {/* LEFT — content */}
         <div className="flex flex-col justify-center">
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
-            <h1 className="font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[14vw] md:text-[8vw] lg:text-[6.8vw]">
+            <h1 className="font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[10vw] md:text-[5.5vw] lg:text-[4.2vw]">
               Niv Haviv
             </h1>
           </div>
           <div className="mt-1.5 md:mt-2 overflow-hidden word-rise" style={{ animationDelay: "200ms" }}>
-            <p className="font-serif font-medium text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]">
+            <p className="font-serif font-medium text-turquoise-deep leading-[1.1] text-[5vw] md:text-[2.2vw] lg:text-[1.6vw] tracking-[-0.03em]">
               Visual Designer
             </p>
           </div>
@@ -301,14 +301,14 @@ function Hero() {
           <Reveal delay={560} className="mt-7 md:mt-8 flex items-center gap-3">
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-2.5 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
+              className="group inline-flex items-center gap-2 border border-ink/30 text-ink px-5 py-2.5 text-[13px] font-mono uppercase tracking-[0.15em] hover:border-ink hover:bg-ink/[0.04] transition-colors"
             >
               View Work
               <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-ink/15 text-ink px-5 py-2.5 text-[13px] font-medium hover:border-ink/40 hover:bg-ink/[0.03] transition-colors"
+              className="inline-flex items-center gap-2 text-ink/40 px-5 py-2.5 text-[13px] font-mono uppercase tracking-[0.15em] hover:text-ink transition-colors"
             >
               Get In Touch
             </a>
