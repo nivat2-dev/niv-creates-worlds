@@ -155,16 +155,16 @@ function Hero() {
         <div className="col-span-12 lg:col-span-7">
           <div className="overflow-hidden">
             <h1
-              className="word-rise font-serif text-ink leading-[0.9] tracking-[-0.04em] text-[16vw] md:text-[11vw] lg:text-[8.4vw]"
+              className="word-rise font-serif text-ink leading-[0.85] tracking-[-0.05em] uppercase text-[14vw] md:text-[10vw] lg:text-[7.8vw]"
               style={{ animationDelay: "80ms" }}
             >
               Niv Haviv
             </h1>
           </div>
 
-          <div className="mt-4 md:mt-6 overflow-hidden">
+          <div className="mt-3 md:mt-5 overflow-hidden">
             <p
-              className="word-rise font-serif italic font-light text-turquoise-deep leading-[1] text-[8vw] md:text-[5.5vw] lg:text-[4vw]"
+              className="word-rise font-sans font-light text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3.5vw] lg:text-[2.6vw] tracking-[-0.02em]"
               style={{ animationDelay: "220ms" }}
             >
               Visual Designer
@@ -172,7 +172,7 @@ function Hero() {
           </div>
 
           <Reveal delay={380} className="mt-10 md:mt-14 max-w-xl">
-            <p className="font-serif text-xl md:text-2xl leading-[1.35] text-ink">
+            <p className="font-sans text-lg md:text-xl leading-[1.45] text-ink">
               Creating visual experiences across digital products,
               publishing and storytelling.
             </p>
