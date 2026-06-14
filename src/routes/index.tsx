@@ -257,21 +257,14 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 }
 
 function Hero() {
-  const y = useScrollY();
   return (
-    <section id="top" className="relative w-full overflow-hidden bg-paper">
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16 pt-24 md:pt-24 pb-14 md:pb-16 grid grid-cols-12 gap-8 lg:gap-14 items-center min-h-[78vh] lg:min-h-[82vh]">
-        {/* LEFT — 60% */}
+    <section id="top" className="relative w-full overflow-hidden bg-white">
+      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16 pt-28 md:pt-32 pb-10 md:pb-14 grid grid-cols-12 gap-8 lg:gap-14 items-center min-h-[58vh] lg:min-h-[62vh]">
+        {/* LEFT — content */}
         <div className="col-span-12 lg:col-span-7">
-          <Reveal delay={60}>
-            <p className="text-[12px] text-ink-muted tracking-[-0.005em] mb-5 flex items-center gap-2">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
-              Available for select work · Tel Aviv
-            </p>
-          </Reveal>
           <div className="overflow-hidden">
             <h1
-              className="word-rise font-serif text-ink leading-[0.95] tracking-[-0.045em] text-[12vw] md:text-[7.4vw] lg:text-[5.8vw]"
+              className="word-rise font-serif text-ink leading-[0.95] tracking-[-0.045em] text-[12vw] md:text-[7vw] lg:text-[5.4vw]"
               style={{ animationDelay: "80ms" }}
             >
               Niv Haviv
@@ -279,7 +272,7 @@ function Hero() {
           </div>
           <div className="mt-1 md:mt-2 overflow-hidden">
             <p
-              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[7vw] md:text-[3.6vw] lg:text-[2.7vw] tracking-[-0.03em]"
+              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]"
               style={{ animationDelay: "200ms" }}
             >
               Visual Designer
@@ -293,9 +286,9 @@ function Hero() {
           </Reveal>
 
           <Reveal delay={460} className="mt-4 text-[13px] text-ink tracking-[-0.005em]">
-            <span>Editorial</span>
+            <span>National Geographic Kids</span>
             <span className="mx-2 text-ink-muted">•</span>
-            <span>UI</span>
+            <span>UI Design</span>
             <span className="mx-2 text-ink-muted">•</span>
             <span>Illustration</span>
             <span className="mx-2 text-ink-muted">•</span>
@@ -305,73 +298,77 @@ function Hero() {
           <Reveal delay={600} className="mt-7 md:mt-8 flex items-center gap-3">
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-3 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-2.5 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
             >
               View Work
               <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-ink/15 text-ink px-5 py-3 text-[13px] font-medium hover:border-ink/40 hover:bg-ink/[0.03] transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-ink/15 text-ink px-5 py-2.5 text-[13px] font-medium hover:border-ink/40 hover:bg-ink/[0.03] transition-colors"
             >
               Get In Touch
             </a>
           </Reveal>
         </div>
 
-        {/* RIGHT — 40% portrait, pulled inward */}
-        <div className="col-span-12 lg:col-span-5 lg:pr-8 xl:pr-16">
-          <CleanPortrait y={y} />
+        {/* RIGHT — portrait illustration */}
+        <div className="col-span-12 lg:col-span-5">
+          <IllustrationPortrait />
         </div>
-
-        {/* Scroll cue */}
-        <a
-          href="#signature"
-          aria-label="Scroll to see work"
-          className="hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-6 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-ink-muted hover:text-ink transition-colors"
-        >
-          <span>Scroll</span>
-          <span className="scroll-cue inline-block h-7 w-px bg-ink/30" />
-        </a>
       </div>
     </section>
   );
 }
 
-function CleanPortrait({ y }: { y: number }) {
-  const slow = y * 0.03;
+function IllustrationPortrait() {
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [pupil, setPupil] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      const el = wrapRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const dx = (e.clientX - cx) / window.innerWidth;
+      const dy = (e.clientY - cy) / window.innerHeight;
+      const max = 3.5;
+      setPupil({
+        x: Math.max(-max, Math.min(max, dx * 12)),
+        y: Math.max(-max, Math.min(max, dy * 12)),
+      });
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
   return (
-    <div className="relative ml-auto mr-0 lg:mx-auto aspect-[4/5] w-full max-w-[460px] lg:max-w-[440px]">
-      {/* soft pastel gradient frame */}
+    <div
+      ref={wrapRef}
+      className="relative mx-auto aspect-[3/4] w-full max-w-[380px] lg:max-w-[400px]"
+    >
+      <img
+        src={nivIllustration}
+        alt="Editorial illustration of Niv Haviv"
+        className="relative w-full h-full object-contain select-none"
+        draggable={false}
+      />
+      {/* subtle pupil overlay — tiny eyes-follow-cursor */}
       <div
         aria-hidden
-        className="absolute inset-0 rounded-[28px] overflow-hidden"
+        className="pointer-events-none absolute inset-0"
         style={{
-          background:
-            "linear-gradient(160deg, oklch(0.95 0.04 200) 0%, oklch(0.97 0.03 30) 55%, oklch(0.96 0.03 90) 100%)",
-          boxShadow:
-            "0 1px 0 rgba(0,0,0,0.04) inset, 0 30px 60px -25px rgba(20,40,60,0.18)",
+          transform: `translate(${pupil.x}px, ${pupil.y}px)`,
+          transition: "transform 280ms cubic-bezier(.2,.7,.2,1)",
         }}
       >
-        {/* subtle radial highlight */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(60% 50% at 70% 25%, oklch(1 0 0 / 0.55), transparent 70%)",
-          }}
+        <span
+          className="absolute rounded-full bg-ink"
+          style={{ left: "44.6%", top: "33.6%", width: 5, height: 5 }}
         />
-      </div>
-
-      {/* portrait — cutout, bottom-aligned, scaled to occupy frame */}
-      <div className="absolute inset-0 overflow-hidden rounded-[28px] flex items-end justify-center">
-        <img
-          src={portraitV2}
-          alt="Niv Haviv — portrait"
-          className="relative h-full w-auto max-w-none select-none"
-          style={{ transform: `translateY(${-slow}px)` }}
-          draggable={false}
+        <span
+          className="absolute rounded-full bg-ink"
+          style={{ left: "54.2%", top: "33.6%", width: 5, height: 5 }}
         />
       </div>
     </div>
@@ -833,12 +830,12 @@ function Contact() {
 
 function Index() {
   return (
-    <main className="bg-paper text-ink">
+    <main className="bg-white text-ink">
       <Nav />
       <Hero />
-      <StudioBand />
-      <SignatureProject />
       <FeaturedWork />
+      <SignatureProject />
+      <StudioBand />
       <About />
       <Contact />
     </main>
