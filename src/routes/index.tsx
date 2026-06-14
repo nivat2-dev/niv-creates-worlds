@@ -44,9 +44,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Niv Haviv — Visual Designer, Illustrator, Storyteller" },
-      { name: "description", content: "A creative studio of one. Niv Haviv designs products, stories and visual worlds — from graphic novels to digital products." },
+      {
+        name: "description",
+        content:
+          "A creative studio of one. Niv Haviv designs products, stories and visual worlds — from graphic novels to digital products.",
+      },
       { property: "og:title", content: "Niv Haviv — Studio" },
-      { property: "og:description", content: "Designing products, stories and visual worlds that people connect with." },
+      {
+        property: "og:description",
+        content: "Designing products, stories and visual worlds that people connect with.",
+      },
     ],
   }),
   component: Index,
@@ -63,7 +70,15 @@ function useScrollY() {
   return y;
 }
 
-function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+function Reveal({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -118,52 +133,48 @@ function Nav() {
   }, [open]);
   return (
     <>
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/85 backdrop-blur-md border-b border-ink/10"
-          : "bg-white/60 backdrop-blur-sm border-b border-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
-        <a
-          href="#top"
-          aria-label="Niv Haviv — home"
-          className="flex items-center gap-2.5 text-ink"
-        >
-          <img
-            src={signature}
-            alt="Niv Haviv signature"
-            className="h-14 md:h-16 w-auto select-none"
-            draggable={false}
-          />
-        </a>
-        <nav className="hidden md:flex items-center gap-9 text-[12px] font-normal text-ink/55">
-          {[
-            ["Work", "#work"],
-            ["About", "#about"],
-            ["Contact", "#contact"],
-          ].map(([label, href]) => (
-            <a key={label} href={href} className="hover:text-ink transition-colors tracking-[-0.005em]">
-              {label}
-            </a>
-          ))}
-        </nav>
-        <button
-          type="button"
-          aria-label="Open menu"
-          onClick={() => setOpen(true)}
-          className="group relative inline-flex items-center gap-3.5 rounded-full bg-ink text-white px-6 py-3 text-[14px] font-medium tracking-[-0.005em] hover:bg-turquoise-deep transition-all duration-300 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
-        >
-          <span className="relative flex flex-col gap-[6px]">
-            <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
-            <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
-          </span>
-          <span>Menu</span>
-        </button>
-      </div>
-    </header>
-    <FullScreenMenu open={open} onClose={() => setOpen(false)} />
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/85 backdrop-blur-md border-b border-ink/10"
+            : "bg-white/60 backdrop-blur-sm border-b border-transparent"
+        }`}
+      >
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
+          <a href="#top" aria-label="Niv Haviv — home" className="flex items-center gap-2.5 text-ink">
+            <img
+              src={signature}
+              alt="Niv Haviv signature"
+              className="h-14 md:h-16 w-auto select-none"
+              draggable={false}
+            />
+          </a>
+          <nav className="hidden md:flex items-center gap-9 text-[12px] font-normal text-ink/55">
+            {[
+              ["Work", "#work"],
+              ["About", "#about"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a key={label} href={href} className="hover:text-ink transition-colors tracking-[-0.005em]">
+                {label}
+              </a>
+            ))}
+          </nav>
+          <button
+            type="button"
+            aria-label="Open menu"
+            onClick={() => setOpen(true)}
+            className="group relative inline-flex items-center gap-3.5 rounded-full bg-ink text-white px-6 py-3 text-[14px] font-medium tracking-[-0.005em] hover:bg-turquoise-deep transition-all duration-300 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
+          >
+            <span className="relative flex flex-col gap-[6px]">
+              <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
+              <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
+            </span>
+            <span>Menu</span>
+          </button>
+        </div>
+      </header>
+      <FullScreenMenu open={open} onClose={() => setOpen(false)} />
     </>
   );
 }
@@ -189,7 +200,12 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
         style={{ background: "linear-gradient(180deg, #E6F4F4 0%, #D9EEEE 55%, #CDE8E8 100%)" }}
       >
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between">
-          <img src={signature} alt="Niv Haviv signature" className="h-14 md:h-16 w-auto select-none" draggable={false} />
+          <img
+            src={signature}
+            alt="Niv Haviv signature"
+            className="h-14 md:h-16 w-auto select-none"
+            draggable={false}
+          />
           <button
             type="button"
             onClick={onClose}
@@ -203,12 +219,12 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 lg:px-16 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-3 md:py-4 lg:py-5 flex flex-col">
+        <div className="mx-auto max-w-[1500px] px-10 md:px-16 lg:px-24 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-6 md:py-8 lg:py-10 flex flex-col">
           <p
             className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-3 md:mb-4 lg:mb-5 shrink-0"
             style={{
               opacity: open ? 1 : 0,
-              marginBottom: "clamp(12px, 1.8vh, 18px)",
+              marginBottom: "clamp(20px, 3vh, 36px)",
               transition: `opacity .5s ease 150ms`,
             }}
           >
@@ -219,9 +235,9 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             {items.map((it, i) => (
               <li
                 key={it.label}
-                className="group border-t border-ink/10 last:border-b"
+                className="group"
                 style={{
-                  height: "clamp(108px, 17vh, 132px)",
+                  height: "clamp(140px, 22vh, 180px)",
                   transform: open ? "translateY(0)" : "translateY(20px)",
                   opacity: open ? 1 : 0,
                   transition: `opacity .6s ease ${220 + i * 90}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${220 + i * 90}ms`,
@@ -237,11 +253,11 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                     0{i + 1}
                   </span>
                   {/* title — left, dominant */}
-                  <h3 className="col-span-5 md:col-span-6 font-serif text-[12vw] sm:text-[9vw] md:text-[5.8vw] lg:text-[4.8vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[6vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                     {it.label}
                   </h3>
                   {/* description + arrow — right, asymmetric */}
-                  <div className="col-span-7 md:col-span-5 md:col-start-8 flex items-center justify-between gap-4 md:gap-8">
+                  <div className="col-span-7 md:col-span-4 md:col-start-9 flex items-center justify-between gap-4 md:gap-8">
                     <p className="max-w-[250px] text-ink/45 text-[12px] md:text-[13px] leading-[1.4] tracking-[-0.005em]">
                       {it.sub}
                     </p>
@@ -265,15 +281,26 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
               Say hi
             </p>
             <div className="col-span-6 md:col-span-6 flex flex-col gap-1.5">
-              <a href="mailto:nivat2@gmail.com" className="font-serif text-[18px] md:text-[24px] lg:text-[28px] tracking-[-0.02em] text-ink hover:text-turquoise-deep transition-colors leading-tight">
+              <a
+                href="mailto:nivat2@gmail.com"
+                className="font-serif text-[18px] md:text-[24px] lg:text-[28px] tracking-[-0.02em] text-ink hover:text-turquoise-deep transition-colors leading-tight"
+              >
                 nivat2@gmail.com
               </a>
-              <a href="tel:050-2231317" className="text-[12px] md:text-[13px] text-ink/45 hover:text-turquoise-deep transition-colors">
+              <a
+                href="tel:050-2231317"
+                className="text-[12px] md:text-[13px] text-ink/45 hover:text-turquoise-deep transition-colors"
+              >
                 050-2231317
               </a>
             </div>
             <div className="col-span-6 md:col-span-5 md:col-start-8 flex flex-col gap-2 text-[11px] md:text-[12px] text-ink/45 md:pt-2">
-              <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="hover:text-turquoise-deep transition-colors">
+              <a
+                href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-turquoise-deep transition-colors"
+              >
                 LinkedIn ↗
               </a>
               <span className="inline-flex items-center gap-2 text-[11px] text-ink/35">
@@ -295,16 +322,12 @@ function Hero() {
         {/* LEFT — content */}
         <div className="flex flex-col justify-center">
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
-            <h1
-              className="font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[14vw] md:text-[8vw] lg:text-[6.8vw]"
-            >
+            <h1 className="font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[14vw] md:text-[8vw] lg:text-[6.8vw]">
               Niv Haviv
             </h1>
           </div>
           <div className="mt-1.5 md:mt-2 overflow-hidden word-rise" style={{ animationDelay: "200ms" }}>
-            <p
-              className="font-serif font-medium text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]"
-            >
+            <p className="font-serif font-medium text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]">
               Visual Designer
             </p>
           </div>
@@ -387,8 +410,7 @@ const projects: Project[] = [
     title: "National Geographic Kids",
     tagline: "Editorial illustration for a global audience.",
     tags: ["Editorial", "Illustration", "Kids"],
-    body:
-      "Spreads, infographics and characters designed for young readers — translating science and wildlife into images that invite curiosity.",
+    body: "Spreads, infographics and characters designed for young readers — translating science and wildlife into images that invite curiosity.",
     image: natgeo,
     alt: "National Geographic Kids editorial spreads",
     to: "/work/national-geographic-kids",
@@ -398,8 +420,7 @@ const projects: Project[] = [
     title: "Gaming & Product",
     tagline: "Product & UI design for a mobile gaming studio.",
     tags: ["Product", "UI", "Game"],
-    body:
-      "Game interfaces, in-app economies and visual systems for a fast-moving mobile studio — designed to feel tactile, playful and clear in the hand.",
+    body: "Game interfaces, in-app economies and visual systems for a fast-moving mobile studio — designed to feel tactile, playful and clear in the hand.",
     image: superplay,
     alt: "SuperPlay mobile game UI screens",
     to: "/work/gaming-product-design",
@@ -409,8 +430,7 @@ const projects: Project[] = [
     title: "Biblical Zoo Treasure Map",
     tagline: "A hand-drawn map for one of Jerusalem's most beloved places.",
     tags: ["Illustrated Map", "Wayfinding", "Storytelling"],
-    body:
-      "An illustrated treasure map that turns a walk through the zoo into a story — every animal a character, every path a chapter.",
+    body: "An illustrated treasure map that turns a walk through the zoo into a story — every animal a character, every path a chapter.",
     image: zooMap,
     alt: "Biblical Zoo illustrated treasure map",
     to: "/work/biblical-zoo",
@@ -420,8 +440,7 @@ const projects: Project[] = [
     title: "Asaflezet",
     tagline: "A self-written, self-illustrated children's book in print.",
     tags: ["Author", "Children's Book", "Illustration"],
-    body:
-      "Written, illustrated and designed end-to-end — from first sketch to a printed hardcover in the hands of real readers.",
+    body: "Written, illustrated and designed end-to-end — from first sketch to a printed hardcover in the hands of real readers.",
     image: asaflezet,
     alt: "Asaflezet — printed children's book held in hand",
     to: "/work/asaflezet",
@@ -435,8 +454,7 @@ function SignatureProject() {
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-20 md:pt-28 pb-6">
         <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <span className="inline-flex items-center gap-2 text-turquoise-deep">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
-            ★ Flagship Project
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />★ Flagship Project
           </span>
           <span>00 / New Direction · Graphic Novel</span>
         </div>
@@ -453,13 +471,11 @@ function SignatureProject() {
             <span className="italic font-light text-turquoise-deep"> Direction</span>
           </h2>
           <p className="font-serif text-2xl md:text-3xl leading-[1.2] max-w-xl mt-8 text-ink">
-            Story, characters, typography and book design — built from
-            a single visual language, panel by panel.
+            Story, characters, typography and book design — built from a single visual language, panel by panel.
           </p>
           <p className="mt-6 max-w-md text-ink-muted leading-relaxed">
-            Hundreds of hand-painted panels. A complete publishing project,
-            from first sketch to printed spine — and the turquoise pendant
-            that anchors the whole world.
+            Hundreds of hand-painted panels. A complete publishing project, from first sketch to printed spine — and the
+            turquoise pendant that anchors the whole world.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
             {["Graphic Novel", "Character Design", "Illustration", "Publishing"].map((t) => (
@@ -482,34 +498,61 @@ function SignatureProject() {
           {/* pages collage behind, tilted */}
           <div
             className="absolute left-0 top-6 w-[55%] opacity-95"
-            style={{ transform: `translateY(${y * -0.03}px) rotate(-5deg)`, filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.18))" }}
+            style={{
+              transform: `translateY(${y * -0.03}px) rotate(-5deg)`,
+              filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.18))",
+            }}
           >
             <img src={pagesCollage} alt="New Direction interior pages" loading="lazy" className="w-full h-auto" />
           </div>
           {/* character peeking */}
-          <div
-            className="absolute right-2 top-0 w-[34%]"
-            style={{ transform: `translateY(${y * 0.05}px)` }}
-          >
+          <div className="absolute right-2 top-0 w-[34%]" style={{ transform: `translateY(${y * 0.05}px)` }}>
             <img src={character} alt="New Direction character" loading="lazy" className="w-full h-auto float-med" />
           </div>
           {/* book mockup, hero */}
           <div
             className="absolute right-0 bottom-2 w-[78%] clip-reveal"
-            style={{ animationDelay: "200ms", transform: `translateY(${y * -0.04}px)`, filter: "drop-shadow(0 40px 50px rgba(0,0,0,0.22))" }}
+            style={{
+              animationDelay: "200ms",
+              transform: `translateY(${y * -0.04}px)`,
+              filter: "drop-shadow(0 40px 50px rgba(0,0,0,0.22))",
+            }}
           >
-            <img src={bookMockup} alt="New Direction — printed graphic novel" loading="lazy" className="w-full h-auto" />
+            <img
+              src={bookMockup}
+              alt="New Direction — printed graphic novel"
+              loading="lazy"
+              className="w-full h-auto"
+            />
           </div>
           {/* pendant floating foreground */}
           <div
             className="absolute left-[10%] bottom-0 w-[26%]"
             style={{ transform: `translateY(${y * 0.08}px) rotate(-6deg)` }}
           >
-            <img src={necklace} alt="Turquoise pendant from New Direction" loading="lazy" width={1024} height={1024} className="float-med w-full h-auto" />
+            <img
+              src={necklace}
+              alt="Turquoise pendant from New Direction"
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="float-med w-full h-auto"
+            />
           </div>
           {/* ambient marks */}
-          <img src={sparkCoral} alt="" aria-hidden className="absolute -top-2 left-[58%] w-9 h-9 opacity-90 float-med" />
-          <img src={diamondTeal} alt="" aria-hidden className="absolute right-[8%] top-1/2 w-7 h-7 opacity-80" style={{ transform: "rotate(12deg)" }} />
+          <img
+            src={sparkCoral}
+            alt=""
+            aria-hidden
+            className="absolute -top-2 left-[58%] w-9 h-9 opacity-90 float-med"
+          />
+          <img
+            src={diamondTeal}
+            alt=""
+            aria-hidden
+            className="absolute right-[8%] top-1/2 w-7 h-7 opacity-80"
+            style={{ transform: "rotate(12deg)" }}
+          />
         </Reveal>
       </div>
 
@@ -562,13 +605,14 @@ function ProjectRow({ p }: { p: Project }) {
             <h3 className="font-serif text-5xl md:text-6xl leading-[0.95] mt-5 text-ink tracking-[-0.04em]">
               {p.title}
             </h3>
-            <p className="font-serif italic text-xl md:text-2xl text-turquoise-deep mt-3 font-light">
-              {p.tagline}
-            </p>
+            <p className="font-serif italic text-xl md:text-2xl text-turquoise-deep mt-3 font-light">{p.tagline}</p>
             <p className="mt-6 text-ink-muted leading-relaxed max-w-md">{p.body}</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {p.tags.map((t) => (
-                <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5">
+                <span
+                  key={t}
+                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5"
+                >
                   {t}
                 </span>
               ))}
@@ -670,8 +714,8 @@ function FeaturedWork() {
             More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
           </h2>
           <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
-            Beyond New Direction — books, characters, illustrated identities and
-            products built around the stories they tell.
+            Beyond New Direction — books, characters, illustrated identities and products built around the stories they
+            tell.
           </p>
         </Reveal>
       </div>
@@ -687,7 +731,10 @@ function FeaturedWork() {
 
 function About() {
   return (
-    <section id="about" className="relative bg-cream/50 text-ink py-20 md:py-28 border-t border-hairline overflow-hidden">
+    <section
+      id="about"
+      className="relative bg-cream/50 text-ink py-20 md:py-28 border-t border-hairline overflow-hidden"
+    >
       <img
         src={sparkCoral}
         alt=""
@@ -697,26 +744,29 @@ function About() {
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-start">
         <Reveal className="col-span-12 lg:col-span-5">
           <div className="lift-img relative aspect-[3/4] w-full overflow-hidden">
-            <img src={portrait} alt="Portrait of Niv Haviv" loading="lazy" width={768} height={1024} className="w-full h-full object-cover" />
+            <img
+              src={portrait}
+              alt="Portrait of Niv Haviv"
+              loading="lazy"
+              width={768}
+              height={1024}
+              className="w-full h-full object-cover"
+            />
             <span aria-hidden className="absolute -top-2 -left-2 h-8 w-8 border-l-2 border-t-2 border-turquoise" />
             <span aria-hidden className="absolute -bottom-2 -right-2 h-8 w-8 border-r-2 border-b-2 border-turquoise" />
           </div>
-          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            Niv Haviv · Tel Aviv
-          </p>
+          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">Niv Haviv · Tel Aviv</p>
         </Reveal>
         <Reveal delay={120} className="col-span-12 lg:col-span-7">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (03) — About
           </p>
           <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] mt-6 tracking-[-0.045em]">
-            I write, <span className="italic text-turquoise-deep">draw</span> and
-            design the worlds I want to read.
+            I write, <span className="italic text-turquoise-deep">draw</span> and design the worlds I want to read.
           </h2>
           <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
-            An independent visual storyteller working between books, illustration
-            and product. I make the story, draw the world, and design the object
-            that puts it in someone's hands.
+            An independent visual storyteller working between books, illustration and product. I make the story, draw
+            the world, and design the object that puts it in someone's hands.
           </p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl">
             {[
@@ -763,7 +813,8 @@ function Contact() {
             Got a story <span className="italic text-turquoise-deep">to tell?</span>
           </h2>
           <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
-            Brand identities, editorial systems, illustration commissions and digital products — I'd love to hear about it.
+            Brand identities, editorial systems, illustration commissions and digital products — I'd love to hear about
+            it.
           </p>
 
           <div className="mt-10 space-y-5">
