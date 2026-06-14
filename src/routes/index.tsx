@@ -153,11 +153,11 @@ function Nav() {
           type="button"
           aria-label="Open menu"
           onClick={() => setOpen(true)}
-          className="group relative inline-flex items-center gap-3 rounded-full border border-ink/15 px-4 py-2 text-[13px] font-medium text-ink hover:border-ink/60 hover:bg-ink hover:text-white transition-all duration-300"
+          className="group relative inline-flex items-center gap-3.5 rounded-full bg-ink text-white px-6 py-3 text-[14px] font-medium tracking-[-0.005em] hover:bg-turquoise-deep transition-all duration-300 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
         >
-          <span className="relative flex flex-col gap-[5px]">
-            <span className="block h-px w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
-            <span className="block h-px w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
+          <span className="relative flex flex-col gap-[6px]">
+            <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:translate-x-0.5" />
+            <span className="block h-[1.5px] w-5 bg-current transition-transform duration-300 group-hover:-translate-x-0.5" />
           </span>
           <span>Menu</span>
         </button>
@@ -170,9 +170,9 @@ function Nav() {
 
 function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const items: { label: string; sub: string; href: string }[] = [
-    { label: "Work", sub: "Selected projects across editorial, product, illustration and AI.", href: "#work" },
-    { label: "About", sub: "A short note on who I am and how I work.", href: "#about" },
-    { label: "Contact", sub: "Tell me about your project — I read every message.", href: "#contact" },
+    { label: "Work", sub: "Editorial, digital products, illustration and AI.", href: "#work" },
+    { label: "About", sub: "Designer, storyteller and visual thinker.", href: "#about" },
+    { label: "Contact", sub: "Available for selected opportunities.", href: "#contact" },
   ];
   return (
     <div
@@ -183,31 +183,32 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
     >
       {/* sliding sheet */}
       <div
-        className={`absolute inset-0 bg-white transition-transform duration-700 ease-[cubic-bezier(.7,0,.2,1)] ${
+        className={`absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(.7,0,.2,1)] ${
           open ? "translate-y-0" : "-translate-y-full"
         }`}
+        style={{ background: "linear-gradient(180deg, #E6F4F4 0%, #D9EEEE 55%, #CDE8E8 100%)" }}
       >
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 flex items-center justify-between">
-          <img src={signature} alt="Niv Haviv signature" className="h-9 md:h-11 w-auto select-none" draggable={false} />
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between">
+          <img src={signature} alt="Niv Haviv signature" className="h-14 md:h-16 w-auto select-none" draggable={false} />
           <button
             type="button"
             onClick={onClose}
             aria-label="Close menu"
-            className="text-[13px] font-medium text-ink inline-flex items-center gap-2"
+            className="text-[14px] font-medium text-ink inline-flex items-center gap-2.5 rounded-full bg-ink/[0.06] hover:bg-ink/10 transition-colors px-5 py-2.5"
           >
-            <span className="relative inline-block h-4 w-4">
-              <span className="absolute top-1/2 left-0 block h-px w-4 bg-ink rotate-45" />
-              <span className="absolute top-1/2 left-0 block h-px w-4 bg-ink -rotate-45" />
+            <span className="relative inline-block h-3.5 w-3.5">
+              <span className="absolute top-1/2 left-0 block h-[1.5px] w-3.5 bg-ink rotate-45" />
+              <span className="absolute top-1/2 left-0 block h-[1.5px] w-3.5 bg-ink -rotate-45" />
             </span>
-            <span className="hidden sm:inline">Close</span>
+            <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-16 md:pt-24 pb-20 grid grid-cols-12 gap-10">
-          <ul className="col-span-12 lg:col-span-9 space-y-6 md:space-y-10">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-12 lg:px-20 pt-20 md:pt-32 pb-24 grid grid-cols-12 gap-10">
+          <ul className="col-span-12 lg:col-span-9 space-y-14 md:space-y-20 lg:space-y-24">
             {items.map((it, i) => (
               <li
                 key={it.label}
-                className="border-b border-ink/10 pb-6 md:pb-10 group"
+                className="group"
                 style={{
                   transform: open ? "translateY(0)" : "translateY(24px)",
                   opacity: open ? 1 : 0,
@@ -216,12 +217,12 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
               >
                 <a href={it.href} onClick={onClose} className="block">
                   <div className="flex items-baseline justify-between gap-6">
-                    <h3 className="font-serif text-[14vw] md:text-[8vw] lg:text-[7vw] leading-[0.95] tracking-[-0.045em] text-ink group-hover:text-turquoise-deep transition-colors">
+                    <h3 className="font-serif text-[14vw] md:text-[9vw] lg:text-[7.6vw] leading-[0.9] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                       {it.label}
                     </h3>
-                    <span className="hidden md:inline-block text-ink/40 group-hover:text-turquoise-deep transition-colors text-3xl">→</span>
+                    <span className="hidden md:inline-block text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-4xl">→</span>
                   </div>
-                  <p className="mt-3 max-w-md text-ink-muted text-[15px] md:text-base leading-relaxed">{it.sub}</p>
+                  <p className="mt-5 md:mt-6 ml-1 max-w-md text-ink/55 text-[15px] md:text-[16px] font-normal leading-[1.55] tracking-[-0.005em]">{it.sub}</p>
                 </a>
               </li>
             ))}
@@ -233,7 +234,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
               transition: `opacity .6s ease 500ms`,
             }}
           >
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/60">Get in touch</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink/55">Get in touch</p>
             <a href="mailto:nivat2@gmail.com" className="text-ink hover:text-turquoise-deep transition-colors">nivat2@gmail.com</a>
             <a href="tel:050-2231317" className="text-ink hover:text-turquoise-deep transition-colors">050-2231317</a>
             <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="text-ink hover:text-turquoise-deep transition-colors">LinkedIn</a>
@@ -271,28 +272,13 @@ function Hero() {
             </p>
           </div>
 
-          <Reveal delay={340} className="mt-6 md:mt-7 max-w-md">
+          <Reveal delay={340} className="mt-7 md:mt-8 max-w-sm">
             <p className="text-[15px] md:text-[16px] leading-[1.6] text-ink-muted">
-              Creating visual experiences across digital products, publishing, illustration and storytelling.
+              Editorial, digital products, illustration and AI.
             </p>
           </Reveal>
 
-          <Reveal delay={460} className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] text-ink-muted tracking-[-0.005em]">
-            <span className="text-ink">Editorial</span>
-            <span className="text-ink/30">/</span>
-            <span className="text-ink">Digital Product</span>
-            <span className="text-ink/30">/</span>
-            <span className="text-ink">Illustration</span>
-            <span className="text-ink/30">/</span>
-            <span className="text-ink">AI</span>
-          </Reveal>
-
-          <Reveal delay={560} className="mt-5 inline-flex items-center gap-2 text-[12px] text-ink-muted">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
-            Featured in National Geographic Kids · Available for selected opportunities
-          </Reveal>
-
-          <Reveal delay={680} className="mt-8 md:mt-9 flex items-center gap-3">
+          <Reveal delay={560} className="mt-8 md:mt-10 flex items-center gap-3">
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-2.5 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
@@ -310,7 +296,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start lg:pl-4 xl:pl-10 lg:-mt-6">
+        <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-end lg:-mt-8">
           <IllustrationPortrait />
         </div>
       </div>
@@ -334,7 +320,7 @@ function IllustrationPortrait() {
   return (
     <div
       ref={wrapRef}
-      className="relative mx-auto aspect-[5/4] w-full max-w-[540px] lg:max-w-[620px]"
+      className="relative mx-auto aspect-[5/4] w-full max-w-[700px] lg:max-w-[810px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
       <img
