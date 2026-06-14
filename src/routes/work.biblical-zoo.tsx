@@ -99,10 +99,10 @@ function BiblicalZooPage() {
               "radial-gradient(60% 55% at 22% 30%, color-mix(in oklab, var(--coral) 12%, transparent), transparent 70%), radial-gradient(50% 50% at 86% 78%, color-mix(in oklab, var(--turquoise) 12%, transparent), transparent 75%)",
           }}
         />
-        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-24 pb-12 md:pb-16 min-h-[84vh] flex items-center">
+        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-24 pb-10 md:pb-12 min-h-[80vh] flex items-center">
           <div className="grid grid-cols-12 gap-10 md:gap-14 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-7">
-              <div className="relative mx-auto w-full max-w-[820px]">
+              <div className="relative mx-auto w-full max-w-[880px]">
                 <img
                   src={heroMockup.url}
                   alt="Biblical Zoo redesigned treasure map mockup"
@@ -117,10 +117,10 @@ function BiblicalZooPage() {
                 <span className="block">Turning a zoo visit</span>
                 <span className="block italic text-coral">into an adventure.</span>
               </H1Hero>
-              <Lead className="mt-8 text-ink max-w-xl">
-                A redesigned visitor map that turns navigation into a treasure hunt — guiding families through the zoo while quietly teaching, rewarding curiosity and pulling kids toward the next exhibit.
+              <Lead className="mt-7 text-ink max-w-xl">
+                A redesigned visitor map that turns navigation into a treasure hunt — guiding families through the zoo, rewarding curiosity at every exhibit and quietly teaching along the way.
               </Lead>
-              <ul className="mt-8 flex flex-wrap gap-2">
+              <ul className="mt-7 flex flex-wrap gap-2">
                 {ROLE_TAGS.map((t) => (
                   <li
                     key={t}
