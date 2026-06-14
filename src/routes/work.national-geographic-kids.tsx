@@ -150,18 +150,14 @@ function NatGeoKidsPage() {
       {/* ───── More than a magazine ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
-            <div className="col-span-12 md:col-span-3">
-              <SectionLabel label="More than a magazine" />
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-                More than a magazine.
-              </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-3xl">
-                National Geographic Kids was never just a monthly publication. Across more than four years I worked on five connected disciplines — and was responsible for the way they fit together.
-              </p>
-            </div>
+          <div className="mb-14 md:mb-20 max-w-3xl">
+            <SectionLabel label="More than a magazine" />
+            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+              More than a magazine.
+            </h2>
+            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+              National Geographic Kids was never just a monthly publication. Across more than four years I worked on five connected disciplines — and was responsible for the way they fit together.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 md:gap-6">
@@ -190,18 +186,14 @@ function NatGeoKidsPage() {
       {/* ───── Featured Work ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
-            <div className="col-span-12 md:col-span-3">
-              <SectionLabel label="Featured Work" />
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-                Featured Work.
-              </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
-                Three editorial projects that defined my years on the magazine — covers and features I designed from concept to final print.
-              </p>
-            </div>
+          <div className="mb-14 md:mb-20 max-w-3xl">
+            <SectionLabel label="Featured Work" />
+            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+              Featured Work.
+            </h2>
+            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+              Three editorial projects that defined my years on the magazine — covers and features I designed from concept to final print.
+            </p>
           </div>
 
           {/* Project 01 — Titanic (image left) */}
@@ -284,18 +276,14 @@ function NatGeoKidsPage() {
       {/* ───── Beyond the Magazine ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
-            <div className="col-span-12 md:col-span-3">
-              <SectionLabel label="Beyond the Magazine" />
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-                Beyond the Magazine.
-              </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
-                I designed physical products and promotional pieces that extended the brand off the page — each one a different category of work I led end-to-end.
-              </p>
-            </div>
+          <div className="mb-14 md:mb-20 max-w-3xl">
+            <SectionLabel label="Beyond the Magazine" />
+            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+              Beyond the Magazine.
+            </h2>
+            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+              I designed physical products and promotional pieces that extended the brand off the page — each one a different category of work I led end-to-end.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
@@ -331,18 +319,14 @@ function NatGeoKidsPage() {
       {/* ───── Digital ───── */}
       <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
-            <div className="col-span-12 md:col-span-3">
-              <SectionLabel label="Digital" />
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <h2 className="font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-3xl">
-                Extending the experience online.
-              </h2>
-              <p className="mt-4 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-2xl">
-                I extended the magazine into digital — designing landing pages and campaign emails that carried the same editorial voice to subscribers and new readers.
-              </p>
-            </div>
+          <div className="mb-14 md:mb-20 max-w-3xl">
+            <SectionLabel label="Digital" />
+            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+              Extending the experience online.
+            </h2>
+            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+              I extended the magazine into digital — designing landing pages and campaign emails that carried the same editorial voice to subscribers and new readers.
+            </p>
           </div>
 
           {/* Featured — Landing Page */}
