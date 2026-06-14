@@ -291,7 +291,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden bg-white">
-      <div className="relative mx-auto max-w-[1280px] px-8 md:px-14 lg:px-16 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
         {/* LEFT — content */}
         <div className="flex flex-col justify-center">
           <div className="overflow-hidden">
@@ -335,7 +335,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="flex justify-center items-center pl-2 md:pl-4 lg:pl-0 pr-4 md:pr-8 lg:pr-12">
+        <div className="flex justify-center items-center">
           <IllustrationPortrait />
         </div>
       </div>
@@ -663,23 +663,19 @@ function StudioBand() {
 function FeaturedWork() {
   return (
     <section id="work" className="relative bg-paper py-20 md:py-28">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20 grid grid-cols-12 gap-6">
-        <div className="col-span-12 md:col-span-3">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20">
+        <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
           </p>
-        </div>
-        <div className="col-span-12 md:col-span-9">
-          <Reveal>
-            <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em]">
-              More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
-            </h2>
-            <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
-              Beyond New Direction — books, characters, illustrated identities and
-              products built around the stories they tell.
-            </p>
-          </Reveal>
-        </div>
+          <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em] mt-6">
+            More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
+          </h2>
+          <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
+            Beyond New Direction — books, characters, illustrated identities and
+            products built around the stories they tell.
+          </p>
+        </Reveal>
       </div>
 
       <div className="space-y-20 md:space-y-28">
@@ -711,7 +707,7 @@ function About() {
             Niv Haviv · Tel Aviv
           </p>
         </Reveal>
-        <Reveal delay={120} className="col-span-12 lg:col-span-7 lg:pl-8">
+        <Reveal delay={120} className="col-span-12 lg:col-span-7">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (03) — About
           </p>
@@ -775,42 +771,44 @@ function Contact() {
           <div className="mt-10 space-y-5">
             <a
               href="mailto:nivat2@gmail.com"
-              className="group flex items-center gap-4 text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+              className="group flex items-center text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
             >
-              <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
+              <span className="inline-flex w-10 shrink-0 items-center justify-start">
+                <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
+              </span>
               nivat2@gmail.com
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
 
             <a
               href="tel:050-2231317"
-              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
             >
-              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">T</span>
+              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">T</span>
               050-2231317
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
 
             <a
               href="https://nivhaviv.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
             >
-              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">W</span>
+              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">W</span>
               nivhaviv.com
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
             >
-              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">in</span>
+              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">in</span>
               LinkedIn
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Reveal>
