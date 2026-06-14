@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import MoreWork from "@/components/MoreWork";
+import { ZoomableImage } from "@/components/Lightbox";
 import {
   CaseNav,
   Reveal,
@@ -62,7 +63,7 @@ function GamingPage() {
           <div className="grid grid-cols-12 gap-10 md:gap-14 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-7">
               <div className="relative mx-auto w-full max-w-[640px]">
-                <img
+                <ZoomableImage
                   src={pirate.url}
                   alt="SuperPlay Pirate Treasure Hunt event popup"
                   className="block w-full h-auto rounded-[10px] select-none"
@@ -204,7 +205,7 @@ function GamingPage() {
           <Reveal className="col-span-12 lg:col-span-6" delay={120}>
             <EyebrowCaps>Final Design · Pirate Treasure Hunt</EyebrowCaps>
             <div className="mt-5">
-              <img
+              <ZoomableImage
                 src={pirate.url}
                 alt="Final Pirate Treasure Hunt popup"
                 className="block w-full h-auto rounded-sm select-none"
@@ -241,7 +242,7 @@ function GamingPage() {
         />
         <Reveal>
           <div className="mx-auto w-full max-w-[1100px]">
-            <img
+            <ZoomableImage
               src={pirate.url}
               alt="SuperPlay Pirate Treasure Hunt — final event popup"
               className="block w-full h-auto rounded-sm select-none"

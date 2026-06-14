@@ -10,6 +10,7 @@ import circleTurq from "@/assets/nd-circle-turquoise.png.asset.json";
 import nivCreator from "@/assets/niv-creator.jpg.asset.json";
 import ariehRoyCircle from "@/assets/nd-arieh-roy-circle.png.asset.json";
 import MoreWork from "@/components/MoreWork";
+import { ZoomableImage } from "@/components/Lightbox";
 import {
   CaseNav,
   Reveal,
@@ -55,7 +56,7 @@ function NewDirectionPage() {
           <div className="grid grid-cols-12 gap-8 md:gap-12 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
               <div className="relative max-w-[440px] w-full">
-                <img
+                <ZoomableImage
                   src={bookCover.url}
                   alt="New Direction — book cover"
                   className="block w-full h-auto select-none rounded-[2px]"
@@ -87,7 +88,7 @@ function NewDirectionPage() {
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
             <div className="mx-auto max-w-[620px]">
-              <img
+              <ZoomableImage
                 src={bookMockup.url}
                 alt="New Direction — open book mockup"
                 className="block w-full h-auto"
@@ -205,10 +206,9 @@ function NewDirectionPage() {
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
           <Reveal className="col-span-12 md:col-span-6">
             <div className="mx-auto max-w-[396px]">
-              <img
+              <ZoomableImage
                 src={nivCreator.url}
                 alt="Niv Haviv illustrating New Direction"
-                loading="lazy"
                 className="block w-full h-auto rounded-sm"
                 style={{ filter: "drop-shadow(0 24px 48px rgba(20,20,22,.18))" }}
               />

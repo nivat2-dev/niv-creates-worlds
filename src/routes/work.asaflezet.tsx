@@ -132,7 +132,7 @@ function AsaflezetPage() {
             </dl>
           </Reveal>
           <Reveal className="lg:col-span-6">
-            <figure className="max-w-[440px] lg:ml-auto">
+            <figure className="max-w-[440px]">
               <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
                 <ZoomableImage
                   src={nivBook.url}
@@ -206,7 +206,7 @@ function AsaflezetPage() {
             </ul>
           </Reveal>
           <Reveal className="lg:col-span-6">
-            <figure className="max-w-[440px] lg:ml-auto">
+            <figure className="max-w-[440px]">
               <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
                 <ZoomableImage
                   src={spreadClassroom.url}
@@ -230,7 +230,7 @@ function AsaflezetPage() {
             </Lead>
           </Reveal>
           <Reveal className="lg:col-span-6">
-            <figure className="max-w-[440px] lg:ml-auto">
+            <figure className="max-w-[440px]">
               <ZoomableImage
                 src={backCover.url}
                 alt="Asaflezet — printed back cover"
