@@ -136,133 +136,263 @@ function Nav() {
 function Hero() {
   const y = useScrollY();
   return (
-    <section id="top" className="relative min-h-screen w-full overflow-hidden bg-paper">
-      {/* faint grid baseline */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, var(--ink) 1px, transparent 1px)",
-          backgroundSize: "calc(100%/12) 100%",
-        }}
-      />
-
+    <section id="top" className="relative min-h-screen w-full overflow-hidden bg-white">
       {/* top eyebrow */}
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32">
-        <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
-          <span>(01) — Independent visual storyteller</span>
-          <span className="hidden md:inline">Author · Illustrator · Designer</span>
-          <span>Vol. MMXXVI<span className="cursor-blink">_</span></span>
+        <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+          <span className="flex items-center gap-2">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
+            Studio of Niv Haviv
+          </span>
+          <span className="hidden md:inline">Tel Aviv · Available for select work</span>
         </div>
         <div className="mt-8 hair-divider" />
       </div>
 
-      {/* Headline composition */}
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-12 md:pt-16 pb-16 md:pb-24 grid grid-cols-12 gap-6">
-        <div className="col-span-12 lg:col-span-8">
-          <h1 className="font-serif text-ink leading-[0.86] tracking-[-0.045em] text-[18vw] md:text-[14vw] lg:text-[11.5vw]">
-            <span className="block overflow-hidden">
-              <span className="word-rise inline-block" style={{ animationDelay: "60ms" }}>
-                Stories,
-              </span>
+      {/* Split: copy left, illustrated portrait right */}
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28 grid grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* LEFT — copy */}
+        <div className="col-span-12 lg:col-span-7">
+          <div className="overflow-hidden">
+            <h1
+              className="word-rise font-serif text-ink leading-[0.9] tracking-[-0.04em] text-[16vw] md:text-[11vw] lg:text-[8.4vw]"
+              style={{ animationDelay: "80ms" }}
+            >
+              Niv Haviv
+            </h1>
+          </div>
+
+          <div className="mt-4 md:mt-6 overflow-hidden">
+            <p
+              className="word-rise font-serif italic font-light text-turquoise-deep leading-[1] text-[8vw] md:text-[5.5vw] lg:text-[4vw]"
+              style={{ animationDelay: "220ms" }}
+            >
+              Visual Designer
+            </p>
+          </div>
+
+          <Reveal delay={380} className="mt-10 md:mt-14 max-w-xl">
+            <p className="font-serif text-xl md:text-2xl leading-[1.35] text-ink">
+              Creating visual experiences across digital products,
+              publishing and storytelling.
+            </p>
+          </Reveal>
+
+          <Reveal delay={520} className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--turquoise)" }} />
+              Editorial
             </span>
-            <span className="block overflow-hidden">
-              <span
-                className="word-rise inline-block italic font-light text-turquoise-deep"
-                style={{ animationDelay: "180ms", fontStyle: "italic" }}
-              >
-                characters,
-              </span>
+            <span className="opacity-40">/</span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--coral-soft)" }} />
+              UI
             </span>
-            <span className="block overflow-hidden">
-              <span className="word-rise inline-block" style={{ animationDelay: "300ms" }}>
-                worlds — drawn by hand.
-              </span>
+            <span className="opacity-40">/</span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--pink)" }} />
+              Illustration
             </span>
-          </h1>
+            <span className="opacity-40">/</span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "oklch(0.78 0.09 150)" }} />
+              AI
+            </span>
+          </Reveal>
+
+          <Reveal delay={680} className="mt-10 flex items-center gap-6">
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-3 rounded-full border border-ink/15 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-ink hover:border-ink/40 transition-colors"
+            >
+              View Work
+              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+            <a
+              href="#contact"
+              className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted hover:text-ink transition-colors story-link"
+            >
+              Get in touch
+            </a>
+          </Reveal>
         </div>
 
-        {/* Portrait — single anchor, no overlap */}
-        <div className="col-span-12 lg:col-span-4 lg:pt-6">
-          <div
-            className="relative aspect-[3/4] w-full overflow-hidden bg-paper-deep clip-reveal"
-            style={{ animationDelay: "200ms" }}
-          >
-            <img
-              src={portrait}
-              alt="Niv Haviv — portrait"
-              width={1280}
-              height={1707}
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ transform: `translateY(${y * -0.04}px) scale(1.04)` }}
-            />
-            {/* turquoise frame mark — author personality */}
-            <span
-              aria-hidden
-              className="absolute -top-2 -left-2 h-6 w-6 border-l-2 border-t-2 border-turquoise"
-            />
-            <span
-              aria-hidden
-              className="absolute -bottom-2 -right-2 h-6 w-6 border-r-2 border-b-2 border-turquoise"
-            />
-            <div className="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-paper mix-blend-difference">
-              <span>N. Haviv</span>
-              <span>— Author & Illustrator</span>
-            </div>
-          </div>
+        {/* RIGHT — semi-illustrated portrait */}
+        <div className="col-span-12 lg:col-span-5 lg:pl-8">
+          <IllustratedPortrait y={y} />
         </div>
       </div>
 
-      {/* Bottom row: short positioning + signal */}
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-16 md:pb-24 grid grid-cols-12 gap-6 items-end">
-        <Reveal className="col-span-12 md:col-span-5" delay={400}>
-          <p className="font-serif text-2xl md:text-3xl leading-[1.15] text-ink max-w-md">
-            I write and draw <span className="italic">books</span>,
-            build <span className="italic">characters</span>, and design
-            the <span className="italic">worlds</span> that hold them together.
-          </p>
-        </Reveal>
-        <div className="col-span-12 md:col-span-3 md:col-start-7 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted leading-relaxed">
-          <div className="flex justify-between"><span>Books &amp; Publishing</span><span>01</span></div>
-          <div className="flex justify-between mt-1"><span>Character Design</span><span>02</span></div>
-          <div className="flex justify-between mt-1"><span>Illustration</span><span>03</span></div>
-          <div className="flex justify-between mt-1"><span>Product / UI</span><span>04</span></div>
-          <div className="mt-4 flex items-center gap-2 text-turquoise-deep normal-case tracking-[0.12em]">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
-            <span>Now: <span className="text-ink">New Direction</span> — printing 2026</span>
-          </div>
-        </div>
-        <div className="col-span-12 md:col-span-2 md:col-start-11 flex md:justify-end">
-          <a
-            href="#work"
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink"
-          >
-            <span className="relative">
-              <span className="block">Scroll</span>
-              <span className="absolute -bottom-0.5 left-0 h-px w-full bg-ink/30" />
-            </span>
-            <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
-          </a>
-        </div>
-      </div>
-
-      {/* marquee — slimmer */}
-      <div className="border-t border-hairline overflow-hidden py-4">
-        <div className="marquee flex gap-12 whitespace-nowrap font-mono text-[12px] uppercase tracking-[0.22em] text-ink">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-12 pr-12">
-              <span>Graphic Novels</span><span className="text-turquoise">✦</span>
-              <span>Author / Illustrator</span><span className="text-turquoise">✦</span>
-              <span>Editorial Illustration</span><span className="text-turquoise">✦</span>
-              <span>Visual Storytelling</span><span className="text-turquoise">✦</span>
-              <span>Character Design</span><span className="text-turquoise">✦</span>
-              <span>World Building</span><span className="text-turquoise">✦</span>
-            </div>
-          ))}
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
+        <div className="hair-divider" />
+        <div className="py-5 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+          <span>Scroll to explore</span>
+          <span className="hidden md:inline">Selected work · 2018 — 2026</span>
+          <span className="inline-block animate-pulse">↓</span>
         </div>
       </div>
     </section>
+  );
+}
+
+function IllustratedPortrait({ y }: { y: number }) {
+  // Subtle parallax offsets
+  const slow = y * 0.04;
+  const med = y * 0.08;
+  const fast = y * 0.14;
+
+  return (
+    <div className="relative mx-auto aspect-[4/5] w-full max-w-[460px]">
+      {/* soft pastel accent shapes — behind */}
+      <div
+        aria-hidden
+        className="absolute rounded-full blur-2xl"
+        style={{
+          top: "8%",
+          left: "-6%",
+          width: "55%",
+          height: "55%",
+          background: "oklch(0.92 0.05 200 / 0.55)",
+          transform: `translateY(${-slow}px)`,
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute rounded-full blur-2xl"
+        style={{
+          bottom: "4%",
+          right: "-8%",
+          width: "48%",
+          height: "48%",
+          background: "oklch(0.9 0.05 20 / 0.5)",
+          transform: `translateY(${slow}px)`,
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute rounded-full"
+        style={{
+          top: "20%",
+          right: "8%",
+          width: "14px",
+          height: "14px",
+          background: "var(--turquoise)",
+          transform: `translateY(${-med}px)`,
+          opacity: 0.85,
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute"
+        style={{
+          bottom: "18%",
+          left: "4%",
+          width: "10px",
+          height: "10px",
+          background: "oklch(0.78 0.09 150)",
+          borderRadius: "2px",
+          transform: `translateY(${med}px) rotate(45deg)`,
+        }}
+      />
+
+      {/* portrait frame */}
+      <div
+        className="absolute inset-[6%] overflow-hidden rounded-[2px] clip-reveal"
+        style={{
+          background: "oklch(0.96 0.02 200)",
+          animationDelay: "200ms",
+        }}
+      >
+        <img
+          src={portrait}
+          alt="Niv Haviv — portrait"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ transform: `translateY(${-slow}px) scale(1.05)` }}
+        />
+      </div>
+
+      {/* Sketch / illustration overlay — partially over portrait */}
+      <svg
+        aria-hidden
+        viewBox="0 0 400 500"
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ transform: `translateY(${-fast * 0.3}px)` }}
+      >
+        {/* outline sketch around head */}
+        <path
+          d="M120 130 C 110 90, 160 55, 210 60 C 270 65, 305 110, 300 165 C 298 200, 285 225, 280 245"
+          fill="none"
+          stroke="var(--ink)"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeDasharray="600"
+          strokeDashoffset="0"
+          opacity="0.55"
+        />
+        {/* hatch marks — shoulder */}
+        <g stroke="var(--turquoise-deep)" strokeWidth="1.2" strokeLinecap="round" opacity="0.7">
+          <line x1="60" y1="360" x2="95" y2="350" />
+          <line x1="58" y1="375" x2="90" y2="370" />
+          <line x1="62" y1="390" x2="88" y2="388" />
+        </g>
+        {/* hatch marks — opposite */}
+        <g stroke="oklch(0.74 0.13 28)" strokeWidth="1.2" strokeLinecap="round" opacity="0.55">
+          <line x1="320" y1="300" x2="345" y2="295" />
+          <line x1="322" y1="312" x2="342" y2="310" />
+        </g>
+        {/* asterisk star */}
+        <g stroke="var(--ink)" strokeWidth="1.4" strokeLinecap="round" opacity="0.7">
+          <line x1="340" y1="120" x2="340" y2="140" />
+          <line x1="330" y1="130" x2="350" y2="130" />
+          <line x1="333" y1="123" x2="347" y2="137" />
+          <line x1="347" y1="123" x2="333" y2="137" />
+        </g>
+        {/* circle annotation */}
+        <circle cx="70" cy="180" r="22" fill="none" stroke="oklch(0.78 0.14 0)" strokeWidth="1.4" opacity="0.7" />
+        {/* arrow swoop */}
+        <path
+          d="M85 200 Q 130 245, 175 235"
+          fill="none"
+          stroke="var(--ink)"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          opacity="0.55"
+        />
+        <path
+          d="M170 230 L 178 235 L 172 242"
+          fill="none"
+          stroke="var(--ink)"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.55"
+        />
+        {/* tiny dots cluster */}
+        <g fill="var(--turquoise)" opacity="0.85">
+          <circle cx="295" cy="380" r="2" />
+          <circle cx="305" cy="388" r="2" />
+          <circle cx="288" cy="392" r="2" />
+        </g>
+        {/* underline mark */}
+        <path
+          d="M150 460 Q 220 450, 290 462"
+          fill="none"
+          stroke="var(--turquoise-deep)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.8"
+        />
+      </svg>
+
+      {/* floating tag */}
+      <div
+        className="absolute -bottom-3 left-2 md:-left-4 bg-white border border-ink/10 shadow-sm rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-ink"
+        style={{ transform: `translateY(${-med * 0.4}px)` }}
+      >
+        <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise mr-2 align-middle" />
+        Designer · Illustrator
+      </div>
+    </div>
   );
 }
 
