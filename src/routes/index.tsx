@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
+
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
 import nivIllustrationAsset from "@/assets/niv-portrait-v3.png.asset.json";
 import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
@@ -10,16 +10,16 @@ import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
 import bzAfterMapAsset from "@/assets/bz-after-map.jpg.asset.json";
 import azNivBookAsset from "@/assets/az-niv-book.jpg.asset.json";
 import ndAriehRoyAsset from "@/assets/nd-arieh-roy-circle.png.asset.json";
-import ndSparkCoralAsset from "@/assets/nd-spark-coral.png.asset.json";
+
 import ndSparkOliveAsset from "@/assets/nd-spark-olive.png.asset.json";
-import ndDiamondTealAsset from "@/assets/nd-diamond-teal.png.asset.json";
-import ndStarCreamAsset from "@/assets/nd-star-cream.png.asset.json";
+
+
 import ndPagesCollageAsset from "@/assets/nd-pages-collage-v2.png.asset.json";
 import ndJerusalemWalkAsset from "@/assets/nd-jerusalem-walk.png.asset.json";
 import ndBeachSceneAsset from "@/assets/nd-beach-scene.png.asset.json";
 import ndKissAsset from "@/assets/nd-kiss.png.asset.json";
 
-const portrait = portraitAsset.url;
+
 const signature = signatureAsset.url;
 const nivIllustration = nivIllustrationAsset.url;
 const bookMockup = bookMockupAsset.url;
@@ -35,10 +35,10 @@ const studioProduct = gpdPiratePopupAsset.url;
 const ndStrip1 = ndJerusalemWalkAsset.url;
 const ndStrip2 = ndBeachSceneAsset.url;
 const ndStrip3 = ndKissAsset.url;
-const sparkCoral = ndSparkCoralAsset.url;
+
 const sparkOlive = ndSparkOliveAsset.url;
-const diamondTeal = ndDiamondTealAsset.url;
-const starCream = ndStarCreamAsset.url;
+
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -180,8 +180,6 @@ function Nav() {
 function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const items = [
     { label: "Work", sub: "Selected projects across editorial, illustration, UI and publishing.", href: "#work" },
-    { label: "About", sub: "Who I am, how I work and what drives my projects.", href: "#about" },
-    { label: "Contact", sub: "Email, collaborations and freelance opportunities.", href: "#contact" },
   ];
   return (
     <div
@@ -717,148 +715,7 @@ function FeaturedWork() {
   );
 }
 
-function About() {
-  return (
-    <section
-      id="about"
-      className="relative bg-white text-ink py-20 md:py-28 border-t border-hairline overflow-hidden"
-    >
-      <img
-        src={sparkCoral}
-        alt=""
-        aria-hidden
-        className="absolute right-[8%] top-20 w-10 h-10 opacity-80 hidden md:block"
-      />
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-start">
-        <Reveal className="col-span-12 lg:col-span-5">
-          <div className="lift-img relative aspect-[3/4] w-full overflow-hidden">
-            <img
-              src={portrait}
-              alt="Portrait of Niv Haviv"
-              loading="lazy"
-              width={768}
-              height={1024}
-              className="w-full h-full object-cover"
-            />
-            <span aria-hidden className="absolute -top-2 -left-2 h-8 w-8 border-l-2 border-t-2 border-turquoise" />
-            <span aria-hidden className="absolute -bottom-2 -right-2 h-8 w-8 border-r-2 border-b-2 border-turquoise" />
-          </div>
-          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">Niv Haviv · Tel Aviv</p>
-        </Reveal>
-        <Reveal delay={120} className="col-span-12 lg:col-span-7">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            <span className="text-turquoise-deep">●</span> (03) — About
-          </p>
-          <h2 className="font-serif text-[8vw] sm:text-[5vw] md:text-[3.5vw] lg:text-[2.8vw] leading-[0.95] mt-6 tracking-[-0.045em]">
-            I write, <span className="italic text-turquoise-deep">draw</span> and design the worlds I want to read.
-          </h2>
-          <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
-            An independent visual storyteller working between books, illustration and product. I make the story, draw
-            the world, and design the object that puts it in someone's hands.
-          </p>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl">
-            {[
-              ["Author", "Original graphic novels and children's books — written and published end-to-end."],
-              ["Illustrator", "Characters, spreads and editorial work with a consistent hand."],
-              ["Designer", "Books, identities and products built around the story they carry."],
-            ].map(([t, b]) => (
-              <div key={t} className="border-t border-turquoise/40 pt-4">
-                <h4 className="font-serif text-2xl text-ink tracking-[-0.03em]">{t}</h4>
-                <p className="mt-2 text-ink-muted leading-relaxed text-sm">{b}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            Selected: National Geographic Kids · SuperPlay · Jerusalem Biblical Zoo · Asaflezet
-          </p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
 
-function Contact() {
-  return (
-    <section id="contact" className="relative bg-white py-20 md:py-28 overflow-hidden">
-      <img
-        src={diamondTeal}
-        alt=""
-        aria-hidden
-        className="absolute right-[12%] top-24 w-14 h-14 opacity-70 hidden md:block"
-      />
-      <img
-        src={starCream}
-        alt=""
-        aria-hidden
-        className="absolute left-[6%] bottom-32 w-10 h-10 opacity-80 hidden md:block"
-      />
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
-        <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            <span className="text-turquoise-deep">●</span> (04) — Let's make something
-          </p>
-          <h2 className="font-serif text-[8vw] sm:text-[6vw] md:text-[4.5vw] lg:text-[3.5vw] leading-[0.86] mt-6 text-ink tracking-[-0.045em]">
-            Got a story <span className="italic text-turquoise-deep">to tell?</span>
-          </h2>
-          <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
-            Brand identities, editorial systems, illustration commissions and digital products — I'd love to hear about
-            it.
-          </p>
-
-          <div className="mt-10 space-y-5">
-            <a
-              href="mailto:nivat2@gmail.com"
-              className="group flex items-center text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
-            >
-              <span className="inline-flex w-10 shrink-0 items-center justify-start">
-                <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
-              </span>
-              nivat2@gmail.com
-              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
-            </a>
-
-            <a
-              href="tel:050-2231317"
-              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
-            >
-              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">T</span>
-              050-2231317
-              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
-            </a>
-
-            <a
-              href="https://nivhaviv.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
-            >
-              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">W</span>
-              nivhaviv.com
-              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
-            >
-              <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">in</span>
-              LinkedIn
-              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
-            </a>
-          </div>
-        </Reveal>
-
-        <div className="mt-16 h-px w-full bg-turquoise/30" />
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-          <span>© {new Date().getFullYear()} Niv Haviv — Visual Designer</span>
-          <span>Tel Aviv</span>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Index() {
   return (
@@ -866,8 +723,6 @@ function Index() {
       <Nav />
       <Hero />
       <FeaturedWork />
-      <About />
-      <Contact />
     </main>
   );
 }
