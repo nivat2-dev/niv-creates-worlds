@@ -180,10 +180,10 @@ function Nav() {
 }
 
 function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const items: { label: string; sub: string; href: string }[] = [
-    { label: "Work", sub: "Editorial, digital products, illustration and AI.", href: "#work" },
-    { label: "About", sub: "Designer, storyteller and visual thinker.", href: "#about" },
-    { label: "Contact", sub: "Available for selected opportunities.", href: "#contact" },
+  const items = [
+    { label: "Work", sub: "Selected projects across editorial, illustration, UI and publishing.", href: "#work" },
+    { label: "About", sub: "Who I am, how I work and what drives my projects.", href: "#about" },
+    { label: "Contact", sub: "Email, collaborations and freelance opportunities.", href: "#contact" },
   ];
   return (
     <div
@@ -192,13 +192,13 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
         open ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >
-      {/* sliding sheet */}
       <div
         className={`absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(.7,0,.2,1)] ${
           open ? "translate-y-0" : "-translate-y-full"
         }`}
         style={{ background: "linear-gradient(180deg, #E6F4F4 0%, #D9EEEE 55%, #CDE8E8 100%)" }}
       >
+        {/* Top bar */}
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between">
           <img
             src={signature}
@@ -219,9 +219,11 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span>Close</span>
           </button>
         </div>
-        <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16 h-[calc(100vh-6rem)] md:h-[calc(100vh-7rem)] py-6 md:py-8 lg:py-10 flex flex-col">
+
+        {/* Nav items — vertically centered */}
+        <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16 flex flex-col" style={{ height: "calc(100vh - 7rem)" }}>
           <p
-            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-3 md:mb-4 lg:mb-5 shrink-0"
+            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 shrink-0"
             style={{
               opacity: open ? 1 : 0,
               marginBottom: "clamp(20px, 3vh, 36px)",
@@ -231,21 +233,12 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span className="inline-block w-8 h-px bg-ink/25 align-middle mr-3" />
             Index
           </p>
-          <div className="flex items-center gap-5 shrink-0" style={{ opacity: open ? 1 : 0, transition: `opacity .5s ease 200ms` }}>
-            <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/40 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/40 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-          </div>
-          <ul className="shrink-0">
+
+          <ul className="flex-1 flex flex-col justify-center">
             {items.map((it, i) => (
               <li
                 key={it.label}
-                className="group"
                 style={{
-                  height: "clamp(120px, 18vh, 150px)",
                   transform: open ? "translateY(0)" : "translateY(20px)",
                   opacity: open ? 1 : 0,
                   transition: `opacity .6s ease ${220 + i * 90}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${220 + i * 90}ms`,
@@ -254,68 +247,35 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 <a
                   href={it.href}
                   onClick={onClose}
-                  className="grid h-full grid-cols-12 gap-4 md:gap-6 items-center py-0"
+                  className="group flex items-center justify-between py-6 md:py-8 border-b border-ink/8 hover:border-ink/20 transition-colors"
                 >
-                  {/* number */}
-                  <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
-                    0{i + 1}
-                  </span>
-                  {/* title — left, dominant */}
-                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6vw] lg:text-[5vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
-                    {it.label}
-                  </h3>
-                  {/* description + arrow — right, asymmetric */}
-                  <div className="col-span-7 md:col-span-4 md:col-start-9 flex items-center justify-between gap-4 md:gap-8">
-                    <p className="max-w-[250px] text-ink/45 text-[12px] md:text-[13px] leading-[1.4] tracking-[-0.005em]">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className="hidden md:block font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
+                      0{i + 1}
+                    </span>
+                    <span className="font-serif text-[9vw] md:text-[3.5vw] lg:text-[2.8vw] leading-[0.9] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                      {it.label}
+                    </span>
+                    <span className="hidden md:block text-ink/45 text-[12px] md:text-[13px] leading-[1.4] tracking-[-0.005em] max-w-[280px]">
                       {it.sub}
-                    </p>
-                    <span className="shrink-0 text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-[24px] md:text-[28px] font-light leading-none">
-                      →
                     </span>
                   </div>
+                  <span className="shrink-0 text-ink/30 group-hover:text-turquoise-deep group-hover:translate-x-2 transition-all duration-500 text-[20px] md:text-[24px] font-light leading-none">
+                    →
+                  </span>
                 </a>
               </li>
             ))}
           </ul>
 
-          <div
-            className="mt-auto pt-3 md:pt-4 lg:pt-5 grid grid-cols-12 gap-4 md:gap-6 shrink-0"
-            style={{
-              opacity: open ? 1 : 0,
-              transition: `opacity .6s ease 560ms`,
-            }}
-          >
-            <p className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
-              Say hi
-            </p>
-            <div className="col-span-6 md:col-span-6 flex flex-col gap-1.5">
-              <a
-                href="mailto:nivat2@gmail.com"
-                className="font-serif text-[18px] md:text-[24px] lg:text-[28px] tracking-[-0.02em] text-ink hover:text-turquoise-deep transition-colors leading-tight"
-              >
-                nivat2@gmail.com
-              </a>
-              <a
-                href="tel:050-2231317"
-                className="text-[12px] md:text-[13px] text-ink/45 hover:text-turquoise-deep transition-colors"
-              >
-                050-2231317
-              </a>
-            </div>
-            <div className="col-span-6 md:col-span-5 md:col-start-8 flex flex-col gap-2 text-[11px] md:text-[12px] text-ink/45 md:pt-2">
-              <a
-                href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-turquoise-deep transition-colors"
-              >
-                LinkedIn ↗
-              </a>
-              <span className="inline-flex items-center gap-2 text-[11px] text-ink/35">
-                <span className="inline-block h-1 w-1 rounded-full bg-turquoise/70 animate-pulse" />
-                Available for selected opportunities
-              </span>
-            </div>
+          {/* Social icons */}
+          <div className="flex items-center gap-5 pb-8">
+            <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/30 hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/30 hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
           </div>
         </div>
       </div>
