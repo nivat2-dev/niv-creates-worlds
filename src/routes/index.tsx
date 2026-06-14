@@ -777,7 +777,7 @@ function Contact() {
                 <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
               </span>
               nivat2@gmail.com
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
 
             <a
@@ -786,7 +786,7 @@ function Contact() {
             >
               <span className="inline-flex w-10 shrink-0 text-turquoise-deep font-mono text-sm">T</span>
               050-2231317
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              <span className="ml-4 inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
 
             <a
