@@ -1,3 +1,4 @@
+import { ZoomableImage } from "@/components/Lightbox";
 import { createFileRoute } from "@tanstack/react-router";
 import MoreWork from "@/components/MoreWork";
 import {
@@ -104,7 +105,7 @@ function BiblicalZooPage() {
           <div className="grid grid-cols-12 gap-10 md:gap-14 items-center w-full">
             <Reveal className="col-span-12 lg:col-span-7">
               <div className="relative mx-auto w-full max-w-[880px]">
-                <img
+                <ZoomableImage
                   src={heroMockup.url}
                   alt="Biblical Zoo redesigned treasure map mockup"
                   className="block w-full h-auto rounded-[10px] select-none"
@@ -164,7 +165,7 @@ function BiblicalZooPage() {
             <Reveal key={img.caption} delay={i * 120}>
               <figure>
                 <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center">
-                  <img
+                  <ZoomableImage
                     src={img.src}
                     alt={img.alt}
                     className="block w-full h-full object-cover"
@@ -195,7 +196,7 @@ function BiblicalZooPage() {
         />
         <Reveal>
           <div className="mx-auto max-w-[640px] border border-hairline bg-paper rounded-sm overflow-hidden">
-            <img
+            <ZoomableImage
               src={afterMap.url}
               alt="Redesigned Biblical Zoo treasure map — full layout"
               className="block w-full h-auto"
@@ -233,7 +234,7 @@ function BiblicalZooPage() {
               <span className="text-coral">·</span> Interactive Treasure Hunt Sheet
             </EyebrowCaps>
             <div className="mt-2.5 border border-hairline bg-cream rounded-sm overflow-hidden">
-              <img
+              <ZoomableImage
                 src={gamification.url}
                 alt="Gamification challenge sheet — collectible gems and animal riddles"
                 className="block w-full h-auto"
@@ -276,7 +277,7 @@ function BiblicalZooPage() {
           <Reveal className="lg:col-span-5">
             <figure>
               <div className="border border-hairline rounded-sm overflow-hidden max-w-[460px]">
-                <img
+                <ZoomableImage
                   src={kids.url}
                   alt="Children using the Biblical Zoo treasure map at the zoo"
                   className="block w-full h-auto"

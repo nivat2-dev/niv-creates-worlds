@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { openLightbox } from "@/components/Lightbox";
 
 /* =============================================================
  * Niv Haviv — Portfolio Case Study Design System
@@ -262,7 +263,8 @@ export function CaseCard({
           src={image}
           alt={alt}
           loading="lazy"
-          className="block max-h-full max-w-[78%] w-auto h-auto object-contain"
+          onClick={() => openLightbox(image, alt)}
+          className="block max-h-full max-w-[78%] w-auto h-auto object-contain cursor-zoom-in"
           style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
         />
       </div>
@@ -305,7 +307,8 @@ export function CaseFramedCard({
           src={image}
           alt={alt}
           loading="lazy"
-          className="block max-h-full max-w-full w-auto h-auto object-contain"
+          onClick={() => openLightbox(image, alt)}
+          className="block max-h-full max-w-full w-auto h-auto object-contain cursor-zoom-in"
           style={{ filter: "drop-shadow(0 18px 32px rgba(20,20,22,.14))" }}
         />
       </div>
@@ -346,7 +349,8 @@ export function CaseCoverCard({
           src={image}
           alt={alt}
           loading="lazy"
-          className="block w-full h-full object-cover object-center"
+          onClick={() => openLightbox(image, alt)}
+          className="block w-full h-full object-cover object-center cursor-zoom-in transition-transform duration-500 group-hover:scale-[1.02]"
         />
       </div>
       <h3 className="mt-5 font-serif text-2xl tracking-[-0.01em]">{title}</h3>
@@ -387,7 +391,8 @@ export function FeatureRow({
           <img
             src={image}
             alt={alt}
-            className="block w-full h-auto rounded-sm select-none"
+            onClick={() => openLightbox(image, alt)}
+            className="block w-full h-auto rounded-sm select-none cursor-zoom-in"
             style={{ filter: `drop-shadow(${imageShadow})` }}
           />
         </div>
