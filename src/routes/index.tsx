@@ -252,33 +252,33 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden bg-white">
-      <div className="relative mx-auto max-w-[1280px] px-8 md:px-16 lg:px-20 pt-40 md:pt-48 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[80vh] lg:min-h-[85vh]">
+      <div className="relative mx-auto max-w-[1280px] px-8 md:px-14 lg:px-16 pt-36 md:pt-40 pb-8 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[62vh] lg:min-h-[66vh]">
         {/* LEFT — content */}
         <div className="flex flex-col justify-center">
           <div className="overflow-hidden">
             <h1
-              className="word-rise font-serif text-ink leading-[0.92] tracking-[-0.05em] text-[11vw] md:text-[6.2vw] lg:text-[5.2vw]"
+              className="word-rise font-serif text-ink leading-[0.9] tracking-[-0.055em] text-[14vw] md:text-[8vw] lg:text-[6.8vw]"
               style={{ animationDelay: "80ms" }}
             >
               Niv Haviv
             </h1>
           </div>
-          <div className="mt-2 md:mt-3 overflow-hidden">
+          <div className="mt-1.5 md:mt-2 overflow-hidden">
             <p
-              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.05] text-[5.5vw] md:text-[2.6vw] lg:text-[2vw] tracking-[-0.03em]"
+              className="word-rise font-serif font-medium text-turquoise-deep leading-[1.1] text-[6vw] md:text-[3vw] lg:text-[2.2vw] tracking-[-0.03em]"
               style={{ animationDelay: "200ms" }}
             >
               Visual Designer
             </p>
           </div>
 
-          <Reveal delay={340} className="mt-7 md:mt-8 max-w-sm">
-            <p className="text-[15px] md:text-[16px] leading-[1.6] text-ink-muted">
+          <Reveal delay={340} className="mt-5 md:mt-6 max-w-[280px]">
+            <p className="text-[14px] md:text-[15px] leading-[1.55] text-ink/50">
               Editorial, digital products, illustration and AI.
             </p>
           </Reveal>
 
-          <Reveal delay={560} className="mt-8 md:mt-10 flex items-center gap-3">
+          <Reveal delay={560} className="mt-7 md:mt-8 flex items-center gap-3">
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-2.5 text-[13px] font-medium hover:bg-turquoise-deep transition-colors"
@@ -296,14 +296,14 @@ function Hero() {
         </div>
 
         {/* RIGHT — portrait illustration */}
-        <div className="flex justify-center items-center px-4 md:px-8 lg:px-6">
+        <div className="flex justify-center items-center pl-2 md:pl-4 lg:pl-0 pr-4 md:pr-8 lg:pr-12">
           <IllustrationPortrait />
         </div>
       </div>
       {/* scroll cue */}
-      <div className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-ink/40 font-mono">
+      <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-ink/40 font-mono">
         <span>Scroll</span>
-        <span className="block h-8 w-px bg-ink/30 scroll-cue" />
+        <span className="block h-6 w-px bg-ink/30 scroll-cue" />
       </div>
     </section>
   );
@@ -313,14 +313,14 @@ function IllustrationPortrait() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY * 0.06);
+    const onScroll = () => setOffset(window.scrollY * 0.04);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <div
       ref={wrapRef}
-      className="relative w-full max-w-[520px] lg:max-w-[560px]"
+      className="relative w-full max-w-[680px] lg:max-w-[740px]"
       style={{ transform: `translateY(${-offset}px)` }}
     >
       <img
