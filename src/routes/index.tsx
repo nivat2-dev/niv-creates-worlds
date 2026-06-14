@@ -10,8 +10,9 @@ import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
 import bzAfterMapAsset from "@/assets/bz-after-map.jpg.asset.json";
 import azNivBookAsset from "@/assets/az-niv-book.jpg.asset.json";
 import ndAriehRoyAsset from "@/assets/nd-arieh-roy-circle.png.asset.json";
-
+import ndSparkCoralAsset from "@/assets/nd-spark-coral.png.asset.json";
 import ndSparkOliveAsset from "@/assets/nd-spark-olive.png.asset.json";
+import ndDiamondTealAsset from "@/assets/nd-diamond-teal.png.asset.json";
 
 
 import ndPagesCollageAsset from "@/assets/nd-pages-collage-v2.png.asset.json";
