@@ -561,11 +561,11 @@ function ProjectRow({ p }: { p: Project }) {
 
     <Link to={p.to} className="group block border-b border-ink/8 last:border-b-0">
 
-      <article className="mx-auto max-w-[1500px] px-10 md:px-16 py-16 md:py-20 grid grid-cols-12 gap-8 md:gap-12 items-center">
+      <article className="mx-auto max-w-[1500px] px-10 md:px-16 py-10 md:py-14 grid grid-cols-12 gap-8 md:gap-12 items-center">
 
         {/* LEFT — image, ~40% width */}
 
-        <Reveal className="col-span-12 md:col-span-5">
+        <Reveal className="col-span-12 md:col-span-4">
 
           <div className="relative w-full aspect-[3/4] overflow-hidden bg-paper-deep">
 
@@ -745,10 +745,45 @@ function FeaturedWork() {
         </Reveal>
       </div>
 
-      <div className="space-y-20 md:space-y-28">
+      <div className="space-y-0">
         {projects.map((p) => (
           <ProjectRow key={p.title} p={p} />
         ))}
+        <Link to="/work/new-direction" className="group block border-b border-ink/8">
+          <article className="mx-auto max-w-[1500px] px-10 md:px-16 py-10 md:py-14 grid grid-cols-12 gap-8 md:gap-12 items-center">
+            <Reveal className="col-span-12 md:col-span-4">
+              <div className="relative w-full aspect-[3/4] overflow-hidden bg-paper-deep">
+                <img src={pagesCollage} alt="New Direction" loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+                <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 mix-blend-difference">00</div>
+              </div>
+            </Reveal>
+            <Reveal delay={100} className="col-span-12 md:col-span-7 flex flex-col justify-center pl-0 md:pl-8">
+              <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/30 mb-6">
+                <span>00</span>
+                <span className="h-px w-8 bg-ink/20" />
+                <span className="text-turquoise-deep">★ Flagship</span>
+              </div>
+              <h3 className="font-serif text-[8vw] sm:text-[5vw] md:text-[3.2vw] lg:text-[2.4vw] leading-[1.05] tracking-[-0.03em] text-ink">
+                New Direction
+              </h3>
+              <p className="font-serif italic text-[18px] text-turquoise-deep mt-3 font-light leading-[1.4]">
+                An original graphic novel — written, drawn and designed by Niv.
+              </p>
+              <p className="mt-5 text-[14px] md:text-[15px] text-ink/50 leading-relaxed max-w-[400px]">
+                Hundreds of hand-painted panels. A complete publishing project, from first sketch to printed spine.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {["Graphic Novel", "Character Design", "Illustration", "Publishing"].map((t) => (
+                  <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 border border-ink/15 px-3 py-1.5">{t}</span>
+                ))}
+              </div>
+              <span className="mt-8 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/40 border border-ink/20 px-5 py-3 w-fit group-hover:border-ink/50 group-hover:text-ink transition-colors duration-300">
+                Open the case study
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </span>
+            </Reveal>
+          </article>
+        </Link>
       </div>
     </section>
   );
