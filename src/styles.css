@@ -224,6 +224,12 @@
   0%, 60% { opacity: 1; }
   61%, 100% { opacity: 0; }
 }
+@keyframes scroll-cue {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0.2; }
+  40% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  60% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0.2; }
+}
 
 @utility float-slow { animation: float-slow 9s ease-in-out infinite; }
 @utility float-med { animation: float-med 6s ease-in-out infinite; }
@@ -232,6 +238,7 @@
 @utility clip-reveal { animation: reveal-clip 1.2s cubic-bezier(.7,0,.2,1) both; }
 @utility word-rise { display: inline-block; animation: word-rise 1s cubic-bezier(.2,.7,.2,1) both; }
 @utility cursor-blink { animation: blink 1s steps(1) infinite; }
+@utility scroll-cue { animation: scroll-cue 2.2s cubic-bezier(.6,.05,.4,1) infinite; }
 
 @utility hair-divider {
   height: 1px;
