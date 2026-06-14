@@ -70,18 +70,18 @@ const SOLUTION_CARDS = [
 const LESSONS = [
   {
     n: "01",
-    title: "Turn directions into rewards.",
-    body: "Once finding the next animal felt like uncovering treasure, families stopped asking where to go — they pulled each other toward the next stop.",
+    title: "Wayfinding works harder when it's a game.",
+    body: "Once each stop felt like uncovering treasure, families stopped asking where to go — kids set the pace and pulled their parents toward the next exhibit.",
   },
   {
     n: "02",
-    title: "Design for curiosity, not instructions.",
-    body: "Just enough structure to start, just enough mystery to keep going — that gap is where children took the lead.",
+    title: "Leave room for kids to lead.",
+    body: "Just enough structure to start, just enough mystery to keep going. The gap between the two is where children took over the visit.",
   },
   {
     n: "03",
-    title: "Learning works best when it hides inside play.",
-    body: "Facts wrapped in riddles and rewards landed without resistance — and parents stayed engaged alongside their kids.",
+    title: "Animal facts land best when wrapped in a riddle.",
+    body: "Information presented as a clue, tied to a specific exhibit, got read out loud — the same facts printed on a panel got walked past.",
   },
 ];
 
