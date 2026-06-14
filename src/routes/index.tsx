@@ -460,6 +460,7 @@ function SignatureProject() {
 }
 
 function ProjectRow({ p }: { p: Project }) {
+  if (p.layout === "wide") return <WideProjectRow p={p} />;
   const isLeft = p.layout === "left";
   return (
     <Link to={p.to} className="group block">
@@ -511,6 +512,136 @@ function ProjectRow({ p }: { p: Project }) {
         </div>
       </article>
     </Link>
+  );
+}
+
+function WideProjectRow({ p }: { p: Project }) {
+  return (
+    <Link to={p.to} className="group block">
+      <article className="relative">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <Reveal>
+            <div className="lift-img relative w-full overflow-hidden bg-paper-deep aspect-[16/9]">
+              <img
+                src={p.image}
+                alt={p.alt}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
+              <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-paper mix-blend-difference">
+                {p.index} / {p.tags[0]}
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="mt-8 grid grid-cols-12 gap-6 md:gap-10">
+              <div className="col-span-12 lg:col-span-7">
+                <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+                  <span>{p.index}</span>
+                  <span className="h-px w-10 bg-turquoise/60" />
+                  <span>Project</span>
+                </div>
+                <h3 className="font-serif text-5xl md:text-6xl leading-[0.95] mt-5 text-ink tracking-[-0.04em]">
+                  {p.title}
+                </h3>
+                <p className="font-serif italic text-xl md:text-2xl text-turquoise-deep mt-3 font-light">
+                  {p.tagline}
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-5">
+                <p className="text-ink-muted leading-relaxed max-w-md">{p.body}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink">
+                  <span className="border-b border-ink/40 pb-0.5 group-hover:border-turquoise group-hover:text-turquoise-deep transition-colors">
+                    View project
+                  </span>
+                  <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </article>
+    </Link>
+  );
+}
+
+function StudioBand() {
+  const items = [
+    {
+      n: "I.",
+      label: "Books",
+      title: "I write and draw books.",
+      body: "Graphic novels and printed children's titles — authored and illustrated end-to-end.",
+      img: studioBooks,
+    },
+    {
+      n: "II.",
+      label: "Illustration",
+      title: "I tell stories in pictures.",
+      body: "Editorial spreads, characters and worlds — a recognizable hand across every project.",
+      img: studioIllo,
+    },
+    {
+      n: "III.",
+      label: "Product",
+      title: "I design the things that carry them.",
+      body: "When the story needs an interface, an identity or a printed object — I make that too.",
+      img: studioProduct,
+    },
+  ];
+  return (
+    <section className="relative bg-cream/70 py-24 md:py-32 border-y border-hairline overflow-hidden">
+      <img
+        src={sparkOlive}
+        alt=""
+        aria-hidden
+        className="absolute left-6 top-10 w-10 h-10 opacity-70 hidden md:block"
+      />
+      <img
+        src={diamondTeal}
+        alt=""
+        aria-hidden
+        className="absolute right-10 bottom-10 w-12 h-12 opacity-60 hidden md:block"
+      />
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
+        <div className="flex items-end justify-between mb-14 md:mb-20">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            <span className="text-turquoise-deep">●</span> The Studio
+          </p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted hidden md:block">
+            One person · three crafts
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+          {items.map((it, i) => (
+            <Reveal key={it.label} delay={i * 80}>
+              <div className="relative">
+                <div className="aspect-[5/4] w-full overflow-hidden bg-paper border border-hairline">
+                  <img src={it.img} alt="" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="mt-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+                  <span className="text-turquoise-deep">{it.n}</span>
+                  <span className="h-px w-8 bg-turquoise/50" />
+                  <span>{it.label}</span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl leading-[1.05] mt-3 text-ink tracking-[-0.03em]">
+                  {it.title}
+                </h3>
+                <p className="mt-3 text-ink-muted leading-relaxed text-[15px] max-w-sm">{it.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
