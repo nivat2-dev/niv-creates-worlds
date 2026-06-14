@@ -654,25 +654,55 @@ function Contact() {
             Got a story <span className="italic text-turquoise-deep">to tell?</span>
           </h2>
           <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
-            Books, illustration commissions, collaborations on worlds that
-            don't exist yet — I'd love to hear about it.
+            Brand identities, editorial systems, illustration commissions and digital products — I'd love to hear about it.
           </p>
-          <a
-            href="mailto:hello@nivhaviv.com"
-            className="group inline-flex mt-10 items-center gap-4 text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors"
-          >
-            <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
-            hello@nivhaviv.com
-            <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-          </a>
+
+          <div className="mt-10 space-y-5">
+            <a
+              href="mailto:nivat2@gmail.com"
+              className="group flex items-center gap-4 text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+            >
+              <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
+              nivat2@gmail.com
+              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+
+            <a
+              href="tel:050-2231317"
+              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+            >
+              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">T</span>
+              050-2231317
+              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+
+            <a
+              href="https://nivhaviv.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+            >
+              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">W</span>
+              nivhaviv.com
+              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 text-xl md:text-2xl font-serif border-b border-turquoise/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors w-fit"
+            >
+              <span className="inline-block w-7 text-center text-turquoise-deep font-mono text-sm">in</span>
+              LinkedIn
+              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
         </Reveal>
 
-        <p className="mt-10 max-w-xl text-ink-muted leading-relaxed">
-          Find me by email — that's where the work happens.
-        </p>
         <div className="mt-16 h-px w-full bg-turquoise/30" />
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-          <span>© {new Date().getFullYear()} Niv Haviv — Author · Illustrator · Designer</span>
+          <span>© {new Date().getFullYear()} Niv Haviv — Visual Designer</span>
           <span>Tel Aviv</span>
         </div>
       </div>
