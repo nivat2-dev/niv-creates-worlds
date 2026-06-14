@@ -231,9 +231,13 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <span className="inline-block w-8 h-px bg-ink/25 align-middle mr-3" />
             Index
           </p>
-          <div className="flex items-center gap-6 shrink-0" style={{ opacity: open ? 1 : 0, transition: `opacity .5s ease 200ms` }}>
-            <a href="mailto:nivat2@gmail.com" className="text-ink/40 hover:text-ink transition-colors text-[12px] font-mono uppercase tracking-[0.2em]">Email</a>
-            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" className="text-ink/40 hover:text-ink transition-colors text-[12px] font-mono uppercase tracking-[0.2em]">LinkedIn</a>
+          <div className="flex items-center gap-5 shrink-0" style={{ opacity: open ? 1 : 0, transition: `opacity .5s ease 200ms` }}>
+            <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/40 hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/40 hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
           </div>
           <ul className="shrink-0">
             {items.map((it, i) => (
