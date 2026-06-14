@@ -208,6 +208,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
             className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 mb-3 md:mb-4 lg:mb-5 shrink-0"
             style={{
               opacity: open ? 1 : 0,
+              marginBottom: "clamp(12px, 1.8vh, 18px)",
               transition: `opacity .5s ease 150ms`,
             }}
           >
@@ -220,6 +221,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 key={it.label}
                 className="group border-t border-ink/10 last:border-b"
                 style={{
+                  height: "clamp(108px, 17vh, 132px)",
                   transform: open ? "translateY(0)" : "translateY(20px)",
                   opacity: open ? 1 : 0,
                   transition: `opacity .6s ease ${220 + i * 90}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${220 + i * 90}ms`,
@@ -228,7 +230,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 <a
                   href={it.href}
                   onClick={onClose}
-                  className="grid grid-cols-12 gap-4 md:gap-6 items-center py-3.5 md:py-4 lg:py-5"
+                  className="grid h-full grid-cols-12 gap-4 md:gap-6 items-center py-0"
                 >
                   {/* number */}
                   <span className="hidden md:block col-span-1 font-mono text-[10px] uppercase tracking-[0.28em] text-ink/30">
