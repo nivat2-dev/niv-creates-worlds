@@ -253,7 +253,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                     0{i + 1}
                   </span>
                   {/* title — left, dominant */}
-                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[6vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
+                  <h3 className="col-span-5 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6vw] lg:text-[6vw] leading-[0.88] tracking-[-0.05em] text-ink group-hover:text-turquoise-deep transition-colors duration-500">
                     {it.label}
                   </h3>
                   {/* description + arrow — right, asymmetric */}
