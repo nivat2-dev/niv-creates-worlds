@@ -1,19 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
-import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
+import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import novelSpread from "@/assets/novel-spread.jpg";
 import necklace from "@/assets/necklace.png";
-import ngkCoverTitanicAsset from "@/assets/ngk-cover-titanic.png.asset.json";
+import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
 import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
-import zoo from "@/assets/zoo.jpg";
-import azFrontCoverAsset from "@/assets/az-front-cover.png.asset.json";
-const asaflezet = azFrontCoverAsset.url;
+import bzAfterMapAsset from "@/assets/bz-after-map.jpg.asset.json";
+import azNivBookAsset from "@/assets/az-niv-book.jpg.asset.json";
+import gpdThreeGamesAsset from "@/assets/gpd-three-games.png.asset.json";
+import ndAriehRoyAsset from "@/assets/nd-arieh-roy-circle.png.asset.json";
+import ndSparkCoralAsset from "@/assets/nd-spark-coral.png.asset.json";
+import ndSparkOliveAsset from "@/assets/nd-spark-olive.png.asset.json";
+import ndDiamondTealAsset from "@/assets/nd-diamond-teal.png.asset.json";
+import ndStarCreamAsset from "@/assets/nd-star-cream.png.asset.json";
 
 const portrait = portraitAsset.url;
-const bookCover = bookCoverAsset.url;
-const natgeo = ngkCoverTitanicAsset.url;
+const bookMockup = bookMockupAsset.url;
+const natgeo = ngkSpreadAsset.url;
 const superplay = gpdPiratePopupAsset.url;
+const zooMap = bzAfterMapAsset.url;
+const asaflezet = azNivBookAsset.url;
+const studioBooks = ndAriehRoyAsset.url;
+const studioIllo = ngkSpreadAsset.url;
+const studioProduct = gpdThreeGamesAsset.url;
+const sparkCoral = ndSparkCoralAsset.url;
+const sparkOlive = ndSparkOliveAsset.url;
+const diamondTeal = ndDiamondTealAsset.url;
+const starCream = ndStarCreamAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
