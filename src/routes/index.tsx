@@ -1,19 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import portraitAsset from "@/assets/niv-portrait.jpg.asset.json";
-import bookCoverAsset from "@/assets/new-direction-cover.png.asset.json";
+import bookMockupAsset from "@/assets/nd-book-mockup-v2.png.asset.json";
 import novelSpread from "@/assets/novel-spread.jpg";
 import necklace from "@/assets/necklace.png";
-import ngkCoverTitanicAsset from "@/assets/ngk-cover-titanic.png.asset.json";
+import ngkSpreadAsset from "@/assets/ngk-spread.png.asset.json";
 import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
-import zoo from "@/assets/zoo.jpg";
-import azFrontCoverAsset from "@/assets/az-front-cover.png.asset.json";
-const asaflezet = azFrontCoverAsset.url;
+import bzAfterMapAsset from "@/assets/bz-after-map.jpg.asset.json";
+import azNivBookAsset from "@/assets/az-niv-book.jpg.asset.json";
+import gpdThreeGamesAsset from "@/assets/gpd-three-games.png.asset.json";
+import ndAriehRoyAsset from "@/assets/nd-arieh-roy-circle.png.asset.json";
+import ndSparkCoralAsset from "@/assets/nd-spark-coral.png.asset.json";
+import ndSparkOliveAsset from "@/assets/nd-spark-olive.png.asset.json";
+import ndDiamondTealAsset from "@/assets/nd-diamond-teal.png.asset.json";
+import ndStarCreamAsset from "@/assets/nd-star-cream.png.asset.json";
 
 const portrait = portraitAsset.url;
-const bookCover = bookCoverAsset.url;
-const natgeo = ngkCoverTitanicAsset.url;
+const bookMockup = bookMockupAsset.url;
+const natgeo = ngkSpreadAsset.url;
 const superplay = gpdPiratePopupAsset.url;
+const zooMap = bzAfterMapAsset.url;
+const asaflezet = azNivBookAsset.url;
+const studioBooks = ndAriehRoyAsset.url;
+const studioIllo = ngkSpreadAsset.url;
+const studioProduct = gpdThreeGamesAsset.url;
+const sparkCoral = ndSparkCoralAsset.url;
+const sparkOlive = ndSparkOliveAsset.url;
+const diamondTeal = ndDiamondTealAsset.url;
+const starCream = ndStarCreamAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -130,8 +144,8 @@ function Hero() {
       {/* top eyebrow */}
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-28 md:pt-32">
         <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
-          <span>(01) — A studio of one</span>
-          <span className="hidden md:inline">Tel Aviv · Worldwide</span>
+          <span>(01) — Independent visual storyteller</span>
+          <span className="hidden md:inline">Author · Illustrator · Designer</span>
           <span>Vol. MMXXVI<span className="cursor-blink">_</span></span>
         </div>
         <div className="mt-8 hair-divider" />
@@ -143,7 +157,7 @@ function Hero() {
           <h1 className="font-serif text-ink leading-[0.86] tracking-[-0.045em] text-[18vw] md:text-[14vw] lg:text-[11.5vw]">
             <span className="block overflow-hidden">
               <span className="word-rise inline-block" style={{ animationDelay: "60ms" }}>
-                Designer,
+                Stories,
               </span>
             </span>
             <span className="block overflow-hidden">
@@ -151,12 +165,12 @@ function Hero() {
                 className="word-rise inline-block italic font-light text-turquoise-deep"
                 style={{ animationDelay: "180ms", fontStyle: "italic" }}
               >
-                storyteller,
+                characters,
               </span>
             </span>
             <span className="block overflow-hidden">
               <span className="word-rise inline-block" style={{ animationDelay: "300ms" }}>
-                world-builder.
+                worlds — drawn by hand.
               </span>
             </span>
           </h1>
@@ -176,9 +190,18 @@ function Hero() {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ transform: `translateY(${y * -0.04}px) scale(1.04)` }}
             />
+            {/* turquoise frame mark — author personality */}
+            <span
+              aria-hidden
+              className="absolute -top-2 -left-2 h-6 w-6 border-l-2 border-t-2 border-turquoise"
+            />
+            <span
+              aria-hidden
+              className="absolute -bottom-2 -right-2 h-6 w-6 border-r-2 border-b-2 border-turquoise"
+            />
             <div className="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-paper mix-blend-difference">
               <span>N. Haviv</span>
-              <span>— Studio Lead</span>
+              <span>— Author & Illustrator</span>
             </div>
           </div>
         </div>
@@ -188,19 +211,20 @@ function Hero() {
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-16 md:pb-24 grid grid-cols-12 gap-6 items-end">
         <Reveal className="col-span-12 md:col-span-5" delay={400}>
           <p className="font-serif text-2xl md:text-3xl leading-[1.15] text-ink max-w-md">
-            An independent practice designing
-            <span className="italic"> products</span>,
-            <span className="italic"> stories </span>
-            and the
-            <span className="italic"> visual systems </span>
-            that hold them together.
+            I write and draw <span className="italic">books</span>,
+            build <span className="italic">characters</span>, and design
+            the <span className="italic">worlds</span> that hold them together.
           </p>
         </Reveal>
         <div className="col-span-12 md:col-span-3 md:col-start-7 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted leading-relaxed">
-          <div className="flex justify-between"><span>Product / UI</span><span>01</span></div>
-          <div className="flex justify-between mt-1"><span>Illustration</span><span>02</span></div>
-          <div className="flex justify-between mt-1"><span>Graphic Novels</span><span>03</span></div>
-          <div className="flex justify-between mt-1"><span>Brand Worlds</span><span>04</span></div>
+          <div className="flex justify-between"><span>Books &amp; Publishing</span><span>01</span></div>
+          <div className="flex justify-between mt-1"><span>Character Design</span><span>02</span></div>
+          <div className="flex justify-between mt-1"><span>Illustration</span><span>03</span></div>
+          <div className="flex justify-between mt-1"><span>Product / UI</span><span>04</span></div>
+          <div className="mt-4 flex items-center gap-2 text-turquoise-deep normal-case tracking-[0.12em]">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise animate-pulse" />
+            <span>Now: <span className="text-ink">New Direction</span> — printing 2026</span>
+          </div>
         </div>
         <div className="col-span-12 md:col-span-2 md:col-start-11 flex md:justify-end">
           <a
@@ -221,12 +245,12 @@ function Hero() {
         <div className="marquee flex gap-12 whitespace-nowrap font-mono text-[12px] uppercase tracking-[0.22em] text-ink">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-12 pr-12">
-              <span>Graphic Novels</span><span className="text-turquoise">●</span>
-              <span>Product Design</span><span className="text-turquoise">●</span>
-              <span>Illustration</span><span className="text-turquoise">●</span>
-              <span>Visual Storytelling</span><span className="text-turquoise">●</span>
-              <span>Brand Worlds</span><span className="text-turquoise">●</span>
-              <span>Character Design</span><span className="text-turquoise">●</span>
+              <span>Graphic Novels</span><span className="text-turquoise">✦</span>
+              <span>Author / Illustrator</span><span className="text-turquoise">✦</span>
+              <span>Editorial Illustration</span><span className="text-turquoise">✦</span>
+              <span>Visual Storytelling</span><span className="text-turquoise">✦</span>
+              <span>Character Design</span><span className="text-turquoise">✦</span>
+              <span>World Building</span><span className="text-turquoise">✦</span>
             </div>
           ))}
         </div>
@@ -244,7 +268,7 @@ type Project = {
   image: string;
   alt: string;
   to: string;
-  layout?: "hero" | "left" | "right";
+  layout?: "hero" | "left" | "right" | "wide";
 };
 
 const projects: Project[] = [
@@ -275,24 +299,24 @@ const projects: Project[] = [
   {
     index: "03",
     title: "Biblical Zoo Treasure Map",
-    tagline: "An illustrated identity for a place full of stories.",
-    tags: ["Identity", "Wayfinding", "Illustration"],
+    tagline: "A hand-drawn map for one of Jerusalem's most beloved places.",
+    tags: ["Illustrated Map", "Wayfinding", "Storytelling"],
     body:
-      "Illustrated mascots, signage and a friendly visual system for one of Jerusalem’s most beloved cultural spaces.",
-    image: zoo,
-    alt: "Biblical Zoo identity and signage",
+      "An illustrated treasure map that turns a walk through the zoo into a story — every animal a character, every path a chapter.",
+    image: zooMap,
+    alt: "Biblical Zoo illustrated treasure map",
     to: "/work/biblical-zoo",
-    layout: "right",
+    layout: "wide",
   },
   {
     index: "04",
     title: "Asaflezet",
-    tagline: "A complete brand world — quiet, warm, distinctly its own.",
-    tags: ["Brand", "Identity", "Art Direction"],
+    tagline: "A self-written, self-illustrated children's book in print.",
+    tags: ["Author", "Children's Book", "Illustration"],
     body:
-      "Identity, packaging and photography direction — a full sensory brand built around a single quiet idea.",
+      "Written, illustrated and designed end-to-end — from first sketch to a printed hardcover in the hands of real readers.",
     image: asaflezet,
-    alt: "Asaflezet brand identity",
+    alt: "Asaflezet — printed children's book held in hand",
     to: "/work/asaflezet",
     layout: "left",
   },
@@ -314,21 +338,27 @@ function SignatureProject() {
 
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-32 pb-10">
         <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-paper/60">
-          <span>★ Signature Project</span>
-          <span>00 / New Direction</span>
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
+            ★ Flagship Project
+          </span>
+          <span>00 / New Direction · Graphic Novel</span>
         </div>
-        <div className="mt-6 h-px w-full bg-paper/15" />
+        <div className="mt-6 h-px w-full bg-turquoise/40" />
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-24 md:pb-36 grid grid-cols-12 gap-6 items-center">
         <Reveal className="col-span-12 lg:col-span-7">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise mb-6">
+            An original graphic novel — written, drawn and designed by Niv.
+          </p>
           <h2 className="font-serif text-[14vw] md:text-[9.5vw] lg:text-[8.2vw] leading-[0.86] tracking-[-0.045em]">
             New
             <span className="italic font-light text-turquoise"> Direction</span>
           </h2>
           <p className="font-serif text-2xl md:text-3xl leading-[1.2] max-w-xl mt-8 text-paper/90">
-            An original graphic novel — story, characters, typography and
-            book design built from a single visual language.
+            Story, characters, typography and book design — built from
+            a single visual language, panel by panel.
           </p>
           <p className="mt-8 max-w-md text-paper/60 leading-relaxed">
             Hundreds of hand-painted panels. A complete publishing project,
@@ -353,21 +383,41 @@ function SignatureProject() {
 
         {/* Right: Book + Pendant composition */}
         <Reveal className="col-span-12 lg:col-span-5 relative h-[520px] md:h-[600px]" delay={160}>
+          {/* ambient personality marks */}
+          <img
+            src={sparkCoral}
+            alt=""
+            aria-hidden
+            className="absolute -top-2 right-6 w-10 h-10 opacity-90 float-med"
+            style={{ transform: `translateY(${y * 0.06}px)` }}
+          />
+          <img
+            src={diamondTeal}
+            alt=""
+            aria-hidden
+            className="absolute top-1/2 right-[6%] w-8 h-8 opacity-80"
+            style={{ transform: `translateY(${y * -0.05}px) rotate(12deg)` }}
+          />
+          <img
+            src={starCream}
+            alt=""
+            aria-hidden
+            className="absolute left-[40%] top-10 w-6 h-6 opacity-70 float-med"
+            style={{ transform: `translateY(${y * 0.04}px)` }}
+          />
           <div
-            className="absolute right-0 top-4 w-[78%] aspect-[968/1320] overflow-hidden bg-paper/5 clip-reveal"
+            className="absolute right-0 top-4 w-[82%] clip-reveal"
             style={{
               animationDelay: "200ms",
               transform: `translateY(${y * -0.04}px)`,
-              filter: "drop-shadow(0 40px 60px rgba(0,0,0,0.45))",
+              filter: "drop-shadow(0 50px 70px rgba(0,0,0,0.55))",
             }}
           >
             <img
-              src={bookCover}
-              alt="New Direction — graphic novel cover"
+              src={bookMockup}
+              alt="New Direction — printed graphic novel"
               loading="lazy"
-              width={968}
-              height={1320}
-              className="w-full h-full object-cover"
+              className="w-full h-auto"
             />
           </div>
           <div
@@ -410,6 +460,7 @@ function SignatureProject() {
 }
 
 function ProjectRow({ p }: { p: Project }) {
+  if (p.layout === "wide") return <WideProjectRow p={p} />;
   const isLeft = p.layout === "left";
   return (
     <Link to={p.to} className="group block">
@@ -464,20 +515,154 @@ function ProjectRow({ p }: { p: Project }) {
   );
 }
 
+function WideProjectRow({ p }: { p: Project }) {
+  return (
+    <Link to={p.to} className="group block">
+      <article className="relative">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+          <Reveal>
+            <div className="lift-img relative w-full overflow-hidden bg-paper-deep aspect-[16/9]">
+              <img
+                src={p.image}
+                alt={p.alt}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500" />
+              <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-paper mix-blend-difference">
+                {p.index} / {p.tags[0]}
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="mt-8 grid grid-cols-12 gap-6 md:gap-10">
+              <div className="col-span-12 lg:col-span-7">
+                <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+                  <span>{p.index}</span>
+                  <span className="h-px w-10 bg-turquoise/60" />
+                  <span>Project</span>
+                </div>
+                <h3 className="font-serif text-5xl md:text-6xl leading-[0.95] mt-5 text-ink tracking-[-0.04em]">
+                  {p.title}
+                </h3>
+                <p className="font-serif italic text-xl md:text-2xl text-turquoise-deep mt-3 font-light">
+                  {p.tagline}
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-5">
+                <p className="text-ink-muted leading-relaxed max-w-md">{p.body}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink border border-hairline rounded-full px-3 py-1.5">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink">
+                  <span className="border-b border-ink/40 pb-0.5 group-hover:border-turquoise group-hover:text-turquoise-deep transition-colors">
+                    View project
+                  </span>
+                  <span className="inline-block transition-transform duration-500 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </article>
+    </Link>
+  );
+}
+
+function StudioBand() {
+  const items = [
+    {
+      n: "I.",
+      label: "Books",
+      title: "I write and draw books.",
+      body: "Graphic novels and printed children's titles — authored and illustrated end-to-end.",
+      img: studioBooks,
+    },
+    {
+      n: "II.",
+      label: "Illustration",
+      title: "I tell stories in pictures.",
+      body: "Editorial spreads, characters and worlds — a recognizable hand across every project.",
+      img: studioIllo,
+    },
+    {
+      n: "III.",
+      label: "Product",
+      title: "I design the things that carry them.",
+      body: "When the story needs an interface, an identity or a printed object — I make that too.",
+      img: studioProduct,
+    },
+  ];
+  return (
+    <section className="relative bg-cream/70 py-24 md:py-32 border-y border-hairline overflow-hidden">
+      <img
+        src={sparkOlive}
+        alt=""
+        aria-hidden
+        className="absolute left-6 top-10 w-10 h-10 opacity-70 hidden md:block"
+      />
+      <img
+        src={diamondTeal}
+        alt=""
+        aria-hidden
+        className="absolute right-10 bottom-10 w-12 h-12 opacity-60 hidden md:block"
+      />
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
+        <div className="flex items-end justify-between mb-14 md:mb-20">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            <span className="text-turquoise-deep">●</span> The Studio
+          </p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted hidden md:block">
+            One person · three crafts
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+          {items.map((it, i) => (
+            <Reveal key={it.label} delay={i * 80}>
+              <div className="relative">
+                <div className="aspect-[5/4] w-full overflow-hidden bg-paper border border-hairline">
+                  <img src={it.img} alt="" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="mt-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+                  <span className="text-turquoise-deep">{it.n}</span>
+                  <span className="h-px w-8 bg-turquoise/50" />
+                  <span>{it.label}</span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl leading-[1.05] mt-3 text-ink tracking-[-0.03em]">
+                  {it.title}
+                </h3>
+                <p className="mt-3 text-ink-muted leading-relaxed text-[15px] max-w-sm">{it.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FeaturedWork() {
   return (
     <section id="work" className="relative bg-paper py-28 md:py-40">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-20 md:mb-28 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            (02) — Selected Work
+            <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
           </p>
         </div>
         <div className="col-span-12 md:col-span-9">
           <Reveal>
             <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em]">
-              A few of the worlds <span className="italic font-light text-turquoise-deep">we've built.</span>
+              More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
             </h2>
+            <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
+              Beyond New Direction — books, characters, illustrated identities and
+              products built around the stories they tell.
+            </p>
           </Reveal>
         </div>
       </div>
@@ -493,32 +678,52 @@ function FeaturedWork() {
 
 function About() {
   return (
-    <section id="about" className="relative bg-ink text-paper py-32 md:py-44">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-start">
+    <section id="about" className="relative bg-cream/60 text-ink py-32 md:py-44 border-t border-hairline overflow-hidden">
+      <img
+        src={sparkCoral}
+        alt=""
+        aria-hidden
+        className="absolute right-[8%] top-20 w-10 h-10 opacity-80 hidden md:block"
+      />
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-8 md:gap-12 items-start">
         <Reveal className="col-span-12 lg:col-span-5">
-          <div className="lift-img relative aspect-[3/4] w-full overflow-hidden grayscale">
+          <div className="lift-img relative aspect-[3/4] w-full overflow-hidden">
             <img src={portrait} alt="Portrait of Niv Haviv" loading="lazy" width={768} height={1024} className="w-full h-full object-cover" />
+            <span aria-hidden className="absolute -top-2 -left-2 h-8 w-8 border-l-2 border-t-2 border-turquoise" />
+            <span aria-hidden className="absolute -bottom-2 -right-2 h-8 w-8 border-r-2 border-b-2 border-turquoise" />
           </div>
+          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            Niv Haviv · Tel Aviv
+          </p>
         </Reveal>
         <Reveal delay={120} className="col-span-12 lg:col-span-7 lg:pl-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/60">(03) — About</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            <span className="text-turquoise-deep">●</span> (03) — About
+          </p>
           <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] mt-6 tracking-[-0.045em]">
-            I build <span className="italic text-turquoise">worlds</span> — products,
-            stories, and the visual systems that hold them together.
+            I write, <span className="italic text-turquoise-deep">draw</span> and
+            design the worlds I want to read.
           </h2>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-2xl">
+          <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
+            An independent visual storyteller working between books, illustration
+            and product. I make the story, draw the world, and design the object
+            that puts it in someone's hands.
+          </p>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl">
             {[
-              ["Design", "Products and interfaces that feel quiet, tactile, and considered."],
-              ["Storytelling", "Long-form narrative — characters, pacing, panel by panel."],
-              ["Illustration", "From editorial spreads to printed graphic novels."],
-              ["Problem solving", "Brand, product and visual language as one continuous craft."],
+              ["Author", "Original graphic novels and children's books — written and published end-to-end."],
+              ["Illustrator", "Characters, spreads and editorial work with a consistent hand."],
+              ["Designer", "Books, identities and products built around the story they carry."],
             ].map(([t, b]) => (
-              <div key={t}>
-                <h4 className="font-serif text-2xl text-paper tracking-[-0.03em]">{t}</h4>
-                <p className="mt-2 text-paper/70 leading-relaxed text-sm">{b}</p>
+              <div key={t} className="border-t border-turquoise/40 pt-4">
+                <h4 className="font-serif text-2xl text-ink tracking-[-0.03em]">{t}</h4>
+                <p className="mt-2 text-ink-muted leading-relaxed text-sm">{b}</p>
               </div>
             ))}
           </div>
+          <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            Selected: National Geographic Kids · SuperPlay · Jerusalem Biblical Zoo · Asaflezet
+          </p>
         </Reveal>
       </div>
     </section>
@@ -527,25 +732,44 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative bg-paper py-32 md:py-44">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
+    <section id="contact" className="relative bg-paper py-32 md:py-44 overflow-hidden">
+      <img
+        src={diamondTeal}
+        alt=""
+        aria-hidden
+        className="absolute right-[12%] top-24 w-14 h-14 opacity-70 hidden md:block"
+      />
+      <img
+        src={starCream}
+        alt=""
+        aria-hidden
+        className="absolute left-[6%] bottom-32 w-10 h-10 opacity-80 hidden md:block"
+      />
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
         <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">(04) — Contact</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
+            <span className="text-turquoise-deep">●</span> (04) — Let's make something
+          </p>
           <h2 className="font-serif text-6xl md:text-[10vw] leading-[0.86] mt-6 text-ink tracking-[-0.045em]">
-            Have a story <span className="italic text-turquoise-deep">to tell?</span>
+            Got a story <span className="italic text-turquoise-deep">to tell?</span>
           </h2>
+          <p className="mt-8 max-w-xl text-ink-muted leading-relaxed text-lg">
+            Books, illustration commissions, collaborations on worlds that
+            don't exist yet — I'd love to hear about it.
+          </p>
           <a
             href="mailto:hello@nivhaviv.com"
-            className="group inline-flex mt-12 items-center gap-4 text-2xl md:text-3xl font-serif border-b border-ink/40 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors"
+            className="group inline-flex mt-10 items-center gap-4 text-2xl md:text-3xl font-serif border-b border-turquoise/60 pb-2 hover:border-turquoise hover:text-turquoise-deep transition-colors"
           >
+            <img src={sparkCoral} alt="" aria-hidden className="w-7 h-7" />
             hello@nivhaviv.com
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </a>
         </Reveal>
 
-        <div className="mt-24 hair-divider" />
+        <div className="mt-24 h-px w-full bg-turquoise/30" />
         <div className="mt-8 flex flex-wrap items-center justify-between gap-6 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-          <span>© {new Date().getFullYear()} Niv Haviv — Studio</span>
+          <span>© {new Date().getFullYear()} Niv Haviv — Author · Illustrator · Designer</span>
           <div className="flex gap-8">
             <a href="#" className="hover:text-turquoise-deep">Instagram</a>
             <a href="#" className="hover:text-turquoise-deep">Behance</a>
@@ -562,6 +786,7 @@ function Index() {
     <main className="bg-paper text-ink">
       <Nav />
       <Hero />
+      <StudioBand />
       <SignatureProject />
       <FeaturedWork />
       <About />
