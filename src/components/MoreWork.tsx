@@ -57,8 +57,9 @@ const PROJECTS: { slug: Slug; to: string; title: string; subtitle: string; image
   },
 ];
 
-export default function MoreWork({ currentSlug, limit = 3 }: { currentSlug: Slug; limit?: number }) {
-  const others = PROJECTS.filter((p) => p.slug !== currentSlug).slice(0, limit);
+export default function MoreWork({ currentSlug, limit }: { currentSlug: Slug; limit?: number }) {
+  const all = PROJECTS.filter((p) => p.slug !== currentSlug);
+  const others = typeof limit === "number" ? all.slice(0, limit) : all;
   const cols = others.length >= 4 ? "md:grid-cols-4" : "md:grid-cols-3";
   return (
     <section className="bg-paper border-t border-hairline py-20 md:py-28">
