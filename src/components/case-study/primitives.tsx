@@ -203,15 +203,18 @@ export function CaseSectionHeader({
   title,
   intro,
   align = "split",
+  dense = false,
 }: {
   label: string;
   title: ReactNode;
   intro?: ReactNode;
   align?: "split" | "stack";
+  dense?: boolean;
 }) {
+  const headerGap = dense ? "mb-10 md:mb-12" : "mb-14 md:mb-20";
   if (align === "stack") {
     return (
-      <Reveal className="mb-14 md:mb-20 max-w-3xl">
+      <Reveal className={`${headerGap} max-w-3xl`}>
         <SectionLabel label={label} />
         <H2Section className="mt-5">{title}</H2Section>
         {intro && <Lead className="mt-4">{intro}</Lead>}
@@ -219,7 +222,7 @@ export function CaseSectionHeader({
     );
   }
   return (
-    <div className="grid grid-cols-12 gap-8 md:gap-12 items-end mb-14 md:mb-20">
+    <div className={`grid grid-cols-12 gap-8 md:gap-12 items-end ${headerGap}`}>
       <Reveal className="col-span-12 md:col-span-3">
         <SectionLabel label={label} />
       </Reveal>
