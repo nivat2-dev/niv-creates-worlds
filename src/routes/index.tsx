@@ -7,7 +7,8 @@ import necklace from "@/assets/necklace.png";
 import ngkCoverTitanicAsset from "@/assets/ngk-cover-titanic.png.asset.json";
 import gpdPiratePopupAsset from "@/assets/gpd-pirate-popup.jpg.asset.json";
 import zoo from "@/assets/zoo.jpg";
-import asaflezet from "@/assets/asaflezet.jpg";
+import azFrontCoverAsset from "@/assets/az-front-cover.png.asset.json";
+const asaflezet = azFrontCoverAsset.url;
 
 const portrait = portraitAsset.url;
 const bookCover = bookCoverAsset.url;
