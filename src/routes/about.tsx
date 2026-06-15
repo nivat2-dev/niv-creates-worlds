@@ -88,11 +88,10 @@ function Reveal({
   );
 }
 
-function SectionLabel({ index, title }: { index: string; title: string }) {
+function SectionLabel({ title }: { index: string; title: string }) {
   return (
-    <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
-      <span>{index}</span>
-      <span className="inline-block w-8 h-px bg-ink/25" />
+    <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/50">
+      <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
       <span>{title}</span>
     </div>
   );
@@ -337,7 +336,7 @@ function S04_Today() {
               </Link>
               <a
                 href="mailto:nivat2@gmail.com"
-                className="group inline-flex items-center gap-4 border border-navy-deep/30 px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] text-ink hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
+                className="group inline-flex items-center gap-4 border border-ink/30 px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] text-ink hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-60 animate-ping" />

@@ -110,8 +110,8 @@ export function CaseNav() {
 
 export function SectionLabel({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-3 font-sans text-[12px] tracking-[0.04em] text-ink-muted">
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
+    <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/50">
+      <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
       <span>{label}</span>
     </div>
   );
@@ -181,7 +181,7 @@ export function Body({ children, className = "" }: { children: ReactNode; classN
 export function Caption({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <p className={`font-sans text-[12px] text-ink-muted ${className}`}>
-      <span className="text-coral">·</span> {children}
+      <span className="text-turquoise">·</span> {children}
     </p>
   );
 }
