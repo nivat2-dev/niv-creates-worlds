@@ -162,7 +162,7 @@ function NatGeoKidsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 md:gap-6">
             {cardsList.map((card) => (
-              <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm">
+              <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper p-5 md:p-6 rounded-sm">
                 <div className="h-[220px] md:h-[230px] flex items-center justify-center">
                   <ZoomableImage
                     src={card.image}
@@ -293,7 +293,7 @@ function NatGeoKidsPage() {
               { title: "Retail Display Stand", body: "Point-of-sale display I designed to present the bookmark collection in stores — from structure to printed graphics.", image: bookmarks.url, alt: "Retail display stand" },
               { title: "Promotional Print", body: "Subscriber posters and giveaways I designed to launch new issues and reward returning readers.", image: promoPoster.url, alt: "Promotional poster" },
             ].map((card) => (
-              <article key={card.title} className="flex h-full flex-col border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+              <article key={card.title} className="flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden">
                 <div className="relative aspect-[4/5] bg-cream flex items-center justify-center p-6">
                   <ZoomableImage
                     src={card.image}

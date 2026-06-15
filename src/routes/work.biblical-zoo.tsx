@@ -164,7 +164,7 @@ function BiblicalZooPage() {
           ].map((img, i) => (
             <Reveal key={img.caption} delay={i * 120}>
               <figure>
-                <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center">
+                <div className="border border-hairline bg-paper rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center">
                   <ZoomableImage
                     src={img.src}
                     alt={img.alt}
@@ -210,7 +210,7 @@ function BiblicalZooPage() {
         <div className="mt-7 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {SOLUTION_CARDS.map((c, i) => (
             <Reveal key={c.title} delay={i * 80}>
-              <article className="h-full border border-hairline bg-cream/60 rounded-sm p-5 md:p-6">
+              <article className="h-full border border-hairline bg-paper rounded-sm p-5 md:p-6">
                 <EyebrowCaps>{String(i + 1).padStart(2, "0")}</EyebrowCaps>
                 <H4Card className="mt-3">{c.title}</H4Card>
                 <Body className="mt-2">{c.body}</Body>
@@ -324,7 +324,7 @@ function BiblicalZooPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {LESSONS.map((l, i) => (
             <Reveal key={l.n} delay={i * 80}>
-              <article className="h-full border border-hairline bg-cream/60 rounded-sm p-5 md:p-6">
+              <article className="h-full border border-hairline bg-paper rounded-sm p-5 md:p-6">
                 <EyebrowCaps>{l.n}</EyebrowCaps>
                 <H4Card className="mt-3">{l.title}</H4Card>
                 <Body className="mt-1.5">{l.body}</Body>

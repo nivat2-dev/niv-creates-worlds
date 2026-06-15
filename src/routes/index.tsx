@@ -467,7 +467,7 @@ const projects: Project[] = [
 function SignatureProject() {
   const y = useScrollY();
   return (
-    <section id="signature" className="relative bg-cream/80 text-ink overflow-hidden border-y border-hairline">
+    <section id="signature" className="relative bg-paper-deep text-ink overflow-hidden border-y border-hairline">
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-20 md:pt-28 pb-6">
         <div className="flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
           <span className="inline-flex items-center gap-2 text-turquoise-deep">

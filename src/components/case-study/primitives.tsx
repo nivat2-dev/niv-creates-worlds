@@ -199,7 +199,7 @@ export function CaseSection({
   children: ReactNode;
 }) {
   const bg =
-    tone === "ink" ? "bg-ink text-paper" : tone === "paper" ? "bg-paper" : "bg-cream";
+    tone === "ink" ? "bg-ink text-paper" : tone === "paper" ? "bg-paper" : "bg-paper-deep";
   return (
     <section
       className={`relative isolate overflow-hidden ${divider ? "border-t border-hairline" : ""} ${bg} py-14 md:py-20 ${className}`}
@@ -266,7 +266,7 @@ export function CaseCard({
 }) {
   return (
     <article
-      className={`flex h-full flex-col border border-hairline bg-cream/60 p-5 md:p-6 rounded-sm ${className}`}
+      className={`flex h-full flex-col border border-hairline bg-paper p-5 md:p-6 rounded-sm ${className}`}
     >
       <div className="h-[220px] md:h-[230px] flex items-center justify-center">
         <img
@@ -307,10 +307,10 @@ export function CaseFramedCard({
 }) {
   return (
     <article
-      className={`flex h-full flex-col border border-hairline bg-cream/60 rounded-sm overflow-hidden ${className}`}
+      className={`flex h-full flex-col border border-hairline bg-paper rounded-sm overflow-hidden ${className}`}
     >
       <div
-        className={`relative bg-cream flex items-center justify-center ${framePadding}`}
+        className={`relative bg-paper-deep flex items-center justify-center ${framePadding}`}
         style={{ aspectRatio: aspect }}
       >
         <img

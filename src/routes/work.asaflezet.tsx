@@ -133,7 +133,7 @@ function AsaflezetPage() {
           </Reveal>
           <Reveal className="lg:col-span-6">
             <figure className="max-w-[440px]">
-              <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+              <div className="border border-hairline bg-paper rounded-sm overflow-hidden">
                 <ZoomableImage
                   src={nivBook.url}
                   alt="Niv Haviv holding the printed Asaflezet hardcover book"
@@ -207,7 +207,7 @@ function AsaflezetPage() {
           </Reveal>
           <Reveal className="lg:col-span-6">
             <figure className="max-w-[440px]">
-              <div className="border border-hairline bg-cream/60 rounded-sm overflow-hidden">
+              <div className="border border-hairline bg-paper rounded-sm overflow-hidden">
                 <ZoomableImage
                   src={spreadClassroom.url}
                   alt="Asaflezet — character close-up spread"

@@ -99,7 +99,7 @@ function GamingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <Reveal>
-            <div className="border border-hairline bg-cream/60 rounded-sm p-7 md:p-9 h-full">
+            <div className="border border-hairline bg-paper rounded-sm p-7 md:p-9 h-full">
               <EyebrowCaps>SuperPlay Assignment</EyebrowCaps>
               <H4Card className="mt-4">The brief.</H4Card>
               <ul className="mt-6 space-y-3">
@@ -119,7 +119,7 @@ function GamingPage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <div className="border border-hairline bg-cream/60 rounded-sm p-7 md:p-9 h-full">
+            <div className="border border-hairline bg-paper rounded-sm p-7 md:p-9 h-full">
               <EyebrowCaps>Skills Used</EyebrowCaps>
               <H4Card className="mt-4">What I brought.</H4Card>
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
@@ -154,7 +154,7 @@ function GamingPage() {
           {/* Left — wireframe */}
           <Reveal className="col-span-12 lg:col-span-6">
             <EyebrowCaps>Wireframe · Structure</EyebrowCaps>
-            <div className="mt-5 border border-hairline bg-cream/60 rounded-sm p-5 md:p-6 flex flex-col">
+            <div className="mt-5 border border-hairline bg-paper rounded-sm p-5 md:p-6 flex flex-col">
               {/* header block */}
               <div className="border border-dashed border-ink/30 rounded-sm py-2.5 text-center font-mono type-label text-ink-muted">
                 Header
