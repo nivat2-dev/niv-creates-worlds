@@ -168,23 +168,14 @@ function AboutPage() {
 /* ─────────────── 01 Intro ─────────────── */
 
 function S01_Intro() {
-  const y = useScrollY();
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-16 right-[-6vw] font-serif italic text-ink/[0.03] leading-none select-none"
-        style={{ fontSize: "30vw", transform: `translateY(${y * -0.06}px)` }}
-      >
-        about
-      </div>
-
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 w-full pt-32 md:pt-36 pb-20 grid grid-cols-12 gap-x-8">
+    <section className="relative py-24 md:py-32 border-b border-ink/10">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
         </div>
 
-        <div className="col-span-12 md:col-span-9 md:col-start-3">
+        <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
             <p className="font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
               01 · Introduction
@@ -192,37 +183,27 @@ function S01_Intro() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-12 md:mt-16 font-serif text-ink leading-[0.95] tracking-[-0.035em] text-[14vw] md:text-[7vw] lg:text-[6vw]">
-              Niv <span className="italic text-turquoise-deep">Haviv.</span>
+            <h1 className="mt-8 md:mt-10 font-serif text-ink leading-[1.08] tracking-[-0.025em] text-[32px] md:text-[44px] lg:text-[50px]">
+              About me.
             </h1>
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-10 md:mt-14 font-serif text-ink/80 leading-[1.5] tracking-[-0.01em] text-[20px] md:text-[24px] lg:text-[28px] max-w-[22ch]">
-              Designer. Illustrator.{" "}
-              <span className="italic text-turquoise-deep">Storyteller.</span>
-            </p>
+            <div className="mt-8 md:mt-10 text-ink/70 text-[15px] md:text-[16px] leading-[1.75] tracking-[-0.005em] max-w-[55ch] space-y-5">
+              <p>
+                I'm a designer, illustrator and storyteller based in Tel Aviv. My path has taken me through theatre, advertising agencies, editorial publishing and book creation, eventually leading me to author and illustrate original stories of my own.
+              </p>
+              <p>
+                Today I create visual identities, editorial experiences and long-form narrative projects, including my graphic novel New Direction.
+              </p>
+            </div>
           </Reveal>
-
-          <Reveal delay={360}>
-            <p className="mt-8 text-ink/55 text-[14px] md:text-[15px] leading-[1.8] max-w-[42ch]">
-              A short editorial portrait — read at your own pace.
-            </p>
-          </Reveal>
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-0 right-0 pointer-events-none">
-        <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
-          <div className="hidden md:flex col-start-2 col-span-1 flex-col items-start gap-3 text-ink/40">
-            <span className="block w-px h-14 bg-ink/25 scroll-cue" />
-            <span className="font-mono text-[9px] uppercase tracking-[0.36em]">Scroll</span>
-          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ─────────────── 02 Philosophy ─────────────── */
 
