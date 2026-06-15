@@ -110,7 +110,7 @@ function NewDirectionPage() {
               </Lead>
             </Reveal>
             <Reveal delay={320}>
-              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-sans text-[12px] text-ink-muted">
+              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4">
                 {[
                   ["Pages", "300+"],
                   ["Format", "Graphic Novel"],
@@ -118,8 +118,8 @@ function NewDirectionPage() {
                   ["Audience", "Readers 16+"],
                 ].map(([k, v]) => (
                   <div key={k}>
-                    <dt className="text-ink-muted text-[11px] uppercase tracking-[0.06em]">{k}</dt>
-                    <dd className="mt-1 text-ink-muted">{v}</dd>
+                    <dt className="font-mono type-label text-ink-muted">{k}</dt>
+                    <dd className="mt-1 font-sans type-body text-ink-muted">{v}</dd>
                   </div>
                 ))}
               </dl>
@@ -229,7 +229,7 @@ function NewDirectionPage() {
               </div>
             </Reveal>
             <Reveal delay={320}>
-              <p className="mt-8 font-sans type-caption text-ink-muted">
+              <p className="mt-8 font-mono type-label text-ink-muted">
                 Niv Haviv · Graphic Novel · 2026
               </p>
             </Reveal>
