@@ -309,42 +309,46 @@ function Hero() {
 
   return (
 
-    <section id="top" className="relative w-full bg-paper">
+    <section id="top" className="relative w-full bg-paper overflow-hidden">
+
+      {/* subtle color accents */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-[15%] left-[8%] w-[340px] h-[340px] rounded-full opacity-[0.07]"
+          style={{ background: "radial-gradient(circle, var(--turquoise), transparent 70%)" }} />
+        <div className="absolute bottom-[20%] left-[30%] w-[200px] h-[200px] rounded-full opacity-[0.05]"
+          style={{ background: "radial-gradient(circle, var(--coral), transparent 70%)" }} />
+      </div>
 
       <div className="relative mx-auto max-w-[1500px] px-14 md:px-24 lg:px-32 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
 
         <div className="flex flex-col justify-center pb-16 md:pb-24">
 
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
-
+            <p className="font-mono type-label text-turquoise mb-5">Portfolio · Tel Aviv</p>
             <h1 className="font-serif text-ink type-display">
-
               My name is<br />
-
-              <strong className="font-bold">Niv Haviv</strong>.
-
+              <strong className="font-bold" style={{ color: "var(--turquoise-deep)" }}>Niv Haviv</strong>.
             </h1>
-
           </div>
 
           <div className="mt-6 md:mt-8 overflow-hidden word-rise" style={{ animationDelay: "220ms" }}>
-
-            <p className="text-[4vw] md:text-[2vw] lg:text-[1.4vw] leading-[1.6] text-ink/70 max-w-[420px]">
-
-              I'm a <strong className="text-ink font-semibold">visual designer and illustrator</strong><br />based in Tel Aviv.
-
+            <p className="type-body-lg leading-[1.6] text-ink-muted max-w-[480px]">
+              Visual designer and illustrator based in Tel Aviv —<br />
+              <span className="text-ink">editorial, digital products, illustration and AI.</span>
             </p>
-
           </div>
 
-          <div className="mt-3 overflow-hidden word-rise" style={{ animationDelay: "320ms" }}>
-
-            <p className="text-[3.5vw] md:text-[1.6vw] lg:text-[1.1vw] leading-[1.6] text-ink/45 max-w-[380px]">
-
-              Editorial, digital products, illustration and AI.
-
-            </p>
-
+          <div className="mt-8 overflow-hidden word-rise" style={{ animationDelay: "340ms" }}>
+            <div className="flex items-center gap-4">
+              <a href="#work"
+                className="inline-flex items-center gap-3 font-mono type-label bg-ink text-paper px-6 py-3 hover:bg-turquoise-deep transition-colors duration-300">
+                View work <span>→</span>
+              </a>
+              <a href="/about"
+                className="inline-flex items-center gap-3 font-mono type-label text-ink/60 hover:text-ink transition-colors duration-300 border-b border-ink/20 pb-px">
+                About me
+              </a>
+            </div>
           </div>
 
         </div>
@@ -385,15 +389,16 @@ function IllustrationPortrait() {
       <svg
         aria-hidden
         viewBox="0 0 200 200"
-        className="pointer-events-none absolute -left-6 top-8 w-[42%] h-auto -z-0 opacity-80"
+        className="pointer-events-none absolute -left-6 top-8 w-[42%] h-auto -z-0 opacity-70"
       >
         <path
-          fill="#8fbce6"
+          fill="var(--turquoise)"
+          fillOpacity="0.18"
           d="M44 18c18-10 46-6 60 8s24 36 16 56-30 36-54 38-44-10-52-30-2-44 12-58 8-6 18-14z"
         />
-        <circle cx="22" cy="150" r="6" fill="#8fbce6" opacity="0.6" />
-        <circle cx="12" cy="170" r="3" fill="#8fbce6" opacity="0.5" />
-        <circle cx="170" cy="40" r="4" fill="#8fbce6" opacity="0.5" />
+        <circle cx="22" cy="150" r="6" fill="var(--coral)" opacity="0.4" />
+        <circle cx="12" cy="170" r="3" fill="var(--turquoise)" opacity="0.5" />
+        <circle cx="170" cy="40" r="4" fill="var(--coral)" opacity="0.45" />
       </svg>
       <img
         src={nivIllustration}
@@ -594,19 +599,20 @@ function ProjectRow({ p }: { p: Project }) {
 
         {/* LEFT — image */}
         <Reveal>
-          <div className="w-full aspect-[4/3] overflow-hidden bg-paper-deep">
+          <Link to={p.to} className="group block w-full aspect-[4/3] overflow-hidden bg-paper-deep relative">
             <img
               src={p.image}
               alt={p.alt}
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
             />
-          </div>
+            <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors duration-300" />
+          </Link>
         </Reveal>
 
         {/* RIGHT — text */}
         <Reveal delay={80} className="flex flex-col">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/35 mb-5">
+          <p className="font-mono type-label text-turquoise mb-5">
             {p.tags[0]}
           </p>
 
@@ -614,16 +620,16 @@ function ProjectRow({ p }: { p: Project }) {
             {p.title}
           </h3>
 
-          <p className="text-[15px] md:text-[16px] text-ink/60 leading-relaxed max-w-[440px] mb-8">
+          <p className="type-body text-ink-muted leading-relaxed max-w-[440px] mb-8">
             {p.body}
           </p>
 
           <Link
             to={p.to}
-            className="inline-flex items-center gap-3 self-start border border-ink/30 text-ink text-[13px] font-medium px-6 py-3 hover:bg-ink hover:text-white transition-all duration-300"
+            className="group inline-flex items-center gap-3 self-start font-mono type-label text-ink border-b border-ink/30 pb-1 hover:border-turquoise hover:text-turquoise-deep transition-all duration-300"
           >
             View project
-            <span className="text-[16px]">→</span>
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </Reveal>
 
@@ -638,7 +644,7 @@ function FeaturedWork() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
+            <span className="text-turquoise-deep">●</span> Selected Work — 4 Projects
           </p>
           <h2 className="font-serif type-h1 text-ink max-w-3xl mt-6">
             More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
