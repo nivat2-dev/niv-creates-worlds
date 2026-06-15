@@ -169,12 +169,19 @@ function Body({ children, className = "" }: { children: React.ReactNode; classNa
 
 function MiniNav() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
+    <header
+      className="fixed top-0 inset-x-0 z-50 border-b border-ink/8"
+      style={{
+        background: "color-mix(in oklab, #F5F5F3 82%, transparent)",
+        backdropFilter: "saturate(140%) blur(14px)",
+        WebkitBackdropFilter: "saturate(140%) blur(14px)",
+      }}
+    >
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="inline-flex items-center gap-3">
-          <img src={signatureAsset.url} alt="Niv Haviv" className="h-10 md:h-12 w-auto" draggable={false} />
+          <img src={signatureAsset.url} alt="Niv Haviv" className="h-8 md:h-10 w-auto" draggable={false} />
         </Link>
-        <nav className="flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.28em] text-ink/70">
+        <nav className="flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/70">
           <Link to="/" className="hover:text-ink transition-colors">Work</Link>
           <span className="text-ink relative">
             About
