@@ -174,7 +174,7 @@ function S01_Intro() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-8 md:mt-10 font-serif text-ink leading-[1.0] tracking-[-0.02em] type-display">
+            <h1 className="mt-8 md:mt-10 font-serif text-ink tracking-[-0.02em] type-display">
               About me<span className="text-turquoise">.</span>
             </h1>
           </Reveal>
@@ -245,7 +245,7 @@ function S03_Journey() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.0] tracking-[-0.02em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink tracking-[-0.02em] type-display">
               The journey<br />so far<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
@@ -278,7 +278,7 @@ function S03_Journey() {
                   <p className="font-mono type-label text-ink-muted">
                     Chapter 0{i + 1}
                   </p>
-                  <h3 className="mt-5 font-serif text-ink leading-[1.1] tracking-[-0.015em] type-h1">
+                  <h3 className="mt-5 font-serif text-ink tracking-[-0.015em] type-h1">
                     {c.label}
                     <span className="text-turquoise">.</span>
                   </h3>
@@ -313,7 +313,7 @@ function S04_Today() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.0] tracking-[-0.02em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink tracking-[-0.02em] type-display">
               Where I am<br />now<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
