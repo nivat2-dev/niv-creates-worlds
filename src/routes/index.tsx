@@ -222,28 +222,39 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
         {/* Nav items — top aligned */}
         <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16 pt-10 md:pt-14 flex flex-col">
           {/* Social icons */}
-          <div className="flex items-center gap-5 pb-10 md:pb-12"
-            style={{
-              opacity: open ? 1 : 0,
-              transition: `opacity .5s ease 100ms`,
-            }}
-          >
-            <span className="inline-block w-8 h-px bg-ink/25" />
-            <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-            </a>
-            <a href="tel:0502231317" aria-label="Phone" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://www.facebook.com/nivhaviv.avraham.3" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="https://nivhaviv.com" target="_blank" rel="noopener noreferrer" aria-label="Website" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </a>
+          <div className="flex items-center gap-4 pb-10 md:pb-12">
+            {/* Animated accent line */}
+            <span
+              className="inline-block h-px bg-turquoise shrink-0"
+              style={{
+                width: open ? "2rem" : "0rem",
+                opacity: open ? 1 : 0,
+                transition: "width .6s cubic-bezier(.2,.7,.2,1) 80ms, opacity .4s ease 80ms",
+              }}
+            />
+            {[
+              { href: "mailto:nivat2@gmail.com", label: "Email", delay: 120, icon: <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg> },
+              { href: "tel:0502231317", label: "Phone", delay: 170, icon: <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> },
+              { href: "https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/", label: "LinkedIn", delay: 220, target: "_blank", icon: <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> },
+              { href: "https://www.facebook.com/nivhaviv.avraham.3", label: "Facebook", delay: 270, target: "_blank", icon: <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> },
+              { href: "https://nivhaviv.com", label: "Website", delay: 320, target: "_blank", icon: <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
+            ].map(({ href, label, delay, target, icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                target={target}
+                rel={target ? "noopener noreferrer" : undefined}
+                style={{
+                  opacity: open ? 1 : 0,
+                  transform: open ? "translateY(0)" : "translateY(8px)",
+                  transition: `opacity .5s ease ${delay}ms, transform .5s cubic-bezier(.2,.7,.2,1) ${delay}ms`,
+                }}
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-ink/15 text-ink/45 hover:border-turquoise hover:text-turquoise hover:bg-turquoise/8 transition-all duration-300"
+              >
+                {icon}
+              </a>
+            ))}
           </div>
 
           <ul className="flex flex-col">
