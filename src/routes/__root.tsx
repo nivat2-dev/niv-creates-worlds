@@ -4,10 +4,11 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -127,14 +128,49 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function PageTransition() {
+  const status = useRouterState({ select: s => s.status });
+  const [phase, setPhase] = useState<"idle" | "cover" | "reveal">("idle");
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (status === "pending") {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      setPhase("cover");
+    } else {
+      timerRef.current = setTimeout(() => setPhase("reveal"), 80);
+      const done = setTimeout(() => setPhase("idle"), 700);
+      return () => clearTimeout(done);
+    }
+  }, [status]);
+
+  if (phase === "idle") return null;
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        background: "oklch(0.92 0.06 10)",
+        transform: phase === "cover" ? "translateX(0%)" : "translateX(100%)",
+        transition: phase === "cover"
+          ? "transform 0.4s cubic-bezier(0.7,0,0.3,1)"
+          : "transform 0.5s cubic-bezier(0.7,0,0.2,1)",
+        pointerEvents: "none",
+      }}
+    />
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <LightboxRoot />
+      <PageTransition />
     </QueryClientProvider>
   );
 }
