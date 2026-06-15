@@ -13,6 +13,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LightboxRoot } from "@/components/Lightbox";
+import { GitHubSyncButton } from "@/components/GitHubSyncButton";
+
 
 function NotFoundComponent() {
   return (
