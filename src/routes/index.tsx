@@ -276,10 +276,10 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 function MenuItemContent({ label, sub }: { label: string; sub: string; index: number }) {
   return (
     <>
-      <span className="col-span-7 md:col-span-6 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
+      <span className="col-span-12 md:col-span-5 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
         {label}
       </span>
-      <span className="hidden md:block col-span-6 text-[13px] text-ink/55 leading-[1.6] max-w-[280px]">{sub}</span>
+      <span className="hidden md:flex md:col-span-7 items-center text-[15px] text-ink/70 leading-[1.5] max-w-[340px]">{sub}</span>
     </>
   );
 }
