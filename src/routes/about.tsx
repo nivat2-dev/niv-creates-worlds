@@ -176,7 +176,6 @@ function MiniNav() {
         </Link>
         <nav className="flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.28em] text-ink/70">
           <Link to="/" className="hover:text-ink transition-colors">Work</Link>
-          <Link to="/who-i-am" className="hover:text-ink transition-colors">Who I Am</Link>
           <span className="text-ink relative">
             About
             <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-turquoise" />
