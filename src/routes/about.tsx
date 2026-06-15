@@ -105,25 +105,19 @@ function MiniNav() {
   const solid = y > 40;
   return (
     <header
-      className="fixed top-0 inset-x-0 z-50 border-b transition-colors"
-      style={{
-        background: solid
-          ? "color-mix(in oklab, var(--paper) 92%, transparent)"
-          : "color-mix(in oklab, var(--paper) 70%, transparent)",
-        backdropFilter: "saturate(140%) blur(16px)",
-        WebkitBackdropFilter: "saturate(140%) blur(16px)",
-        borderColor: solid ? "rgba(0,0,0,0.10)" : "rgba(0,0,0,0.04)",
-      }}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        solid ? "bg-paper/90 backdrop-blur-md border-b border-ink/10" : "bg-paper/60 backdrop-blur-sm border-b border-transparent"
+      }`}
     >
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 h-16 md:h-[68px] flex items-center justify-between">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 flex items-center justify-between">
         <Link to="/" className="inline-flex items-center gap-3">
-          <img src={signatureAsset.url} alt="Niv Haviv" className="h-8 md:h-9 w-auto" draggable={false} />
+          <img src={signatureAsset.url} alt="Niv Haviv" className="h-10 md:h-12 w-auto" draggable={false} />
         </Link>
-        <nav className="flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/75">
+        <nav className="flex items-center gap-8 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/60">
           <Link to="/" className="hover:text-ink transition-colors">Work</Link>
           <span className="text-ink relative">
             About
-            <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-turquoise" />
+            <span className="absolute -bottom-1 left-0 right-0 h-px bg-turquoise" />
           </span>
         </nav>
       </div>
@@ -168,7 +162,7 @@ function AboutPage() {
 function S01_Intro() {
   return (
     <section className="relative pt-24 md:pt-32 pb-20 md:pb-28 border-b border-ink/10">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
         </div>
@@ -239,7 +233,7 @@ function S03_Journey() {
 
   return (
     <section className="relative pt-20 md:pt-28 pb-8 md:pb-12 border-t border-ink/10">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
         </div>
@@ -259,7 +253,7 @@ function S03_Journey() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 mt-20 md:mt-28 space-y-24 md:space-y-36">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 mt-20 md:mt-28 space-y-24 md:space-y-36">
         {chapters.map((c, i) => {
           const reverse = i % 2 === 1;
           return (
@@ -307,7 +301,7 @@ function S03_Journey() {
 function S04_Today() {
   return (
     <section className="relative pt-24 md:pt-32 pb-24 md:pb-32 border-t border-ink/10">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
         </div>
@@ -365,7 +359,7 @@ function S04_Today() {
 function Footer() {
   return (
     <footer className="border-t border-ink/10 py-10">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
         <img src={signatureAsset.url} alt="Niv Haviv" className="h-8 w-auto opacity-80" draggable={false} />
         <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
           © {new Date().getFullYear()} Niv Haviv · Designer · Illustrator · Storyteller

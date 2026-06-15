@@ -138,8 +138,8 @@ function Nav() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/85 backdrop-blur-md border-b border-ink/10"
-            : "bg-white/60 backdrop-blur-sm border-b border-transparent"
+            ? "bg-paper/90 backdrop-blur-md border-b border-ink/10"
+            : "bg-paper/60 backdrop-blur-sm border-b border-transparent"
         }`}
       >
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between text-ink">
