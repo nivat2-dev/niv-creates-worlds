@@ -339,7 +339,7 @@ function S02_TwoWorlds() {
     <section className="relative py-32 md:py-48 border-t border-ink/10">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="mb-20">
-          <Reveal><SectionLabel index="02" title="Two Worlds" /></Reveal>
+          <Reveal><SectionLabel index="03" title="Two Worlds" /></Reveal>
           <Reveal delay={120}>
             <h2 className="mt-8 font-serif text-ink leading-[1.02] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.6vw] max-w-[18ch]">
               Between the brief<br />
@@ -417,11 +417,6 @@ function S02_TwoWorlds() {
           </div>
         </div>
 
-        <Reveal delay={300}>
-          <p className="mt-24 font-serif italic text-ink/70 text-center text-[20px] md:text-[26px] leading-snug max-w-[40ch] mx-auto">
-            "Both hands — one writes the brief, the other draws what was missing from it."
-          </p>
-        </Reveal>
       </div>
     </section>
   );
@@ -442,7 +437,7 @@ function S03_Timeline() {
   return (
     <section className="relative py-32 md:py-48 border-t border-ink/10">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-        <Reveal><SectionLabel index="03" title="Timeline" /></Reveal>
+        <Reveal><SectionLabel index="04" title="Journey" /></Reveal>
         <Reveal delay={120}>
           <h2 className="mt-8 mb-24 font-serif text-ink leading-[1.02] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.6vw] max-w-[16ch]">
             A path drawn<br />
@@ -525,7 +520,7 @@ function S04_BehindND() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-8 items-end mb-20">
           <div className="col-span-12 md:col-span-7 space-y-8">
-            <Reveal><SectionLabel index="04" title="Behind New Direction" /></Reveal>
+            <Reveal><SectionLabel index="05" title="Behind New Direction" /></Reveal>
             <Reveal delay={120}>
               <h2 className="font-serif text-ink leading-[0.98] tracking-[-0.035em] text-[14vw] md:text-[9vw] lg:text-[7.2vw]">
                 Inside the<br />
@@ -606,7 +601,7 @@ function S05_Inspiration() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 md:col-span-6 space-y-8">
-            <Reveal><SectionLabel index="05" title="Things That Inspire Me" /></Reveal>
+            <Reveal><SectionLabel index="06" title="Things That Inspire Me" /></Reveal>
             <Reveal delay={120}>
               <h2 className="font-serif text-ink leading-[1.0] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.6vw]">
                 A shelf,<br />
@@ -712,7 +707,7 @@ function S06_StudioDesk() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-8 mb-16">
           <div className="col-span-12 md:col-span-6 space-y-8">
-            <Reveal><SectionLabel index="06" title="Studio Desk" /></Reveal>
+            <Reveal><SectionLabel index="07" title="Studio Desk" /></Reveal>
             <Reveal delay={120}>
               <h2 className="font-serif text-ink leading-[1.0] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.4vw]">
                 What's on the<br />
@@ -807,7 +802,7 @@ function S07_Today() {
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
-        <Reveal><SectionLabel index="07" title="Today" /></Reveal>
+        <Reveal><SectionLabel index="08" title="Today" /></Reveal>
 
         <Reveal delay={150}>
           <p className="mt-12 font-serif text-ink leading-[1.08] tracking-[-0.025em] text-[8vw] md:text-[5vw] lg:text-[3.8vw] max-w-[22ch]">
