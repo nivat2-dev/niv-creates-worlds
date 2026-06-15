@@ -15,9 +15,12 @@ import {
 
 const ADMIN_MODE_KEY = "github-sync-admin-mode";
 
+type SyncDirection = "pull" | "push";
+
 export function GitHubSyncButton() {
   const [adminMode, setAdminMode] = useState(false);
   const [open, setOpen] = useState(false);
+  const [direction, setDirection] = useState<SyncDirection>("pull");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -66,24 +69,63 @@ export function GitHubSyncButton() {
             Sync with GitHub
           </DialogTitle>
           <DialogDescription>
-            Pull the latest changes from your connected GitHub repository using
-            the Lovable editor.
+            Pull or push changes with your connected GitHub repository using the
+            Lovable editor.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 pt-2">
-          <ol className="list-decimal space-y-2 pl-5 text-sm text-foreground">
-            <li>
-              Click the <strong>+</strong> button in the chat composer.
-            </li>
-            <li>
-              Select <strong>GitHub</strong> from the menu.
-            </li>
-            <li>
-              Choose <strong>Sync</strong> to pull the latest changes.
-            </li>
-          </ol>
+          <div className="flex rounded-md border p-1">
+            <button
+              onClick={() => setDirection("pull")}
+              className={`flex-1 rounded px-2 py-1 text-xs font-medium transition-colors ${
+                direction === "pull"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Pull from GitHub
+            </button>
+            <button
+              onClick={() => setDirection("push")}
+              className={`flex-1 rounded px-2 py-1 text-xs font-medium transition-colors ${
+                direction === "push"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Push to GitHub
+            </button>
+          </div>
+
+          {direction === "pull" ? (
+            <ol className="list-decimal space-y-2 pl-5 text-sm text-foreground">
+              <li>
+                Click the <strong>+</strong> button in the chat composer.
+              </li>
+              <li>
+                Select <strong>GitHub</strong> from the menu.
+              </li>
+              <li>
+                Choose <strong>Sync</strong> to pull the latest changes.
+              </li>
+            </ol>
+          ) : (
+            <ol className="list-decimal space-y-2 pl-5 text-sm text-foreground">
+              <li>
+                Click the <strong>+</strong> button in the chat composer.
+              </li>
+              <li>
+                Select <strong>GitHub</strong> from the menu.
+              </li>
+              <li>
+                Choose <strong>Sync</strong> to push your latest changes to the
+                repository.
+              </li>
+            </ol>
+          )}
+
           <div className="rounded-md bg-muted p-3 text-xs text-muted-foreground">
-            This dialog is only visible in admin mode. Toggle it anytime with{" "}
+            This button is only visible in admin mode. Toggle it anytime with{" "}
             <kbd className="rounded border bg-background px-1 font-mono">
               Ctrl+Shift+G
             </kbd>{" "}
@@ -98,3 +140,4 @@ export function GitHubSyncButton() {
     </Dialog>
   );
 }
+
