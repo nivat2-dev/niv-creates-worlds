@@ -585,103 +585,48 @@ function SignatureProject() {
 }
 
 function ProjectRow({ p }: { p: Project }) {
-
   return (
+    <div className="border-b border-ink/8 last:border-b-0">
+      <article className="mx-auto max-w-[1500px] px-10 md:px-16 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
-    <Link to={p.to} className="group block border-b border-ink/8 last:border-b-0">
-
-      <article className="mx-auto max-w-[1500px] px-10 md:px-16 py-10 md:py-14 grid grid-cols-12 gap-8 md:gap-12 items-center">
-
-        {/* LEFT — image, ~40% width */}
-
-        <Reveal className="col-span-12 md:col-span-4">
-
-          <div className="relative w-full aspect-[3/4] overflow-hidden bg-paper-deep">
-
+        {/* LEFT — image */}
+        <Reveal>
+          <div className="w-full aspect-[4/3] overflow-hidden bg-paper-deep">
             <img
-
               src={p.image}
-
               alt={p.alt}
-
               loading="lazy"
-
-              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-
+              className="w-full h-full object-cover"
             />
-
-            <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70 mix-blend-difference">
-
-              {p.index}
-
-            </div>
-
           </div>
-
         </Reveal>
 
-        {/* RIGHT — text, ~55% width */}
+        {/* RIGHT — text */}
+        <Reveal delay={80} className="flex flex-col">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/35 mb-5">
+            {p.tags[0]}
+          </p>
 
-        <Reveal delay={100} className="col-span-12 md:col-span-7 flex flex-col justify-center pl-0 md:pl-8">
-
-          <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/30 mb-6">
-
-            <span>{p.index}</span>
-
-            <span className="h-px w-8 bg-ink/20" />
-
-            <span>{p.tags[0]}</span>
-
-          </div>
-
-          <h3 className="font-serif text-[8vw] sm:text-[5vw] md:text-[3.2vw] lg:text-[2.4vw] leading-[1.05] tracking-[-0.03em] text-ink">
-
+          <h3 className="font-serif text-[2rem] md:text-[2.4rem] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             {p.title}
-
           </h3>
 
-          <p className="font-serif italic text-[1.1vw] md:text-[1vw] lg:text-[18px] text-turquoise-deep mt-3 font-light leading-[1.4]">
-
-            {p.tagline}
-
-          </p>
-
-          <p className="mt-5 text-[14px] md:text-[15px] text-ink/50 leading-relaxed max-w-[400px]">
-
+          <p className="text-[15px] md:text-[16px] text-ink/60 leading-relaxed max-w-[440px] mb-8">
             {p.body}
-
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-2">
-
-            {p.tags.map((t) => (
-
-              <span key={t} className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 border border-ink/15 px-3 py-1.5">
-
-                {t}
-
-              </span>
-
-            ))}
-
-          </div>
-
-          <span className="mt-8 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/40 border border-ink/20 px-5 py-3 w-fit group-hover:border-ink/50 group-hover:text-ink transition-colors duration-300">
-
+          <Link
+            to={p.to}
+            className="inline-flex items-center gap-3 self-start border border-ink/30 text-ink text-[13px] font-medium px-6 py-3 hover:bg-ink hover:text-white transition-all duration-300"
+          >
             View project
-
-            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-
-          </span>
-
+            <span className="text-[16px]">→</span>
+          </Link>
         </Reveal>
 
       </article>
-
-    </Link>
-
+    </div>
   );
-
 }
 
 function FeaturedWork() {
