@@ -6,10 +6,8 @@ import nivIllustrationAsset from "@/assets/niv-portrait-v3.png.asset.json";
 
 // Journey
 import shenkar4 from "@/assets/wia-shenkar-4.jpg.asset.json";
-import shenkar8 from "@/assets/wia-shenkar-8.jpg.asset.json";
 import theatre1 from "@/assets/wia-theatre-1.jpg.asset.json";
 import ngkSpread from "@/assets/ngk-spread.png.asset.json";
-import azNivBook from "@/assets/az-niv-book.jpg.asset.json";
 import ndCover from "@/assets/nd-cover.png.asset.json";
 import eilatChildhood from "@/assets/wia-eilat-childhood.jpg.asset.json";
 
