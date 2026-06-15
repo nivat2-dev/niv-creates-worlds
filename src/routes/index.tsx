@@ -266,9 +266,9 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 <li
                   key={it.label}
                   style={{
-                    transform: open ? "translateY(0)" : "translateY(20px)",
+                    transform: open ? "translateY(0)" : "translateY(52px)",
                     opacity: open ? 1 : 0,
-                    transition: `opacity .6s ease ${rowDelay}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${rowDelay}ms`,
+                    transition: `opacity .65s ease ${rowDelay}ms, transform 1s cubic-bezier(.1,.9,.2,1) ${rowDelay}ms`,
                   }}
                 >
                   {it.href.startsWith("/") ? (
