@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
 import nivIllustrationAsset from "@/assets/niv-portrait-v3.png.asset.json";
-import necklace from "@/assets/necklace.png";
 
 // New Direction world
 import ndArieh from "@/assets/nd-arieh-roy-circle.png.asset.json";
@@ -14,30 +13,13 @@ import ndPages from "@/assets/nd-pages-collage-v2.png.asset.json";
 import ndBookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
 import ndCover from "@/assets/nd-cover.png.asset.json";
 import ndPalette from "@/assets/nd-palette.png.asset.json";
-import ndPoster from "@/assets/nd-poster.png.asset.json";
-import ndSpark from "@/assets/nd-spark-coral.png.asset.json";
-import ndSparkOlive from "@/assets/nd-spark-olive.png.asset.json";
-import ndDiamond from "@/assets/nd-diamond-teal.png.asset.json";
-import ndDiamondGreen from "@/assets/nd-diamond-green.png.asset.json";
-import ndStar from "@/assets/nd-star-cream.png.asset.json";
-import ndCircleNavy from "@/assets/nd-circle-navy.png.asset.json";
 
-// WIA / history
-import sketches1 from "@/assets/wia-sketches-1.png.asset.json";
-import shenkar3 from "@/assets/wia-shenkar-3.png.asset.json";
+// Journey
 import shenkar4 from "@/assets/wia-shenkar-4.jpg.asset.json";
 import shenkar8 from "@/assets/wia-shenkar-8.jpg.asset.json";
 import theatre1 from "@/assets/wia-theatre-1.jpg.asset.json";
-import theatre2 from "@/assets/wia-theatre-2.jpg.asset.json";
-import eilatChildhood from "@/assets/wia-eilat-childhood.jpg.asset.json";
-
-// Projects
 import ngkSpread from "@/assets/ngk-spread.png.asset.json";
-import ngkPortrait from "@/assets/ngk-portrait.jpg.asset.json";
-import ngkCover from "@/assets/ngk-cover-titanic.png.asset.json";
 import azNivBook from "@/assets/az-niv-book.jpg.asset.json";
-import azSpread from "@/assets/az-spread-fantasy.jpg.asset.json";
-import gpdPirate from "@/assets/gpd-pirate-popup.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -46,13 +28,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "An interactive exhibition: Niv Haviv — designer, illustrator, storyteller. A journey between commercial design and personal narrative.",
+          "Niv Haviv — designer, illustrator, storyteller. From theatre to National Geographic Kids to New Direction.",
       },
       { property: "og:title", content: "About — Niv Haviv" },
       {
         property: "og:description",
         content:
-          "Between commercial design and personal storytelling — an interactive portrait of Niv Haviv.",
+          "From theatre to publishing to graphic novels — a short editorial portrait of Niv Haviv.",
       },
       { property: "og:image", content: nivIllustrationAsset.url },
     ],
@@ -77,7 +59,7 @@ function Reveal({
   children,
   className = "",
   delay = 0,
-  y = 28,
+  y = 24,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -108,39 +90,9 @@ function Reveal({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : `translateY(${y}px)`,
-        transition: `opacity 1.1s cubic-bezier(.2,.7,.2,1) ${delay}ms, transform 1.1s cubic-bezier(.2,.7,.2,1) ${delay}ms`,
+        transition: `opacity .9s cubic-bezier(.2,.7,.2,1) ${delay}ms, transform .9s cubic-bezier(.2,.7,.2,1) ${delay}ms`,
       }}
     >
-      {children}
-    </div>
-  );
-}
-
-function Parallax({
-  children,
-  speed = 0.08,
-  className = "",
-}: {
-  children: React.ReactNode;
-  speed?: number;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    const on = () => {
-      const el = ref.current;
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      const c = r.top + r.height / 2 - window.innerHeight / 2;
-      setOffset(-c * speed);
-    };
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, [speed]);
-  return (
-    <div ref={ref} className={className} style={{ transform: `translate3d(0, ${offset}px, 0)` }}>
       {children}
     </div>
   );
@@ -148,40 +100,36 @@ function Parallax({
 
 function SectionLabel({ index, title }: { index: string; title: string }) {
   return (
-    <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
-      <span className="inline-block w-10 h-px bg-ink/25" />
+    <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
       <span>{index}</span>
-      <span className="text-ink/30">·</span>
+      <span className="inline-block w-8 h-px bg-ink/25" />
       <span>{title}</span>
     </div>
-  );
-}
-
-function Body({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <p className={`text-ink/65 text-[15px] md:text-[16px] leading-[1.75] max-w-[44ch] ${className}`}>
-      {children}
-    </p>
   );
 }
 
 /* ─────────────── nav ─────────────── */
 
 function MiniNav() {
+  const y = useScrollY();
+  const solid = y > 40;
   return (
     <header
-      className="fixed top-0 inset-x-0 z-50 border-b border-ink/8"
+      className="fixed top-0 inset-x-0 z-50 border-b transition-colors"
       style={{
-        background: "color-mix(in oklab, #F5F5F3 82%, transparent)",
-        backdropFilter: "saturate(140%) blur(14px)",
-        WebkitBackdropFilter: "saturate(140%) blur(14px)",
+        background: solid
+          ? "color-mix(in oklab, #F5F5F3 92%, transparent)"
+          : "color-mix(in oklab, #F5F5F3 70%, transparent)",
+        backdropFilter: "saturate(140%) blur(16px)",
+        WebkitBackdropFilter: "saturate(140%) blur(16px)",
+        borderColor: solid ? "rgba(0,0,0,0.10)" : "rgba(0,0,0,0.04)",
       }}
     >
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 h-16 md:h-[68px] flex items-center justify-between">
         <Link to="/" className="inline-flex items-center gap-3">
-          <img src={signatureAsset.url} alt="Niv Haviv" className="h-8 md:h-10 w-auto" draggable={false} />
+          <img src={signatureAsset.url} alt="Niv Haviv" className="h-8 md:h-9 w-auto" draggable={false} />
         </Link>
-        <nav className="flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/70">
+        <nav className="flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/75">
           <Link to="/" className="hover:text-ink transition-colors">Work</Link>
           <span className="text-ink relative">
             About
@@ -190,26 +138,6 @@ function MiniNav() {
         </nav>
       </div>
     </header>
-  );
-}
-
-/* ─────────────── page ─────────────── */
-
-function AboutPage() {
-  return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: "#F5F5F3", color: "var(--ink)" }}>
-      <MiniNav />
-      <ScrollProgress />
-      <S01_Intro />
-      <S02_Philosophy />
-      <S02_TwoWorlds />
-      <S03_Timeline />
-      <S04_BehindND />
-      <S05_Inspiration />
-      <S06_StudioDesk />
-      <S07_Today />
-      <Footer />
-    </div>
   );
 }
 
@@ -230,23 +158,38 @@ function ScrollProgress() {
   );
 }
 
+/* ─────────────── page ─────────────── */
+
+function AboutPage() {
+  return (
+    <div className="min-h-screen overflow-x-hidden" style={{ background: "#F5F5F3", color: "var(--ink)" }}>
+      <MiniNav />
+      <ScrollProgress />
+      <S01_Intro />
+      <S02_Philosophy />
+      <S03_Journey />
+      <S04_NewDirection />
+      <S05_Today />
+      <Footer />
+    </div>
+  );
+}
+
 /* ─────────────── 01 Intro ─────────────── */
 
 function S01_Intro() {
   const y = useScrollY();
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* huge faded backdrop word — quieter */}
+    <section className="relative min-h-[92vh] flex flex-col justify-center overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-16 right-[-6vw] font-serif italic text-ink/[0.03] leading-none select-none"
-        style={{ fontSize: "34vw", transform: `translateY(${y * -0.06}px)` }}
+        style={{ fontSize: "30vw", transform: `translateY(${y * -0.06}px)` }}
       >
         about
       </div>
 
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 w-full pt-40 md:pt-48 pb-28 grid grid-cols-12 gap-x-8">
-        {/* thin vertical guide — anchors the whole composition */}
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 w-full pt-32 md:pt-36 pb-20 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
         </div>
@@ -258,36 +201,32 @@ function S01_Intro() {
             </p>
           </Reveal>
 
-          <Reveal delay={150}>
-            <h1 className="mt-16 md:mt-24 font-serif text-ink leading-[0.95] tracking-[-0.035em] text-[16vw] md:text-[8vw] lg:text-[7vw]">
+          <Reveal delay={120}>
+            <h1 className="mt-12 md:mt-16 font-serif text-ink leading-[0.95] tracking-[-0.035em] text-[14vw] md:text-[7vw] lg:text-[6vw]">
               Niv <span className="italic text-turquoise-deep">Haviv.</span>
             </h1>
           </Reveal>
 
-          <Reveal delay={280}>
-            <p className="mt-14 md:mt-20 font-serif text-ink/80 leading-[1.5] tracking-[-0.01em] text-[22px] md:text-[26px] lg:text-[30px] max-w-[22ch]">
-              Designer. Illustrator. <span className="italic text-turquoise-deep">Storyteller.</span>
+          <Reveal delay={240}>
+            <p className="mt-10 md:mt-14 font-serif text-ink/80 leading-[1.5] tracking-[-0.01em] text-[20px] md:text-[24px] lg:text-[28px] max-w-[22ch]">
+              Designer. Illustrator.{" "}
+              <span className="italic text-turquoise-deep">Storyteller.</span>
             </p>
           </Reveal>
 
-          <Reveal delay={420}>
-            <p className="mt-10 text-ink/55 text-[14px] md:text-[15px] leading-[1.8] max-w-[42ch]">
-              An interactive portrait — read at your own pace.
+          <Reveal delay={360}>
+            <p className="mt-8 text-ink/55 text-[14px] md:text-[15px] leading-[1.8] max-w-[42ch]">
+              A short editorial portrait — read at your own pace.
             </p>
           </Reveal>
         </div>
       </div>
 
-      {/* scroll cue — aligned to the same vertical axis as the content */}
-      <div className="absolute bottom-10 left-0 right-0 pointer-events-none">
+      <div className="absolute bottom-8 left-0 right-0 pointer-events-none">
         <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
           <div className="hidden md:flex col-start-2 col-span-1 flex-col items-start gap-3 text-ink/40">
-            <span className="block w-px h-16 bg-ink/25 scroll-cue" />
+            <span className="block w-px h-14 bg-ink/25 scroll-cue" />
             <span className="font-mono text-[9px] uppercase tracking-[0.36em]">Scroll</span>
-          </div>
-          <div className="md:hidden col-span-12 flex flex-col items-center gap-3 text-ink/40">
-            <span className="font-mono text-[9px] uppercase tracking-[0.36em]">Scroll</span>
-            <span className="block w-px h-12 bg-ink/25 scroll-cue" />
           </div>
         </div>
       </div>
@@ -299,7 +238,7 @@ function S01_Intro() {
 
 function S02_Philosophy() {
   return (
-    <section className="relative py-40 md:py-60 border-t border-ink/10 overflow-hidden">
+    <section className="relative py-24 md:py-36 border-t border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
@@ -307,13 +246,11 @@ function S02_Philosophy() {
 
         <div className="col-span-12 md:col-span-9 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
-              02 · Philosophy
-            </p>
+            <SectionLabel index="02" title="Philosophy" />
           </Reveal>
 
-          <Reveal delay={180}>
-            <p className="mt-20 md:mt-28 font-serif text-ink leading-[1.25] tracking-[-0.02em] text-[28px] md:text-[40px] lg:text-[48px] max-w-[22ch]">
+          <Reveal delay={150}>
+            <p className="mt-14 md:mt-20 font-serif text-ink leading-[1.25] tracking-[-0.02em] text-[26px] md:text-[36px] lg:text-[42px] max-w-[22ch]">
               Both hands —<br />
               one writes the brief,<br />
               the other draws what was{" "}
@@ -321,8 +258,8 @@ function S02_Philosophy() {
             </p>
           </Reveal>
 
-          <Reveal delay={360}>
-            <p className="mt-16 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
+          <Reveal delay={320}>
+            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
               — A working belief
             </p>
           </Reveal>
@@ -332,508 +269,325 @@ function S02_Philosophy() {
   );
 }
 
-/* ─────────────── 02 Two Worlds ─────────────── */
+/* ─────────────── 03 Journey ─────────────── */
 
-function S02_TwoWorlds() {
+function S03_Journey() {
+  const milestones = [
+    {
+      year: "Beginnings",
+      label: "Theatre",
+      body: "First language was the stage — light, timing, the way a room holds its breath.",
+      art: theatre1.url,
+    },
+    {
+      year: "Shenkar",
+      label: "Design Studies",
+      body: "Formal training. Sketchbooks fill faster than coursework.",
+      art: shenkar4.url,
+    },
+    {
+      year: "Agency",
+      label: "Advertising",
+      body: "Learning to defend ideas, kill darlings, and ship on a Friday.",
+      art: shenkar8.url,
+    },
+    {
+      year: "Years",
+      label: "National Geographic Kids",
+      body: "Lead designer. Craft and curiosity, spread by spread.",
+      art: ngkSpread.url,
+    },
+    {
+      year: "Author",
+      label: "Asaflezet",
+      body: "Wrote and designed a children's book — first taste of long-form authorship.",
+      art: azNivBook.url,
+    },
+    {
+      year: "Now",
+      label: "New Direction",
+      body: "A graphic novel about choice and return.",
+      art: ndCover.url,
+    },
+  ];
+
   return (
-    <section className="relative py-32 md:py-48 border-t border-ink/10">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-        <div className="mb-20">
-          <Reveal><SectionLabel index="03" title="Two Worlds" /></Reveal>
+    <section className="relative py-24 md:py-32 border-t border-ink/10">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
+          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+        </div>
+
+        <div className="col-span-12 md:col-span-9 md:col-start-3">
+          <Reveal><SectionLabel index="03" title="Journey" /></Reveal>
+
           <Reveal delay={120}>
-            <h2 className="mt-8 font-serif text-ink leading-[1.02] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.6vw] max-w-[18ch]">
-              Between the brief<br />
-              and the <span className="italic text-turquoise-deep">blank page.</span>
+            <h2 className="mt-10 md:mt-14 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[36px] md:text-[52px] lg:text-[60px] max-w-[14ch]">
+              A path drawn{" "}
+              <span className="italic text-turquoise-deep">by hand.</span>
             </h2>
           </Reveal>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-0 relative">
-          {/* divider */}
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-ink/12" />
+          <ol className="mt-16 md:mt-20 relative">
+            {/* vertical guide line */}
+            <div className="absolute left-[10px] md:left-[12px] top-2 bottom-2 w-px bg-ink/15" />
 
-          {/* LEFT — Graphic Design */}
-          <div className="relative pr-0 md:pr-12 pb-16 md:pb-0">
-            <Reveal>
-              <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45 mb-6">
-                Left side
-              </p>
-            </Reveal>
-            <Reveal delay={120}>
-              <h3 className="font-serif text-ink leading-[1.0] tracking-[-0.02em] text-[40px] md:text-[56px] lg:text-[68px]">
-                Graphic<br /><span className="italic">Design.</span>
-              </h3>
-            </Reveal>
-            <Reveal delay={220}>
-              <Body className="mt-8">
-                Editorial, brand and product — the disciplined craft of making
-                meaning legible. Years of client work, deadlines, decks, and
-                covers that had to ship.
-              </Body>
-            </Reveal>
+            {milestones.map((m, i) => (
+              <li key={m.label} className="relative pl-10 md:pl-14 py-6 md:py-7">
+                <Reveal delay={i * 60} y={16}>
+                  <span className="absolute left-0 top-[28px] md:top-[32px] flex items-center justify-center w-[22px] h-[22px] md:w-[25px] md:h-[25px] rounded-full bg-[#F5F5F3] ring-1 ring-ink/25">
+                    <span className="block w-1.5 h-1.5 rounded-full bg-turquoise" />
+                  </span>
+                </Reveal>
 
-            <div className="relative mt-12 h-[420px] md:h-[520px]">
-              <Parallax speed={0.05} className="absolute inset-0">
-                <img src={ngkSpread.url} alt="" className="absolute top-0 left-0 w-[78%] shadow-[0_30px_60px_rgba(0,0,0,0.12)]" draggable={false} />
-              </Parallax>
-              <Parallax speed={-0.04} className="absolute inset-0">
-                <img src={ngkCover.url} alt="" className="absolute bottom-0 right-2 w-[42%] shadow-[0_20px_40px_rgba(0,0,0,0.12)] rotate-[-3deg]" draggable={false} />
-              </Parallax>
-              <Parallax speed={0.07} className="absolute inset-0">
-                <img src={gpdPirate.url} alt="" className="absolute top-1/3 right-0 w-[34%] rotate-[5deg]" draggable={false} />
-              </Parallax>
-            </div>
-          </div>
-
-          {/* RIGHT — Storytelling & Comics */}
-          <div className="relative pl-0 md:pl-12">
-            <Reveal>
-              <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45 mb-6">
-                Right side
-              </p>
-            </Reveal>
-            <Reveal delay={120}>
-              <h3 className="font-serif text-ink leading-[1.0] tracking-[-0.02em] text-[40px] md:text-[56px] lg:text-[68px]">
-                Storytelling<br />& <span className="italic text-turquoise-deep">Comics.</span>
-              </h3>
-            </Reveal>
-            <Reveal delay={220}>
-              <Body className="mt-8">
-                Sketchbooks, panels, character voices. The freedom of long-form
-                storytelling — built one drawing at a time, no client in the room.
-              </Body>
-            </Reveal>
-
-            <div className="relative mt-12 h-[420px] md:h-[520px]">
-              <Parallax speed={0.05} className="absolute inset-0">
-                <img src={sketches1.url} alt="" className="absolute top-0 left-2 w-[68%] mix-blend-multiply opacity-95" draggable={false} />
-              </Parallax>
-              <Parallax speed={-0.05} className="absolute inset-0">
-                <img src={ndArieh.url} alt="" className="absolute bottom-2 right-0 w-[44%] drop-shadow-[0_20px_40px_rgba(0,0,0,0.14)]" draggable={false} />
-              </Parallax>
-              <img src={ndStar.url} alt="" className="absolute top-6 right-6 w-10 float-slow" draggable={false} />
-              <img src={ndDiamond.url} alt="" className="absolute bottom-12 left-12 w-8 float-med" draggable={false} />
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── 03 Timeline ─────────────── */
-
-function S03_Timeline() {
-  const milestones = [
-    { icon: "🎭", year: "Early", label: "Theatre", body: "First language was the stage. Light, timing, the way a room holds its breath.", art: theatre1.url, accent: "rotate-[-3deg]" },
-    { icon: "🎨", year: "Shenkar", label: "Design Studies", body: "Formal training. Sketchbooks fill faster than coursework.", art: shenkar4.url, accent: "rotate-[2deg]" },
-    { icon: "🏢", year: "Agency", label: "Advertising", body: "Learned to defend ideas, kill darlings, and ship on a Friday.", art: shenkar8.url, accent: "rotate-[-2deg]" },
-    { icon: "🌍", year: "Years", label: "National Geographic Kids", body: "Lead designer. Craft and curiosity, on every spread.", art: ngkSpread.url, accent: "rotate-[1deg]" },
-    { icon: "📚", year: "Author", label: "Asaflezet", body: "Wrote and designed a children's book — first taste of long-form authorship.", art: azNivBook.url, accent: "rotate-[-2deg]" },
-    { icon: "📖", year: "Now", label: "New Direction", body: "A graphic novel about choice and return. The work that holds the rest together.", art: ndCover.url, accent: "rotate-[2deg]" },
-  ];
-
-  return (
-    <section className="relative py-32 md:py-48 border-t border-ink/10">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-        <Reveal><SectionLabel index="04" title="Journey" /></Reveal>
-        <Reveal delay={120}>
-          <h2 className="mt-8 mb-24 font-serif text-ink leading-[1.02] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.6vw] max-w-[16ch]">
-            A path drawn<br />
-            <span className="italic text-turquoise-deep">by hand.</span>
-          </h2>
-        </Reveal>
-
-        <div className="relative max-w-[1200px] mx-auto">
-          {/* vertical line */}
-          <div className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-1/2 w-px bg-ink/15" />
-
-          <ul className="space-y-28 md:space-y-40">
-            {milestones.map((m, i) => {
-              const left = i % 2 === 0;
-              return (
-                <li key={m.label} className="relative">
-                  {/* node */}
-                  <Reveal delay={50} y={0}>
-                    <span className="absolute left-6 md:left-1/2 md:-translate-x-1/2 -translate-y-1 flex items-center justify-center w-4 h-4 rounded-full bg-[#F5F5F3] ring-1 ring-ink/25">
-                      <span className="block w-1.5 h-1.5 rounded-full bg-turquoise" />
-                    </span>
+                <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 items-start">
+                  <Reveal className="col-span-12 md:col-span-7" delay={60}>
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
+                        0{i + 1} · {m.year}
+                      </span>
+                    </div>
+                    <h3 className="mt-2 font-serif text-ink leading-[1.1] tracking-[-0.015em] text-[22px] md:text-[28px]">
+                      {m.label}
+                    </h3>
+                    <p className="mt-3 text-ink/65 text-[14px] md:text-[15px] leading-[1.7] max-w-[44ch]">
+                      {m.body}
+                    </p>
                   </Reveal>
 
-                  <div className={`grid grid-cols-12 gap-6 md:gap-12 pl-16 md:pl-0 items-center`}>
-                    {/* text block */}
-                    <div className={`col-span-12 ${left ? "md:col-span-5 md:col-start-1 md:text-right md:pr-12" : "md:col-span-5 md:col-start-8 md:pl-12"}`}>
-                      <Reveal delay={100}>
-                        <div className={`flex items-baseline gap-4 ${left ? "md:justify-end" : ""}`}>
-                          <span className="text-2xl md:text-3xl select-none">{m.icon}</span>
-                          <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">{m.year}</span>
-                        </div>
-                      </Reveal>
-                      <Reveal delay={180}>
-                        <h3 className="mt-4 font-serif text-ink leading-[1.05] tracking-[-0.02em] text-[28px] md:text-[40px] lg:text-[48px]">
-                          {m.label}
-                        </h3>
-                      </Reveal>
-                      <Reveal delay={260}>
-                        <p className={`mt-4 text-ink/65 text-[15px] md:text-[16px] leading-[1.7] max-w-[42ch] ${left ? "md:ml-auto" : ""}`}>
-                          {m.body}
-                        </p>
-                      </Reveal>
+                  <Reveal
+                    className="hidden md:block md:col-span-4 md:col-start-9"
+                    delay={120}
+                    y={20}
+                  >
+                    <div className="relative max-w-[180px] ml-auto">
+                      <div className="absolute -inset-2 bg-white shadow-[0_14px_30px_rgba(0,0,0,0.08)] -z-10" />
+                      <img
+                        src={m.art}
+                        alt={m.label}
+                        className="w-full h-auto block aspect-[4/5] object-cover"
+                        draggable={false}
+                      />
                     </div>
-
-                    {/* illustration */}
-                    <div className={`col-span-12 ${left ? "md:col-span-5 md:col-start-8" : "md:col-span-5 md:col-start-1 md:row-start-1"}`}>
-                      <Reveal delay={150} y={40}>
-                        <div className={`relative max-w-[360px] ${left ? "" : "md:ml-auto"} ${m.accent}`}>
-                          <div className="absolute -inset-3 bg-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] -z-10" />
-                          <img src={m.art} alt={m.label} className="w-full h-auto block" draggable={false} />
-                        </div>
-                      </Reveal>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  </Reveal>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
   );
 }
 
-/* ─────────────── 04 Behind New Direction ─────────────── */
+/* ─────────────── 04 New Direction Case Study ─────────────── */
 
-function S04_BehindND() {
-  const panels = [
-    { src: ndJerusalem.url, label: "Panel · Jerusalem walk", span: "md:col-span-7 aspect-[16/10]" },
-    { src: ndBeach.url, label: "Panel · Beach scene", span: "md:col-span-5 aspect-[4/5]" },
-    { src: ndPages.url, label: "Process · Spread collage", span: "md:col-span-5 aspect-[4/5]" },
-    { src: ndKiss.url, label: "Character study · Roy & Arieh", span: "md:col-span-7 aspect-[16/10]" },
-    { src: ndPoster.url, label: "Cover study", span: "md:col-span-4 aspect-[3/4]" },
-    { src: ndPalette.url, label: "Color palette", span: "md:col-span-4 aspect-[3/4] bg-white" },
-    { src: ndBookMockup.url, label: "Bound book", span: "md:col-span-4 aspect-[3/4] bg-white" },
-  ];
-
+function S04_NewDirection() {
   return (
-    <section className="relative py-32 md:py-52 border-t border-ink/10" style={{ background: "linear-gradient(180deg, #F5F5F3 0%, #EFEEEA 100%)" }}>
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-8 items-end mb-20">
-          <div className="col-span-12 md:col-span-7 space-y-8">
-            <Reveal><SectionLabel index="05" title="Behind New Direction" /></Reveal>
-            <Reveal delay={120}>
-              <h2 className="font-serif text-ink leading-[0.98] tracking-[-0.035em] text-[14vw] md:text-[9vw] lg:text-[7.2vw]">
-                Inside the<br />
+    <section
+      className="relative py-24 md:py-36 border-t border-ink/10"
+      style={{ background: "linear-gradient(180deg, #F5F5F3 0%, #EFEEEA 100%)" }}
+    >
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
+          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+        </div>
+
+        <div className="col-span-12 md:col-span-9 md:col-start-3">
+          <Reveal><SectionLabel index="04" title="A Project · New Direction" /></Reveal>
+
+          <div className="mt-10 md:mt-14 grid grid-cols-12 gap-x-8 gap-y-6 items-end">
+            <Reveal className="col-span-12 md:col-span-8" delay={120}>
+              <h2 className="font-serif text-ink leading-[1.0] tracking-[-0.025em] text-[36px] md:text-[56px] lg:text-[66px]">
+                Inside the{" "}
                 <span className="italic text-turquoise-deep">making.</span>
               </h2>
             </Reveal>
-          </div>
-          <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={200}>
-            <Body>
-              A graphic novel is a year of small decisions stacked on each other.
-              Panels, palettes, characters that argue with you in the margin.
-              This is the work table.
-            </Body>
-          </Reveal>
-        </div>
-
-        {/* floating ambient marks */}
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          <img src={ndSpark.url} alt="" className="absolute top-[12%] right-[6%] w-14 float-slow" draggable={false} />
-          <img src={ndDiamondGreen.url} alt="" className="absolute top-[45%] left-[3%] w-10 float-med" draggable={false} />
-          <img src={ndCircleNavy.url} alt="" className="absolute bottom-[10%] right-[10%] w-12 float-slow" draggable={false} />
-          <img src={ndSparkOlive.url} alt="" className="absolute bottom-[30%] left-[12%] w-12 float-med" draggable={false} />
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 relative">
-          {panels.map((p, i) => (
-            <Reveal
-              key={i}
-              delay={i * 80}
-              y={36}
-              className={`group relative overflow-hidden ${p.span} shadow-[0_20px_50px_rgba(0,0,0,0.10)]`}
-            >
-              <img
-                src={p.src}
-                alt={p.label}
-                className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-[1.06]"
-                draggable={false}
-              />
-              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/30 transition-colors duration-700" />
-              <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex items-end justify-between translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-white">
-                  {p.label}
-                </span>
-                <span className="font-mono text-[10px] text-white/70">0{i + 1}</span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={120}>
-          <Link
-            to="/work/new-direction"
-            className="mt-20 inline-flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.28em] text-ink hover:text-turquoise-deep transition-colors"
-          >
-            <span>Open the full project</span>
-            <span className="inline-block w-12 h-px bg-ink" />
-            <span>→</span>
-          </Link>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── 05 Things That Inspire Me ─────────────── */
-
-function S05_Inspiration() {
-  const items = [
-    { src: eilatChildhood.url, label: "Travel", note: "South light, salt air, slow days.", span: "md:col-span-6 md:row-span-2 aspect-[4/5]" },
-    { src: shenkar3.url, label: "Books", note: "Anything Tomi Ungerer.", span: "md:col-span-3 aspect-square bg-white" },
-    { src: theatre2.url, label: "Theatre", note: "The original storyboard.", span: "md:col-span-3 aspect-square" },
-    { src: ngkPortrait.url, label: "People", note: "Portraits that don't pose.", span: "md:col-span-3 aspect-[3/4]" },
-    { src: azSpread.url, label: "Storytelling", note: "Worlds with rules of their own.", span: "md:col-span-3 aspect-[3/4] bg-white" },
-  ];
-
-  return (
-    <section className="relative py-32 md:py-48 border-t border-ink/10">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-8 mb-20">
-          <div className="col-span-12 md:col-span-6 space-y-8">
-            <Reveal><SectionLabel index="06" title="Things That Inspire Me" /></Reveal>
-            <Reveal delay={120}>
-              <h2 className="font-serif text-ink leading-[1.0] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.6vw]">
-                A shelf,<br />
-                <span className="italic text-turquoise-deep">not a list.</span>
-              </h2>
+            <Reveal className="col-span-12 md:col-span-4" delay={200}>
+              <p className="text-ink/65 text-[14px] md:text-[15px] leading-[1.7] max-w-[36ch]">
+                A graphic novel built one decision at a time — panels, palette,
+                characters, cover.
+              </p>
             </Reveal>
           </div>
-          <Reveal className="col-span-12 md:col-span-4 md:col-start-9 self-end" delay={200}>
-            <Body>
-              The objects I keep returning to. Hover anything to hear why.
-            </Body>
-          </Reveal>
-        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 md:auto-rows-[220px]">
-          {items.map((t, i) => (
-            <Reveal
-              key={t.label}
-              delay={i * 80}
-              className={`group relative overflow-hidden ${t.span} shadow-[0_16px_40px_rgba(0,0,0,0.08)]`}
-            >
-              <img
-                src={t.src}
-                alt={t.label}
-                className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-[1.06]"
-                draggable={false}
-              />
-              <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/35 transition-colors duration-700" />
-              <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 text-white">
-                <p className="font-mono text-[10px] uppercase tracking-[0.28em]">{t.label}</p>
-                <p className="mt-1 font-serif italic text-[15px] md:text-[17px] leading-snug">
-                  "{t.note}"
-                </p>
-              </div>
+          {/* Editorial collage — one project, six artifacts */}
+          <div className="mt-16 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
+            {/* Cover */}
+            <Reveal className="col-span-12 md:col-span-5" delay={0}>
+              <figure className="relative">
+                <img
+                  src={ndCover.url}
+                  alt="New Direction — cover"
+                  className="w-full h-auto block shadow-[0_24px_50px_rgba(0,0,0,0.14)]"
+                  draggable={false}
+                />
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
+                  01 · Cover
+                </figcaption>
+              </figure>
             </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
-/* ─────────────── 06 Studio Desk ─────────────── */
-
-function S06_StudioDesk() {
-  type Obj = {
-    id: string;
-    label: string;
-    note: string;
-    src: string;
-    style: React.CSSProperties;
-    className?: string;
-  };
-  const [hover, setHover] = useState<string | null>(null);
-
-  const objects: Obj[] = [
-    {
-      id: "sketch",
-      label: "Sketchbook",
-      note: "Page 47. Never to be shown.",
-      src: sketches1.url,
-      style: { top: "8%", left: "6%", width: "30%", transform: "rotate(-6deg)" },
-    },
-    {
-      id: "panel",
-      label: "Comic page",
-      note: "Draft #3 — the version that finally breathed.",
-      src: ndJerusalem.url,
-      style: { top: "14%", right: "8%", width: "30%", transform: "rotate(4deg)" },
-    },
-    {
-      id: "cover",
-      label: "Book cover",
-      note: "Asaflezet — proof that I can finish a thing.",
-      src: azNivBook.url,
-      style: { bottom: "12%", left: "12%", width: "20%", transform: "rotate(-3deg)" },
-    },
-    {
-      id: "pendant",
-      label: "Turquoise pendant",
-      note: "A small reminder of why color matters.",
-      src: necklace,
-      style: { top: "42%", left: "44%", width: "12%", transform: "rotate(2deg)" },
-    },
-    {
-      id: "spark",
-      label: "Pencil",
-      note: "Always B. Never softer.",
-      src: ndSpark.url,
-      style: { bottom: "20%", right: "22%", width: "8%", transform: "rotate(20deg)" },
-    },
-    {
-      id: "camera",
-      label: "Camera",
-      note: "Old, manual, slow on purpose.",
-      src: ngkPortrait.url,
-      style: { bottom: "8%", right: "6%", width: "22%", transform: "rotate(3deg)" },
-    },
-  ];
-
-  return (
-    <section className="relative py-28 md:py-40 border-t border-ink/10" style={{ background: "#EFEEEA" }}>
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-8 mb-16">
-          <div className="col-span-12 md:col-span-6 space-y-8">
-            <Reveal><SectionLabel index="07" title="Studio Desk" /></Reveal>
-            <Reveal delay={120}>
-              <h2 className="font-serif text-ink leading-[1.0] tracking-[-0.03em] text-[12vw] md:text-[7vw] lg:text-[5.4vw]">
-                What's on the<br />
-                <span className="italic text-turquoise-deep">desk today.</span>
-              </h2>
+            {/* Character */}
+            <Reveal className="col-span-12 md:col-span-7 md:pl-8 self-end" delay={80}>
+              <figure>
+                <img
+                  src={ndArieh.url}
+                  alt="Character study — Roy & Arieh"
+                  className="w-full max-w-[420px] h-auto block mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.14)]"
+                  draggable={false}
+                />
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45 text-center">
+                  02 · Character study
+                </figcaption>
+              </figure>
             </Reveal>
-          </div>
-          <Reveal className="col-span-12 md:col-span-4 md:col-start-9 self-end" delay={200}>
-            <Body>
-              An honest snapshot. Hover any object to peek inside.
-            </Body>
-          </Reveal>
-        </div>
 
-        {/* the desk */}
-        <div
-          className="relative w-full mx-auto rounded-sm overflow-hidden"
-          style={{
-            height: "640px",
-            background:
-              "radial-gradient(ellipse at 50% 40%, #E8E5DD 0%, #DAD5C9 60%, #C9C3B4 100%)",
-            boxShadow: "inset 0 30px 80px rgba(0,0,0,0.08), inset 0 -30px 80px rgba(0,0,0,0.10)",
-          }}
-        >
-          {/* paper grain hint */}
-          <div aria-hidden className="absolute inset-0 opacity-[0.04] mix-blend-multiply" style={{ backgroundImage: "radial-gradient(#000 1px, transparent 1px)", backgroundSize: "4px 4px" }} />
-
-          {objects.map((o) => {
-            const active = hover === o.id;
-            return (
-              <div
-                key={o.id}
-                className="absolute group cursor-pointer"
-                style={o.style}
-                onMouseEnter={() => setHover(o.id)}
-                onMouseLeave={() => setHover((h) => (h === o.id ? null : h))}
-              >
-                <div
-                  className="transition-transform duration-700 ease-[cubic-bezier(.2,.7,.2,1)]"
-                  style={{
-                    transform: active ? "translateY(-10px) scale(1.04)" : "translateY(0) scale(1)",
-                    filter: hover && !active ? "grayscale(0.5) brightness(0.92)" : "none",
-                  }}
-                >
+            {/* Palette */}
+            <Reveal className="col-span-6 md:col-span-4" delay={140}>
+              <figure>
+                <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
                   <img
-                    src={o.src}
-                    alt={o.label}
-                    className="w-full h-auto block drop-shadow-[0_18px_28px_rgba(0,0,0,0.22)]"
+                    src={ndPalette.url}
+                    alt="Color palette"
+                    className="w-full h-auto block aspect-[4/5] object-contain p-4"
                     draggable={false}
                   />
                 </div>
-                {/* tooltip */}
-                <div
-                  className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-4 -translate-y-full whitespace-nowrap"
-                  style={{
-                    opacity: active ? 1 : 0,
-                    transform: `translate(-50%, ${active ? "-100%" : "calc(-100% + 8px)"})`,
-                    transition: "opacity .35s ease, transform .35s ease",
-                  }}
-                >
-                  <div className="bg-ink text-[#F5F5F3] px-4 py-2.5 shadow-xl">
-                    <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-turquoise">{o.label}</p>
-                    <p className="mt-1 font-serif italic text-[14px]">"{o.note}"</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
+                  03 · Palette
+                </figcaption>
+              </figure>
+            </Reveal>
 
-        <Reveal delay={200}>
-          <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45 text-center">
-            Hover · 6 objects · honest mess
-          </p>
-        </Reveal>
+            {/* Interior panel — Jerusalem */}
+            <Reveal className="col-span-12 md:col-span-8" delay={200}>
+              <figure>
+                <img
+                  src={ndJerusalem.url}
+                  alt="Interior panel — Jerusalem walk"
+                  className="w-full h-auto block shadow-[0_20px_44px_rgba(0,0,0,0.10)]"
+                  draggable={false}
+                />
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
+                  04 · Interior panel
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            {/* Process */}
+            <Reveal className="col-span-12 md:col-span-7" delay={260}>
+              <figure>
+                <img
+                  src={ndPages.url}
+                  alt="Process — spread collage"
+                  className="w-full h-auto block shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
+                  draggable={false}
+                />
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
+                  05 · Process
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            {/* Mockup */}
+            <Reveal className="col-span-12 md:col-span-5 md:pl-6 self-end" delay={320}>
+              <figure>
+                <img
+                  src={ndBookMockup.url}
+                  alt="Bound book — mockup"
+                  className="w-full max-w-[360px] h-auto block mx-auto"
+                  draggable={false}
+                />
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45 text-center">
+                  06 · Bound book
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
+
+          {/* Secondary scenes — small row */}
+          <div className="mt-12 grid grid-cols-3 gap-3 md:gap-4">
+            {[ndKiss.url, ndBeach.url].map((src, i) => (
+              <Reveal key={src} delay={i * 80} className="col-span-1">
+                <img
+                  src={src}
+                  alt=""
+                  className="w-full h-auto block aspect-[4/5] object-cover shadow-[0_14px_30px_rgba(0,0,0,0.10)]"
+                  draggable={false}
+                />
+              </Reveal>
+            ))}
+            <Reveal delay={160} className="col-span-1 self-center">
+              <Link
+                to="/work/new-direction"
+                className="group block aspect-[4/5] border border-ink/25 hover:border-turquoise-deep transition-colors flex flex-col items-center justify-center text-center px-4"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/70 group-hover:text-turquoise-deep">
+                  Open the full project
+                </span>
+                <span className="mt-3 inline-block w-8 h-px bg-ink/40 group-hover:bg-turquoise-deep transition-colors" />
+                <span className="mt-3 text-ink/60 group-hover:text-turquoise-deep">→</span>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-/* ─────────────── 07 Today ─────────────── */
+/* ─────────────── 05 Today ─────────────── */
 
-function S07_Today() {
+function S05_Today() {
   return (
-    <section className="relative py-40 md:py-56 border-t border-ink/10 overflow-hidden">
+    <section className="relative py-28 md:py-40 border-t border-ink/10 overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-center justify-center font-serif italic text-ink/[0.04] leading-none select-none"
-        style={{ fontSize: "32vw" }}
+        className="pointer-events-none absolute inset-0 flex items-center justify-center font-serif italic text-ink/[0.03] leading-none select-none"
+        style={{ fontSize: "26vw" }}
       >
         today
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10">
-        <Reveal><SectionLabel index="08" title="Today" /></Reveal>
+      <div className="relative mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
+          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+        </div>
 
-        <Reveal delay={150}>
-          <p className="mt-12 font-serif text-ink leading-[1.08] tracking-[-0.025em] text-[8vw] md:text-[5vw] lg:text-[3.8vw] max-w-[22ch]">
-            Today I help brands tell stories through design — while building
-            <span className="italic text-turquoise-deep"> stories of my own.</span>
-          </p>
-        </Reveal>
+        <div className="col-span-12 md:col-span-9 md:col-start-3">
+          <Reveal><SectionLabel index="05" title="Today" /></Reveal>
 
-        <Reveal delay={300}>
-          <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <Link
-              to="/"
-              className="group inline-flex items-center gap-4 bg-ink text-[#F5F5F3] px-7 py-4 font-mono text-[11px] uppercase tracking-[0.28em] hover:bg-turquoise-deep transition-colors"
-            >
-              <span>View my work</span>
-              <span className="inline-block w-6 h-px bg-current transition-all group-hover:w-10" />
-              <span>→</span>
-            </Link>
-            <a
-              href="mailto:nivat2@gmail.com"
-              className="group inline-flex items-center gap-4 border border-ink/30 px-7 py-4 font-mono text-[11px] uppercase tracking-[0.28em] text-ink hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-turquoise" />
-              </span>
-              <span>Contact me</span>
-              <span>→</span>
-            </a>
-          </div>
-        </Reveal>
+          <Reveal delay={150}>
+            <p className="mt-10 md:mt-14 font-serif text-ink leading-[1.15] tracking-[-0.02em] text-[30px] md:text-[44px] lg:text-[52px] max-w-[22ch]">
+              I help brands tell stories through design — while building{" "}
+              <span className="italic text-turquoise-deep">stories of my own.</span>
+            </p>
+          </Reveal>
+
+          <Reveal delay={300}>
+            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link
+                to="/"
+                className="group inline-flex items-center gap-4 bg-ink text-[#F5F5F3] px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.28em] hover:bg-turquoise-deep transition-colors"
+              >
+                <span>View my work</span>
+                <span>→</span>
+              </Link>
+              <a
+                href="mailto:nivat2@gmail.com"
+                className="group inline-flex items-center gap-4 border border-ink/30 px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.28em] text-ink hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-60 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-turquoise" />
+                </span>
+                <span>Contact me</span>
+                <span>→</span>
+              </a>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -843,9 +597,9 @@ function S07_Today() {
 
 function Footer() {
   return (
-    <footer className="border-t border-ink/10 py-14">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <img src={signatureAsset.url} alt="Niv Haviv" className="h-10 w-auto opacity-80" draggable={false} />
+    <footer className="border-t border-ink/10 py-10">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+        <img src={signatureAsset.url} alt="Niv Haviv" className="h-8 w-auto opacity-80" draggable={false} />
         <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
           © {new Date().getFullYear()} Niv Haviv · Designer · Illustrator · Storyteller
         </p>
