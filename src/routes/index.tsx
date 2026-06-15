@@ -314,7 +314,7 @@ function Hero() {
 
           <div className="overflow-hidden word-rise" style={{ animationDelay: "80ms" }}>
 
-            <h1 className="font-serif text-ink leading-[1.05] tracking-[-0.03em] text-[9vw] md:text-[5vw] lg:text-[4vw]">
+            <h1 className="font-serif text-ink type-display">
 
               My name is<br />
 
@@ -479,7 +479,7 @@ function SignatureProject() {
             New
             <span className="italic font-light text-turquoise-deep"> Direction</span>
           </h2>
-          <p className="font-serif text-2xl md:text-3xl leading-[1.2] max-w-xl mt-8 text-ink">
+          <p className="font-sans type-body-lg leading-[1.6] max-w-xl mt-8 text-ink-muted">
             Story, characters, typography and book design — built from a single visual language, panel by panel.
           </p>
           <p className="mt-6 max-w-md text-ink-muted leading-relaxed">
@@ -668,7 +668,7 @@ function FeaturedWork() {
               <h3 className="font-serif type-h2 text-ink">
                 New Direction
               </h3>
-              <p className="font-serif italic text-[18px] text-turquoise-deep mt-3 font-light leading-[1.4]">
+              <p className="font-serif italic type-body-lg text-turquoise-deep mt-3">
                 An original graphic novel — written, drawn and designed by Niv.
               </p>
               <p className="mt-5 text-[14px] md:text-[15px] text-ink/50 leading-relaxed max-w-[400px]">

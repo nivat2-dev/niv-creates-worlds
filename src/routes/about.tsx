@@ -174,13 +174,13 @@ function S01_Intro() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-8 md:mt-10 font-serif text-ink leading-[0.98] tracking-[-0.035em] type-display">
+            <h1 className="mt-8 md:mt-10 font-serif text-ink leading-[1.0] tracking-[-0.02em] type-display">
               About me<span className="text-turquoise">.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={240}>
-            <div className="mt-10 md:mt-14 text-ink type-h3 leading-[1.5] tracking-[-0.01em] max-w-[700px] space-y-6">
+            <div className="mt-10 md:mt-14 text-ink-muted type-body-lg max-w-[700px] space-y-6">
               <p>
                 I'm a designer, illustrator and storyteller based in Tel Aviv. My path has taken me through theatre, advertising agencies, editorial publishing and book creation, eventually leading me to author and illustrate original stories of my own.
               </p>
@@ -245,7 +245,7 @@ function S03_Journey() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[0.98] tracking-[-0.035em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.0] tracking-[-0.02em] type-display">
               The journey<br />so far<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
@@ -278,7 +278,7 @@ function S03_Journey() {
                   <p className="font-mono type-label text-ink-muted">
                     Chapter 0{i + 1}
                   </p>
-                  <h3 className="mt-5 font-serif text-ink leading-[1.02] tracking-[-0.03em] type-h1">
+                  <h3 className="mt-5 font-serif text-ink leading-[1.1] tracking-[-0.015em] type-h1">
                     {c.label}
                     <span className="text-turquoise">.</span>
                   </h3>
@@ -313,13 +313,13 @@ function S04_Today() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[0.98] tracking-[-0.035em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.0] tracking-[-0.02em] type-display">
               Where I am<br />now<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-10 md:mt-14 text-ink type-h3 leading-[1.5] tracking-[-0.01em] max-w-[700px]">
+            <p className="mt-10 md:mt-14 text-ink-muted type-body-lg max-w-[700px]">
               I help brands tell stories through design — while building{" "}
               <span className="italic text-turquoise-deep">stories of my own.</span>
             </p>
