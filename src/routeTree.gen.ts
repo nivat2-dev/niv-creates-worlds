@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhoIAmRouteImport } from './routes/who-i-am'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkNewDirectionRouteImport } from './routes/work.new-direction'
 import { Route as WorkNationalGeographicKidsRouteImport } from './routes/work.national-geographic-kids'
@@ -20,6 +21,11 @@ import { Route as WorkAsaflezetRouteImport } from './routes/work.asaflezet'
 const WhoIAmRoute = WhoIAmRouteImport.update({
   id: '/who-i-am',
   path: '/who-i-am',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -56,6 +62,7 @@ const WorkAsaflezetRoute = WorkAsaflezetRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/who-i-am': typeof WhoIAmRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/who-i-am': typeof WhoIAmRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
@@ -75,6 +83,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/who-i-am': typeof WhoIAmRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/who-i-am'
     | '/work/asaflezet'
     | '/work/biblical-zoo'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/who-i-am'
     | '/work/asaflezet'
     | '/work/biblical-zoo'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/who-i-am'
     | '/work/asaflezet'
     | '/work/biblical-zoo'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   WhoIAmRoute: typeof WhoIAmRoute
   WorkAsaflezetRoute: typeof WorkAsaflezetRoute
   WorkBiblicalZooRoute: typeof WorkBiblicalZooRoute
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/who-i-am'
       fullPath: '/who-i-am'
       preLoaderRoute: typeof WhoIAmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   WhoIAmRoute: WhoIAmRoute,
   WorkAsaflezetRoute: WorkAsaflezetRoute,
   WorkBiblicalZooRoute: WorkBiblicalZooRoute,
