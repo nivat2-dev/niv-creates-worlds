@@ -201,24 +201,26 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
       >
         {/* Top bar */}
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between">
-          <img
-            src={signature}
-            alt="Niv Haviv signature"
-            className="h-14 md:h-16 w-auto select-none"
-            draggable={false}
-          />
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close menu"
-            className="text-[14px] font-medium text-ink inline-flex items-center gap-2.5 rounded-full bg-ink/[0.06] hover:bg-ink/10 transition-colors px-5 py-2.5"
-          >
-            <span className="relative inline-block h-3.5 w-3.5">
-              <span className="absolute top-1/2 left-0 block h-[1.5px] w-3.5 bg-ink rotate-45" />
-              <span className="absolute top-1/2 left-0 block h-[1.5px] w-3.5 bg-ink -rotate-45" />
-            </span>
-            <span>Close</span>
-          </button>
+          <div className="flex items-center gap-6 md:gap-8">
+            <img
+              src={signature}
+              alt="Niv Haviv signature"
+              className="h-14 md:h-16 w-auto select-none"
+              draggable={false}
+            />
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close menu"
+              className="group relative inline-flex items-center gap-3.5 rounded-full bg-ink text-white px-6 py-3 text-[14px] font-medium tracking-[-0.005em] hover:bg-turquoise-deep transition-all duration-300 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
+            >
+              <span className="relative inline-block h-3.5 w-3.5">
+                <span className="absolute top-1/2 left-0 block h-[1.5px] w-3.5 bg-white rotate-45" />
+                <span className="absolute top-1/2 left-0 block h-[1.5px] w-3.5 bg-white -rotate-45" />
+              </span>
+              <span>Close</span>
+            </button>
+          </div>
         </div>
 
         {/* Nav items — top aligned */}
@@ -294,10 +296,7 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 
 function MenuItemContent({ label, sub, index }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
   return (
-    <div className="flex items-baseline gap-6 md:gap-10 w-full">
-      <span className="font-mono type-label text-ink/30 w-6 shrink-0">
-        {String(index + 1).padStart(2, "0")}
-      </span>
+    <div className="flex items-baseline gap-8 md:gap-12 w-full">
       <span className="font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.02em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 shrink-0">
         {label}
       </span>
