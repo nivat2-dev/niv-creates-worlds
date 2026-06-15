@@ -258,34 +258,31 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
           </div>
 
           <ul className="flex flex-col">
-            {items.map((it, i) => (
-              <li
-                key={it.label}
-                style={{
-                  transform: open ? "translateY(0)" : "translateY(20px)",
-                  opacity: open ? 1 : 0,
-                  transition: `opacity .6s ease ${220 + i * 90}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${220 + i * 90}ms`,
-                }}
-              >
-                {it.href.startsWith("/") ? (
-                  <Link
-                    to={it.href}
-                    onClick={onClose}
-                    className="group grid grid-cols-12 items-center py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors"
-                  >
-                    <MenuItemContent label={it.label} sub={it.sub} index={i} />
-                  </Link>
-                ) : (
-                  <a
-                    href={it.href}
-                    onClick={onClose}
-                    className="group grid grid-cols-12 items-center py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors"
-                  >
-                    <MenuItemContent label={it.label} sub={it.sub} index={i} />
-                  </a>
-                )}
-              </li>
-            ))}
+            {items.map((it, i) => {
+              const rowDelay = 200 + i * 100;
+              const lineDelay = rowDelay + 180;
+              const inner = <MenuItemContent label={it.label} sub={it.sub} index={i} open={open} lineDelay={lineDelay} />;
+              return (
+                <li
+                  key={it.label}
+                  style={{
+                    transform: open ? "translateY(0)" : "translateY(20px)",
+                    opacity: open ? 1 : 0,
+                    transition: `opacity .6s ease ${rowDelay}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${rowDelay}ms`,
+                  }}
+                >
+                  {it.href.startsWith("/") ? (
+                    <Link to={it.href} onClick={onClose} className="group flex items-center gap-5 py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors">
+                      {inner}
+                    </Link>
+                  ) : (
+                    <a href={it.href} onClick={onClose} className="group flex items-center gap-5 py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors">
+                      {inner}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -293,13 +290,22 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
   );
 }
 
-function MenuItemContent({ label, sub }: { label: string; sub: string; index: number }) {
+function MenuItemContent({ label, sub, open, lineDelay }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
   return (
     <>
-      <span className="col-span-12 md:col-span-5 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
+      {/* Growing turquoise bar */}
+      <span
+        className="shrink-0 block h-[2px] rounded-full bg-turquoise self-center"
+        style={{
+          width: open ? "2rem" : "0px",
+          opacity: open ? 1 : 0,
+          transition: `width .55s cubic-bezier(.2,.7,.2,1) ${lineDelay}ms, opacity .3s ease ${lineDelay}ms`,
+        }}
+      />
+      <span className="flex-1 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
         {label}
       </span>
-      <span className="hidden md:flex md:col-span-7 items-center text-[15px] text-ink/70 leading-[1.5] max-w-[340px]">{sub}</span>
+      <span className="hidden md:flex items-center text-[15px] text-ink/70 leading-[1.5] max-w-[340px] ml-auto pr-2">{sub}</span>
     </>
   );
 }
