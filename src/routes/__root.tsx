@@ -169,6 +169,8 @@ function RootComponent() {
       <Outlet />
       <LightboxRoot />
       <PageTransition />
+      <GitHubSyncButton />
     </QueryClientProvider>
   );
+
 }
