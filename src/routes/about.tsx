@@ -4,22 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import signatureAsset from "@/assets/niv-signature-v2.png.asset.json";
 import nivIllustrationAsset from "@/assets/niv-portrait-v3.png.asset.json";
 
-// New Direction world
-import ndArieh from "@/assets/nd-arieh-roy-circle.png.asset.json";
-import ndKiss from "@/assets/nd-kiss.png.asset.json";
-import ndJerusalem from "@/assets/nd-jerusalem-walk.png.asset.json";
-import ndBeach from "@/assets/nd-beach-scene.png.asset.json";
-import ndPages from "@/assets/nd-pages-collage-v2.png.asset.json";
-import ndBookMockup from "@/assets/nd-book-mockup-v2.png.asset.json";
-import ndCover from "@/assets/nd-cover.png.asset.json";
-import ndPalette from "@/assets/nd-palette.png.asset.json";
-
 // Journey
 import shenkar4 from "@/assets/wia-shenkar-4.jpg.asset.json";
 import shenkar8 from "@/assets/wia-shenkar-8.jpg.asset.json";
 import theatre1 from "@/assets/wia-theatre-1.jpg.asset.json";
 import ngkSpread from "@/assets/ngk-spread.png.asset.json";
 import azNivBook from "@/assets/az-niv-book.jpg.asset.json";
+import ndCover from "@/assets/nd-cover.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -168,8 +159,7 @@ function AboutPage() {
       <S01_Intro />
       <S02_Philosophy />
       <S03_Journey />
-      <S04_NewDirection />
-      <S05_Today />
+      <S04_Today />
       <Footer />
     </div>
   );
@@ -380,166 +370,9 @@ function S03_Journey() {
   );
 }
 
-/* ─────────────── 04 New Direction Case Study ─────────────── */
+/* ─────────────── 04 Today ─────────────── */
 
-function S04_NewDirection() {
-  return (
-    <section
-      className="relative py-24 md:py-36 border-t border-ink/10"
-      style={{ background: "linear-gradient(180deg, #F5F5F3 0%, #EFEEEA 100%)" }}
-    >
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
-        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
-        </div>
-
-        <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="04" title="A Project · New Direction" /></Reveal>
-
-          <div className="mt-10 md:mt-14 grid grid-cols-12 gap-x-8 gap-y-6 items-end">
-            <Reveal className="col-span-12 md:col-span-8" delay={120}>
-              <h2 className="font-serif text-ink leading-[1.0] tracking-[-0.025em] text-[36px] md:text-[56px] lg:text-[66px]">
-                Inside the{" "}
-                <span className="italic text-turquoise-deep">making.</span>
-              </h2>
-            </Reveal>
-            <Reveal className="col-span-12 md:col-span-4" delay={200}>
-              <p className="text-ink/65 text-[14px] md:text-[15px] leading-[1.7] max-w-[36ch]">
-                A graphic novel built one decision at a time — panels, palette,
-                characters, cover.
-              </p>
-            </Reveal>
-          </div>
-
-          {/* Editorial collage — one project, six artifacts */}
-          <div className="mt-16 md:mt-20 grid grid-cols-12 gap-4 md:gap-6">
-            {/* Cover */}
-            <Reveal className="col-span-12 md:col-span-5" delay={0}>
-              <figure className="relative">
-                <img
-                  src={ndCover.url}
-                  alt="New Direction — cover"
-                  className="w-full h-auto block shadow-[0_24px_50px_rgba(0,0,0,0.14)]"
-                  draggable={false}
-                />
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
-                  01 · Cover
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            {/* Character */}
-            <Reveal className="col-span-12 md:col-span-7 md:pl-8 self-end" delay={80}>
-              <figure>
-                <img
-                  src={ndArieh.url}
-                  alt="Character study — Roy & Arieh"
-                  className="w-full max-w-[420px] h-auto block mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.14)]"
-                  draggable={false}
-                />
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45 text-center">
-                  02 · Character study
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            {/* Palette */}
-            <Reveal className="col-span-6 md:col-span-4" delay={140}>
-              <figure>
-                <div className="bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
-                  <img
-                    src={ndPalette.url}
-                    alt="Color palette"
-                    className="w-full h-auto block aspect-[4/5] object-contain p-4"
-                    draggable={false}
-                  />
-                </div>
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
-                  03 · Palette
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            {/* Interior panel — Jerusalem */}
-            <Reveal className="col-span-12 md:col-span-8" delay={200}>
-              <figure>
-                <img
-                  src={ndJerusalem.url}
-                  alt="Interior panel — Jerusalem walk"
-                  className="w-full h-auto block shadow-[0_20px_44px_rgba(0,0,0,0.10)]"
-                  draggable={false}
-                />
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
-                  04 · Interior panel
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            {/* Process */}
-            <Reveal className="col-span-12 md:col-span-7" delay={260}>
-              <figure>
-                <img
-                  src={ndPages.url}
-                  alt="Process — spread collage"
-                  className="w-full h-auto block shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
-                  draggable={false}
-                />
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45">
-                  05 · Process
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            {/* Mockup */}
-            <Reveal className="col-span-12 md:col-span-5 md:pl-6 self-end" delay={320}>
-              <figure>
-                <img
-                  src={ndBookMockup.url}
-                  alt="Bound book — mockup"
-                  className="w-full max-w-[360px] h-auto block mx-auto"
-                  draggable={false}
-                />
-                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/45 text-center">
-                  06 · Bound book
-                </figcaption>
-              </figure>
-            </Reveal>
-          </div>
-
-          {/* Secondary scenes — small row */}
-          <div className="mt-12 grid grid-cols-3 gap-3 md:gap-4">
-            {[ndKiss.url, ndBeach.url].map((src, i) => (
-              <Reveal key={src} delay={i * 80} className="col-span-1">
-                <img
-                  src={src}
-                  alt=""
-                  className="w-full h-auto block aspect-[4/5] object-cover shadow-[0_14px_30px_rgba(0,0,0,0.10)]"
-                  draggable={false}
-                />
-              </Reveal>
-            ))}
-            <Reveal delay={160} className="col-span-1 self-center">
-              <Link
-                to="/work/new-direction"
-                className="group block aspect-[4/5] border border-ink/25 hover:border-turquoise-deep transition-colors flex flex-col items-center justify-center text-center px-4"
-              >
-                <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/70 group-hover:text-turquoise-deep">
-                  Open the full project
-                </span>
-                <span className="mt-3 inline-block w-8 h-px bg-ink/40 group-hover:bg-turquoise-deep transition-colors" />
-                <span className="mt-3 text-ink/60 group-hover:text-turquoise-deep">→</span>
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── 05 Today ─────────────── */
-
-function S05_Today() {
+function S04_Today() {
   return (
     <section className="relative py-28 md:py-40 border-t border-ink/10 overflow-hidden">
       <div
@@ -556,7 +389,7 @@ function S05_Today() {
         </div>
 
         <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="05" title="Today" /></Reveal>
+          <Reveal><SectionLabel index="04" title="Today" /></Reveal>
 
           <Reveal delay={150}>
             <p className="mt-10 md:mt-14 font-serif text-ink leading-[1.15] tracking-[-0.02em] text-[30px] md:text-[44px] lg:text-[52px] max-w-[22ch]">
