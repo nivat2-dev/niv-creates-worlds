@@ -181,6 +181,7 @@ function Nav() {
 
 function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const items = [
+    { label: "Home", sub: "Back to the beginning — the full picture in one place.", href: "#top" },
     { label: "Work", sub: "Selected projects across editorial, illustration, UI and publishing.", href: "#work" },
     { label: "About", sub: "An editorial portrait — journey, philosophy and what's next.", href: "/about" },
   ];
