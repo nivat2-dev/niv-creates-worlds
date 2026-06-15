@@ -125,14 +125,25 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const TRANSITION_COLORS = [
+  "oklch(0.92 0.06 10)",   // pink-red
+  "oklch(0.88 0.08 185)",  // turquoise light
+  "oklch(0.92 0.06 10)",   // pink-red
+  "oklch(0.86 0.10 190)",  // turquoise deeper
+];
+let transitionColorIndex = 0;
+
 function PageTransition() {
   const status = useRouterState({ select: s => s.status });
   const [phase, setPhase] = useState<"idle" | "cover" | "reveal">("idle");
+  const [color, setColor] = useState(TRANSITION_COLORS[0]);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (status === "pending") {
       if (timerRef.current) clearTimeout(timerRef.current);
+      transitionColorIndex = (transitionColorIndex + 1) % TRANSITION_COLORS.length;
+      setColor(TRANSITION_COLORS[transitionColorIndex]);
       setPhase("cover");
     } else {
       timerRef.current = setTimeout(() => setPhase("reveal"), 80);
@@ -149,7 +160,7 @@ function PageTransition() {
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        background: "oklch(0.92 0.06 10)",
+        background: color,
         transform: phase === "cover" ? "translateX(0%)" : "translateX(100%)",
         transition: phase === "cover"
           ? "transform 0.4s cubic-bezier(0.7,0,0.3,1)"
