@@ -15,7 +15,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LightboxRoot } from "@/components/Lightbox";
 import { GitHubSyncButton } from "@/components/GitHubSyncButton";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
