@@ -47,7 +47,7 @@ export const Route = createFileRoute("/work/gaming-product-design")({
 
 function GamingPage() {
   return (
-    <main className="page-fade-in bg-cream text-ink">
+    <main className="page-fade-in bg-paper text-ink">
       <CaseNav />
 
       {/* ───── 01 — HERO ───── */}

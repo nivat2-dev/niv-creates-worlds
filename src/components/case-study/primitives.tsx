@@ -75,14 +75,30 @@ export function Reveal({
 /* ───── Navigation ───── */
 
 export function CaseNav() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-6 flex items-center justify-between text-ink">
-        <Link to="/" className="flex items-center gap-2 font-sans text-[12px] tracking-[0.02em]">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-          Niv Haviv
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-paper/90 backdrop-blur-md border-b border-ink/10"
+          : "bg-paper/60 backdrop-blur-sm border-b border-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-20 flex items-center justify-between text-ink">
+        <Link to="/" className="flex items-center gap-2.5 text-ink">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-turquoise" />
+          <span className="font-mono text-[11px] uppercase tracking-[0.22em]">Niv Haviv</span>
         </Link>
-        <Link to="/" className="font-sans text-[12px] tracking-[0.02em] hover:text-coral transition-colors">
+        <Link
+          to="/"
+          className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/50 hover:text-ink transition-colors inline-flex items-center gap-2"
+        >
           ← Index
         </Link>
       </div>
@@ -113,10 +129,7 @@ export function EyebrowCaps({ children }: { children: ReactNode }) {
 
 export function H1Hero({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <h1
-      className={`font-serif font-medium leading-[0.9] tracking-[-0.035em] ${className}`}
-      style={{ fontSize: "clamp(46px,7vw,108px)" }}
-    >
+    <h1 className={`font-serif type-display text-ink ${className}`}>
       {children}
     </h1>
   );
@@ -124,7 +137,7 @@ export function H1Hero({ children, className = "" }: { children: ReactNode; clas
 
 export function H2Section({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <h2 className={`font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] ${className}`}>
+    <h2 className={`font-serif type-h1 text-ink ${className}`}>
       {children}
     </h2>
   );
