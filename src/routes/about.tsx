@@ -11,6 +11,7 @@ import theatre1 from "@/assets/wia-theatre-1.jpg.asset.json";
 import ngkSpread from "@/assets/ngk-spread.png.asset.json";
 import azNivBook from "@/assets/az-niv-book.jpg.asset.json";
 import ndCover from "@/assets/nd-cover.png.asset.json";
+import eilatChildhood from "@/assets/wia-eilat-childhood.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -245,108 +246,132 @@ function S02_Philosophy() {
 /* ─────────────── 03 Journey ─────────────── */
 
 function S03_Journey() {
-  const milestones = [
+  const chapters = [
     {
-      year: "Beginnings",
+      label: "Eilat",
+      body: "I grew up in Israel's southernmost city, spending as much time drawing as I did performing.",
+      art: eilatChildhood.url,
+    },
+    {
       label: "Theatre",
-      body: "First language was the stage — light, timing, the way a room holds its breath.",
+      body: "Years on stage taught me timing, emotion and storytelling long before I worked as a designer.",
       art: theatre1.url,
     },
     {
-      year: "Shenkar",
-      label: "Design Studies",
-      body: "Formal training. Sketchbooks fill faster than coursework.",
+      label: "Design",
+      body: "I later moved into visual communication, learning how ideas become experiences.",
       art: shenkar4.url,
     },
     {
-      year: "Agency",
-      label: "Advertising",
-      body: "Learning to defend ideas, kill darlings, and ship on a Friday.",
-      art: shenkar8.url,
-    },
-    {
-      year: "Years",
-      label: "National Geographic Kids",
-      body: "Lead designer. Craft and curiosity, spread by spread.",
+      label: "Editorial",
+      body: "As lead designer at National Geographic Kids, I spent years turning curiosity into pages, stories and visual worlds.",
       art: ngkSpread.url,
     },
     {
-      year: "Author",
-      label: "Asaflezet",
-      body: "Wrote and designed a children's book — first taste of long-form authorship.",
-      art: azNivBook.url,
-    },
-    {
-      year: "Now",
-      label: "New Direction",
-      body: "A graphic novel about choice and return.",
+      label: "Stories of my own",
+      body: "Today, alongside client work, I write and illustrate original books and graphic novels, including New Direction.",
       art: ndCover.url,
     },
   ];
 
+  const [active, setActive] = useState(0);
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const idx = Number((e.target as HTMLElement).dataset.idx);
+            setActive(idx);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+    );
+    itemRefs.current.forEach((el) => el && io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section className="relative py-24 md:py-32 border-t border-ink/10">
+    <section className="relative py-20 md:py-28 border-t border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
         </div>
 
         <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="03" title="Journey" /></Reveal>
+          <Reveal><SectionLabel index="03" title="The road here" /></Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-10 md:mt-14 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[36px] md:text-[52px] lg:text-[60px] max-w-[14ch]">
-              A path drawn{" "}
-              <span className="italic text-turquoise-deep">by hand.</span>
+            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[36px] md:text-[52px] lg:text-[60px] max-w-[14ch]">
+              How I got{" "}
+              <span className="italic text-turquoise-deep">here.</span>
             </h2>
           </Reveal>
 
-          <ol className="mt-16 md:mt-20 relative">
-            {/* vertical guide line */}
-            <div className="absolute left-[10px] md:left-[12px] top-2 bottom-2 w-px bg-ink/15" />
-
-            {milestones.map((m, i) => (
-              <li key={m.label} className="relative pl-10 md:pl-14 py-6 md:py-7">
-                <Reveal delay={i * 60} y={16}>
-                  <span className="absolute left-0 top-[28px] md:top-[32px] flex items-center justify-center w-[22px] h-[22px] md:w-[25px] md:h-[25px] rounded-full bg-[#F5F5F3] ring-1 ring-ink/25">
-                    <span className="block w-1.5 h-1.5 rounded-full bg-turquoise" />
-                  </span>
-                </Reveal>
-
-                <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 items-start">
-                  <Reveal className="col-span-12 md:col-span-7" delay={60}>
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
-                        0{i + 1} · {m.year}
-                      </span>
-                    </div>
-                    <h3 className="mt-2 font-serif text-ink leading-[1.1] tracking-[-0.015em] text-[22px] md:text-[28px]">
-                      {m.label}
-                    </h3>
-                    <p className="mt-3 text-ink/65 text-[14px] md:text-[15px] leading-[1.7] max-w-[44ch]">
-                      {m.body}
-                    </p>
-                  </Reveal>
-
-                  <Reveal
-                    className="hidden md:block md:col-span-4 md:col-start-9"
-                    delay={120}
-                    y={20}
+          <div className="mt-14 md:mt-20 grid grid-cols-12 gap-x-10">
+            {/* Left: narrative */}
+            <ol className="col-span-12 md:col-span-6">
+              {chapters.map((c, i) => (
+                <li
+                  key={c.label}
+                  ref={(el) => { itemRefs.current[i] = el; }}
+                  data-idx={i}
+                  className="py-12 md:py-16 first:pt-0"
+                >
+                  <div
+                    className="transition-opacity duration-500"
+                    style={{ opacity: active === i ? 1 : 0.35 }}
                   >
-                    <div className="relative max-w-[180px] ml-auto">
-                      <div className="absolute -inset-2 bg-white shadow-[0_14px_30px_rgba(0,0,0,0.08)] -z-10" />
-                      <img
-                        src={m.art}
-                        alt={m.label}
-                        className="w-full h-auto block aspect-[4/5] object-cover"
-                        draggable={false}
-                      />
-                    </div>
-                  </Reveal>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
+                      0{i + 1}
+                    </span>
+                    <h3 className="mt-3 font-serif text-ink leading-[1.05] tracking-[-0.02em] text-[28px] md:text-[36px]">
+                      {c.label}
+                      <span className="text-turquoise">.</span>
+                    </h3>
+                    <p className="mt-4 text-ink/75 text-[15px] md:text-[16px] leading-[1.7] max-w-[42ch]">
+                      {c.body}
+                    </p>
+                  </div>
+                  {/* Mobile image */}
+                  <div className="md:hidden mt-6">
+                    <img
+                      src={c.art}
+                      alt={c.label}
+                      className="w-full h-auto aspect-[4/5] object-cover"
+                      draggable={false}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            {/* Right: sticky image */}
+            <div className="hidden md:block md:col-span-6">
+              <div className="sticky top-28">
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink/5">
+                  {chapters.map((c, i) => (
+                    <img
+                      key={c.label}
+                      src={c.art}
+                      alt={c.label}
+                      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out"
+                      style={{ opacity: active === i ? 1 : 0 }}
+                      draggable={false}
+                    />
+                  ))}
                 </div>
-              </li>
-            ))}
-          </ol>
+                <div className="mt-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
+                  <span>{chapters[active].label}</span>
+                  <span>
+                    {String(active + 1).padStart(2, "0")} / {String(chapters.length).padStart(2, "0")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
