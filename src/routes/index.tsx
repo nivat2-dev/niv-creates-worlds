@@ -296,11 +296,11 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
 
 function MenuItemContent({ label, sub, index }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
   return (
-    <div className="flex items-baseline gap-8 md:gap-12 w-full">
-      <span className="font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.02em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 shrink-0">
+    <div className="flex items-center w-full">
+      <span className="font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.02em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 w-[40vw] md:w-[32vw] shrink-0">
         {label}
       </span>
-      <span className="hidden md:block font-sans type-body text-ink-muted leading-[1.5] max-w-[260px]">{sub}</span>
+      <span className="hidden md:block font-sans type-body text-ink-muted leading-[1.6] max-w-[280px] border-l border-ink/15 pl-8">{sub}</span>
     </div>
   );
 }
