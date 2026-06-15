@@ -84,7 +84,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 02 — PROJECT OVERVIEW ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-7">
             <div className="mx-auto max-w-[620px]">
@@ -129,7 +129,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 03 — INSIDE THE STORY ───── */}
-      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-t border-hairline py-20 md:py-28">
+      <section id="chapters" className="relative isolate overflow-hidden bg-cream border-t border-hairline py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel label="Inside the Story" />
@@ -153,7 +153,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 04 — VISUAL LANGUAGE ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <Reveal>
             <SectionLabel label="A visual thread" />
@@ -202,7 +202,7 @@ function NewDirectionPage() {
       </section>
 
       {/* ───── 05 — MY ROLE ───── */}
-      <section className="relative isolate overflow-hidden bg-cream border-t border-hairline py-20 md:py-28">
+      <section className="relative isolate overflow-hidden bg-cream border-t border-hairline py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-10 md:gap-16 items-center">
           <Reveal className="col-span-12 md:col-span-6">
             <div className="mx-auto max-w-[396px]">

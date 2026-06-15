@@ -160,7 +160,7 @@ function AboutPage() {
 
 function S01_Intro() {
   return (
-    <section className="relative pt-24 md:pt-32 pb-20 md:pb-28 border-b border-ink/10">
+    <section className="relative pt-20 md:pt-28 pb-14 md:pb-20 border-b border-ink/10">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
@@ -231,7 +231,7 @@ function S03_Journey() {
   ];
 
   return (
-    <section className="relative pt-20 md:pt-28 pb-8 md:pb-12 border-t border-ink/10">
+    <section className="relative pt-16 md:pt-20 pb-8 md:pb-10 border-t border-ink/10">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
@@ -299,7 +299,7 @@ function S03_Journey() {
 
 function S04_Today() {
   return (
-    <section className="relative pt-24 md:pt-32 pb-24 md:pb-32 border-t border-ink/10">
+    <section className="relative pt-16 md:pt-24 pb-16 md:pb-24 border-t border-ink/10">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />

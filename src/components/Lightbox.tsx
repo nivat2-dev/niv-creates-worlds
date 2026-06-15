@@ -46,43 +46,67 @@ export function LightboxRoot() {
       aria-modal="true"
       aria-label={state.alt || "Image preview"}
       onClick={close}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 md:p-12 cursor-zoom-out"
       style={{
-        background: "color-mix(in oklab, #14141a 70%, transparent)",
-        backdropFilter: "blur(18px) saturate(140%)",
+        background: "color-mix(in oklab, var(--ink) 82%, var(--turquoise-deep) 18%)",
+        backdropFilter: "blur(20px) saturate(150%)",
         animation: "lb-fade 220ms cubic-bezier(.2,.7,.2,1)",
       }}
     >
+      {/* top bar */}
+      <div className="absolute top-0 left-0 right-0 h-[2px]"
+        style={{ background: "linear-gradient(90deg, var(--turquoise), var(--coral))" }}
+      />
+
+      {/* caption */}
+      {state.alt && (
+        <p
+          className="absolute top-5 left-1/2 -translate-x-1/2 font-mono text-[11px] uppercase tracking-[0.22em] text-center pointer-events-none select-none"
+          style={{ color: "var(--turquoise)" }}
+        >
+          {state.alt}
+        </p>
+      )}
+
+      {/* close button */}
       <button
         type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-          close();
-        }}
+        onClick={(e) => { e.stopPropagation(); close(); }}
         aria-label="Close image preview"
-        className="absolute top-5 right-5 md:top-7 md:right-7 h-10 w-10 rounded-full flex items-center justify-center text-white/90 hover:text-white transition-colors"
+        className="absolute top-4 right-5 md:top-5 md:right-7 h-9 w-9 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
         style={{
-          background: "color-mix(in oklab, #ffffff 14%, transparent)",
-          backdropFilter: "blur(12px) saturate(140%)",
+          background: "var(--turquoise)",
+          color: "var(--paper)",
+          boxShadow: "0 2px 12px color-mix(in oklab, var(--turquoise) 50%, transparent)",
         }}
       >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-          <path d="M3 3 L13 13 M13 3 L3 13" />
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <path d="M2 2 L12 12 M12 2 L2 12" />
         </svg>
       </button>
+
+      {/* image */}
       <img
         src={state.src}
         alt={state.alt}
         onClick={(e) => e.stopPropagation()}
-        className="block max-w-[min(1400px,94vw)] max-h-[88vh] w-auto h-auto rounded-sm cursor-default select-none"
+        className="block max-w-[min(1400px,92vw)] max-h-[82vh] w-auto h-auto cursor-default select-none"
         style={{
-          boxShadow: "0 40px 100px rgba(0,0,0,0.45)",
-          animation: "lb-pop 260ms cubic-bezier(.2,.7,.2,1)",
+          boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px color-mix(in oklab, var(--turquoise) 20%, transparent)",
+          animation: "lb-pop 280ms cubic-bezier(.2,.7,.2,1)",
+          borderRadius: "2px",
         }}
       />
+
+      {/* hint */}
+      <p className="absolute bottom-5 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.18em] pointer-events-none select-none opacity-40"
+        style={{ color: "var(--paper)" }}>
+        ESC to close
+      </p>
+
       <style>{`
         @keyframes lb-fade { from { opacity: 0 } to { opacity: 1 } }
-        @keyframes lb-pop { from { opacity: 0; transform: scale(.985) } to { opacity: 1; transform: scale(1) } }
+        @keyframes lb-pop  { from { opacity: 0; transform: scale(.96) translateY(8px) } to { opacity: 1; transform: scale(1) translateY(0) } }
       `}</style>
     </div>,
     document.body,

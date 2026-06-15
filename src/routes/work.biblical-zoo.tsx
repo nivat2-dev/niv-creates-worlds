@@ -138,7 +138,7 @@ function BiblicalZooPage() {
       </section>
 
       {/* ───── 02 — THE CHALLENGE ───── */}
-      <CaseSection tone="paper" className="!py-14 md:!py-20">
+      <CaseSection tone="paper" className="!py-12 md:!py-16">
         <CaseSectionHeader
           label="The Challenge"
           title="From map to experience."
@@ -187,7 +187,7 @@ function BiblicalZooPage() {
       </CaseSection>
 
       {/* ───── 03 — DESIGN SOLUTION ───── */}
-      <CaseSection tone="cream" className="!py-14 md:!py-20">
+      <CaseSection tone="cream" className="!py-12 md:!py-16">
         <CaseSectionHeader
           label="Design Solution"
           title="Navigation designed as play."
@@ -221,7 +221,7 @@ function BiblicalZooPage() {
       </CaseSection>
 
       {/* ───── 04 — GAMIFICATION ───── */}
-      <CaseSection tone="paper" className="!py-14 md:!py-20">
+      <CaseSection tone="paper" className="!py-12 md:!py-16">
         <CaseSectionHeader
           label="Gamification"
           title="Encouraging exploration through challenges."

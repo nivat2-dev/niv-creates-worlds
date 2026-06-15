@@ -202,7 +202,7 @@ export function CaseSection({
     tone === "ink" ? "bg-ink text-paper" : tone === "paper" ? "bg-paper" : "bg-cream";
   return (
     <section
-      className={`relative isolate overflow-hidden ${divider ? "border-t border-hairline" : ""} ${bg} py-20 md:py-28 ${className}`}
+      className={`relative isolate overflow-hidden ${divider ? "border-t border-hairline" : ""} ${bg} py-14 md:py-20 ${className}`}
     >
       <div className="mx-auto max-w-[1500px] px-6 md:px-10">{children}</div>
     </section>

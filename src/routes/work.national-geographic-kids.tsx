@@ -148,7 +148,7 @@ function NatGeoKidsPage() {
       </section>
 
       {/* ───── More than a magazine ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="More than a magazine" />
@@ -184,7 +184,7 @@ function NatGeoKidsPage() {
       </section>
 
       {/* ───── Featured Work ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="Featured Work" />
@@ -274,7 +274,7 @@ function NatGeoKidsPage() {
       </section>
 
       {/* ───── Beyond the Magazine ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="Beyond the Magazine" />
@@ -317,7 +317,7 @@ function NatGeoKidsPage() {
       </section>
 
       {/* ───── Digital ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-cream py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="Digital" />
@@ -384,7 +384,7 @@ function NatGeoKidsPage() {
       </section>
 
       {/* ───── Behind the work ───── */}
-      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-20 md:py-28">
+      <section className="relative isolate overflow-hidden border-t border-hairline bg-paper py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-10 md:gap-14 items-center">
             {/* Left — portrait */}
