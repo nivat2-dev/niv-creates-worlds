@@ -82,9 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Niv Haviv designs products, stories and visual worlds — from graphic novels to digital products." },
       { name: "author", content: "Niv Haviv" },
       { property: "og:title", content: "Niv Haviv — Visual Designer, Illustrator, Storyteller" },
-      { property: "og:description", content: "Designing products, stories and visual worlds that people connect with." },
+      { property: "og:description", content: "Niv Haviv designs products, stories and visual worlds — from graphic novels to digital products." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Niv Haviv — Visual Designer, Illustrator, Storyteller" },
+      { name: "twitter:description", content: "Niv Haviv designs products, stories and visual worlds — from graphic novels to digital products." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/79ed50aa-fda1-42f6-93f0-e59f88a081ae" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/79ed50aa-fda1-42f6-93f0-e59f88a081ae" },
     ],
     links: [
       {
