@@ -187,15 +187,16 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
   return (
     <div
       aria-hidden={!open}
-      className={`fixed inset-0 z-[60] transition-[opacity,visibility] duration-500 ${
-        open ? "opacity-100 visible" : "opacity-0 invisible"
-      }`}
+      className={`fixed inset-0 z-[60] ${open ? "visible" : "invisible"}`}
+      style={{ transitionDelay: open ? "0ms" : "700ms", transition: "visibility 0ms" }}
     >
       <div
-        className={`absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(.7,0,.2,1)] ${
-          open ? "translate-y-0" : "-translate-y-full"
-        }`}
-        style={{ background: "linear-gradient(180deg, #E6F4F4 0%, #D9EEEE 55%, #CDE8E8 100%)" }}
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, #E6F4F4 0%, #D9EEEE 55%, #CDE8E8 100%)",
+          transform: open ? "translateY(0)" : "translateY(-100%)",
+          transition: `transform 0.75s cubic-bezier(.7,0,.2,1)`,
+        }}
       >
         {/* Top bar */}
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 h-24 md:h-28 flex items-center justify-between">
@@ -302,10 +303,10 @@ function MenuItemContent({ label, sub, open, lineDelay }: { label: string; sub: 
           transition: `width .55s cubic-bezier(.2,.7,.2,1) ${lineDelay}ms, opacity .3s ease ${lineDelay}ms`,
         }}
       />
-      <span className="flex-1 font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300">
+      <span className="font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 shrink-0">
         {label}
       </span>
-      <span className="hidden md:flex items-center text-[15px] text-ink/70 leading-[1.5] max-w-[340px] ml-auto pr-2">{sub}</span>
+      <span className="hidden md:flex items-center text-[15px] text-ink/65 leading-[1.5] max-w-[280px] ml-8">{sub}</span>
     </>
   );
 }
