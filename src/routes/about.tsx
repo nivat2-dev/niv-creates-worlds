@@ -236,48 +236,97 @@ function S01_Intro() {
   const y = useScrollY();
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* huge faded backdrop word */}
+      {/* huge faded backdrop word — quieter */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-10 right-[-4vw] font-serif italic text-ink/[0.04] leading-none select-none"
-        style={{ fontSize: "38vw", transform: `translateY(${y * -0.08}px)` }}
+        className="pointer-events-none absolute -bottom-16 right-[-6vw] font-serif italic text-ink/[0.03] leading-none select-none"
+        style={{ fontSize: "34vw", transform: `translateY(${y * -0.06}px)` }}
       >
         about
       </div>
 
-      <div className="absolute top-32 left-1/2 -translate-x-1/2 h-px w-24 bg-turquoise/60" />
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 w-full pt-40 md:pt-48 pb-28 grid grid-cols-12 gap-x-8">
+        {/* thin vertical guide — anchors the whole composition */}
+        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
+          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+        </div>
 
-      <div className="mx-auto max-w-[1500px] px-6 md:px-10 w-full pt-40 md:pt-48 pb-24">
-        <Reveal>
-          <p className="font-mono text-[10px] uppercase tracking-[0.36em] text-ink/45 mb-12">
-            <span className="inline-block w-10 h-px bg-ink/25 align-middle mr-3" />
-            An interactive portrait · 2026
-          </p>
-        </Reveal>
+        <div className="col-span-12 md:col-span-9 md:col-start-3">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
+              01 · Introduction
+            </p>
+          </Reveal>
 
-        <Reveal delay={150}>
-          <h1 className="font-serif text-ink leading-[0.92] tracking-[-0.045em] text-[18vw] md:text-[13vw] lg:text-[11vw]">
-            Niv <span className="italic text-turquoise-deep">Haviv.</span>
-          </h1>
-        </Reveal>
+          <Reveal delay={150}>
+            <h1 className="mt-16 md:mt-24 font-serif text-ink leading-[0.95] tracking-[-0.035em] text-[16vw] md:text-[8vw] lg:text-[7vw]">
+              Niv <span className="italic text-turquoise-deep">Haviv.</span>
+            </h1>
+          </Reveal>
 
-        <div className="mt-20 md:mt-32 grid grid-cols-12 gap-8">
-          <div className="col-span-12 md:col-span-5 md:col-start-7 space-y-2">
-            {["Designer.", "Illustrator.", "Storyteller."].map((w, i) => (
-              <Reveal key={w} delay={300 + i * 140}>
-                <p className="font-serif text-ink leading-[1.05] tracking-[-0.02em] text-[34px] md:text-[44px] lg:text-[52px]">
-                  {i === 2 ? <span className="italic text-turquoise-deep">{w}</span> : w}
-                </p>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={280}>
+            <p className="mt-14 md:mt-20 font-serif text-ink/80 leading-[1.5] tracking-[-0.01em] text-[22px] md:text-[26px] lg:text-[30px] max-w-[22ch]">
+              Designer. Illustrator. <span className="italic text-turquoise-deep">Storyteller.</span>
+            </p>
+          </Reveal>
+
+          <Reveal delay={420}>
+            <p className="mt-10 text-ink/55 text-[14px] md:text-[15px] leading-[1.8] max-w-[42ch]">
+              An interactive portrait — read at your own pace.
+            </p>
+          </Reveal>
         </div>
       </div>
 
-      {/* scroll cue */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-ink/40">
-        <span className="font-mono text-[10px] uppercase tracking-[0.36em]">Scroll to begin</span>
-        <span className="block w-px h-14 bg-ink/30 scroll-cue" />
+      {/* scroll cue — aligned to the same vertical axis as the content */}
+      <div className="absolute bottom-10 left-0 right-0 pointer-events-none">
+        <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+          <div className="hidden md:flex col-start-2 col-span-1 flex-col items-start gap-3 text-ink/40">
+            <span className="block w-px h-16 bg-ink/25 scroll-cue" />
+            <span className="font-mono text-[9px] uppercase tracking-[0.36em]">Scroll</span>
+          </div>
+          <div className="md:hidden col-span-12 flex flex-col items-center gap-3 text-ink/40">
+            <span className="font-mono text-[9px] uppercase tracking-[0.36em]">Scroll</span>
+            <span className="block w-px h-12 bg-ink/25 scroll-cue" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────── 02 Philosophy ─────────────── */
+
+function S02_Philosophy() {
+  return (
+    <section className="relative py-40 md:py-60 border-t border-ink/10 overflow-hidden">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
+          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+        </div>
+
+        <div className="col-span-12 md:col-span-9 md:col-start-3">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
+              02 · Philosophy
+            </p>
+          </Reveal>
+
+          <Reveal delay={180}>
+            <p className="mt-20 md:mt-28 font-serif text-ink leading-[1.25] tracking-[-0.02em] text-[28px] md:text-[40px] lg:text-[48px] max-w-[22ch]">
+              Both hands —<br />
+              one writes the brief,<br />
+              the other draws what was{" "}
+              <span className="italic text-turquoise-deep">missing from it.</span>
+            </p>
+          </Reveal>
+
+          <Reveal delay={360}>
+            <p className="mt-16 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
+              — A working belief
+            </p>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
