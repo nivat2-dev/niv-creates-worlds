@@ -156,7 +156,6 @@ function AboutPage() {
       <MiniNav />
       <ScrollProgress />
       <S01_Intro />
-      <S02_Philosophy />
       <S03_Journey />
       <S04_Today />
       <Footer />
@@ -206,40 +205,6 @@ function S01_Intro() {
 
 
 
-/* ─────────────── 02 Philosophy ─────────────── */
-
-function S02_Philosophy() {
-  return (
-    <section className="relative py-24 md:py-36 border-t border-ink/10">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
-        <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
-        </div>
-
-        <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal>
-            <SectionLabel index="02" title="Philosophy" />
-          </Reveal>
-
-          <Reveal delay={150}>
-            <p className="mt-14 md:mt-20 font-serif text-ink leading-[1.25] tracking-[-0.02em] text-[26px] md:text-[36px] lg:text-[42px] max-w-[22ch]">
-              Both hands —<br />
-              one writes the brief,<br />
-              the other draws what was{" "}
-              <span className="italic text-turquoise-deep">missing from it.</span>
-            </p>
-          </Reveal>
-
-          <Reveal delay={320}>
-            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
-              — A working belief
-            </p>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ─────────────── 03 Journey ─────────────── */
 
@@ -299,7 +264,7 @@ function S03_Journey() {
         </div>
 
         <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="03" title="The road here" /></Reveal>
+          <Reveal><SectionLabel index="02" title="The road here" /></Reveal>
 
           <Reveal delay={120}>
             <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[36px] md:text-[52px] lg:text-[60px] max-w-[14ch]">
@@ -395,7 +360,7 @@ function S04_Today() {
         </div>
 
         <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="04" title="Today" /></Reveal>
+          <Reveal><SectionLabel index="03" title="Today" /></Reveal>
 
           <Reveal delay={150}>
             <p className="mt-10 md:mt-14 font-serif text-ink leading-[1.15] tracking-[-0.02em] text-[30px] md:text-[44px] lg:text-[52px] max-w-[22ch]">
