@@ -201,6 +201,7 @@ function AboutPage() {
       <MiniNav />
       <ScrollProgress />
       <S01_Intro />
+      <S02_Philosophy />
       <S02_TwoWorlds />
       <S03_Timeline />
       <S04_BehindND />
