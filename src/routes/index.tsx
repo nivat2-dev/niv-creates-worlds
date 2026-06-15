@@ -291,22 +291,13 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
   );
 }
 
-function MenuItemContent({ label, sub, open, lineDelay }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
+function MenuItemContent({ label, sub }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
   return (
     <>
-      {/* Growing turquoise bar */}
-      <span
-        className="shrink-0 block h-[2px] rounded-full bg-turquoise self-center"
-        style={{
-          width: open ? "2rem" : "0px",
-          opacity: open ? 1 : 0,
-          transition: `width .55s cubic-bezier(.2,.7,.2,1) ${lineDelay}ms, opacity .3s ease ${lineDelay}ms`,
-        }}
-      />
       <span className="font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 shrink-0">
         {label}
       </span>
-      <span className="hidden md:flex items-center text-[15px] text-ink/65 leading-[1.5] max-w-[280px] ml-8">{sub}</span>
+      <span className="hidden md:flex items-center text-[15px] text-ink/65 leading-[1.5] max-w-[280px] ml-14">{sub}</span>
     </>
   );
 }
