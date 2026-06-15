@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkNewDirectionRouteImport } from './routes/work.new-direction'
 import { Route as WorkNationalGeographicKidsRouteImport } from './routes/work.national-geographic-kids'
@@ -17,11 +16,6 @@ import { Route as WorkGamingProductDesignRouteImport } from './routes/work.gamin
 import { Route as WorkBiblicalZooRouteImport } from './routes/work.biblical-zoo'
 import { Route as WorkAsaflezetRouteImport } from './routes/work.asaflezet'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -56,7 +50,6 @@ const WorkAsaflezetRoute = WorkAsaflezetRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
@@ -65,7 +58,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
@@ -75,7 +67,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/work/asaflezet': typeof WorkAsaflezetRoute
   '/work/biblical-zoo': typeof WorkBiblicalZooRoute
   '/work/gaming-product-design': typeof WorkGamingProductDesignRoute
@@ -86,7 +77,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
     | '/work/asaflezet'
     | '/work/biblical-zoo'
     | '/work/gaming-product-design'
@@ -95,7 +85,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/work/asaflezet'
     | '/work/biblical-zoo'
     | '/work/gaming-product-design'
@@ -104,7 +93,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/about'
     | '/work/asaflezet'
     | '/work/biblical-zoo'
     | '/work/gaming-product-design'
@@ -114,7 +102,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
   WorkAsaflezetRoute: typeof WorkAsaflezetRoute
   WorkBiblicalZooRoute: typeof WorkBiblicalZooRoute
   WorkGamingProductDesignRoute: typeof WorkGamingProductDesignRoute
@@ -124,13 +111,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -178,7 +158,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
   WorkAsaflezetRoute: WorkAsaflezetRoute,
   WorkBiblicalZooRoute: WorkBiblicalZooRoute,
   WorkGamingProductDesignRoute: WorkGamingProductDesignRoute,
