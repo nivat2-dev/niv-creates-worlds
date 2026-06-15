@@ -89,7 +89,7 @@ function GamingPage() {
       <CaseSection tone="paper">
         <Reveal className="mb-10 md:mb-14 max-w-3xl">
           <SectionLabel label="The Challenge" />
-          <h2 className="font-serif text-2xl md:text-[32px] leading-[1.05] tracking-[-0.02em] mt-4">
+          <h2 className="font-serif type-h2 mt-4">
             A pirate-themed event, end-to-end.
           </h2>
           <Lead className="mt-3 max-w-2xl">

@@ -163,7 +163,7 @@ function NewDirectionPage() {
             <Lead className="mt-5 max-w-xl">
               Warm cream and coral hold the family scenes in Jerusalem. The deeper teals belong to the sea, to Tel Aviv, and to the quiet hours Arieh and Roy share after the loss. Small motifs — a star, a spark, a diamond — drift through the panels like something half-remembered.
             </Lead>
-            <p className="mt-5 font-serif italic text-[17px] leading-[1.5] text-ink/80 max-w-xl">
+            <p className="mt-5 font-serif italic type-body-lg text-ink-muted max-w-xl">
               “Some things you don't say out loud. You draw them, and hope someone notices.”
             </p>
           </Reveal>
@@ -224,12 +224,12 @@ function NewDirectionPage() {
             </Reveal>
             <Reveal delay={220}>
               <div className="mt-6 space-y-5 max-w-lg">
-                <Body className="text-[17px]">New Direction began as a single drawing and grew, slowly, into a 300-page book.</Body>
-                <Body className="text-[17px]">It was made by one person, over several years — written, drawn and shaped night after night, from the first sketch to the final printed page.</Body>
+                <Body>New Direction began as a single drawing and grew, slowly, into a 300-page book.</Body>
+                <Body>It was made by one person, over several years — written, drawn and shaped night after night, from the first sketch to the final printed page.</Body>
               </div>
             </Reveal>
             <Reveal delay={320}>
-              <p className="mt-8 font-sans text-[13px] text-ink-muted">
+              <p className="mt-8 font-sans type-caption text-ink-muted">
                 Niv Haviv · Graphic Novel · 2026
               </p>
             </Reveal>

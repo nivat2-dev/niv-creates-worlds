@@ -262,7 +262,7 @@ function BiblicalZooPage() {
               ))}
             </ul>
             <Reveal delay={300}>
-              <p className="mt-7 border-t border-hairline pt-5 font-serif text-[18px] leading-[1.45] text-ink italic">
+              <p className="mt-7 border-t border-hairline pt-5 font-serif type-body-lg text-ink italic">
                 Families finished the visit together — kids leading, parents following, learning happening along the way.
               </p>
             </Reveal>
@@ -333,7 +333,7 @@ function BiblicalZooPage() {
           ))}
         </div>
         <Reveal delay={280}>
-          <p className="mt-10 md:mt-12 max-w-2xl font-serif text-[22px] md:text-[28px] leading-[1.3] tracking-[-0.015em] text-ink">
+          <p className="mt-10 md:mt-12 max-w-2xl font-serif type-h2 text-ink">
             The strongest physical experiences don't ask to be used. They invite people to play — and trust them to discover the rest.
           </p>
         </Reveal>

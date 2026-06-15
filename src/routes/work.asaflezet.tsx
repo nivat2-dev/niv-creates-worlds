@@ -126,7 +126,7 @@ function AsaflezetPage() {
                   <dt className="font-sans text-[10px] tracking-[0.08em] uppercase text-ink-muted">
                     {m.k}
                   </dt>
-                  <dd className="mt-1 font-serif text-[18px] tracking-[-0.01em]">{m.v}</dd>
+                  <dd className="mt-1 font-serif type-h3">{m.v}</dd>
                 </div>
               ))}
             </dl>
@@ -255,10 +255,10 @@ function AsaflezetPage() {
           <dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-8 max-w-4xl border-t border-hairline pt-8">
             {OUTCOMES.map((o) => (
               <div key={o.label}>
-                <dt className="font-serif text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.02em]">
+                <dt className="font-serif type-h2">
                   {o.value}
                 </dt>
-                <dd className="mt-2 font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                <dd className="mt-2 font-sans type-label text-ink-muted">
                   {o.label}
                 </dd>
               </div>
