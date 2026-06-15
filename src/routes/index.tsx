@@ -219,31 +219,25 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
           </button>
         </div>
 
-        {/* Nav items — vertically centered */}
-        <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16 flex flex-col" style={{ height: "calc(100vh - 7rem)" }}>
-          <p
-            className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/35 shrink-0"
+        {/* Nav items — top aligned */}
+        <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16 pt-10 md:pt-14 flex flex-col">
+          {/* Social icons */}
+          <div className="flex items-center gap-5 pb-10 md:pb-12"
             style={{
               opacity: open ? 1 : 0,
-              marginBottom: "clamp(20px, 3vh, 36px)",
-              transition: `opacity .5s ease 150ms`,
+              transition: `opacity .5s ease 100ms`,
             }}
           >
-            <span className="inline-block w-8 h-px bg-ink/25 align-middle mr-3" />
-            Index
-          </p>
-
-          {/* Social icons */}
-          <div className="flex items-center gap-5 pb-8">
+            <span className="inline-block w-8 h-px bg-ink/25" />
             <a href="mailto:nivat2@gmail.com" aria-label="Email" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
             </a>
             <a href="https://www.linkedin.com/in/niv-haviv-avraham-2274a8229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-ink/30 hover:text-ink transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </div>
 
-          <ul className="flex-1 flex flex-col justify-center">
+          <ul className="flex flex-col">
             {items.map((it, i) => (
               <li
                 key={it.label}
