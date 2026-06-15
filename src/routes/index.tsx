@@ -274,11 +274,11 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
                   }}
                 >
                   {it.href.startsWith("/") ? (
-                    <Link to={it.href} onClick={onClose} className="group flex items-center gap-5 py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors">
+                    <Link to={it.href} onClick={onClose} className="group flex items-center gap-5 py-5 md:py-6 border-b border-ink/10 hover:border-ink/25 transition-colors">
                       {inner}
                     </Link>
                   ) : (
-                    <a href={it.href} onClick={onClose} className="group flex items-center gap-5 py-7 md:py-9 border-b border-ink/10 hover:border-ink/25 transition-colors">
+                    <a href={it.href} onClick={onClose} className="group flex items-center gap-5 py-5 md:py-6 border-b border-ink/10 hover:border-ink/25 transition-colors">
                       {inner}
                     </a>
                   )}
@@ -292,14 +292,17 @@ function FullScreenMenu({ open, onClose }: { open: boolean; onClose: () => void 
   );
 }
 
-function MenuItemContent({ label, sub }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
+function MenuItemContent({ label, sub, index }: { label: string; sub: string; index: number; open: boolean; lineDelay: number }) {
   return (
-    <>
-      <span className="font-serif text-[13vw] sm:text-[9vw] md:text-[6.5vw] lg:text-[5vw] leading-none tracking-[-0.04em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 shrink-0">
+    <div className="flex items-baseline gap-6 md:gap-10 w-full">
+      <span className="font-mono type-label text-ink/30 w-6 shrink-0">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <span className="font-serif text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.2vw] leading-none tracking-[-0.02em] text-ink group-hover:text-turquoise-deep transition-colors duration-300 shrink-0">
         {label}
       </span>
-      <span className="hidden md:flex items-center text-[15px] text-ink/65 leading-[1.5] max-w-[280px] ml-14">{sub}</span>
-    </>
+      <span className="hidden md:block font-sans type-body text-ink-muted leading-[1.5] max-w-[260px]">{sub}</span>
+    </div>
   );
 }
 
