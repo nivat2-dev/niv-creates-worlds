@@ -152,7 +152,7 @@ function ScrollProgress() {
 
 function AboutPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: "#F5F5F3", color: "var(--ink)" }}>
+    <div className="page-fade-in min-h-screen overflow-x-hidden" style={{ background: "#F5F5F3", color: "var(--ink)" }}>
       <MiniNav />
       <ScrollProgress />
       <S01_Intro />

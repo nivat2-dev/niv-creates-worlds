@@ -254,3 +254,16 @@
     transform: scale(1.04);
   }
 }
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@utility page-fade-in {
+  animation: page-enter 0.7s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@utility page-fade-in-slow {
+  animation: page-enter 1s cubic-bezier(.2,.7,.2,1) both;
+}

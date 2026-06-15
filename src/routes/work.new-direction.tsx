@@ -41,7 +41,7 @@ export const Route = createFileRoute("/work/new-direction")({
 
 function NewDirectionPage() {
   return (
-    <main className="bg-cream text-ink">
+    <main className="page-fade-in bg-cream text-ink">
       <CaseNav />
 
       {/* ───── 01 — HERO ───── */}
