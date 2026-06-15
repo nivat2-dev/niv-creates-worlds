@@ -178,7 +178,7 @@ function S01_Intro() {
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
             <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
-              01 Introduction
+              01 INTRODUCTION
             </p>
           </Reveal>
 
