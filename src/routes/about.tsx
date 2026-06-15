@@ -238,36 +238,38 @@ function S03_Journey() {
   ];
 
   return (
-    <section className="relative py-16 md:py-20 border-t border-ink/10">
+    <section className="relative pt-20 md:pt-28 pb-8 md:pb-12 border-t border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-navy-deep/15" />
         </div>
 
-        <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="02" title="The road here" /></Reveal>
-
-          <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[32px] md:text-[48px] lg:text-[56px] max-w-[14ch]">
-              How I got{" "}
-              <span className="italic text-turquoise-deep">here.</span>
-            </h2>
+        <div className="col-span-12 md:col-span-8 md:col-start-3">
+          <Reveal>
+            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+              02 THE ROAD HERE
+            </p>
           </Reveal>
 
-          <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-10 gap-y-10 md:gap-y-12">
-            {chapters.map((c, i) => (
-              <article key={c.label} className="group">
-                <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-2 font-serif text-ink leading-[1.05] tracking-[-0.02em] text-[22px] md:text-[26px]">
-                  {c.label}
-                  <span className="text-turquoise">.</span>
-                </h3>
-                <p className="mt-3 text-ink/75 text-[15px] md:text-[16px] leading-[1.7] max-w-[42ch]">
-                  {c.body}
-                </p>
-                <div className="mt-4">
+          <Reveal delay={120}>
+            <h2 className="mt-8 md:mt-10 font-serif font-bold text-navy-deep leading-[0.98] tracking-[-0.035em] text-[48px] md:text-[72px] lg:text-[84px]">
+              The journey<br />so far<span className="text-turquoise">.</span>
+            </h2>
+          </Reveal>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 mt-20 md:mt-28 space-y-24 md:space-y-36">
+        {chapters.map((c, i) => {
+          const reverse = i % 2 === 1;
+          return (
+            <Reveal key={c.label}>
+              <article className="grid grid-cols-12 gap-x-8 items-center">
+                <div
+                  className={`col-span-12 md:col-span-7 ${
+                    reverse ? "md:col-start-1 md:order-1" : "md:col-start-6 md:order-2"
+                  }`}
+                >
                   <img
                     src={c.art}
                     alt={c.label}
@@ -275,10 +277,26 @@ function S03_Journey() {
                     draggable={false}
                   />
                 </div>
+                <div
+                  className={`col-span-12 md:col-span-4 mt-8 md:mt-0 ${
+                    reverse ? "md:col-start-9 md:order-2" : "md:col-start-2 md:order-1"
+                  }`}
+                >
+                  <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+                    Chapter 0{i + 1}
+                  </p>
+                  <h3 className="mt-5 font-serif font-bold text-navy-deep leading-[1.02] tracking-[-0.03em] text-[36px] md:text-[44px] lg:text-[52px]">
+                    {c.label}
+                    <span className="text-turquoise">.</span>
+                  </h3>
+                  <p className="mt-6 text-navy-deep/85 text-[19px] md:text-[21px] leading-[1.55] tracking-[-0.005em]">
+                    {c.body}
+                  </p>
+                </div>
               </article>
-            ))}
-          </div>
-        </div>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
@@ -288,42 +306,44 @@ function S03_Journey() {
 
 function S04_Today() {
   return (
-    <section className="relative py-28 md:py-40 border-t border-ink/10 overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-center justify-center font-serif italic text-ink/[0.03] leading-none select-none"
-        style={{ fontSize: "26vw" }}
-      >
-        today
-      </div>
-
-      <div className="relative mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+    <section className="relative pt-24 md:pt-32 pb-24 md:pb-32 border-t border-ink/10">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-navy-deep/15" />
         </div>
 
-        <div className="col-span-12 md:col-span-9 md:col-start-3">
-          <Reveal><SectionLabel index="03" title="Today" /></Reveal>
+        <div className="col-span-12 md:col-span-8 md:col-start-3">
+          <Reveal>
+            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+              03 TODAY
+            </p>
+          </Reveal>
 
-          <Reveal delay={150}>
-            <p className="mt-10 md:mt-14 font-serif text-ink leading-[1.15] tracking-[-0.02em] text-[30px] md:text-[44px] lg:text-[52px] max-w-[22ch]">
+          <Reveal delay={120}>
+            <h2 className="mt-8 md:mt-10 font-serif font-bold text-navy-deep leading-[0.98] tracking-[-0.035em] text-[48px] md:text-[72px] lg:text-[84px]">
+              Where I am<br />now<span className="text-turquoise">.</span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={240}>
+            <p className="mt-10 md:mt-14 text-navy-deep text-[22px] md:text-[28px] lg:text-[32px] leading-[1.5] tracking-[-0.01em] max-w-[700px]">
               I help brands tell stories through design — while building{" "}
               <span className="italic text-turquoise-deep">stories of my own.</span>
             </p>
           </Reveal>
 
-          <Reveal delay={300}>
-            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <Reveal delay={360}>
+            <div className="mt-12 md:mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-4 bg-ink text-[#F5F5F3] px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.28em] hover:bg-turquoise-deep transition-colors"
+                className="group inline-flex items-center gap-4 bg-navy-deep text-[#F5F5F3] px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] hover:bg-turquoise-deep transition-colors"
               >
                 <span>View my work</span>
                 <span>→</span>
               </Link>
               <a
                 href="mailto:nivat2@gmail.com"
-                className="group inline-flex items-center gap-4 border border-ink/30 px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.28em] text-ink hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
+                className="group inline-flex items-center gap-4 border border-navy-deep/30 px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] text-navy-deep hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-60 animate-ping" />
