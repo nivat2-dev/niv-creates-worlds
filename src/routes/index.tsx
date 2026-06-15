@@ -644,7 +644,7 @@ function FeaturedWork() {
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
-            <span className="text-turquoise-deep">●</span> Selected Work — 4 Projects
+            <span className="text-turquoise-deep">●</span> Selected Work — 5 Projects
           </p>
           <h2 className="font-serif type-h1 text-ink max-w-3xl mt-6">
             More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
