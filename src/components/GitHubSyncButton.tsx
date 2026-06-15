@@ -106,22 +106,34 @@ export function GitHubSyncButton() {
                 Select <strong>GitHub</strong> from the menu.
               </li>
               <li>
-                Choose <strong>Sync</strong> to pull the latest changes.
+                Choose <strong>Sync</strong> to pull the latest changes from the
+                repository into Lovable.
               </li>
             </ol>
           ) : (
-            <ol className="list-decimal space-y-2 pl-5 text-sm text-foreground">
-              <li>
-                Click the <strong>+</strong> button in the chat composer.
-              </li>
-              <li>
-                Select <strong>GitHub</strong> from the menu.
-              </li>
-              <li>
-                Choose <strong>Sync</strong> to push your latest changes to the
-                repository.
-              </li>
-            </ol>
+            <div className="space-y-3 text-sm text-foreground">
+              <p>
+                Lovable syncs changes with GitHub automatically when the project
+                is connected. To push your latest changes now:
+              </p>
+              <ol className="list-decimal space-y-2 pl-5">
+                <li>
+                  Click the <strong>+</strong> button in the chat composer.
+                </li>
+                <li>
+                  Select <strong>GitHub</strong> from the menu.
+                </li>
+                <li>
+                  Choose <strong>Sync</strong> to sync the latest changes in both
+                  directions.
+                </li>
+              </ol>
+              <p className="text-xs text-muted-foreground">
+                If you don’t see a <strong>Sync</strong> option, the project isn’t
+                connected to GitHub yet — select <strong>Connect project</strong>{" "}
+                first.
+              </p>
+            </div>
           )}
 
           <div className="rounded-md bg-muted p-3 text-xs text-muted-foreground">
