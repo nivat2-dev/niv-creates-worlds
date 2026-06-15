@@ -108,8 +108,8 @@ function MiniNav() {
       className="fixed top-0 inset-x-0 z-50 border-b transition-colors"
       style={{
         background: solid
-          ? "color-mix(in oklab, #F5F5F3 92%, transparent)"
-          : "color-mix(in oklab, #F5F5F3 70%, transparent)",
+          ? "color-mix(in oklab, var(--paper) 92%, transparent)"
+          : "color-mix(in oklab, var(--paper) 70%, transparent)",
         backdropFilter: "saturate(140%) blur(16px)",
         WebkitBackdropFilter: "saturate(140%) blur(16px)",
         borderColor: solid ? "rgba(0,0,0,0.10)" : "rgba(0,0,0,0.04)",
@@ -152,7 +152,7 @@ function ScrollProgress() {
 
 function AboutPage() {
   return (
-    <div className="page-fade-in min-h-screen overflow-x-hidden" style={{ background: "#F5F5F3", color: "var(--ink)" }}>
+    <div className="page-fade-in min-h-screen overflow-x-hidden" style={{ background: "var(--paper)", color: "var(--ink)" }}>
       <MiniNav />
       <ScrollProgress />
       <S01_Intro />
@@ -170,24 +170,24 @@ function S01_Intro() {
     <section className="relative pt-24 md:pt-32 pb-20 md:pb-28 border-b border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-2 bottom-0 w-px bg-navy-deep/15" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
         </div>
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
               01 INTRODUCTION
             </p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-8 md:mt-10 font-serif font-bold text-navy-deep leading-[0.98] tracking-[-0.035em] type-display">
+            <h1 className="mt-8 md:mt-10 font-serif font-bold text-ink leading-[0.98] tracking-[-0.035em] type-display">
               About me<span className="text-turquoise">.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={240}>
-            <div className="mt-10 md:mt-14 text-navy-deep type-h3 leading-[1.5] tracking-[-0.01em] max-w-[700px] space-y-6">
+            <div className="mt-10 md:mt-14 text-ink type-h3 leading-[1.5] tracking-[-0.01em] max-w-[700px] space-y-6">
               <p>
                 I'm a designer, illustrator and storyteller based in Tel Aviv. My path has taken me through theatre, advertising agencies, editorial publishing and book creation, eventually leading me to author and illustrate original stories of my own.
               </p>
@@ -241,18 +241,18 @@ function S03_Journey() {
     <section className="relative pt-20 md:pt-28 pb-8 md:pb-12 border-t border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-2 bottom-0 w-px bg-navy-deep/15" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
         </div>
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
               02 THE ROAD HERE
             </p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif font-bold text-navy-deep leading-[0.98] tracking-[-0.035em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif font-bold text-ink leading-[0.98] tracking-[-0.035em] type-display">
               The journey<br />so far<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
@@ -282,14 +282,14 @@ function S03_Journey() {
                     reverse ? "md:col-start-9 md:order-2" : "md:col-start-2 md:order-1"
                   }`}
                 >
-                  <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+                  <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
                     Chapter 0{i + 1}
                   </p>
-                  <h3 className="mt-5 font-serif font-bold text-navy-deep leading-[1.02] tracking-[-0.03em] type-h1">
+                  <h3 className="mt-5 font-serif font-bold text-ink leading-[1.02] tracking-[-0.03em] type-h1">
                     {c.label}
                     <span className="text-turquoise">.</span>
                   </h3>
-                  <p className="mt-6 text-navy-deep/85 text-[19px] md:text-[21px] leading-[1.55] tracking-[-0.005em]">
+                  <p className="mt-6 text-ink/85 text-[19px] md:text-[21px] leading-[1.55] tracking-[-0.005em]">
                     {c.body}
                   </p>
                 </div>
@@ -309,24 +309,24 @@ function S04_Today() {
     <section className="relative pt-24 md:pt-32 pb-24 md:pb-32 border-t border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-2 bottom-0 w-px bg-navy-deep/15" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-ink/15" />
         </div>
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-navy-deep/60">
+            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
               03 TODAY
             </p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif font-bold text-navy-deep leading-[0.98] tracking-[-0.035em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif font-bold text-ink leading-[0.98] tracking-[-0.035em] type-display">
               Where I am<br />now<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-10 md:mt-14 text-navy-deep type-h3 leading-[1.5] tracking-[-0.01em] max-w-[700px]">
+            <p className="mt-10 md:mt-14 text-ink type-h3 leading-[1.5] tracking-[-0.01em] max-w-[700px]">
               I help brands tell stories through design — while building{" "}
               <span className="italic text-turquoise-deep">stories of my own.</span>
             </p>
@@ -336,14 +336,14 @@ function S04_Today() {
             <div className="mt-12 md:mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-4 bg-navy-deep text-[#F5F5F3] px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] hover:bg-turquoise-deep transition-colors"
+                className="group inline-flex items-center gap-4 bg-ink text-paper px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] hover:bg-turquoise-deep transition-colors"
               >
                 <span>View my work</span>
                 <span>→</span>
               </Link>
               <a
                 href="mailto:nivat2@gmail.com"
-                className="group inline-flex items-center gap-4 border border-navy-deep/30 px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] text-navy-deep hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
+                className="group inline-flex items-center gap-4 border border-navy-deep/30 px-7 py-4 font-mono text-[11px] uppercase tracking-[0.3em] text-ink hover:border-turquoise-deep hover:text-turquoise-deep transition-colors"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-60 animate-ping" />

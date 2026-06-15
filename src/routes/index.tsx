@@ -306,7 +306,7 @@ function Hero() {
 
   return (
 
-    <section id="top" className="relative w-full bg-[#f0f4f8]">
+    <section id="top" className="relative w-full bg-paper">
 
       <div className="relative mx-auto max-w-[1500px] px-14 md:px-24 lg:px-32 pt-40 md:pt-48 pb-0 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[88vh]">
 
@@ -631,7 +631,7 @@ function ProjectRow({ p }: { p: Project }) {
 
 function FeaturedWork() {
   return (
-    <section id="work" className="relative bg-white py-20 md:py-28">
+    <section id="work" className="relative bg-paper py-20 md:py-28">
       <div className="mx-auto max-w-[1500px] px-6 md:px-10 mb-14 md:mb-20">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
