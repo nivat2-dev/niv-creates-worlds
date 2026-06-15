@@ -145,7 +145,7 @@ function ScrollProgress() {
 
 function AboutPage() {
   return (
-    <div className="page-fade-in min-h-screen overflow-x-hidden" style={{ background: "var(--paper)", color: "var(--ink)" }}>
+    <div className="page-fade-in min-h-screen overflow-x-hidden bg-paper text-ink">
       <MiniNav />
       <ScrollProgress />
       <S01_Intro />
@@ -168,13 +168,13 @@ function S01_Intro() {
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
+            <p className="font-mono type-label text-ink-muted">
               01 INTRODUCTION
             </p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-8 md:mt-10 font-serif font-bold text-ink leading-[0.98] tracking-[-0.035em] type-display">
+            <h1 className="mt-8 md:mt-10 font-serif text-ink leading-[0.98] tracking-[-0.035em] type-display">
               About me<span className="text-turquoise">.</span>
             </h1>
           </Reveal>
@@ -239,13 +239,13 @@ function S03_Journey() {
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
+            <p className="font-mono type-label text-ink-muted">
               02 THE ROAD HERE
             </p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif font-bold text-ink leading-[0.98] tracking-[-0.035em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[0.98] tracking-[-0.035em] type-display">
               The journey<br />so far<span className="text-turquoise">.</span>
             </h2>
           </Reveal>
@@ -275,14 +275,14 @@ function S03_Journey() {
                     reverse ? "md:col-start-9 md:order-2" : "md:col-start-2 md:order-1"
                   }`}
                 >
-                  <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
+                  <p className="font-mono type-label text-ink-muted">
                     Chapter 0{i + 1}
                   </p>
-                  <h3 className="mt-5 font-serif font-bold text-ink leading-[1.02] tracking-[-0.03em] type-h1">
+                  <h3 className="mt-5 font-serif text-ink leading-[1.02] tracking-[-0.03em] type-h1">
                     {c.label}
                     <span className="text-turquoise">.</span>
                   </h3>
-                  <p className="mt-6 text-ink/85 text-[19px] md:text-[21px] leading-[1.55] tracking-[-0.005em]">
+                  <p className="mt-6 type-body-lg text-ink-muted">
                     {c.body}
                   </p>
                 </div>
@@ -307,13 +307,13 @@ function S04_Today() {
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[11px] font-light uppercase tracking-[0.3em] text-ink/60">
+            <p className="font-mono type-label text-ink-muted">
               03 TODAY
             </p>
           </Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif font-bold text-ink leading-[0.98] tracking-[-0.035em] type-display">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[0.98] tracking-[-0.035em] type-display">
               Where I am<br />now<span className="text-turquoise">.</span>
             </h2>
           </Reveal>

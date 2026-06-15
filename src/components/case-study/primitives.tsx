@@ -18,15 +18,15 @@ import { openLightbox } from "@/components/Lightbox";
  * - Backgrounds: bg-cream / bg-paper alternating, bg-ink for accents
  * - Hairline:    border-t border-hairline between sections
  *
- * Typography
- * - H1Hero:   clamp(46px, 7vw, 108px) / 0.9 / -0.035em  (serif)
- * - H2Section:text-3xl md:text-[44px] / 1.05 / -0.02em  (serif)
- * - H3Feature:clamp(32px, 3.6vw, 52px) / 1.02 / -0.025em (serif)
- * - H4Card:   22px / 1.1 / -0.015em                     (serif)
- * - Lead:     17px / 1.6                                (sans, ink-muted)
- * - Body:     15px / 1.6                                (sans, ink-muted)
- * - Eyebrow:  12px / coral dot                          (sans, ink-muted)
- * - EyebrowCaps: 12px uppercase tracking-[0.08em]       (sans, ink-muted)
+ * Typography (uses type scale utilities from styles.css)
+ * - H1Hero:    type-display  (serif)
+ * - H2Section: type-h1       (serif)
+ * - H3Feature: type-h2       (serif)
+ * - H4Card:    type-h3       (serif)
+ * - Lead:      type-body-lg  (sans, ink-muted)
+ * - Body:      type-body     (sans, ink-muted)
+ * - SectionLabel: type-label (mono, turquoise dot)
+ * - EyebrowCaps:  12px uppercase tracking-[0.08em] (sans, ink-muted)
  * ============================================================= */
 
 /* ───── Motion ───── */
@@ -145,10 +145,7 @@ export function H2Section({ children, className = "" }: { children: ReactNode; c
 
 export function H3Feature({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <h3
-      className={`font-serif leading-[1.02] tracking-[-0.025em] ${className}`}
-      style={{ fontSize: "clamp(32px,3.6vw,52px)" }}
-    >
+    <h3 className={`font-serif type-h2 leading-[1.02] tracking-[-0.025em] ${className}`}>
       {children}
     </h3>
   );
@@ -156,7 +153,7 @@ export function H3Feature({ children, className = "" }: { children: ReactNode; c
 
 export function H4Card({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <h3 className={`font-serif text-[22px] leading-[1.1] tracking-[-0.015em] ${className}`}>
+    <h3 className={`font-serif type-h3 leading-[1.1] tracking-[-0.015em] ${className}`}>
       {children}
     </h3>
   );
@@ -164,7 +161,7 @@ export function H4Card({ children, className = "" }: { children: ReactNode; clas
 
 export function Lead({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`font-sans text-[17px] leading-[1.6] text-ink-muted ${className}`}>
+    <p className={`font-sans type-body-lg text-ink-muted ${className}`}>
       {children}
     </p>
   );
@@ -172,7 +169,7 @@ export function Lead({ children, className = "" }: { children: ReactNode; classN
 
 export function Body({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`font-sans text-[15px] leading-[1.6] text-ink-muted ${className}`}>
+    <p className={`font-sans type-body text-ink-muted ${className}`}>
       {children}
     </p>
   );
@@ -366,7 +363,7 @@ export function CaseCoverCard({
           className="block w-full h-full object-cover object-center cursor-zoom-in transition-transform duration-500 group-hover:scale-[1.02]"
         />
       </div>
-      <h3 className="mt-5 font-serif text-2xl tracking-[-0.01em]">{title}</h3>
+      <h3 className="mt-5 font-serif type-h2 tracking-[-0.01em]">{title}</h3>
       <Body className="mt-1.5">{body}</Body>
     </article>
   );
@@ -436,8 +433,8 @@ export function MetricsGrid({
     <dl className={`grid grid-cols-1 ${cls} gap-x-10 gap-y-8 max-w-xl`}>
       {items.map((m) => (
         <div key={m.label} className="border-t border-hairline pt-4">
-          <dt className="font-serif text-[26px] leading-[1.1] tracking-[-0.02em]">{m.value}</dt>
-          <dd className="mt-2 font-sans text-[13px] tracking-[0.04em] uppercase text-ink-muted">
+          <dt className="font-serif type-h2 leading-[1.1] tracking-[-0.02em]">{m.value}</dt>
+          <dd className="mt-2 font-sans type-label text-ink-muted">
             {m.label}
           </dd>
         </div>
