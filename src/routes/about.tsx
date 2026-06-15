@@ -169,27 +169,25 @@ function AboutPage() {
 
 function S01_Intro() {
   return (
-    <section className="relative py-24 md:py-32 border-b border-ink/10">
-      <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
+    <section className="relative min-h-[92vh] flex flex-col border-b border-ink/10">
+      <div className="mx-auto max-w-[1280px] w-full px-6 md:px-12 pt-32 md:pt-40 lg:pt-48 flex-1 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
-          <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-navy-deep/15" />
         </div>
 
         <div className="col-span-12 md:col-span-8 md:col-start-3">
           <Reveal>
-            <p className="font-mono text-[10px] uppercase tracking-[0.36em] text-ink/50">
-              01 · Introduction
-            </p>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <h1 className="mt-8 md:mt-10 font-serif text-ink leading-[1.08] tracking-[-0.025em] text-[32px] md:text-[44px] lg:text-[50px]">
-              About me.
+            <h1 className="font-serif font-bold text-navy-deep leading-[0.95] tracking-[-0.04em] text-[56px] md:text-[84px] lg:text-[110px]">
+              About me<span className="text-turquoise">.</span>
             </h1>
           </Reveal>
 
-          <Reveal delay={240}>
-            <div className="mt-8 md:mt-10 text-ink/70 text-[15px] md:text-[16px] leading-[1.75] tracking-[-0.005em] max-w-[55ch] space-y-5">
+          <Reveal delay={180}>
+            <div className="mt-6 md:mt-8 w-16 h-1 bg-turquoise" />
+          </Reveal>
+
+          <Reveal delay={280}>
+            <div className="mt-10 md:mt-14 text-navy-deep text-[18px] md:text-[22px] lg:text-[24px] leading-[1.55] tracking-[-0.01em] max-w-[52ch] space-y-6">
               <p>
                 I'm a designer, illustrator and storyteller based in Tel Aviv. My path has taken me through theatre, advertising agencies, editorial publishing and book creation, eventually leading me to author and illustrate original stories of my own.
               </p>
@@ -200,9 +198,19 @@ function S01_Intro() {
           </Reveal>
         </div>
       </div>
+
+      <Reveal className="w-full py-10 md:py-14" delay={400}>
+        <div className="mx-auto max-w-[1280px] px-6 md:px-12 flex flex-col items-center gap-3">
+          <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-navy-deep/45">
+            Scroll
+          </span>
+          <div className="w-px h-12 bg-navy-deep/20" />
+        </div>
+      </Reveal>
     </section>
   );
 }
+
 
 
 /* ─────────────── 02 Philosophy ─────────────── */
