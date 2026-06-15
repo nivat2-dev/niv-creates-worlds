@@ -237,27 +237,8 @@ function S03_Journey() {
     },
   ];
 
-  const [active, setActive] = useState(0);
-  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
-
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const idx = Number((e.target as HTMLElement).dataset.idx);
-            setActive(idx);
-          }
-        });
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
-    );
-    itemRefs.current.forEach((el) => el && io.observe(el));
-    return () => io.disconnect();
-  }, []);
-
   return (
-    <section className="relative py-20 md:py-28 border-t border-ink/10">
+    <section className="relative py-16 md:py-20 border-t border-ink/10">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 grid grid-cols-12 gap-x-8">
         <div aria-hidden className="hidden md:block col-start-2 col-span-1 relative">
           <div className="absolute left-0 top-1 bottom-0 w-px bg-ink/15" />
@@ -267,73 +248,35 @@ function S03_Journey() {
           <Reveal><SectionLabel index="02" title="The road here" /></Reveal>
 
           <Reveal delay={120}>
-            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[36px] md:text-[52px] lg:text-[60px] max-w-[14ch]">
+            <h2 className="mt-8 md:mt-10 font-serif text-ink leading-[1.02] tracking-[-0.02em] text-[32px] md:text-[48px] lg:text-[56px] max-w-[14ch]">
               How I got{" "}
               <span className="italic text-turquoise-deep">here.</span>
             </h2>
           </Reveal>
 
-          <div className="mt-14 md:mt-20 grid grid-cols-12 gap-x-10">
-            {/* Left: narrative */}
-            <ol className="col-span-12 md:col-span-6">
-              {chapters.map((c, i) => (
-                <li
-                  key={c.label}
-                  ref={(el) => { itemRefs.current[i] = el; }}
-                  data-idx={i}
-                  className="py-12 md:py-16 first:pt-0"
-                >
-                  <div
-                    className="transition-opacity duration-500"
-                    style={{ opacity: active === i ? 1 : 0.35 }}
-                  >
-                    <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
-                      0{i + 1}
-                    </span>
-                    <h3 className="mt-3 font-serif text-ink leading-[1.05] tracking-[-0.02em] text-[28px] md:text-[36px]">
-                      {c.label}
-                      <span className="text-turquoise">.</span>
-                    </h3>
-                    <p className="mt-4 text-ink/75 text-[15px] md:text-[16px] leading-[1.7] max-w-[42ch]">
-                      {c.body}
-                    </p>
-                  </div>
-                  {/* Mobile image */}
-                  <div className="md:hidden mt-6">
-                    <img
-                      src={c.art}
-                      alt={c.label}
-                      className="w-full h-auto aspect-[4/5] object-cover"
-                      draggable={false}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            {/* Right: sticky image */}
-            <div className="hidden md:block md:col-span-6">
-              <div className="sticky top-28">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink/5">
-                  {chapters.map((c, i) => (
-                    <img
-                      key={c.label}
-                      src={c.art}
-                      alt={c.label}
-                      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out"
-                      style={{ opacity: active === i ? 1 : 0 }}
-                      draggable={false}
-                    />
-                  ))}
+          <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-10 gap-y-10 md:gap-y-12">
+            {chapters.map((c, i) => (
+              <article key={c.label} className="group">
+                <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
+                  0{i + 1}
+                </span>
+                <h3 className="mt-2 font-serif text-ink leading-[1.05] tracking-[-0.02em] text-[22px] md:text-[26px]">
+                  {c.label}
+                  <span className="text-turquoise">.</span>
+                </h3>
+                <p className="mt-3 text-ink/75 text-[15px] md:text-[16px] leading-[1.7] max-w-[42ch]">
+                  {c.body}
+                </p>
+                <div className="mt-4">
+                  <img
+                    src={c.art}
+                    alt={c.label}
+                    className="w-full aspect-[4/3] object-cover bg-ink/5"
+                    draggable={false}
+                  />
                 </div>
-                <div className="mt-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.32em] text-ink/45">
-                  <span>{chapters[active].label}</span>
-                  <span>
-                    {String(active + 1).padStart(2, "0")} / {String(chapters.length).padStart(2, "0")}
-                  </span>
-                </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>
