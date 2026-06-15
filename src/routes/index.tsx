@@ -475,7 +475,7 @@ function SignatureProject() {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-turquoise-deep mb-6">
             An original graphic novel — written, drawn and designed by Niv.
           </p>
-          <h2 className="font-serif text-[14vw] md:text-[9vw] lg:text-[7.6vw] leading-[0.86] tracking-[-0.045em] text-ink">
+          <h2 className="font-serif type-display text-ink">
             New
             <span className="italic font-light text-turquoise-deep"> Direction</span>
           </h2>
@@ -607,7 +607,7 @@ function ProjectRow({ p }: { p: Project }) {
             {p.tags[0]}
           </p>
 
-          <h3 className="font-serif text-[2rem] md:text-[2.4rem] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
+          <h3 className="font-serif type-h2 text-ink mb-4">
             {p.title}
           </h3>
 
@@ -637,7 +637,7 @@ function FeaturedWork() {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted">
             <span className="text-turquoise-deep">●</span> (02) — Selected Work · 04 Projects
           </p>
-          <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] text-ink max-w-3xl tracking-[-0.045em] mt-6">
+          <h2 className="font-serif type-h1 text-ink max-w-3xl mt-6">
             More worlds <span className="italic font-light text-turquoise-deep">I've drawn.</span>
           </h2>
           <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
@@ -665,7 +665,7 @@ function FeaturedWork() {
                 <span className="h-px w-8 bg-ink/20" />
                 <span className="text-turquoise-deep">★ Flagship</span>
               </div>
-              <h3 className="font-serif text-[8vw] sm:text-[5vw] md:text-[3.2vw] lg:text-[2.4vw] leading-[1.05] tracking-[-0.03em] text-ink">
+              <h3 className="font-serif type-h2 text-ink">
                 New Direction
               </h3>
               <p className="font-serif italic text-[18px] text-turquoise-deep mt-3 font-light leading-[1.4]">
