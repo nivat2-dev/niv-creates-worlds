@@ -118,7 +118,7 @@ function NewDirectionPage() {
                   ["Audience", "Readers 16+"],
                 ].map(([k, v]) => (
                   <div key={k}>
-                    <dt className="text-ink-muted/70 text-[11px] uppercase tracking-[0.06em]">{k}</dt>
+                    <dt className="text-ink-muted text-[11px] uppercase tracking-[0.06em]">{k}</dt>
                     <dd className="mt-1 text-ink-muted">{v}</dd>
                   </div>
                 ))}

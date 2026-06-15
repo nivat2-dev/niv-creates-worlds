@@ -139,7 +139,7 @@ function NatGeoKidsPage() {
                 <span className="block">Designing</span>
                 <span className="block italic text-coral">curiosity.</span>
               </h1>
-              <p className="mt-10 font-sans text-[17px] leading-[1.6] text-ink max-w-xl">
+              <p className="mt-10 font-sans type-body-lg text-ink max-w-xl">
                 For more than four years I led the visual experience of National Geographic Kids Israel — designing the magazine, the products around it and the campaigns that reached thousands of young readers every month.
               </p>
             </div>
@@ -152,10 +152,10 @@ function NatGeoKidsPage() {
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="More than a magazine" />
-            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-serif type-h2 leading-[1.05] tracking-[-0.02em]">
               More than a magazine.
             </h2>
-            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+            <p className="mt-5 font-sans type-body-lg text-ink-muted">
               National Geographic Kids was never just a monthly publication. Across more than four years I worked on five connected disciplines — and was responsible for the way they fit together.
             </p>
           </div>
@@ -171,10 +171,10 @@ function NatGeoKidsPage() {
                     style={{ filter: "drop-shadow(0 14px 28px rgba(20,20,22,.12))" }}
                   />
                 </div>
-                <h3 className="mt-7 font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                <h3 className="mt-7 font-serif type-h3 tracking-[-0.015em]">
                   {card.title}
                 </h3>
-                <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[28ch]">
+                <p className="mt-3 font-sans type-body text-ink-muted max-w-[28ch]">
                   {card.body}
                 </p>
               </article>
@@ -188,10 +188,10 @@ function NatGeoKidsPage() {
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="Featured Work" />
-            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-serif type-h2 leading-[1.05] tracking-[-0.02em]">
               Featured Work.
             </h2>
-            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+            <p className="mt-5 font-sans type-body-lg text-ink-muted">
               Three editorial projects that defined my years on the magazine — covers and features I designed from concept to final print.
             </p>
           </div>
@@ -209,13 +209,13 @@ function NatGeoKidsPage() {
               </div>
             </div>
             <div className="col-span-12 lg:col-span-5 order-2">
-              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <div className="font-mono type-label text-ink-muted">
                 Cover Story
               </div>
-              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
+              <h3 className="mt-5 font-serif type-h3 leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
                 Bringing history back to the surface.
               </h3>
-              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+              <p className="mt-6 font-sans type-body-lg text-ink-muted max-w-md">
                 A cover I designed around new technology used to reveal details from the Titanic wreck more than a century after the disaster. I led the cover concept, typography and image treatment.
               </p>
             </div>
@@ -224,13 +224,13 @@ function NatGeoKidsPage() {
           {/* Project 02 — Amazon (image right) */}
           <article className="mt-20 md:mt-28 grid grid-cols-12 gap-8 md:gap-14 items-center">
             <div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
-              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <div className="font-mono type-label text-ink-muted">
                 Feature Issue
               </div>
-              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
+              <h3 className="mt-5 font-serif type-h3 leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
                 A visual journey into the Amazon.
               </h3>
-              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+              <p className="mt-6 font-sans type-body-lg text-ink-muted max-w-md">
                 A feature issue on one of the world's most important ecosystems. I designed the cover and shaped the interior story to immerse young readers in the rainforest.
               </p>
             </div>
@@ -259,13 +259,13 @@ function NatGeoKidsPage() {
               </div>
             </div>
             <div className="col-span-12 lg:col-span-5 order-2">
-              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <div className="font-mono type-label text-ink-muted">
                 Inside the Magazine
               </div>
-              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
+              <h3 className="mt-5 font-serif type-h3 leading-[1.02] tracking-[-0.025em] max-w-[18ch]">
                 Editorial storytelling.
               </h3>
-              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+              <p className="mt-6 font-sans type-body-lg text-ink-muted max-w-md">
                 Across dozens of issues I translated complex scientific and historical topics into visual experiences — building layout systems that let each story breathe.
               </p>
             </div>
@@ -278,10 +278,10 @@ function NatGeoKidsPage() {
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="Beyond the Magazine" />
-            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-serif type-h2 leading-[1.05] tracking-[-0.02em]">
               Beyond the Magazine.
             </h2>
-            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+            <p className="mt-5 font-sans type-body-lg text-ink-muted">
               I designed physical products and promotional pieces that extended the brand off the page — each one a different category of work I led end-to-end.
             </p>
           </div>
@@ -303,10 +303,10 @@ function NatGeoKidsPage() {
                   />
                 </div>
                 <div className="border-t border-hairline p-5 md:p-6">
-                  <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                  <h3 className="font-serif type-h3 tracking-[-0.015em]">
                     {card.title}
                   </h3>
-                  <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[32ch]">
+                  <p className="mt-3 font-sans type-body text-ink-muted max-w-[32ch]">
                     {card.body}
                   </p>
                 </div>
@@ -321,10 +321,10 @@ function NatGeoKidsPage() {
         <div className="mx-auto max-w-[1500px] px-6 md:px-10">
           <div className="mb-14 md:mb-20 max-w-3xl">
             <SectionLabel label="Digital" />
-            <h2 className="mt-4 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-serif type-h2 leading-[1.05] tracking-[-0.02em]">
               Extending the experience online.
             </h2>
-            <p className="mt-5 font-sans text-[17px] leading-[1.6] text-ink-muted">
+            <p className="mt-5 font-sans type-body-lg text-ink-muted">
               I extended the magazine into digital — designing landing pages and campaign emails that carried the same editorial voice to subscribers and new readers.
             </p>
           </div>
@@ -342,13 +342,13 @@ function NatGeoKidsPage() {
               </div>
             </div>
             <div className="col-span-12 lg:col-span-5 order-2">
-              <div className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <div className="font-mono type-label text-ink-muted">
                 Landing Page Design
               </div>
-              <h3 className="mt-5 font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.02] tracking-[-0.025em] max-w-[16ch]">
+              <h3 className="mt-5 font-serif type-h3 leading-[1.02] tracking-[-0.025em] max-w-[16ch]">
                 From print to digital.
               </h3>
-              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-md">
+              <p className="mt-6 font-sans type-body-lg text-ink-muted max-w-md">
                 A landing page I designed to promote new issues and subscriptions to parents and educators. I led the layout, hierarchy and visual system — translating the magazine's editorial voice to the screen.
               </p>
             </div>
@@ -370,10 +370,10 @@ function NatGeoKidsPage() {
                   />
                 </div>
                 <div className="border-t border-hairline p-6 md:p-7">
-                  <h3 className="font-serif text-[22px] leading-[1.1] tracking-[-0.015em]">
+                  <h3 className="font-serif type-h3 tracking-[-0.015em]">
                     {card.title}
                   </h3>
-                  <p className="mt-3 font-sans text-[15px] leading-[1.6] text-ink-muted max-w-[42ch]">
+                  <p className="mt-3 font-sans type-body text-ink-muted max-w-[42ch]">
                     {card.body}
                   </p>
                 </div>
@@ -402,10 +402,10 @@ function NatGeoKidsPage() {
             {/* Right — copy + metrics */}
             <div className="col-span-12 lg:col-span-6">
               <SectionLabel label="Behind the work" />
-              <h2 className="mt-6 font-serif text-3xl md:text-[44px] leading-[1.05] tracking-[-0.02em] max-w-[16ch]">
+              <h2 className="mt-6 font-serif type-h2 leading-[1.05] tracking-[-0.02em] max-w-[16ch]">
                 Four years inside National Geographic Kids.
               </h2>
-              <p className="mt-6 font-sans text-[17px] leading-[1.6] text-ink-muted max-w-xl">
+              <p className="mt-6 font-sans type-body-lg text-ink-muted max-w-xl">
                 I joined as the lead designer and stayed for more than four years. I was responsible for the magazine's visual language, the products that grew around it and the campaigns that brought new readers to the brand.
               </p>
 

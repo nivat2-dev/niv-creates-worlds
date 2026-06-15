@@ -96,7 +96,7 @@ function AsaflezetPage() {
                 {ROLE_TAGS.map((t) => (
                   <li
                     key={t}
-                    className="font-sans text-[12px] tracking-[0.04em] uppercase text-ink-muted border border-hairline rounded-full px-3 py-1.5"
+                    className="font-mono type-label text-ink-muted border border-hairline rounded-full px-3 py-1.5"
                   >
                     {t}
                   </li>
@@ -123,7 +123,7 @@ function AsaflezetPage() {
                 { k: "Run", v: "900 copies" },
               ].map((m) => (
                 <div key={m.k}>
-                  <dt className="font-sans text-[10px] tracking-[0.08em] uppercase text-ink-muted">
+                  <dt className="font-mono type-label text-ink-muted">
                     {m.k}
                   </dt>
                   <dd className="mt-1 font-serif type-h3">{m.v}</dd>
@@ -140,7 +140,7 @@ function AsaflezetPage() {
                   className="block w-full h-auto"
                 />
               </div>
-              <figcaption className="mt-3 font-sans text-[12px] text-ink-muted">
+              <figcaption className="mt-3 font-mono type-label text-ink-muted">
                 <span className="text-coral">·</span> The finished book, in hand.
               </figcaption>
             </figure>
@@ -178,7 +178,7 @@ function AsaflezetPage() {
                     className="block w-full h-auto"
                   />
                 </div>
-                <figcaption className="mt-2.5 font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted/80">
+                <figcaption className="mt-2.5 font-mono type-label text-ink-muted">
                   {String(i + 1).padStart(2, "0")} / {img.caption}
                 </figcaption>
               </figure>
@@ -246,7 +246,7 @@ function AsaflezetPage() {
       <CaseSection tone="paper" className="!py-16 md:!py-24">
         <Reveal className="max-w-3xl">
           <EyebrowCaps>In Closing</EyebrowCaps>
-          <p className="mt-6 font-serif font-medium leading-[1.05] tracking-[-0.025em] text-[clamp(32px,4.2vw,56px)]">
+          <p className="mt-6 font-serif type-h2">
             What began as a personal idea became a printed hardcover book
             <span className="text-coral italic"> in the hands of real readers.</span>
           </p>

@@ -156,12 +156,12 @@ function GamingPage() {
             <EyebrowCaps>Wireframe · Structure</EyebrowCaps>
             <div className="mt-5 border border-hairline bg-cream/60 rounded-sm p-5 md:p-6 flex flex-col">
               {/* header block */}
-              <div className="border border-dashed border-ink/30 rounded-sm py-2.5 text-center font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <div className="border border-dashed border-ink/30 rounded-sm py-2.5 text-center font-mono type-label text-ink-muted">
                 Header
               </div>
               {/* progress block */}
               <div className="mt-3 border border-dashed border-ink/30 rounded-sm p-3">
-                <div className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
+                <div className="font-mono type-label text-ink-muted">
                   Progress Bar
                 </div>
                 <div className="mt-2 flex items-center gap-3">
@@ -173,13 +173,13 @@ function GamingPage() {
               {/* icon */}
               <div className="mt-3 border border-dashed border-ink/30 rounded-sm p-3 flex items-center gap-4">
                 <div className="h-9 w-9 rounded-sm border border-dashed border-ink/30" />
-                <div className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
+                <div className="font-mono type-label text-ink-muted">
                   Challenge Icon
                 </div>
               </div>
               {/* rewards */}
               <div className="mt-3 border border-dashed border-ink/30 rounded-sm p-3 space-y-1.5">
-                <div className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
+                <div className="font-mono type-label text-ink-muted">
                   Reward Structure
                 </div>
                 {["Streaks ×1", "Level Win ×2", "Levels 1st Try ×4"].map((r) => (
@@ -194,7 +194,7 @@ function GamingPage() {
               </div>
               {/* CTA */}
               <div className="mt-3">
-                <div className="mx-auto w-3/4 border border-dashed border-coral/60 rounded-full py-2 text-center font-sans text-[11px] tracking-[0.08em] uppercase text-coral">
+                <div className="mx-auto w-3/4 border border-dashed border-coral/60 rounded-full py-2 text-center font-mono type-label text-coral">
                   CTA Button
                 </div>
               </div>
@@ -220,10 +220,10 @@ function GamingPage() {
                   { k: "CTA Button", v: "High-contrast Let's Go owns the bottom." },
                 ].map((m) => (
                   <div key={m.k} className="border-t border-hairline pt-3">
-                    <dt className="font-sans text-[11px] tracking-[0.08em] uppercase text-ink-muted">
+                    <dt className="font-mono type-label text-ink-muted">
                       {m.k}
                     </dt>
-                    <dd className="mt-1 font-sans text-[14px] text-ink leading-[1.5]">
+                    <dd className="mt-1 font-sans type-body text-ink">
                       {m.v}
                     </dd>
                   </div>

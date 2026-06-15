@@ -126,7 +126,7 @@ function BiblicalZooPage() {
                 {ROLE_TAGS.map((t) => (
                   <li
                     key={t}
-                    className="font-sans text-[12px] tracking-[0.04em] uppercase text-ink-muted border border-hairline rounded-full px-3 py-1.5"
+                    className="font-mono type-label text-ink-muted border border-hairline rounded-full px-3 py-1.5"
                   >
                     {t}
                   </li>
@@ -173,10 +173,10 @@ function BiblicalZooPage() {
                   />
                 </div>
                 <figcaption className="mt-4">
-                  <p className="font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+                  <p className="font-mono type-label text-ink-muted">
                     <span className={img.tone === "accent" ? "text-coral" : "text-ink-muted"}>·</span> {img.caption}
                   </p>
-                  <p className={`mt-1.5 font-sans text-[15px] leading-relaxed max-w-md ${img.tone === "accent" ? "text-ink" : "text-ink-muted"}`}>
+                  <p className={`mt-1.5 font-sans type-body max-w-md ${img.tone === "accent" ? "text-ink" : "text-ink-muted"}`}>
                     {img.desc}
                   </p>
                 </figcaption>
@@ -203,7 +203,7 @@ function BiblicalZooPage() {
               loading="lazy"
             />
           </div>
-          <p className="mt-4 text-center font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+          <p className="mt-4 text-center font-mono type-label text-ink-muted">
             <span className="text-coral">·</span> The four design decisions behind the map ↓
           </p>
         </Reveal>
@@ -252,7 +252,7 @@ function BiblicalZooPage() {
               ].map((row, i) => (
                 <Reveal key={row.t} delay={i * 60}>
                   <li className="flex gap-4 border-b border-hairline pb-4 last:border-b-0 last:pb-0">
-                    <span className="font-mono text-[11px] tracking-[0.18em] text-coral pt-1">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-mono type-label text-coral pt-1">{String(i + 1).padStart(2, "0")}</span>
                     <div>
                       <H4Card>{row.t}</H4Card>
                       <Body className="mt-1.5">{row.b}</Body>
@@ -284,7 +284,7 @@ function BiblicalZooPage() {
                   loading="lazy"
                 />
               </div>
-              <figcaption className="mt-3 max-w-[460px] font-sans text-[12px] tracking-[0.08em] uppercase text-ink-muted">
+              <figcaption className="mt-3 max-w-[460px] font-mono type-label text-ink-muted">
                 <span className="text-coral">·</span> On site, Biblical Zoo Jerusalem
               </figcaption>
             </figure>
@@ -304,7 +304,7 @@ function BiblicalZooPage() {
                 "Engagement held from the entrance to the final exhibit, with the map in hand the whole visit.",
               ].map((t, i) => (
                 <li key={i} className="flex gap-4 border-b border-hairline py-3.5">
-                  <span className="font-mono text-[11px] tracking-[0.18em] text-coral pt-1">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono type-label text-coral pt-1">{String(i + 1).padStart(2, "0")}</span>
                   <Body className="text-ink">{t}</Body>
                 </li>
               ))}
